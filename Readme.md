@@ -29,6 +29,7 @@ Descubre y sumérgete en el mundo del vinilo en nuestra tienda online. 🎶
 Conoce al increíble equipo detrás de nuestra tienda:
 
 - **Cesar Daniel Saavedra:**
+
   Ingeniero electrónico orientado al desarrollo de software de sistemas embebidos y creación de productos electrónicos. Actualmente, me encuentro inmerso en el mundo del desarrollo web, perfeccionando mis habilidades a través de Digital House. 💪 Me interesa el diseño y me gustaría orientarme hacia el frontend.
 
   Fuera del mundo digital, disfruto del diseño de muebles y ambientes, convirtiendo este hobby en mi emprendimiento.
@@ -37,8 +38,11 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
   Mi vida siempre está acompañada de la música; para mí, es el motor detrás de todo. Amante del Rock y defensor del Rock Barrial, estoy entusiasmado y ansioso por llevar adelante este proyecto.
 
-- **Nombre 2:**
-  Breve descripción sobre la contribución y experiencia.
+- **Nicolas Randazzo:**
+  
+  Apasionado de los deportes y la vida saludable. Con un pasado como entrenador de handball y personal trainer, he encontrado mi camino en el mundo de las ventas a través de las redes sociales. Disfruto compartir momentos con amigos, ya sea practicando deportes, disfrutando de una buena comida o escuchando música.
+  
+  Soy un entusiasta de la programación y actualmente me encuentro enfocado en mejorar mis habilidades en esta área para seguir creciendo personal y profesionalmente. Trato de "dejar todo en la cancha" en cada meta que me propongo, y al final del dia, no hay mejor manera de relajarme que con un buen fernet.
 
 - **Nombre 3:**
   Breve descripción sobre la contribución y experiencia.
