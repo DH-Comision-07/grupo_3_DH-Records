@@ -44,8 +44,9 @@ Conoce al increíble equipo detrás de nuestra tienda:
   
   Soy un entusiasta de la programación y actualmente me encuentro enfocado en mejorar mis habilidades en esta área para seguir creciendo personal y profesionalmente. Trato de "dejar todo en la cancha" en cada meta que me propongo, y al final del dia, no hay mejor manera de relajarme que con un buen fernet.
 
-- **Nombre 3:**
-  Breve descripción sobre la contribución y experiencia.
+- **Federico Loscocco**
+
+  Buenas! Soy Federico Loscocco, un apasionado de la tecnología y los videojuegos, graduado con un título universitario en esa área. Me encanta sumergirme en el mundo de la programación y la creatividad para aportar mi granito de arena al mundo de la tecnologia. Además, soy un entusiasta del deporte y la música, la cual me ayuda mucho a desconectarme un rato del mundo.
 
 ...
 
