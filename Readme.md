@@ -54,3 +54,14 @@ Me gusta cocinar bla bla. hg
 
 ---
 
+# 🌐 Páginas web que nos sirven de inspiración
+
+Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de nuestra tienda online de vinilos:
+
+1. [Discogs](https://www.discogs.com/) - Una referencia importante por su extensa base de datos y plataforma de compraventa.
+
+2. [MercadoLibre - Sección de Productos](https://www.mercadolibre.com.ar/categoria-principal){:target="_blank"} - Nos inspira la organización y los mecanismos de filtros de su sección de productos, brindando una experiencia de usuario efectiva.
+
+3. **[Web a completar](#)** - Descripción sobre la página web.
+
+4. **[Web a completar](#)** - Descripción sobre la página web.
