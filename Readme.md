@@ -48,7 +48,9 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
   Buenas! Soy Federico Loscocco, un apasionado de la tecnología y los videojuegos, graduado con un título universitario en esa área. Me encanta sumergirme en el mundo de la programación y la creatividad para aportar mi granito de arena al mundo de la tecnologia. Además, soy un entusiasta del deporte y la música, la cual me ayuda mucho a desconectarme un rato del mundo.
 
-...
+**Sebastian Gonzalez C.**
+
+Me gusta cocinar bla bla. hg
 
 ---
 
