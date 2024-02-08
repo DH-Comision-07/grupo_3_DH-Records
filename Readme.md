@@ -60,7 +60,7 @@ Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de
 
 1. [Discogs](https://www.discogs.com/) - Una referencia importante por su extensa base de datos y plataforma de compraventa.
 
-2. [MercadoLibre - Sección de Productos](https://www.mercadolibre.com.ar/categoria-principal){:target="_blank"} - Nos inspira la organización y los mecanismos de filtros de su sección de productos, brindando una experiencia de usuario efectiva.
+2. [MercadoLibre - Sección de Productos](https://listado.mercadolibre.com.ar/discos-de-vinilo-nuevos#D[A:discos%20de%20vinilo%20nuevos]) - Nos inspira la organización y los mecanismos de filtros de su sección de productos, brindando una experiencia de usuario efectiva.
 
 3. **[Web a completar](#)** - Descripción sobre la página web.
 
