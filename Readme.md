@@ -63,6 +63,12 @@ Conoce al increíble equipo detrás de nuestra tienda:
 - **Sophie Laureda**
   Soy una entusiasta de la programación desde hace un buen tiempo, al igual que el diseño gráfico, el dibujo y la fotografía. Soy amante de la musica de los 80s y el pop y rock de los 2000s/2010s. Mi tiempo libre me gusta pasarlo con mis perros, con amigos o tomando un buen café mirando el atardecer. Soy muy comprometida con lo que me propongo y siempre estoy dispuesta a aprender. 
 
+- **ian gruszeczka**
+ hola soy ian gruszeczka, un joven graduado de secundaria, con diploma en fotografia y acualmente estudiante de programacion.
+ me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
+ hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena    convivencia y hacer amigos y conocidos.
+
+
 # 🌐 Páginas web que nos sirven de inspiración
 
   Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de nuestra tienda online de vinilos:
