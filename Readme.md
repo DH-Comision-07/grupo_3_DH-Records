@@ -59,6 +59,8 @@ Me gusta cocinar bla bla. hg
 De profesión odontóloga desde hace 12 años, me caracterizo por ser una persona introvertida, familiar, enamora de los perros, naturaleza y el ejercicio. Me gusta explorar nuevos caminos, los retos constantes y adquirir nuevas habilidades, es por esta razón, que decidí iniciar la carrera en programación.
 Actualmente vivo en la ciudad de Bogotá y para darle color a los días caóticos que en ella se viven me gusta escuchar música entre ellos el género de la electrónica, y en días lluviosos escucho baladas románticas. 
 
+**Daniela Carolina Sánchez**
+Hola soy Daniela Carolina Sánchez, odontóloga amante de los gatos, la naturaleza y la música. Mi conexión con estas tres cosas va mas allá de ser un gusto o una simple afición, tengo que confesar que el hard rock es mi escape al caos del día a día. Me encanta aprender cosas nuevas y por eso tengo un reto personal de aprender programación.
 
 # 🌐 Páginas web que nos sirven de inspiración
 
