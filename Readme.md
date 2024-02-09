@@ -48,31 +48,33 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
   Buenas! Soy Federico Loscocco, un apasionado de la tecnología y los videojuegos, graduado con un título universitario en esa área. Me encanta sumergirme en el mundo de la programación y la creatividad para aportar mi granito de arena al mundo de la tecnologia. Además, soy un entusiasta del deporte y la música, la cual me ayuda mucho a desconectarme un rato del mundo.
 
-**Sebastian Gonzalez C.**
+- **Sebastian Gonzalez C.**
 
-Me gusta cocinar bla bla. hg
+  Me gusta cocinar bla bla. hg
 
----
+- **Diana Robayo**
 
-** Diana Robayo**
+  De profesión odontóloga desde hace 12 años, me caracterizo por ser una persona introvertida, familiar, enamora de los perros, naturaleza y el ejercicio. Me gusta explorar nuevos caminos, los retos constantes y adquirir nuevas habilidades, es por esta razón, que decidí iniciar la carrera en programación.
+  Actualmente vivo en la ciudad de Bogotá y para darle color a los días caóticos que en ella se viven me gusta escuchar música entre ellos el género de la electrónica, y en días lluviosos escucho baladas románticas. 
 
-De profesión odontóloga desde hace 12 años, me caracterizo por ser una persona introvertida, familiar, enamora de los perros, naturaleza y el ejercicio. Me gusta explorar nuevos caminos, los retos constantes y adquirir nuevas habilidades, es por esta razón, que decidí iniciar la carrera en programación.
-Actualmente vivo en la ciudad de Bogotá y para darle color a los días caóticos que en ella se viven me gusta escuchar música entre ellos el género de la electrónica, y en días lluviosos escucho baladas románticas. 
+- **Daniela Carolina Sánchez**
+  Hola soy Daniela Carolina Sánchez, odontóloga amante de los gatos, la naturaleza y la música. Mi conexión con estas tres cosas va mas allá de ser un gusto o una simple afición, tengo que confesar que el hard rock es mi escape al caos del día a día. Me encanta aprender cosas nuevas y por eso tengo un reto personal de aprender programación.
 
-**Daniela Carolina Sánchez**
-Hola soy Daniela Carolina Sánchez, odontóloga amante de los gatos, la naturaleza y la música. Mi conexión con estas tres cosas va mas allá de ser un gusto o una simple afición, tengo que confesar que el hard rock es mi escape al caos del día a día. Me encanta aprender cosas nuevas y por eso tengo un reto personal de aprender programación.
-
-**Sophie Laureda**
-Soy una entusiasta de la programación desde hace un buen tiempo, al igual que el diseño gráfico, el dibujo y la fotografía. Soy amante de la musica de los 80s y el pop y rock de los 2000s/2010s. Mi tiempo libre me gusta pasarlo con mis perros, con amigos o tomando un buen café mirando el atardecer. Soy muy comprometida con lo que me propongo y siempre estoy dispuesta a aprender. 
+- **Sophie Laureda**
+  Soy una entusiasta de la programación desde hace un buen tiempo, al igual que el diseño gráfico, el dibujo y la fotografía. Soy amante de la musica de los 80s y el pop y rock de los 2000s/2010s. Mi tiempo libre me gusta pasarlo con mis perros, con amigos o tomando un buen café mirando el atardecer. Soy muy comprometida con lo que me propongo y siempre estoy dispuesta a aprender. 
 
 # 🌐 Páginas web que nos sirven de inspiración
 
-Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de nuestra tienda online de vinilos:
+  Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de nuestra tienda online de vinilos:
 
 1. [Discogs](https://www.discogs.com/) - Una referencia importante por su extensa base de datos y plataforma de compraventa.
 
 2. [MercadoLibre - Sección de Productos](https://listado.mercadolibre.com.ar/discos-de-vinilo-nuevos#D[A:discos%20de%20vinilo%20nuevos]) - Nos inspira la organización y los mecanismos de filtros de su sección de productos, brindando una experiencia de usuario efectiva.
 
-3. **[Web a completar](#)** - Descripción sobre la página web.
+3. [Audiofilostore](https://www.audiofilostore.com) - Nos gusto la parte visual y la distribucion de la pagina.
 
-4. **[Web a completar](#)** - Descripción sobre la página web.
+4. [Nike](https://www.nike.com.ar/?gad_source=1&gclid=CjwKCAiAt5euBhB9EiwAdkXWOzoya7vdjhL0SvBMEAECPaMrjLN49ShY5tUmQ6Nhd1It9iZXHl0ZyRoCKq0QAvD_BwE) - Nos gusto el diseño con banners promocionales llamativos.
+
+5. [Universal Music Store](https://universalmusicstore.com.co/collections/vinil) - Nos gusto como tiene distribuido el modulo de vinilos para la venta.
+
+6. [The Sound Of Vinyl](https://thesoundofvinyl.com) - Lo usamos de referencia para comparar nuestra pagina con otras de venta de vinilos.
