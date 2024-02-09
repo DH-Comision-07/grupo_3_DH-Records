@@ -62,6 +62,9 @@ Actualmente vivo en la ciudad de Bogotá y para darle color a los días caótico
 **Daniela Carolina Sánchez**
 Hola soy Daniela Carolina Sánchez, odontóloga amante de los gatos, la naturaleza y la música. Mi conexión con estas tres cosas va mas allá de ser un gusto o una simple afición, tengo que confesar que el hard rock es mi escape al caos del día a día. Me encanta aprender cosas nuevas y por eso tengo un reto personal de aprender programación.
 
+**Sophie Laureda**
+Soy una entusiasta de la programación desde hace un buen tiempo, al igual que el diseño gráfico, el dibujo y la fotografía. Soy amante de la musica de los 80s y el pop y rock de los 2000s/2010s. Mi tiempo libre me gusta pasarlo con mis perros, con amigos o tomando un buen café mirando el atardecer. Soy muy comprometida con lo que me propongo y siempre estoy dispuesta a aprender. 
+
 # 🌐 Páginas web que nos sirven de inspiración
 
 Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de nuestra tienda online de vinilos:
