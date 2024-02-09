@@ -54,6 +54,12 @@ Me gusta cocinar bla bla. hg
 
 ---
 
+** Diana Robayo**
+
+De profesión odontóloga desde hace 12 años, me caracterizo por ser una persona introvertida, familiar, enamora de los perros, naturaleza y el ejercicio. Me gusta explorar nuevos caminos, los retos constantes y adquirir nuevas habilidades, es por esta razón, que decidí iniciar la carrera en programación.
+Actualmente vivo en la ciudad de Bogotá y para darle color a los días caóticos que en ella se viven me gusta escuchar música entre ellos el género de la electrónica, y en días lluviosos escucho baladas románticas. 
+
+
 # 🌐 Páginas web que nos sirven de inspiración
 
 Aquí compartimos algunas páginas web que nos han inspirado en el desarrollo de nuestra tienda online de vinilos:
