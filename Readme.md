@@ -50,7 +50,8 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
 - **Sebastian Gonzalez C.**
 
-  Me gusta cocinar bla bla. hg
+  Hola, soy Sebastián. Me gusta la cocina y siempre estoy buscando nuevas formas de crear nuevas recetas. Me encanta experimentar con pastas, incluyendo sabores y técnicas culinarias y así darle forma a mi propio emprendimiento. 
+  Recientemente, he decidido explorar en este nuevo mundo y inscribirme en este curso de full stack. Estoy ansioso por aprender mas sobre el desarrollo de software y combinar mi pasión por la cocina con la tecnología. 
 
 - **Diana Robayo**
 
@@ -58,15 +59,18 @@ Conoce al increíble equipo detrás de nuestra tienda:
   Actualmente vivo en la ciudad de Bogotá y para darle color a los días caóticos que en ella se viven me gusta escuchar música entre ellos el género de la electrónica, y en días lluviosos escucho baladas románticas. 
 
 - **Daniela Carolina Sánchez**
+
   Hola soy Daniela Carolina Sánchez, odontóloga amante de los gatos, la naturaleza y la música. Mi conexión con estas tres cosas va mas allá de ser un gusto o una simple afición, tengo que confesar que el hard rock es mi escape al caos del día a día. Me encanta aprender cosas nuevas y por eso tengo un reto personal de aprender programación.
 
 - **Sophie Laureda**
+
   Soy una entusiasta de la programación desde hace un buen tiempo, al igual que el diseño gráfico, el dibujo y la fotografía. Soy amante de la musica de los 80s y el pop y rock de los 2000s/2010s. Mi tiempo libre me gusta pasarlo con mis perros, con amigos o tomando un buen café mirando el atardecer. Soy muy comprometida con lo que me propongo y siempre estoy dispuesta a aprender. 
 
 - **ian gruszeczka**
- hola soy ian gruszeczka, un joven graduado de secundaria, con diploma en fotografia y acualmente estudiante de programacion.
- me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
- hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena    convivencia y hacer amigos y conocidos.
+
+  Hola soy Ian Gruszeczka, un joven graduado de secundaria, con diploma en fotografia y acualmente estudiante de programacion.
+  me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
+  Hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena convivencia y hacer amigos y conocidos.
 
 
 # 🌐 Páginas web que nos sirven de inspiración
