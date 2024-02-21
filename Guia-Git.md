@@ -33,4 +33,9 @@ Con esto el repositorio remoto queda actualizado y listo para que los demas miem
 ## Como pedir un Pull Request 
 
 Una vez que tengamos funcionando completamente la tarea asignada es momento de realizar un merge a la rama de desarrollo. Para esto es necesario hacer un Pull Request de la siguiente manera:
-- ESTE PASO SE COMPLETARA CUANDO LAS RAMAS DE "DESARROLLO" Y "MAIN" SE ENCUENTREN CONFIGURADAS PARA QUE LOS PULL REQUEST DEBAN SER AUTORIZADOS POR OTROS INTEGRANTES DE LA COMISION.
+- Nos paramos en la rama correspondiente de la tarea.
+- Presionamos en el link azul que dice que estamos un commit adelantados de la rama.
+- Nos aseguramos que tengamos bien seleccionada la rama donde queremos mergear. SIEMPRE desarrollo a la izquierda de las flechitas, y a la derecha la rama a mergear.
+- presionar el boton verde donde dice Create Pull Request
+
+- completar..
