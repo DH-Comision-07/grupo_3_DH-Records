@@ -1,3 +1,5 @@
+
+
 header{
     background-color: grey;
     
@@ -6,23 +8,46 @@ header img {
     max-width: 10%; 
     max-height: 10%; 
     height: auto; 
+    
   }
 
 
 main {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
     max-width: 100%; 
     margin: auto; 
+    font-size: 32px;
   }
-  main a {
+  #volver{
+    position: absolute;
+    left: 5px;
+  }
+
+.div-perfil {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  .imagen-de-perfil{
+    border-radius: 50%;
+  }
+
+  .inputs{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:350px ;
+    height: auto;
+    margin: 5px;
     
-    justify-content: space-between;
-  }
-main img {
-    max-width: 40%; 
-    max-height: 40%; 
-    height: auto; 
+
   }
