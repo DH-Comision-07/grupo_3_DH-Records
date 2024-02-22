@@ -1,0 +1,24 @@
+header{
+    background-color: grey;
+    
+}
+header img {
+    max-width: 10%; 
+    max-height: 10%; 
+    height: auto; 
+  }
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Opcional: alinea los elementos horizontalmente en el centro */
+    max-width: 100%; /* Opcional: ajusta el ancho máximo según sea necesario */
+    margin: auto; /* Opcional: centra el main horizontalmente */
+  }
+main img {
+    max-width: 10%; 
+    max-height: 10%; 
+    height: auto; 
+  }
