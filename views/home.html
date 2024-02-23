@@ -2,46 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>DHRecords</title>
     <link rel="stylesheet" href="/css/home.css">
 </head>
+<!--cosas por defecto-->
+
+
+
+
+
 <body>
     <header>
         <nav>
+            <!--en espera para acoplarse-->
             <img src="\images\logo.jpeg" alt="">
         </nav>
     </header>
     <main>
-        <button id="boton-volver"><a href="">volver</a></button>
-               
-            <section class="falso-main">
+
+        <!-- este boton no es responsive, es (en teoria) lo unico que falta -->
+        <div class="boton-volver">
+            <button id="boton-volver"><a href="">volver</a></button>
+        </div>       
+            <section class="el-section">
                 
-                   
-                    
                     <h2>crear cuenta</h2>
                     
-                
-                <div class="cuenta-inexistente">
-                    <div class="div-perfil">
+                 <!-- varios div para mas flexibilidad a la hora de acomodar el contenido -->
+                    <div class="div-imagen-de-perfil">
                         
-                        <img src="https://picsum.photos/id/237/200/300" alt="" class="imagen-de-perfil"><!--<p>foto de perfil</p> imagen de referencia sacada de google-->
+                        <!--foto de perfil, imagen de referencia sacada de google-->
+                        <img src="https://picsum.photos/id/237/200/300" alt="" class="imagen-de-perfil">
                     </div>
+
+
+
+                    <!--  todos los input tienen la clase "input-individual" -->
                    <div class="inputs" >
                         <input type="text" class="input-individual" name="nombre" placeholder="usuario">
                         <input type="email" class="input-individual" name="email" placeholder="Correo electrónico">
                         <input type="text" class="input-individual" name="contraseña" placeholder="contraseña">
-                        <ur>
+                        
+
+                        <!-- los button cuentan con un <a> link aunque no se si es util pero ahí esta -->
                         <button id="boton-confirnar" class="boton-estilo" onclick="alert('tu cuenta a sido creada')"><a href="">confirmar</a></button>
         
-                        <p>ya tienes cuenta?<a href="">conectate</a></p>
+
+                        <p>¿ya tienes cuenta?<a href=""> conectate</a></p>
                     </div>
+
+
             </section>
     </main>
     <footer>
-
+        <!--en espera para acoplarse-->
     </footer>
 </body>
 </html>
