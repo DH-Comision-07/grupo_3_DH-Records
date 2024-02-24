@@ -1,0 +1,46 @@
+/* COLORES */
+:root {
+    --OCRE: #FBA834;
+    --AZUL: #333A73;
+    --CELESTE-OSCURO: #387ADF;
+    --CELESTE-CLARO: #50C4ED;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.header {
+    background-color: var(--AZUL);
+    padding: 10px;
+    display: flex;
+} 
+
+.header__contenedor-img-logo {
+    background-color: var(--OCRE);
+    padding: 10px;
+}
+
+.header__img-logo {
+    width: 50px;
+    height: auto;
+    margin: 0px;
+}
+
+.header__navbar {
+    background-color: var(--OCRE);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.header__barra-superior {
+    width: 100%;
+    background-color: var(--OCRE);
+}
