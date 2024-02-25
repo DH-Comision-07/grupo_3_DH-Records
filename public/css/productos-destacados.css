@@ -26,6 +26,11 @@ main article {
     background-color: #FFF;
 }
 
+h2{
+    font-size: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+}
 
 .productos__seccion{
     display: flex;
@@ -53,12 +58,12 @@ main article {
 }
 
 .productos__descripcion{
-    font-size: 15px;
+    font-size: 18px;
     margin-bottom: 15px;
 }
 
 .productos__precio{
-    font-size: 15px;
+    font-size: 17px;
 }
 
 
@@ -72,3 +77,28 @@ main article {
 .productos__img:hover {
     transform: scale(0.8) rotate(360deg);
   }
+
+
+ 
+  
+
+  .productos__section-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    
+}
+
+.productos__boton{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+
+
+
+
+ 
+
+
