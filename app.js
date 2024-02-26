@@ -22,3 +22,7 @@ app.get('/login', (req,res) => {
 });
 
 app.get("/productos-destacados", (req, res) => res.sendFile(path.join(__dirname, "/views/productos-destacados.html")));
+
+app.get("/banner-promociones", (req, res) => res.sendFile(path.join(__dirname, "/grupo_3_DH-Records/views/banner-promociones.html")));
+
+
