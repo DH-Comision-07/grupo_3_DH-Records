@@ -1,19 +1,130 @@
+/* COLORES */
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: #000;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+
+@media screen and (min-width: 1024px) {    /*    Desktop   */
+    .banner{
+        display:flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        width: 1200px;
+        height: 430px;
+        margin-bottom: 30px;
+    }
+
+    h2{
+        font-size: 25px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
+    .banner{
+        display:flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+        width: 1200px;
+        height: 430px;
+        margin-bottom: 30px;
+    }
+
+    h2{
+        font-size: 25px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 768px){   /*    Mobile     */
+
+    /* banner-promociones */
+    .banner{
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    
+
+
+    /* productos-destacados */
+
+    h2{
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .productos__seccion{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+       
+        
+    }
+
+    .productos__articulo{
+        width: 80%;  /* si no fuera 80% no se podria repartir el espacio libre con el amrgin ya que ocuparioa todo el contenedor al 100% */
+        margin: 0 auto 20px auto; 
+        padding: 12px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        color: var(--NEGRO);
+        Background-color: var(--GRIS);
+       
+
+    }
+
+    .productos__info {
+        padding: 15px;
+        margin-bottom: 5px;
+        border-top: solid 1px black;
+    }
+    
+    
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 main{
-    
+    width: 100%;
 }
 
 /* banner-promociones */
 
-.banner{
-    display:flex;
-    justify-content: center;
-    width: 90%;
-    margin: auto;
-    width: 1200px;
-    height: 430px;
-}
+
 
 .banner__img{
     width: 0px;
@@ -30,3 +141,67 @@ main{
     opacity: 1;
     filter: contrast(120%);
 }
+
+
+
+
+
+/* productos-destacados */
+
+main article {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+.productos__descripcion{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.productos__precio{
+    font-size: 17px;
+}
+
+
+.productos__img {
+    width: 100%;
+    margin: auto;
+    transition: transform 2s;
+}
+  
+
+.productos__img:hover {
+    transform: scale(0.8) rotate(360deg);
+  }
+
+
+ 
+  
+
+  .productos__section-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    
+}
+
+.productos__boton{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+
+
+
+
+ 
+
+
