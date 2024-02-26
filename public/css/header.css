@@ -1,9 +1,10 @@
 /* COLORES */
 :root {
-    --OCRE: #FBA834;
-    --AZUL: #333A73;
-    --CELESTE-OSCURO: #387ADF;
-    --CELESTE-CLARO: #50C4ED;
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS: #CCC;
+    --BLANCO: #FFF;
+    --NEGRO: #000;
 }
 
 * {
@@ -13,15 +14,39 @@
     padding: 0px;
 }
 
+.contenedor-general-tarjeta {
+    Background-color: var(--VIOLETA-OSCURO);
+    padding: 12px; /* con valor fijo en px o 10% */ 
+    border-radius: 6px; /* con valor fijo en px o 5% */ 
+    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+    text-align: center;
+    color: var(--BLANCO);
+    font-size: 12px;
+}
+
+.input-general {
+    padding: 12px; /* con valor fijo en px o 10% */ 
+    border: 1px solid var(--GRIS);
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.boton-general {
+    background-color: var(--NEGRO);
+    text-align: center;
+    color: var(--BLANCO);
+    font-size: 16px;
+}
+
+
 
 .header {
-    background-color: var(--AZUL);
-    padding: 10px;
     display: flex;
+    border-radius: 0;
 } 
 
 .header__contenedor-img-logo {
-    background-color: var(--OCRE);
+    background-color: var(--FUCSIA);
     padding: 10px;
 }
 
@@ -32,7 +57,7 @@
 }
 
 .header__navbar {
-    background-color: var(--OCRE);
+    background-color: var(--FUCSIA);
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -42,5 +67,5 @@
 
 .header__barra-superior {
     width: 100%;
-    background-color: var(--OCRE);
+    background-color: var(--FUCSIA);
 }
