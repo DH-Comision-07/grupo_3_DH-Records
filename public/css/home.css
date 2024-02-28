@@ -241,7 +241,7 @@ main article {
 
 .footer{
     font-size: 12px;
-    Background-color: #3C0753;
+    background: linear-gradient(to right, #642829, #cc4b46); 
     padding: 12px; /* con valor fijo en px o 10% */
     box-shadow: 0 0 15px #3C0753;
     text-align:left;
@@ -249,8 +249,6 @@ main article {
     font-size: 12px;
     display: flex;
     justify-content:space-between;
-
-
 }
 
 .navbar-footer{
