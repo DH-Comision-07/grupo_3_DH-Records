@@ -24,3 +24,7 @@ app.get('/login', (req,res) => {
 app.get("/productos-destacados", (req, res) => res.sendFile(path.join(__dirname, "./views/productos-destacados.html")));
 
 app.get("/banner-promociones", (req, res) => res.sendFile(path.join(__dirname, "./views/banner-promociones.html")));
+
+app.get('/perfil-usuario', (req,res) => {
+  res.sendFile(path.resolve(__dirname, './views/perfil-usuario.html'));
+});
