@@ -1,0 +1,68 @@
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: #000;
+}
+
+.vinilo.img{ 
+    width: 100px;
+    height: 100px;
+}
+
+.vinilo{
+    transform: translate(700px, -480px);
+}
+
+.precio{
+    transform: translate(700px, -450px);
+}
+
+.canciones{
+    transform: translate(200px, -350px);
+}
+
+.sugerencias{
+    transform: translate(100px, -300px);
+}
+
+.fa-star{
+    color: #720455;
+}
+
+.fa-cart-shopping{
+    color: #720455;
+}
+
+.agregar.carrito{
+    background-color: #720455;
+    color:#F5F5F5;
+}
+
+@media (0px <= width <= 480px){
+    .vinilo{
+        transform: translate(50px);
+    }
+    
+    .precio{
+        transform: translate(50px);
+    }
+    .canciones{
+        transform: translate(50px);
+    }
+    
+    .sugerencias{
+        transform: translate(50px);
+    }
+}
+
+@media (481px <= width <= 768px){
+} 
+
+
+@media (769px <= width <= 1024px){
+}
+
+@media (1025px <= width <= 1200px){
+}
