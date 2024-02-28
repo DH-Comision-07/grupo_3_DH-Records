@@ -1,3 +1,235 @@
+
+/* COLORES */
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: #000;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+
+@media screen and (min-width: 1024px) {    /*    Desktop   */
+      /* banner-promociones */
+      .banner{
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        height: 500px;
+        margin-bottom: 20px;
+    }
+
+    h2{
+        font-size: 25px;
+        margin: 30px 0px;
+        text-align: center;
+    }
+
+
+    
+    /* productos-destacados */
+
+    .productos__seccion{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .productos__articulo{
+        flex-basis: calc(33% - 20px); 
+        margin: 0 auto 20px auto; 
+        padding: 15px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        color: var(--NEGRO);
+        Background-color: var(--GRIS);
+    }
+
+    
+    
+}
+
+
+@media screen and (min-width: 76px) and (max-width: 1024px) {      /*    Tablet    */
+      /* banner-promociones */
+      .banner{
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    h2{
+        font-size: 25px;
+        margin: 30px 0px;
+        text-align: center;
+    }
+
+
+    
+    /* productos-destacados */
+
+    .productos__seccion{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .productos__articulo{
+        flex-basis: calc(40% - 20px); 
+        margin: 0 auto 20px auto; 
+        padding: 15px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        color: var(--NEGRO);
+        Background-color: var(--GRIS);
+    }
+
+    
+    
+
+}
+
+
+@media screen and (max-width: 768px){   /*    Mobile     */
+
+    /* banner-promociones */
+    .banner{
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    
+
+
+    /* productos-destacados */
+
+    h2{
+        font-size: 30px;
+        margin: 30px 0px;
+        text-align: center;
+    }
+
+    .productos__seccion{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;  
+    }
+
+    .productos__articulo{
+        width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
+        margin: 0 auto 20px auto; 
+        padding: 15px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        color: var(--NEGRO);
+        Background-color: var(--GRIS);
+
+    }
+
+    
+
+}
+
+
+
+
+main{
+    width: 100%;
+    
+}
+
+
+
+/* banner-promociones */
+
+.banner__img{
+    width: 0px;
+    flex-grow: 1; 
+    object-fit: cover; /* para que no se deforme la foto y ocupe en su lugar todo el espacio */
+    opacity: .8;
+    transition: .7s ;
+}
+
+
+.banner__img:hover{
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+
+
+
+
+/* productos-destacados */
+
+main article {
+    margin-bottom: 10px;
+    background-color:#ff614d;
+}
+
+
+.productos__articulo{
+   
+    background: linear-gradient(to right, #3c3c38, #ff614d);
+       
+} 
+
+
+.productos__descripcion{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--BLANCO)
+}
+
+.productos__precio{
+    font-size: 17px;
+    color: var(--BLANCO)
+}
+
+
+.productos__img {
+    width: 100%;
+    margin: auto;
+    transition: transform 2s;
+}
+  
+
+.productos__img:hover {
+    transform: scale(0.8) rotate(360deg);
+  }
+
+
+  .productos__section-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    
+}
+
+.productos__boton{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+
+
 .footer{
     font-size: 12px;
     Background-color: #3C0753;
