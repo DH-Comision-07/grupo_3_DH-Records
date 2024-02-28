@@ -1,3 +1,50 @@
+/* COLORES */
+:root {
+  --FUCSIA: #720455;
+  --VIOLETA-OSCURO: #3C0753;
+  --GRIS: #CCC;
+  --BLANCO: #FFF;
+  --NEGRO: #000;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.contenedor-general-tarjeta {
+  Background-color: var(--VIOLETA-OSCURO);
+  padding: 12px; /* con valor fijo en px o 10% */ 
+  border-radius: 6px; /* con valor fijo en px o 5% */ 
+  box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+  text-align: center;
+  color: var(--BLANCO);
+  font-size: 12px;
+}
+
+.input-general {
+  padding: 12px; /* con valor fijo en px o 10% */ 
+  border: 1px solid var(--GRIS);
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.boton-general {
+  background-color: var(--NEGRO);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--BLANCO);
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+
+
 /*las cosas aparecen en el mismo orden que en el html*/
 
 header{
