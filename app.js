@@ -20,3 +20,9 @@ app.get('/', (req,res) => {
 app.get('/login', (req,res) => {
   res.sendFile(path.resolve(__dirname, './views/login.html'));
 });
+
+app.get("/productos-destacados", (req, res) => res.sendFile(path.join(__dirname, "/views/productos-destacados.html")));
+
+app.get("/banner-promociones", (req, res) => res.sendFile(path.join(__dirname, "/grupo_3_DH-Records/views/banner-promociones.html")));
+
+
