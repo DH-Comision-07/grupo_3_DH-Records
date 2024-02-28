@@ -4,7 +4,7 @@
     --VIOLETA-OSCURO: #3C0753;
     --GRIS:  #F5F5F5;
     --BLANCO: #FFF;
-    --NEGRO: #000;
+    --NEGRO: #101010;
     --GRIS-OSCURO: #282828;
 }
 
@@ -22,6 +22,10 @@ body{
 
 main{
     width: 100%;  
+}
+
+.subtitulo{
+    font-size: 16px;
 }
 
 p{
@@ -76,18 +80,24 @@ h3{
 .bloque__info{
     width: 90%;
     margin: 10px 20px;
+    padding: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--NEGRO);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--NEGRO);
 }
 
 .grupo__info p{
     padding-top: 5px;
+    padding-bottom: 5px;
     text-align: right;
 }
 
 .datos__info p{
     padding-top: 5px;
+    padding-bottom: 5px;
     text-align: left;
 }
 
@@ -105,17 +115,58 @@ h3{
 .bloque__compras{
     width: 90%;
     margin: 10px 20px;
+    padding: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--NEGRO);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--NEGRO);
 }
 
 .grupo__compras p{
     padding-top: 5px;
+    padding-bottom: 5px;
     text-align: right;
 }
 
 .datos__compras p{
     padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+/*SEGURIDAD*/
+
+.seccion__seguridad{
+    margin: 20px 10px 20px;
+}
+
+.titulo__seguridad{
+    text-align: start;
+    font-size: 18px;
+}
+
+.bloque__seguridad{
+    width: 90%;
+    margin: 10px 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--NEGRO);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--NEGRO);
+}
+
+.grupo__seguridad p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.datos__seguridad p{
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: left;
 }
