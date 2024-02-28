@@ -130,6 +130,7 @@
     padding: 0px;
     display: none;
     justify-content: start;
+    margin: 0px;
 }
 
 .header__sec-lista-opciones__link {

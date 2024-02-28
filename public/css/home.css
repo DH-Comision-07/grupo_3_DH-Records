@@ -11,9 +11,13 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
 }
 
+.contenedor-general-home {
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: var(--VIOLETA-OSCURO);
+}
 
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
