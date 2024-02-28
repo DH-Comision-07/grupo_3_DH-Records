@@ -16,8 +16,9 @@
 .contenedor-general-home {
     margin: 0 auto;
     max-width: 1200px;
-    background-color: var(--VIOLETA-OSCURO);
+    background: linear-gradient(to right, #858986, #b3b2b8); 
 }
+
 
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
@@ -35,6 +36,7 @@
         font-size: 25px;
         margin: 30px 0px;
         text-align: center;
+        color: white;
     }
 
 
@@ -77,6 +79,7 @@
         font-size: 25px;
         margin: 30px 0px;
         text-align: center;
+        color: white;
     }
 
 
@@ -125,6 +128,7 @@
         font-size: 30px;
         margin: 30px 0px;
         text-align: center;
+        color: white;
     }
 
     .productos__seccion{
@@ -184,7 +188,7 @@ main{
 
 main article {
     margin-bottom: 10px;
-    background-color:#ff614d;
+  
 }
 
 
@@ -233,6 +237,7 @@ main article {
 }
 
 
+/*               Footer              */
 
 .footer{
     font-size: 12px;

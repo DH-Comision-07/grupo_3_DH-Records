@@ -15,7 +15,7 @@
 }
 
 .contenedor-general-tarjeta {
-    Background-color: var(--VIOLETA-OSCURO);
+    background: linear-gradient(to right, #3c3c38, #be3431); 
     padding: 12px; /* con valor fijo en px o 10% */ 
     border-radius: 6px; /* con valor fijo en px o 5% */ 
     box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
@@ -51,7 +51,7 @@
 } 
 
 .header__contenedor-img-logo {
-    background-color: var(--FUCSIA);
+    border-radius: 20px; 
     padding: 10px;
 }
 
@@ -63,13 +63,15 @@
 }
 
 .header__navbar {
-    background-color: var(--FUCSIA);
+    background: linear-gradient(to right, #3c3c38, #a91a2c); 
     padding: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
     width: 100%;
+    border-radius: 15px;
+    
 
 }
 
