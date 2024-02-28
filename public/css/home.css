@@ -16,40 +16,87 @@
 
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
-    .banner{
+      /* banner-promociones */
+      .banner{
         display:flex;
         justify-content: center;
-        width: 90%;
+        width: 100%;
         margin: auto;
-        width: 1200px;
-        height: 430px;
-        margin-bottom: 30px;
+        height: 500px;
+        margin-bottom: 20px;
     }
 
     h2{
         font-size: 25px;
-        margin-bottom: 30px;
+        margin: 30px 0px;
         text-align: center;
     }
+
+
+    
+    /* productos-destacados */
+
+    .productos__seccion{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .productos__articulo{
+        flex-basis: calc(33% - 20px); 
+        margin: 0 auto 20px auto; 
+        padding: 15px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        color: var(--NEGRO);
+        Background-color: var(--GRIS);
+    }
+
+    
+    
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
-    .banner{
+@media screen and (min-width: 76px) and (max-width: 1024px) {      /*    Tablet    */
+      /* banner-promociones */
+      .banner{
         display:flex;
         justify-content: center;
-        width: 90%;
+        width: 100%;
         margin: auto;
-        width: 1200px;
-        height: 430px;
-        margin-bottom: 30px;
+        height: 300px;
+        margin-bottom: 20px;
     }
 
     h2{
         font-size: 25px;
-        margin-bottom: 30px;
+        margin: 30px 0px;
         text-align: center;
     }
+
+
+    
+    /* productos-destacados */
+
+    .productos__seccion{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .productos__articulo{
+        flex-basis: calc(40% - 20px); 
+        margin: 0 auto 20px auto; 
+        padding: 15px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        color: var(--NEGRO);
+        Background-color: var(--GRIS);
+    }
+
+    
+    
+
 }
 
 
@@ -70,61 +117,43 @@
     /* productos-destacados */
 
     h2{
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 30px;
+        margin: 30px 0px;
         text-align: center;
     }
 
     .productos__seccion{
         display: flex;
         justify-content: center;
-        flex-direction: column;
-       
-        
+        flex-direction: column;  
     }
 
     .productos__articulo{
-        width: 80%;  /* si no fuera 80% no se podria repartir el espacio libre con el amrgin ya que ocuparioa todo el contenedor al 100% */
+        width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
         margin: 0 auto 20px auto; 
-        padding: 12px; /* con valor fijo en px o 10% */
+        padding: 15px; /* con valor fijo en px o 10% */
         border-radius: 6px; /* con valor fijo en px o 5% */
         box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
         color: var(--NEGRO);
         Background-color: var(--GRIS);
-       
 
     }
 
-    .productos__info {
-        padding: 15px;
-        margin-bottom: 5px;
-        border-top: solid 1px black;
-    }
     
-    
-
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
 
 main{
     width: 100%;
+    
 }
 
+
+
 /* banner-promociones */
-
-
 
 .banner__img{
     width: 0px;
@@ -150,23 +179,26 @@ main{
 
 main article {
     margin-bottom: 10px;
+    background-color:#ff614d;
 }
 
 
-
-
-
-
-
+.productos__articulo{
+   
+    background: linear-gradient(to right, #3c3c38, #ff614d);
+       
+} 
 
 
 .productos__descripcion{
     font-size: 18px;
     margin-bottom: 15px;
+    color: var(--BLANCO)
 }
 
 .productos__precio{
     font-size: 17px;
+    color: var(--BLANCO)
 }
 
 
@@ -181,9 +213,6 @@ main article {
     transform: scale(0.8) rotate(360deg);
   }
 
-
- 
-  
 
   .productos__section-boton {
     display: flex;
