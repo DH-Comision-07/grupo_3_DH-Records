@@ -5,6 +5,7 @@
     --GRIS:  #F5F5F5;
     --BLANCO: #FFF;
     --NEGRO: #000;
+    --GRIS-OSCURO: #282828;
 }
 
 
@@ -15,20 +16,32 @@
     padding: 0px;
 }
 
+body{
+    Background-color: var(--GRIS-OSCURO);   
+}
+
 main{
-    width: 100%;   
+    width: 100%;  
+}
+
+p{
+    color: var(--GRIS);
 }
 
 h2{
     font-size: 25px;
     margin: 10px 0px;
     text-align: center;
+    color: var(--GRIS);
 }
 
 h3{
     font-size: 20px;
     text-align: center;
+    color: var(--GRIS);
 }
+
+/*PERFIL*/
 
 .seccion__perfil{
     margin: auto;
@@ -49,6 +62,8 @@ h3{
     align-items: center;
 }
 
+/*INFO*/
+
 .seccion__info{
     margin: 20px 10px 20px;
 }
@@ -63,6 +78,7 @@ h3{
     margin: 10px 20px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .grupo__info p{
@@ -71,6 +87,35 @@ h3{
 }
 
 .datos__info p{
+    padding-top: 5px;
+    text-align: left;
+}
+
+/*COMPRAS*/
+
+.seccion__compras{
+    margin: 20px 10px 20px;
+}
+
+.titulo__compras{
+    text-align: start;
+    font-size: 18px;
+}
+
+.bloque__compras{
+    width: 90%;
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grupo__compras p{
+    padding-top: 5px;
+    text-align: right;
+}
+
+.datos__compras p{
     padding-top: 5px;
     text-align: left;
 }
