@@ -5,13 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href= "/grupo_3_DH-Records/public/css/home.css" rel="stylesheet">
     <title>DHRecords</title>
-   
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="header contenedor-general-tarjeta">
+        <div class="header__contenedor-img-logo">
+            <img src="/images/Logo.jpg" alt="logo" class="header__img-logo">
+        </div>
+        <nav class="header__navbar">
+            <div class="header__barra-superior">
+                <section class="barra-superior__sec-buscar-productos">
+                    <input 
+                        type="text" placeholder="Buscar productos, marcas..." 
+                        class="sec-buscar-productos__input"
+                    >
+                    <button class="top-bar__sec-buscar-productos__btn-buscar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </section>
+
+                <section class="barra-superior__sec-login">
+                    <p class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Login </a></p>
+                    <p class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Sing-up </a></p>
+                </section>
+                
 
 
+            </div>
+            <div class="header__barra-inferior">
+                <div class="header__burger-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <ul class="header__sec-lista-opciones">
+                    <li class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Ofertas </a></li>
+                    <li class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Destacados </a></li>
+                    <li class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Productos </a></li>      
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -96,7 +130,23 @@
 
     
 
-    <footer>
+    <footer class="footer">
+        <div class="navbar-footer">
+            <nav>
+                <ul class="link-footer">
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="redes-sociales">
+            <h2>Nuestras Redes</h2>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
 
 
     </footer>

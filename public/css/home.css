@@ -1,3 +1,4 @@
+
 /* COLORES */
 :root {
     --FUCSIA: #720455;
@@ -229,8 +230,55 @@ main article {
 
 
 
+.footer{
+    font-size: 12px;
+    Background-color: #3C0753;
+    padding: 12px; /* con valor fijo en px o 10% */
+    box-shadow: 0 0 15px #3C0753;
+    text-align:left;
+    color: #FFF;
+    font-size: 12px;
+    display: flex;
+    justify-content:space-between;
 
 
- 
+}
+
+.navbar-footer{
+    
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    display: flex;
+    justify-content: left;
 
 
+}
+ul{
+    text-align: left;
+    margin: 10px 0px;
+    padding: 0;
+
+}
+.navbar-footer li{
+    list-style-type: none;
+    margin-bottom: 5px;
+    }
+a{
+    text-decoration: none;
+    color:#FFF;
+}    
+
+.redes-sociales{
+    display:inline-block;
+    width: 50%;
+   
+}
+.redes-sociales h2{
+    margin-top: 0;
+}
+
+.redes-sociales i{
+    font-size: 30px;
+    margin: 5px 5px;
+}
