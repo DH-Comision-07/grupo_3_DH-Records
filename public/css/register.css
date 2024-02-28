@@ -29,6 +29,7 @@
   border: 1px solid var(--GRIS);
   border-radius: 12px;
   font-size: 12px;
+  margin-bottom: 15px;
 }
 
 .boton-general {
@@ -85,8 +86,9 @@ body{
     font-size: 22px;
   }
 
-  h2{
+.h2-crear-cuenta{
     text-align: center;
+    font-size: 24px;
 }
 
 

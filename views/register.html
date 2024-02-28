@@ -27,7 +27,7 @@
         </div>       
             <section class="el-section">
                 
-                    <h2>crear cuenta</h2>
+                    <h2 class="h2-crear-cuenta">crear cuenta</h2>
                     
                  <!-- varios div para mas flexibilidad a la hora de acomodar el contenido -->
                     <div class="div-imagen-de-perfil">
@@ -40,14 +40,20 @@
 
                     <!--  todos los input tienen la clase "input-individual" -->
                    <div class="inputs" >
-                        <input type="text" class="input-general" name="nombre" placeholder="usuario">
-                        <input type="email" class="input-general" name="email" placeholder="Correo electrónico">
-                        <input type="text" class="input-general" name="contraseña" placeholder="contraseña">
-                        
 
+                    <section>
+                        <input type="text" class="input-general" name="nombre" placeholder="usuario">
+                    </section>
+                    <section>
+                        <input type="email" class="input-general" name="email" placeholder="Correo electrónico">
+                    </section>
+                    <section>
+                        <input type="text" class="input-general" name="contraseña" placeholder="contraseña">
+                    </section>
+                    <section>
                         <!-- los button cuentan con un <a> link aunque no se si es util pero ahí esta -->
                         <button id="boton-confirnar" class="boton-general" onclick="alert('tu cuenta a sido creada')"><a href="">confirmar</a></button>
-        
+                    </section>
 
                         <p>¿ya tienes cuenta?<a href=""> conectate</a></p>
                     </div>
