@@ -72,6 +72,10 @@ Conoce al increíble equipo detrás de nuestra tienda:
   me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
   Hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena convivencia y hacer amigos y conocidos.
 
+  - **Mariano Xinos**
+
+  Hola soy Mariano, estudie hasta 4 año de Arquitectura en la Unlar, me gusta mucho la cocina y la tecnología. Siempre me llamo la atención la programación asi que decidí darme la oportunidad en esta nueva área.
+  
 
 # 🌐 Páginas web que nos sirven de inspiración
 
