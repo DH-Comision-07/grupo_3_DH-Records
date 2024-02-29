@@ -24,6 +24,12 @@ Descubre y sumérgete en el mundo del vinilo en nuestra tienda online. 🎶
 
 ---
 
+## Link Trello
+
+- https://trello.com/invite/b/XtrvydMp/ATTI28c227f1587414908eefa2472ac97a56E5F1414D/dh-records-sprint-2
+
+---
+
 # Nosotros
 
 Conoce al increíble equipo detrás de nuestra tienda:
