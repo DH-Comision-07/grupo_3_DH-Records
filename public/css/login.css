@@ -27,11 +27,11 @@ body {
   margin-bottom: 10px;
 }
 
-input[type="texto"],
+input[type="text"],
 input[type="password"],
-input[type="ingresar"] 
+input[type="submit"] 
 {
-  width: calc(100% - 20px); 
+  width: calc(100% - 8px); 
   padding: 12px; 
   margin: 25px auto; 
   box-sizing: border-box; 
@@ -41,7 +41,7 @@ input[type="ingresar"]
   font-size: 12px; 
 }
 
-input[type="ingresar"] {
+input[type="submit"] {
   background-color: #000000; 
   border: none;
   color: #ffffff; 
@@ -50,7 +50,7 @@ input[type="ingresar"] {
   font-size: 16px; 
 }
 
-input[type="ingresar"]:hover {
+input[type="submit"]:hover {
   background-color: #000000; 
 }
 
@@ -60,4 +60,3 @@ input[type="ingresar"]:hover {
   display: block; 
   margin-top: 10px; 
 }
-
