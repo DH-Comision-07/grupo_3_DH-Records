@@ -1,4 +1,4 @@
-# Retrospectiva Sprint 1
+# Retrospectiva del Sprint 1
 
 ## Start Doing
 1. Elegir canal de comunicación: Discord, Zoom y Whatsapp.
