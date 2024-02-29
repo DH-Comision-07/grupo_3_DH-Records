@@ -6,63 +6,95 @@
     --NEGRO: #000;
 }
 
-.vinilo.img{ 
-    width: 100px;
-    height: 100px;
+.producto{
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    flex-wrap: wrap;
 }
 
-.vinilo{
-    transform: translate(700px, -480px);
-}
-
-.precio{
-    transform: translate(700px, -450px);
-}
-
-.canciones{
-    transform: translate(200px, -350px);
-}
-
-.sugerencias{
-    transform: translate(100px, -300px);
+.viniloimg1 img{
+    width: 70%;
+    height: auto;
 }
 
 .fa-star{
-    color: #720455;
+    color: var(--VIOLETA-OSCURO);
 }
 
 .fa-cart-shopping{
-    color: #720455;
+    color: var(--BLANCO);
 }
 
-.agregar.carrito{
-    background-color: #720455;
-    color:#F5F5F5;
+.agregarcarrito{
+    background-color: var(--FUCSIA);
+    color: var(--BLANCO);
+    text-align: center;
+    padding: 0.7rem;
 }
 
-@media (0px <= width <= 480px){
-    .vinilo{
-        transform: translate(50px);
-    }
-    
-    .precio{
-        transform: translate(50px);
+.sugerencias{
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.sugerenciastitulo{
+    align-items: center;
+    width: 80vw;
+}
+
+.viniloimg2 img{
+    width: 30%;
+    height: auto;
+}
+
+@media (768px <= width <= 1024px){
+    .producto{
+        justify-content: space-around;
     }
     .canciones{
-        transform: translate(50px);
+        transform: translate(-10px);
     }
-    
-    .sugerencias{
-        transform: translate(50px);
+    .viniloimg2{
+        flex-wrap: nowrap;
+        justify-content: space-around;
     }
-}
-
-@media (481px <= width <= 768px){
 } 
 
-
-@media (769px <= width <= 1024px){
-}
-
-@media (1025px <= width <= 1200px){
+@media(min-width:1025px){
+    .viniloimg1{
+        width: 45%;
+    }
+    .vinilo{
+        width: 40%;
+        transform: translate(0px, -90px);
+    }
+    .precio{
+        width: 30%;
+        transform: translate(100px, -150px);
+    }
+    .canciones{
+        width: 30%;
+        transform: translate(-70px);
+    }    
+    .sugerencias{
+        width: 90%;
+    }
+    .sugerenciastitulo{
+        transform: translate(-350px);
+    }
+    .viniloimg2{
+        flex-wrap: nowrap;
+        width: 30%;
+        padding: 1px;
+    }
 }
