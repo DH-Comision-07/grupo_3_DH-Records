@@ -4,7 +4,7 @@
     --VIOLETA-OSCURO: #3C0753;
     --GRIS: #CCC;
     --BLANCO: #FFF;
-    --NEGRO: #000;
+    --NEGRO: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -63,7 +63,6 @@
 }
 
 .header__navbar {
-    background: linear-gradient(to right, #3c3c38, #a91a2c); 
     padding: 10px;
     display: flex;
     flex-direction: row;
