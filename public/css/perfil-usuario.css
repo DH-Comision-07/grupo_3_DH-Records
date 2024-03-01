@@ -1,0 +1,186 @@
+/* COLORES */
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: #101010;
+    --GRIS-OSCURO: #282828;
+}
+
+
+* {
+    box-sizing: border-box;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    Background-color: var(--GRIS-OSCURO);
+    max-width: 1200px;
+    margin: auto;
+}
+
+main{
+    width: 100%;  
+}
+
+.subtitulo{
+    font-size: 16px;
+}
+
+p{
+    color: var(--GRIS);
+}
+
+h2{
+    font-size: 25px;
+    margin: 10px 0px;
+    text-align: center;
+    color: var(--GRIS);
+}
+
+h3{
+    font-size: 20px;
+    text-align: center;
+    color: var(--GRIS);
+}
+
+/*PERFIL*/
+
+.seccion__perfil{
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.contenedor__perfil{
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil__img{
+    width: 200px;
+    margin: auto;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*INFO*/
+
+.seccion__info{
+    margin: 20px 10px 20px;
+}
+
+.titulo__info{
+    text-align: start;
+    font-size: 18px;
+}
+
+.bloque__info{
+    width: 90%;
+    margin: 15px auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NEGRO);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--NEGRO);
+}
+
+.grupo__info p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+    padding-right: 15px;
+    margin: auto;
+}
+
+.datos__info p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    padding-left: 15px;
+    margin: auto;
+}
+
+/*COMPRAS*/
+
+.seccion__compras{
+    margin: 20px 10px 20px;
+}
+
+.titulo__compras{
+    text-align: start;
+    font-size: 18px;
+}
+
+.bloque__compras{
+    width: 90%;
+    margin: 15px auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NEGRO);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--NEGRO);
+}
+
+.grupo__compras p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+    padding-right: 15px;
+    margin: auto;
+}
+
+.datos__compras p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    padding-left: 15px;
+    margin: auto;
+}
+
+/*SEGURIDAD*/
+
+.seccion__seguridad{
+    margin: 20px 10px 20px;
+}
+
+.titulo__seguridad{
+    text-align: start;
+    font-size: 18px;
+}
+
+.bloque__seguridad{
+    width: 90%;
+    margin: 15px auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--NEGRO);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--NEGRO);
+}
+
+.grupo__seguridad p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+    padding-right: 15px;
+    margin: auto;
+}
+
+.datos__seguridad p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    padding-left: 15px;
+    margin: auto;
+}
