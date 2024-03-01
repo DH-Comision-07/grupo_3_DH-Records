@@ -27,7 +27,7 @@ Una vez que tenemos nuestra nueva rama en nuestro repositorio local, debemos tra
 ## Actualizar cambios en el repositorio remoto 
 
 Si bien al haecr un commit los cambios realizados quedan guardados, los mismos quedan guardados en nuestro repositorio local. Esto no permite que los demas miembros de la comision esten al tanto de estos cambios. Para que todos los miembros de la comision puedan ver estos cambios y puedan descargarlos y asi trabajar con el proyecto actualizaddo es necesario actualizar el repositorio remoto:
-- Para esto es necesario hacer un "git push origin 'nombre 'nueva-rama'"
+- Para esto es necesario hacer un "git push origin "nombre de la rama en la que estas"
 Con esto el repositorio remoto queda actualizado y listo para que los demas miembros pueda hacer un "git pull" y tener sus repositorios locales actualizados.
 
 ## Como pedir un Pull Request 
