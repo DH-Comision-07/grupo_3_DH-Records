@@ -28,3 +28,10 @@ app.get('/perfil-usuario', (req,res) => {
   res.sendFile(path.resolve(__dirname, './views/perfil-usuario.html'));
 });
 
+app.get('/product-detail', (req,res) => {
+  res.sendFile(path.resolve(__dirname, './views/product-detail.html'));
+});
+
+app.get('/carrito', (req,res) => {
+  res.sendFile(path.resolve(__dirname, './views/carrito.html'));
+});
