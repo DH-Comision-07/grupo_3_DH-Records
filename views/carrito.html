@@ -8,67 +8,100 @@
     <title>Seccion  productos en carrito</title>
 </head>
 <body>
-    <main>
-        <h1>Descripción</h1>
-        <table>
-            <thead>
-                <tr>  
-                    <th></th>
-                    <th>Producto en carrito</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="icono_basura"><a href="#"><i class="fa-solid fa-trash"></i></a></td>
-                    <td>
-                        <div class="desc_producto">
-                            <img src="\imagenes\Vinilo1.png" alt="Vinilo1">
-                            <div class="info_producto">
-                                <p class="nombre_producto">Titulo: Snips</p>
-                                <p class="precio_producto">Precio:$123</p>
-                                <p></p>
+    <div class="contenedor-general-home">
+        <header class="header contenedor-general-tarjeta">
+            <div class="header__contenedor-img-logo">
+                <img src="/imagenes/Logo.jpg" alt="logo" class="header__img-logo">
+            </div>
+            <nav class="header__navbar">
+                <div class="header__barra-superior">
+                    <section class="barra-superior__sec-buscar-productos">
+                        <input 
+                            type="text" placeholder="Buscar productos, marcas..." 
+                            class="sec-buscar-productos__input"
+                        >
+                        <button class="top-bar__sec-buscar-productos__btn-buscar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </section>
+
+                    <section class="barra-superior__sec-login">
+                        <p class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Carrito </a></p>
+                        <p class="boton-general"><a href="/login" class="header__sec-lista-opciones__link">Login </a></p>
+                        <p class="boton-general"><a href="/register" class="header__sec-lista-opciones__link">Sing-up </a></p>
+                    </section>
+                
+
+
+                </div>
+                <div class="header__barra-inferior">
+                    <div class="header__burger-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <ul class="header__sec-lista-opciones">
+                        <li class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Ofertas </a></li>
+                        <li class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Destacados </a></li>
+                        <li class="boton-general"><a href="#" class="header__sec-lista-opciones__link">Productos </a></li>      
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Descripción</h1>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="cart-container" style="width: 80%; padding: 10px; margin-top: 20px;">
+                    <div class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
+                        <div class="delete" style="flex: 1; text-align: center;">Eliminar</div>
+                        <div class="item" style="flex: 3; text-align: center;">ITEM</div>
+                        <div class="cantidad" style="flex: 1; text-align: center;">Cantidad</div>
+                        <div class="precio" style="flex: 1; text-align: center;">Precio Acumulado</div>
+                    </div>
+                    <div class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
+                        <div class="delete" style="flex: 1;"><a href="#"><i class="fa-solid fa-trash"></i></a></div>
+                        <div class="item" style="flex: 3; display: flex; align-items: center; text-align: left;">
+                            <article class="carrito__articulo">
+                                <article class="productos__articulo">
+                                    <img src="/imagenes/Vinilo1.png" class="productos__img">
+                                    <div class="productos__info">
+                                        <p class="productos__descripcion"> Poul Weller </p>
+                                        <p class="productos__precio"> $5.000 </p>     
+                                    </div>
+                                </article>
+                            </article>
+                        </div>
+                        <div class="cantidad" style="flex: 1; text-align: center;">
+                            <div class="quantity-buttons">
+                                <button onclick="decrement(this)">-</button>
+                                <span class="quantity-value" style="margin: 0 10px;">1</span>
+                                <button onclick="increment(this)">+</button>
                             </div>
                         </div>
-                    </td>
-                    <td class="cantidad">
-                        <div class="cantidad-buttons">
-                          <button onclick="decrement(this)">-</button>
-                          <span class="cantidad-value">1</span>
-                          <button onclick="increment(this)">+</button>
-                        </div>
-                    </td>
-                    <td class="precio">12345$</td>
-                </tr>
-                <tr>
-                    <td class="icono_basura"><a href="#"><i class="fa-solid fa-trash"></i></a></td>
-                    <td>
-                        <div class="desc_producto">
-                            <img src="\imagenes\Vinilo2.png" alt="Vinilo2">
-                            <div class="info_producto">
-                                <p class="nombre_producto">Titulo: N/A</p>
-                                <p class="precio_producto">Precio:$123</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="cantidad">
-                        <div class="cantidad-buttons">
-                          <button onclick="decrement(this)">-</button>
-                          <span class="cantidad-value">1</span>
-                          <button onclick="increment(this)">+</button>
-                        </div>
-                    </td>
-                    <td>12345$</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><button class="compra" type="submit">Comprar</button></td>
-                    <td>Total:123124</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+                        <div class="precio" style="flex: 1; text-align: center;">$12345</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+            
+        <footer class="footer">
+            <div class="navbar-footer">
+                <nav>
+                    <ul class="link-footer">
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Terminos y condiciones</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="redes-sociales">
+                <h2>Nuestras Redes</h2>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,12 +1,171 @@
+/* COLORES */
+:root {
+  --FUCSIA: #720455;
+  --VIOLETA-OSCURO: #3C0753;
+  --GRIS:  #F5F5F5;
+  --BLANCO: #FFF;
+  --NEGRO: rgba(0, 0, 0, 0.6);
+}
 
-body{
-    font-family: Roboto;
+
+* {
+  box-sizing: border-box;
+}
+
+.contenedor-general-home {
+  margin: 0 auto;
+  max-width: 1200px;
+  background: linear-gradient(to right, #858986, #b3b2b8); 
+}
+
+.contenedor-general-tarjeta {
+  background: linear-gradient(to right, #3c3c38, #be3431); 
+  padding: 12px; /* con valor fijo en px o 10% */ 
+  border-radius: 6px; /* con valor fijo en px o 5% */ 
+  box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+  text-align: center;
+  color: var(--BLANCO);
+  font-size: 12px;
+}
+
+.input-general {
+  padding: 12px; /* con valor fijo en px o 10% */ 
+  border: 1px solid var(--GRIS);
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.boton-general {
+  background-color: var(--NEGRO);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--BLANCO);
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+
+
+/*      Header.css : falta ver el error que salta cuando sacamos los elementos de esta Media Query, ver que dejamos   */
+
+.header {
+  display: flex;
+  border-radius: 0;
+} 
+
+.header__contenedor-img-logo {
+  border-radius: 20px; 
+  padding: 10px;
+}
+
+.header__img-logo {
+  width: 80px;
+  height: auto;
+  margin: 0px;
+  border-radius: 10px;
+}
+
+.header__navbar {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  width: 100%;
+  border-radius: 15px;
+  
+
+}
+
+.header__barra-superior {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barra-superior__sec-buscar-productos {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.sec-buscar-productos__input {
+  border-style: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 80%;
+  padding: 5px;
+}
+
+.top-bar__sec-buscar-productos__btn-buscar {
+  background-color: var(--BLANCO);
+  border-style: none;
+  border-left: 1px solid var(--NEGRO);
+  color: var(--NEGRO);
+  padding: 2px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 20%
+}
+
+.barra-superior__sec-login {
+  display: none;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.header__burger-menu {
+  background-color: var(--NEGRO);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--BLANCO);
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.header__sec-lista-opciones {
+  list-style-type: none;
+  padding: 0px;
+  display: none;
+  justify-content: start;
+  margin: 0px;
+}
+
+.header__sec-lista-opciones__link {
+  text-decoration: none;
+  color: var(--BLANCO);
+}
+
+@media screen and (min-width: 461px) {
+  /* Estilos específicos para pantallas mayores a 360px */
+  .header__burger-menu {
+      display: none;
   }
-  img {
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
+
+  .barra-superior__sec-login {
+      display: flex;
   }
+
+  .header__sec-lista-opciones {
+      display: flex;
+  }
+}
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------*/
   /*------------------------Tabla------------------------*/
   table {
     width: 100%;
@@ -69,12 +228,143 @@ body{
   }
   
   @media screen and (max-width: 767px) {
-    img {
-        max-width: 100%;
-        height: auto;
-        max-height: 65px;
-    }
+
     tr{
         font-size: 12px;
     }
   }
+/*---------------------------------------------------------------------------------------------------------------*/
+
+
+/* productos */
+
+.productos__articulo{
+ 
+  background: linear-gradient(to right, #3c3c38, #ff614d);
+  max-width: 250px;   
+} 
+
+.productos__descripcion{
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--BLANCO)
+}
+
+.productos__precio{
+  font-size: 17px;
+  color: var(--BLANCO)
+}
+
+.productos__img {
+  width: 100%;
+  margin: auto;
+  transition: transform 2s;
+}
+
+.productos__img:hover {
+  transform: scale(0.8) rotate(360deg);
+}
+
+
+@media screen and (min-width: 1024px) {    /*    Desktop   */
+
+  /* productos */
+
+  .productos__articulo{
+      flex-basis: calc(33% - 20px); 
+      margin: 0 auto 20px auto; 
+      padding: 15px; /* con valor fijo en px o 10% */
+      border-radius: 6px; /* con valor fijo en px o 5% */
+      box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+      color: var(--NEGRO);
+      Background-color: var(--GRIS);
+  } 
+}
+
+
+@media screen and (min-width: 76px) and (max-width: 1024px) {      /*    Tablet    */
+
+  /* productos */
+
+  .productos__articulo{
+      flex-basis: calc(40% - 20px); 
+      margin: 0 auto 20px auto; 
+      padding: 15px; /* con valor fijo en px o 10% */
+      border-radius: 6px; /* con valor fijo en px o 5% */
+      box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+      color: var(--NEGRO);
+      Background-color: var(--GRIS);
+  }
+}
+
+
+@media screen and (max-width: 768px){   /*    Mobile     */
+
+  /* productos */
+
+  .productos__articulo{
+      width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
+      margin: 0 auto 20px auto; 
+      padding: 15px; /* con valor fijo en px o 10% */
+      border-radius: 6px; /* con valor fijo en px o 5% */
+      box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+      color: var(--NEGRO);
+      Background-color: var(--GRIS);
+
+  }
+}
+
+
+
+  /*               Footer              */
+
+.footer{
+  font-size: 12px;
+  background: linear-gradient(to right, #642829, #cc4b46); 
+  padding: 12px; /* con valor fijo en px o 10% */
+  box-shadow: 0 0 15px #3C0753;
+  text-align:left;
+  color: #FFF;
+  font-size: 12px;
+  display: flex;
+  justify-content:space-between;
+}
+
+.navbar-footer{
+  
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  display: flex;
+  justify-content: left;
+
+
+}
+ul{
+  text-align: left;
+  margin: 10px 0px;
+  padding: 0;
+
+}
+.navbar-footer li{
+  list-style-type: none;
+  margin-bottom: 5px;
+  }
+a{
+  text-decoration: none;
+  color:#FFF;
+}    
+
+.redes-sociales{
+  display:inline-block;
+  width: 50%;
+ 
+}
+.redes-sociales h2{
+  margin-top: 0;
+}
+
+.redes-sociales i{
+  font-size: 30px;
+  margin: 5px 5px;
+}
