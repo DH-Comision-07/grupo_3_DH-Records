@@ -1,4 +1,4 @@
-/* COLORES */
+/*---------------------------------------------- COLORES  y reglas generales ----------------------------------------------*/
 :root {
   --FUCSIA: #720455;
   --VIOLETA-OSCURO: #3C0753;
@@ -6,7 +6,6 @@
   --BLANCO: #FFF;
   --NEGRO: rgba(0, 0, 0, 0.6);
 }
-
 
 * {
   box-sizing: border-box;
@@ -49,7 +48,7 @@
 
 
 
-/*      Header.css : falta ver el error que salta cuando sacamos los elementos de esta Media Query, ver que dejamos   */
+/*    Header.css : falta ver el error que salta cuando sacamos los elementos de esta Media Query, ver que dejamos   */
 
 .header {
   display: flex;
@@ -161,85 +160,75 @@
 }
 
 
+/*---------------------------------------------- Main ----------------------------------------------*/
 
 
+/* Card de Productos - heredada de home - */
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-/*---------------------------------------------------------------------------------------------------------------*/
-  /*------------------------Tabla------------------------*/
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-  background-color: #f2f2f2;
-  }
-  
-  .cantidad-buttons button {
-  margin: 0 5px;
+.carrito{
+  width: 90%; 
+  margin-top: 20px; 
+  border: 1px solid var(--GRIS)
+}
+
+.carrito__header{
+  padding: 10px; 
+  margin: 0px;
+  border-bottom: 1px solid var(--GRIS)
+}
+
+.carito__item{
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;  
+  border-bottom: 1px solid var(--GRIS)
+}
+
+.item__delete{
+  width: 15%;
+  display: flex; 
+  justify-content: center; 
+}
+
+.item__delete-button{
+  background: none; 
+  border: none; 
+  color: var(--GRIS);
   cursor: pointer;
-  padding: 3px 8px;
-  border: none;
-  color: #000000;
-  background-color: #ffffff;
-  }
-  
-  p{
-    margin: 0;
-  }
-  
-  .desc_producto {
-    display: flex;
-    align-items: center;
-  }
-  
-  .info_producto {
-    margin-left: 10px;
-  }
-  
-  .nombre_producto, .precio_producto {
-    margin: 0;
-  }
-  
-  .precio_producto {
-    margin-top: 5px;
-  }
-  
-  .icono_basura {
-    text-align: center;
-    color: black;
-  }
-  
-  .compra{
-    padding: 10px 20px;
-    background-color: #62abd4;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  @media screen and (max-width: 767px) {
+}
 
-    tr{
-        font-size: 12px;
-    }
-  }
-/*---------------------------------------------------------------------------------------------------------------*/
+.item__producto{
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
 
+.item__cantidad{
+  width: 20%;
+  display: flex; 
+  flex-direction: column-reverse; 
+  flex-wrap: nowrap; 
+  justify-content: center; 
+  align-items: center;
+}
 
-/* productos */
+.item__precio{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
 
-.productos__articulo{
- 
+.productos__articulo{ 
   background: linear-gradient(to right, #3c3c38, #ff614d);
   max-width: 250px;   
 } 
@@ -265,6 +254,14 @@
   transform: scale(0.8) rotate(360deg);
 }
 
+.carrito__footer{
+  display: flex; 
+  justify-content: end; 
+  align-items: center;
+  padding: 10px; 
+  margin: 0px;
+  border-bottom: 1px solid var(--GRIS);  
+}
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
 
@@ -281,8 +278,7 @@
   } 
 }
 
-
-@media screen and (min-width: 76px) and (max-width: 1024px) {      /*    Tablet    */
+@media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
 
   /* productos */
 
@@ -316,7 +312,7 @@
 
 
 
-  /*               Footer              */
+  /*---------------------------------------------- Footer ----------------------------------------------*/
 
 .footer{
   font-size: 12px;
@@ -337,19 +333,19 @@
   width: 40%;
   display: flex;
   justify-content: left;
-
-
 }
+
 ul{
   text-align: left;
   margin: 10px 0px;
   padding: 0;
 
 }
+
 .navbar-footer li{
   list-style-type: none;
   margin-bottom: 5px;
-  }
+}
 a{
   text-decoration: none;
   color:#FFF;
