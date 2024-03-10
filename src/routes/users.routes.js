@@ -2,13 +2,14 @@ const express = require('express');
 const routes = express.Router();
 const path = require ('path');
 
+const usersControllers = require('../controllers/usersControllers');
 
 
-routes.get("/register", (req,res) => res.sendFile(path.resolve(__dirname, '../views/users/register.html')));
+routes.get("/register", usersControllers.register);
 
-routes.get("/login", (req,res) => res.sendFile(path.resolve(__dirname, '../views/users/login.html')));
+routes.get("/login", usersControllers.login);   
 
-routes.get("/perfil-usuario", (req,res) => res.sendFile(path.resolve(__dirname, '../views/users/perfil-usuario.html')));
+routes.get("/perfil-usuario", usersControllers.perfilUsuario);
 
 module.exports = routes;
 
