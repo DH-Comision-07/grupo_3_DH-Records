@@ -49,19 +49,24 @@
         </header>
 
         <main>
-            <h1>Descripción</h1>
             
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <div class="cart-container" style="width: 80%; padding: 10px; margin-top: 20px;">
-                    <div class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
-                        <div class="delete" style="flex: 1; text-align: center;">Eliminar</div>
-                        <div class="item" style="flex: 3; text-align: center;">ITEM</div>
-                        <div class="cantidad" style="flex: 1; text-align: center;">Cantidad</div>
-                        <div class="precio" style="flex: 1; text-align: center;">Precio Acumulado</div>
-                    </div>
-                    <div class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
-                        <div class="delete" style="flex: 1;"><a href="#"><i class="fa-solid fa-trash"></i></a></div>
-                        <div class="item" style="flex: 3; display: flex; align-items: center; text-align: left;">
+                <div class="cart-container" style="width: 100%; margin-top: 20px;">
+                    <section class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
+                        <div class="delete" style="flex: 1; text-align: center; width: 20%;">
+                                <p style="font-size: 12px; margin-top: 5px;">ELIMINAR</p>
+                        </div>
+                        <div class="item" style="flex: 3; text-align: center; width: 40%;">ITEM</div>
+                        <div class="cantidad" style="flex: 1; text-align: center; width: 20%;">Cantidad</div>
+                        <div class="precio" style="flex: 1; text-align: center; width: 20%;">Precio</div>
+                    </section>
+                    <section class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
+                        <div class="delete" style="flex: 1; width: 20%;">
+                            <button onclick="eliminarItem()" style="background: none; border: none; cursor: pointer;">
+                                <i class="fa-solid fa-trash" style="color: #333;"></i>
+                            </button>
+                        </div>
+                        <div class="item" style="flex: 3; display: flex; align-items: center; justify-content: center; text-align: left; width: 40%;">
                             <article class="carrito__articulo">
                                 <article class="productos__articulo">
                                     <img src="/imagenes/Vinilo1.png" class="productos__img">
@@ -72,17 +77,46 @@
                                 </article>
                             </article>
                         </div>
-                        <div class="cantidad" style="flex: 1; text-align: center;">
-                            <div class="quantity-buttons">
-                                <button onclick="decrement(this)">-</button>
-                                <span class="quantity-value" style="margin: 0 10px;">1</span>
-                                <button onclick="increment(this)">+</button>
+                        <div class="cantidad" style="flex: 1; text-align: center; width: 20%;">
+                            <div class="quantity-buttons" style="display: flex; flex-wrap: nowrap; justify-content: center;">
+                                <button onclick="decrement(this)" style="font-size: 80%;">-</button>
+                                <span class="quantity-value" style="margin: 0 10px; font-size: 80%;">1</span>
+                                <button onclick="increment(this)" style="font-size: 80%;">+</button>
                             </div>
                         </div>
-                        <div class="precio" style="flex: 1; text-align: center;">$12345</div>
-                    </div>
+                        <div class="precio" style="flex: 1; text-align: center; width: 20%;">$12345</div>
+                    </section>
+                    <section class="cart-item" style="display: flex; align-items: center; width: 100%; padding: 10px; border-bottom: 1px solid #eee;">
+                        <div class="delete" style="flex: 1; width: 20%;">
+                            <button onclick="eliminarItem()" style="background: none; border: none; cursor: pointer;">
+                                <i class="fa-solid fa-trash" style="color: #333;"></i>
+                            </button>
+                        </div>
+                        <div class="item" style="flex: 3; display: flex; align-items: center; justify-content: center; text-align: left; width: 40%;">
+                            <article class="carrito__articulo">
+                                <article class="productos__articulo">
+                                    <img src="/imagenes/Vinilo2.png" class="productos__img">
+                                        <div class="productos__info">
+                                            <p class="productos__descripcion"> Poul Keane </p>
+                                            <p class="productos__precio"> $5.000 </p>     
+                                        </div>
+                                </article>
+                            </article>
+                        </div>
+                        <div class="cantidad" style="flex: 1; text-align: center; width: 20%;">
+                            <div class="quantity-buttons" style="display: flex; flex-wrap: nowrap; justify-content: center;">
+                                <button onclick="decrement(this)" style="font-size: 80%;">-</button>
+                                <span class="quantity-value" style="margin: 0 10px; font-size: 80%;">1</span>
+                                <button onclick="increment(this)" style="font-size: 80%;">+</button>
+                            </div>
+                        </div>
+                        <div class="precio" style="flex: 1; text-align: center; width: 20%;">$12345</div>
+                    </section>
                 </div>
             </div>
+             
+                       
+            
         </main>
             
         <footer class="footer">
