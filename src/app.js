@@ -3,6 +3,8 @@ const app = express();
 const path = require ('path');
 const publicPath = path.resolve(__dirname, '../public');
 
+app.set("view engine","ejs");
+
 app.use(express.static(publicPath));
 
 
