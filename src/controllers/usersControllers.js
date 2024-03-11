@@ -3,15 +3,15 @@ const path = require ('path');
 let usersControllers = {
 
     register: function (req, res) {
-        res.sendFile(path.resolve(__dirname, '../views/users/register.ejs'));
+        res.render('users/register');
     },
 
     login: function (req, res) {
-        res.sendFile(path.resolve(__dirname, '../views/users/login.ejs'));
+        res.render('users/login');
     },
     
     perfilUsuario: function (req, res) {
-        res.sendFile(path.resolve(__dirname, '../views/users/perfil-usuario.ejs'));
+        res.render('users/perfil-usuario');
     }
 
 }
