@@ -10,7 +10,7 @@ routes.use('/products', productsRoutes);
 routes.use('/users', usersRoutes);
 
 
-routes.get('/', (req,res) => res.sendFile(path.resolve(__dirname, '../views/home.html')));
+routes.get('/', (req,res) => res.render('home'));
 
 
 
