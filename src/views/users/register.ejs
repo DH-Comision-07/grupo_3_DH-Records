@@ -13,15 +13,7 @@
 
 
 <body>
-    <header>
-        <nav>
-            <div class="header__contenedor-img-logo">
-                <a href="/">
-                    <img src="/imagenes/Logo.jpg" alt="logo" class="header__img-logo">
-                </a>
-            </div>
-        </nav>
-    </header>
+    <%- include('../partials/header.ejs') %>
     <main>
 
         <!-- este boton no es responsive, es (en teoria) lo unico que falta -->
@@ -64,8 +56,8 @@
 
             </section>
     </main>
-    <footer>
-        <!--en espera para acoplarse-->
-    </footer>
+    
+        <%- include('../partials/footer.ejs') %>
+    
 </body>
 </html>
