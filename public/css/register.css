@@ -82,7 +82,6 @@ body{
     justify-content: center;
     align-items: center; 
     max-width: 100%; 
-    margin: auto; 
     font-size: 22px;
   }
 
@@ -150,3 +149,238 @@ body{
   @media screen and (min-width:1024px){
 
   }
+
+
+
+  .header {
+    display: flex;
+    border-radius: 0;
+    background: linear-gradient(to right, #642829, #cc4b46); 
+
+} 
+
+/*.header__contenedor-img-logo {
+    border-radius: 20px; 
+    padding: 10px;
+    width: 200px;
+    height: auto;
+}*/
+
+.header__img-logo {
+    border-radius: 20px; 
+    width: 5%;
+    height: 5%;
+    margin: 0px;
+}
+
+.header__navbar {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    width: 100%;
+    border-radius: 15px;
+    
+
+}
+
+.header__barra-superior {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra-superior__sec-buscar-productos {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+    border-radius: 5px;
+}
+.sec-buscar-productos__input {
+  border-style: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 80%;
+  padding: 5px;
+}
+
+.top-bar__sec-buscar-productos__btn-buscar {
+  background-color: var(--BLANCO);
+  border-style: none;
+  border-left: 1px solid var(--NEGRO);
+  color: var(--NEGRO);
+  padding: 2px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 20%
+}
+
+.barra-superior__sec-login {
+  display: none;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.header__burger-menu {
+  background-color: var(--NEGRO);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--BLANCO);
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.header__sec-lista-opciones {
+  list-style-type: none;
+  padding: 0px;
+  display: none;
+  justify-content: start;
+  margin: 0px;
+}
+
+.header__sec-lista-opciones__link {
+  text-decoration: none;
+  color: var(--BLANCO);
+}
+
+
+ 
+
+
+
+.footer{
+  font-size: 12px;
+  background: linear-gradient(to right, #642829, #cc4b46); 
+  padding: 12px; /* con valor fijo en px o 10% */
+  box-shadow: 0 0 15px #3C0753;
+  text-align:left;
+  color: #FFF;
+  font-size: 12px;
+  display: flex;
+  justify-content:space-between;
+  margin-top: 725px;
+}
+
+.navbar-footer{
+  
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  display: flex;
+  justify-content: left;
+
+
+}
+ul{
+  text-align: left;
+  margin: 10px 0px;
+  padding: 0;
+
+}
+.navbar-footer li{
+  list-style-type: none;
+  margin-bottom: 5px;
+  }
+a{
+  text-decoration: none;
+  color:#FFF;
+}    
+
+.redes-sociales{
+  display:inline-block;
+  width: 50%;
+ 
+}
+.redes-sociales h2{
+  margin-top: 0;
+}
+
+.redes-sociales i{
+  font-size: 30px;
+  margin: 5px 5px;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 461px) {
+  /* Estilos específicos para pantallas mayores a 360px */
+  .header__burger-menu {
+      display: none;
+  }
+
+  .barra-superior__sec-login {
+      display: flex;
+  }
+
+  .header__sec-lista-opciones {
+      display: flex;
+  }
+}
+
+
+
+/* Home.css */
+
+
+@media screen and (min-width: 1024px) {    /*    Desktop   */
+    /* banner-promociones */
+    .banner{
+      display:flex;
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+      height: 500px;
+      margin-bottom: 20px;
+  }
+
+  
+}
+
+
+@media screen and (min-width: 76px) and (max-width: 1024px) {      /*    Tablet    */
+    /* banner-promociones */
+    .banner{
+      display:flex;
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+      height: 300px;
+      margin-bottom: 20px;
+  }
+  .header__img-logo {
+    border-radius: 20px; 
+    width: 97px;
+    height: 97px;
+    margin: 0px;
+}
+
+}
+
+@media screen and (max-width: 768px){   /*    Mobile     */
+
+  /* banner-promociones */
+  .banner{
+      display:flex;
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+      height: 250px;
+      margin-bottom: 20px;
+  }
+  .header__img-logo {
+    border-radius: 20px; 
+    width: 50px;
+    height: 50px;
+    margin: 0px 0px 0px 15px;
+}
+}
