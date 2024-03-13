@@ -8,6 +8,10 @@ let productsControllers = {
 
     carrito: function (req, res) {
         res.render('products/carrito');
+    },
+
+    newProduct: function (req, res) {
+        res.render('products/new-product');
     }
 }
 
