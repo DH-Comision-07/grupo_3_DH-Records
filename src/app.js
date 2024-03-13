@@ -14,3 +14,7 @@ const homeRoutes= require('./routes/home.routes');
 
 app.use('/', homeRoutes);
 
+//le declaro a express el motor de plantilla que voy a usar
+//app.set("view enjine","ejs")
+//app.set("views", __dirname + "./src/views")
+
