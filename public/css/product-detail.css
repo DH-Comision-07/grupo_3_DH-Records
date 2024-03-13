@@ -4,10 +4,36 @@
     --GRIS:  #F5F5F5;
     --BLANCO: #FFF;
     --NEGRO: #000;
+    --GRIS-OSCURO: #282828;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    Background-color: var(--GRIS-OSCURO);
+    max-width: 1200px;
+    margin: auto;
+    color: var(--GRIS)
+}
+
+main{
+    width: 100%;  
+}
+
+p{
+    color: var(--GRIS);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin: auto;
 }
 
 .producto{
-    box-sizing: border-box;
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -16,7 +42,7 @@
     flex-wrap: wrap;
 }
 
-.viniloimg1 img{
+.vinilo__img1 img{
     width: 70%;
     height: auto;
 }
@@ -29,7 +55,7 @@
     color: var(--BLANCO);
 }
 
-.agregarcarrito{
+.agregar__carrito{
     background-color: var(--FUCSIA);
     color: var(--BLANCO);
     text-align: center;
@@ -37,7 +63,6 @@
 }
 
 .sugerencias{
-    box-sizing: border-box;
     display: flex; 
     justify-content: center; 
     align-items: center;
@@ -47,12 +72,12 @@
     margin: auto;
 }
 
-.sugerenciastitulo{
+.sugerencias__titulo{
     align-items: center;
     width: 80vw;
 }
 
-.viniloimg2 img{
+.vinilo__img2 img{
     width: 30%;
     height: auto;
 }
@@ -64,14 +89,14 @@
     .canciones{
         transform: translate(-10px);
     }
-    .viniloimg2{
+    .vinilo__img2{
         flex-wrap: nowrap;
         justify-content: space-around;
     }
 } 
 
 @media(min-width:1025px){
-    .viniloimg1{
+    .vinilo__img1{
         width: 45%;
     }
     .vinilo{
@@ -89,10 +114,10 @@
     .sugerencias{
         width: 90%;
     }
-    .sugerenciastitulo{
+    .sugerencias__titulo{
         transform: translate(-350px);
     }
-    .viniloimg2{
+    .vinilo__img2{
         flex-wrap: nowrap;
         width: 30%;
         padding: 1px;
