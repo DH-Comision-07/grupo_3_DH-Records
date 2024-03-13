@@ -1,5 +1,6 @@
 :root {
     --FUCSIA: #720455;
+    --FUCSIA-CLARO: #c3028f;
     --VIOLETA-OSCURO: #3C0753;
     --GRIS:  #F5F5F5;
     --BLANCO: #FFF;
@@ -10,8 +11,8 @@
 * {
     box-sizing: border-box;
     font-size: 12px;
-    margin: 0px;
-    padding: 0px;
+    margin: 5px;
+    padding: 5px;
 }
 
 body{
@@ -25,6 +26,10 @@ main{
     width: 100%;  
 }
 
+.titulo_principal{
+    font-size: 27px;
+}
+
 p{
     color: var(--GRIS);
     padding-top: 5px;
@@ -33,13 +38,22 @@ p{
     margin: auto;
 }
 
+h4{
+    font-size: 20px;
+}
+
 .producto{
     display: flex; 
     justify-content: center; 
     align-items: center;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
     flex-wrap: wrap;
+}
+
+.vinilo{
+    display: flex; 
+    flex-direction: column;
 }
 
 .vinilo__img1 img{
@@ -47,8 +61,38 @@ p{
     height: auto;
 }
 
+.canciones{
+    display: flex; 
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 13px;
+}
+
+.canciones li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+.precio{
+    display: flex; 
+    flex-direction: column;
+}
+
+.precio p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin: auto;
+}
+
+.num__precio{
+    font-size: 30px;
+}
+
 .fa-star{
-    color: var(--VIOLETA-OSCURO);
+    color: var(--FUCSIA-CLARO);
 }
 
 .fa-cart-shopping{
@@ -77,8 +121,12 @@ p{
     width: 80vw;
 }
 
+.sugerencias__titulo h3{
+    font-size: 22px;
+}
+
 .vinilo__img2 img{
-    width: 30%;
+    width: 35%;
     height: auto;
 }
 
@@ -96,6 +144,9 @@ p{
 } 
 
 @media(min-width:1025px){
+    .titulo_principal{
+        font-size: 30px;
+    }
     .vinilo__img1{
         width: 45%;
     }
@@ -104,8 +155,8 @@ p{
         transform: translate(0px, -90px);
     }
     .precio{
-        width: 30%;
-        transform: translate(100px, -150px);
+        width: 40%;
+        transform: translate(80px, -130px);
     }
     .canciones{
         width: 30%;
