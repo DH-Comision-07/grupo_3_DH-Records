@@ -1,5 +1,5 @@
 let nextProductId = 1;
-const product ={
+const AllProducts ={
 
     products:[
         {
@@ -125,7 +125,7 @@ const product ={
     ],
 
 
-    getAllProducts:function () {
+    getAll:function () {
     return this.products;
     },
     getProductById:function(productId){
@@ -133,4 +133,4 @@ const product ={
     }
 }
 
-module.exports = products;
+module.exports = AllProducts;
