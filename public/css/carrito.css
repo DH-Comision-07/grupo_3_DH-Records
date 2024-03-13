@@ -27,6 +27,12 @@
   font-size: 12px;
 }
 
+.contenedor-general{
+  width: 90%; 
+  margin-top: 20px; 
+  border: 1px solid var(--GRIS)
+}
+
 .input-general {
   padding: 12px; /* con valor fijo en px o 10% */ 
   border: 1px solid var(--GRIS);
@@ -170,12 +176,6 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.carrito{
-  width: 90%; 
-  margin-top: 20px; 
-  border: 1px solid var(--GRIS)
 }
 
 .carrito__header{
