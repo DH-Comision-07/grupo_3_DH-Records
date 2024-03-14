@@ -3,6 +3,10 @@ const app = express();
 const path = require ('path');
 const publicPath = path.resolve(__dirname, '../public');
 
+//le declaro a express el motor de plantilla que voy a usar
+app.set("view engine","ejs");
+app.set('views', path.join(__dirname,"/views"));
+
 app.use(express.static(publicPath));
 
 
@@ -14,7 +18,5 @@ const homeRoutes= require('./routes/home.routes');
 
 app.use('/', homeRoutes);
 
-//le declaro a express el motor de plantilla que voy a usar
-//app.set("view enjine","ejs")
-//app.set("views", __dirname + "./src/views")
+
 

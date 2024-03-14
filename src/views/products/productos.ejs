@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/product-detail.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/home.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <title>Product Detail</title>
+    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
+    <title>Lista de Productos</title>
 </head>
 <body>
     <header class="header contenedor-general-tarjeta">
@@ -48,46 +49,68 @@
         </nav>
     </header>
     <main>
-        <h2> Detalle del Producto </h2>
-        <section class="producto">
-                <div class="viniloimg1">
-                    <img src="Imagenes/Vinilo1.png" alt="Vinilo1">
+    <h1>Lista de Productos</h1>
+
+    <section class="productos__seccion">
+                
+        <article class="productos__articulo">
+            <img src="/imagenes/Vinilo1.png" class="productos__img">
+                <div class="productos__info">
+                    <p class="productos__descripcion"> Poul Weller </p>
+                    <p class="productos__precio"> $5.000 </p>     
                 </div>
-                <div class="vinilo">
-                    <h4 class="titulovinilo">Titulo: Snips</h4>
-                    <p class="cantantevinilo">Grupo: Snips </p>
-                    <p class="aniovinilo">Año: 1980 </p>
-                    <p class="generovinilo">Genero: Rock </p>
-                    <p class="stylevinilo">Estilo: New Wave/Pop Rock/Power Pop</p>
-                    <p class="calificaciónvinilo">Calificación: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
+        </article>
+
+        <article class="productos__articulo">
+            <img src="/imagenes/Vinilo2.png" class="productos__img">
+                <div class="productos__info">
+                    <p class="productos__descripcion"> Poul Keane </p>
+                    <p class="productos__precio"> $5.000 </p>     
                 </div>
-                <div class="canciones">
-                    <h4 class="titulocanciones">Canciones</h4>
-                    <ol type="A">
-                        <li>9 O'Clock</li>
-                        <li>What's Your Number</li>
-                    </ol> 
+        </article>
+
+        <article class="productos__articulo">
+            <img src="/imagenes/Vinilo3.png" class="productos__img">
+                <div class="productos__info">
+                    <p class="productos__descripcion"> AC/DC </p>
+                    <p class="productos__precio"> $5.000 </p>     
                 </div>
-                <div class="precio">
-                    <h4 class="tituloprecio">Precio</h4>
-                    <p class="preciovinilo">$123</p>
-                    <p class="agregarcarrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></p> </div> 
-        </section>
-        <section class="sugerencias">
-            <div class="sugerenciastitulo">
-                <h3>Sugerencias segun tu busqueda</h3>
+        </article>
+
+        <article class="productos__articulo">
+            <img src="/imagenes/Vinilo4.png" class="productos__img">
+                <div class="productos__info">
+                    <p class="productos__descripcion"> INXS </p>
+                    <p class="productos__precio"> $5.000 </p>     
+                </div>
+        </article>
+
+        <article class="productos__articulo">
+            <img src="/imagenes/Vinilo1.png" class="productos__img">
+                <div class="productos__info">
+                    <p class="productos__descripcion"> Bernie Taupin </p>
+                    <p class="productos__precio"> $5.000 </p>     
+                </div>
+        </article>
+
+        <article class="productos__articulo">
+            <img src="/imagenes/Vinilo2.png" class="productos__img">
+                <div class="productos__info">
+                    <p class="productos__descripcion"> Thin Lizzy </p>
+                    <p class="productos__precio"> $5.000 </p>     
+                </div>
+        </article>
+        
+    </section>
+
+
+    <section class="productos__section-boton">
+        <form action="/" method="post">
+            <div class="productos__botonPadre">
+                <button class="productos__boton" type="submit" value="Ver Mas Productos"> Ver Mas Productos </button>
             </div>
-            <br>
-            <div class="viniloimg2">
-                <img src="Imagenes/Vinilo2.png" alt="Vinilo2">
-            </div>
-            <div class="viniloimg2">
-                <img src="Imagenes/Vinilo3.png" alt="Vinilo3">
-            </div>
-            <div class="viniloimg2">
-                <img src="Imagenes/Vinilo4.png" alt="Vinilo4">
-            </div>
-         </section>
+          </form>
+    </section>
     </main>
     <footer class="footer">
         <div class="navbar-footer">
@@ -105,8 +128,9 @@
             <i class="fa-brands fa-x-twitter"></i>
             <i class="fa-brands fa-whatsapp"></i>
         </div>
-
     </footer>
+
+   
 </body>
-    
 </html>
+
