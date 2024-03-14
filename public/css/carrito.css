@@ -364,3 +364,8 @@ a{
   font-size: 30px;
   margin: 5px 5px;
 }
+
+/* Hamburguesa animacion */
+#checkbox {
+  display: none;
+}
