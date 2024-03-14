@@ -24,6 +24,12 @@ Descubre y sumérgete en el mundo del vinilo en nuestra tienda online. 🎶
 
 ---
 
+## Link Trello
+
+- https://trello.com/invite/b/XtrvydMp/ATTI28c227f1587414908eefa2472ac97a56E5F1414D/dh-records-sprint-2
+
+---
+
 # Nosotros
 
 Conoce al increíble equipo detrás de nuestra tienda:
@@ -72,6 +78,9 @@ Conoce al increíble equipo detrás de nuestra tienda:
   me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
   Hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena convivencia y hacer amigos y conocidos.
 
+- **Mariano Xinos**
+  Hola soy Mariano, estudie 4 años en Arquitectura y actualmente trabajo en una empresa constructora. En mis tiempos libres me gusta cocinar y ir al gimnasio, me encanta la tecnología y decidi darme la oportunidad de aprender a programar.
+
 
 # 🌐 Páginas web que nos sirven de inspiración
 
@@ -88,3 +97,7 @@ Conoce al increíble equipo detrás de nuestra tienda:
 5. [Universal Music Store](https://universalmusicstore.com.co/collections/vinil) - Nos gusto como tiene distribuido el modulo de vinilos para la venta.
 
 6. [The Sound Of Vinyl](https://thesoundofvinyl.com) - Lo usamos de referencia para comparar nuestra pagina con otras de venta de vinilos.
+
+
+
+

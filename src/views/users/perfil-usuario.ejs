@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHRecords</title>
+    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/perfil-usuario.css">
+    <link href= "/grupo_3_DH-Records/public/css/home.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <section class="seccion__perfil">
+            <div class="contenedor__perfil">
+                <img src="/imagenes/Logo.jpg" alt="logo" class="perfil__img">
+                <h2>Nombre Apellido</h2>
+                <h3 class="subtitulo">email@email.com</h3>
+            </div>
+        </section>
+        <section class="seccion__info">
+            <h3 class="titulo__info">Mi informacion</h3>
+            <div class="bloque__info">
+                <div class="grupo__info">
+                    <p>Nombre y Apellido</p>
+                    <p>E-Mail</p>
+                    <p>DNI</p>
+                    <p>Direccion</p>
+                </div>
+                <div class="datos__info">
+                    <p>Nombre Apellido</p>
+                    <p>email@email.com</p>
+                    <p>12345678</p>
+                    <p>Calle Falsa 123</p>
+                </div>
+            </div>
+        </section>
+        <section class="seccion__compras">
+            <h3 class="titulo__compras">Mis Compras</h3>
+            <div class="bloque__compras">
+                <div class="grupo__compras">
+                    <p>Compra 1</p>
+                    <p>Estado</p>
+                    <p>Fecha de entrega</p>
+                    <p>Productos</p>
+                </div>
+                <div class="datos__compras">
+                    <p>N Articulos</p>
+                    <p>Entregado</p>
+                    <p>Entregado el 20 de Febrero</p>
+                    <p>Disco 1, Disco 2...</p>
+                </div>
+            </div>
+            <div class="bloque__compras">
+                <div class="grupo__compras">
+                    <p>Compra 2</p>
+                    <p>Estado</p>
+                    <p>Fecha de entrega</p>
+                    <p>Productos</p>
+                </div>
+                <div class="datos__compras">
+                    <p>N Articulos</p>
+                    <p>En Viaje</p>
+                    <p>Llega el 29 de Febrero</p>
+                    <p>Disco 1, Disco 2...</p>
+                </div>
+            </div>
+        </section>
+        <section class="seccion__seguridad">
+            <h3 class="titulo__seguridad">Seguridad</h3>
+            <div class="bloque__seguridad">
+                <div class="grupo__seguridad">
+                    <p>Cambiar contraseña</p>
+                    <p>Cambiar E-Mail</p>
+                    <p>Borrar Cuenta</p>
+                </div>
+                <div class="datos__seguridad">
+                    <p>********</p>
+                    <p>********</p>
+                    <p>********</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
