@@ -1,0 +1,101 @@
+/*---------------------------------------------- COLORES  y reglas generales ----------------------------------------------*/
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor-general-home {
+    margin: 0 auto;
+    max-width: 1200px;
+    background: linear-gradient(to right, #858986, #b3b2b8); 
+}
+
+.contenedor-general {
+    width: 90%; 
+    margin-top: 20px; 
+    border: 1px solid var(--GRIS);
+}
+
+.contenedor-general-tarjeta {
+    background: linear-gradient(to right, #3c3c38, #be3431); 
+    padding: 12px; /* con valor fijo en px o 10% */ 
+    border-radius: 6px; /* con valor fijo en px o 5% */ 
+    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+    text-align: center;
+    color: var(--BLANCO);
+    font-size: 12px;
+}
+
+.form-general {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label-general {
+    display: block;
+    padding: 12px; /* con valor fijo en px o 10% */ 
+    color: var(--GRIS);
+    font-size: 12px;
+}
+
+.input-general {
+    display: block;
+    padding: 12px; /* con valor fijo en px o 10% */ 
+    border: 1px solid var(--GRIS);
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.boton-general {
+    background-color: var(--NEGRO);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--BLANCO);
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.section-izquierda {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-derecha {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 468px) {
+    .form-section {
+        flex-direction: row;
+        align-items: start;
+    } 
+  }

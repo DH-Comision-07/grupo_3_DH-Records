@@ -1,0 +1,65 @@
+<!--<%- include('../partials/head.ejs') %>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHRecords</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+
+                
+    <main>
+        <!-- este boton no es responsive, es (en teoria) lo unico que falta -->
+        <div class="boton-volver">
+            <button id="boton-volver"><a href="">volver</a></button>
+        </div>       
+            <section class="el-section">
+                
+                    <h2 class="h2-crear-cuenta">crear cuenta</h2>
+                    
+                 <!-- varios div para mas flexibilidad a la hora de acomodar el contenido -->
+                    <div class="div-imagen-de-perfil">
+                        
+                        <!--foto de perfil, imagen de referencia sacada de google-->
+                        <img src="https://picsum.photos/id/237/200/300" alt="" class="imagen-de-perfil">
+                    </div>
+
+
+
+                    <!--  todos los input tienen la clase "input-individual" -->
+                   <div class="inputs" >
+
+                    <div>
+                        <input type="text" class="input-general" name="nombre" placeholder="usuario">
+                    </div>
+                    <div>
+                        <input type="email" class="input-general" name="email" placeholder="Correo electrónico">
+                    </div>
+                    <div>
+                        <input type="text" class="input-general" name="contraseña" placeholder="contraseña">
+                    </div>
+                    <div>
+                        <!-- los button cuentan con un <a> link aunque no se si es util pero ahí esta -->
+                        <button id="boton-confirnar" class="boton-general" onclick="alert('tu cuenta a sido creada')"><a href="">confirmar</a></button>
+                    </div>
+
+                        <p>¿ya tienes cuenta?<a href=""> conectate</a></p>
+                    </div>
+
+
+            </section>
+    </main>
+    
+        <%- include('../partials/footer.ejs') %>
+    
+</body>
+</html>
