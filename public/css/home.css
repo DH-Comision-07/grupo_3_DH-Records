@@ -19,6 +19,12 @@
     background: linear-gradient(to right, #858986, #b3b2b8); 
 }
 
+/* Hamburguesa animacion */
+#checkbox {
+    display: none;
+  }
+
+
 
 /*      Header.css : falta ver el error que salta cuando sacamos los elementos de esta Media Query, ver que dejamos   */
 .contenedor-general-tarjeta {
@@ -293,7 +299,65 @@
 
     }
 
+    /* Hamburguesa animación */
+
+  .hamburguesa {
     
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     gap: 5px;   /* Mi espacio entre las barras */
+    transition-duration: .5s; /* para cuando vuelva */
+  }
+
+  .barra {
+    width: 100%;
+    height: 4px;
+    background-color: 		#F0F0F0;
+    border-radius: 4px;
+  }
+
+  #bar2 {
+    transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+    width: 100%;
+  }
+
+  /* checked selecciona el elemento con el id checkbox solo cuando está marcado. */
+ #checkbox:checked + .hamburguesa .barra {
+    position: absolute; /* me lo va a posicionar respecto a su elemento padre cuando se mueve */
+    transition-duration: .5s;
+  }
+
+  #checkbox:checked + .hamburguesa #bar2 {
+    transform: scaleX(0);  /* lo hago invisible en 0 , en el eje x */
+    transition-duration: .5s;
+  }
+
+
+  #checkbox:checked + .hamburguesa #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .hamburguesa #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+
+  
+  #checkbox:checked + .hamburguesa {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
 
 }
 
