@@ -12,10 +12,16 @@ let productsControllers = {
         res.render('products/carrito');
     },
 
+
+    newProduct: function (req, res) {
+        res.render('products/new-product');
+    }
+
     AllProducts: function (req, res) {
         res.render('products/productos', {products: productos.getAll()});
 
     },
+
 
 }
 
