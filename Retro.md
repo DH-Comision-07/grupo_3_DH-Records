@@ -16,3 +16,26 @@
 
 ## Stop Doing
 - Dejar de plantear tareas generales de forma individual. Comenzar a desarrollar la idea general en forma grupal de forma lograr plantear tareas pequeñas y manejables.
+
+-------------------------------------------
+
+# Retrospectiva del Sprint 2
+
+## Start Doing
+- Organizarnos mejor a la hora de utilizar GIT, en especial a la hora de crear los PR, ya que se generan varias ramas donde se trabajan varios temas al mismo tiempo, y a veces por no actualizar los repositorios locales se generan problemas de trabajo.
+
+## More of
+- Necesitamos mejorar la coordinacion grupal en general ya que se encontraron algunos problemas a la hora de dividirnos las tareas a realizar.
+- Seguir planteando tareas desglozadas en pequeñas subtareas.
+- Aprovechar de mejor manera el Trello ya que es una gran herramienta de organizacion grupal.
+
+## Keep Doing
+- Definimos utilizar de canal de comunicacion a Discord, ya que nos da las herramientas necesarias para una buena comunicacion grupal, en especial a la hora de realizar reuniones.
+- Igualmente seguiremos utilizando WhatsApp como una forma mas rapida de intercambio de mensajes que Discord.
+
+## Less Of
+- Dejar de planificar tantas tareas y pasar mas a la accion.
+
+## Stop Doing
+- Dejar de trabajar de manera aislada y empezar a integrar mas las tareas con las de los otros integrantes del grupo.
+- Asegurarse a la hora de hacer un PR que el sitio este funcionando de manera correcta.

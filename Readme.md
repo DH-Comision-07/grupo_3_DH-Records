@@ -97,3 +97,4 @@ Conoce al increíble equipo detrás de nuestra tienda:
 5. [Universal Music Store](https://universalmusicstore.com.co/collections/vinil) - Nos gusto como tiene distribuido el modulo de vinilos para la venta.
 
 6. [The Sound Of Vinyl](https://thesoundofvinyl.com) - Lo usamos de referencia para comparar nuestra pagina con otras de venta de vinilos.
+

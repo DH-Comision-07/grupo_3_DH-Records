@@ -14,6 +14,8 @@
   padding: 0px;
 }
 
+
+
 .contenedor-general-tarjeta {
   Background-color: var(--VIOLETA-OSCURO);
   padding: 12px; /* con valor fijo en px o 10% */ 
@@ -150,3 +152,9 @@ body{
   @media screen and (min-width:1024px){
 
   }
+
+
+/* Hamburguesa animacion */
+#checkbox {
+  display: none;
+}
