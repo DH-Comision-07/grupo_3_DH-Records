@@ -98,6 +98,3 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
 6. [The Sound Of Vinyl](https://thesoundofvinyl.com) - Lo usamos de referencia para comparar nuestra pagina con otras de venta de vinilos.
 
-
-
-
