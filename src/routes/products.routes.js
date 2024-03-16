@@ -14,7 +14,7 @@ routes.get('/new-product', productsControllers.newProduct);
 
 routes.get("/edit-product", productsControllers.editProduct);
 
-routes.get('/productos', productsControllers.AllProducts);
+routes.get('/', productsControllers.AllProducts);
 
 
 module.exports = routes;
