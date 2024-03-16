@@ -17,6 +17,10 @@ let productsControllers = {
         res.render('products/new-product');
     },
 
+    editProduct: function (req, res) {
+        res.render('products/edit-product');
+    },
+
     AllProducts: function (req, res) {
         res.render('products/productos', {products: productos.getAll()});
 

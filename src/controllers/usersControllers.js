@@ -13,7 +13,6 @@ let usersControllers = {
     perfilUsuario: function (req, res) {
         res.render('users/perfil-usuario');
     }
-
 }
 
 module.exports = usersControllers;
