@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("/imagenes/Foto4.jpg");
+    background-image: url("/imagenes/Foto8.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,7 +19,7 @@ body{
     background: transparent;
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(25px);  /* temendo efecto para fondo borroso */
     width: 30%;
     color: white;
     border-radius: 10px;
@@ -29,7 +29,6 @@ body{
 .titulo-formulario{
     font-size: 36px;
     text-align: center;
-
 }
 
 
@@ -92,9 +91,15 @@ body{
     box-shadow: 0 0 10px rgba( 0, 0, 0, .3);
     cursor: pointer;
     font-size: 16px;
-    color: black;
+    color: 	 #404040;
     font-weight: 600;
+    transition: .8s;
 }
+
+.boton-login:hover{
+    font-size: 18px;
+}
+
 
 .link-registro{
     font-size: 15px;
@@ -106,6 +111,7 @@ body{
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    margin-left: 3px;
 }
 
 .link-registro a:hover{
