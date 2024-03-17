@@ -7,7 +7,7 @@ let usersControllers = {
     },
 
     login: function (req, res) {
-        res.render('users/login');
+        res.render('users/login2');
     },
     
     perfilUsuario: function (req, res) {
