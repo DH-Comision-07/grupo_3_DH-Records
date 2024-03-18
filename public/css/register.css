@@ -1,160 +1,171 @@
-/* COLORES */
-:root {
-  --FUCSIA: #720455;
-  --VIOLETA-OSCURO: #3C0753;
-  --GRIS: #CCC;
-  --BLANCO: #FFF;
-  --NEGRO: #000;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
-  font-size: 12px;
-  margin: 0px;
-  padding: 0px;
-}
-
-
-
-.contenedor-general-tarjeta {
-  Background-color: var(--VIOLETA-OSCURO);
-  padding: 12px; /* con valor fijo en px o 10% */ 
-  border-radius: 6px; /* con valor fijo en px o 5% */ 
-  box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
-  text-align: center;
-  color: var(--BLANCO);
-  font-size: 12px;
-}
-
-.input-general {
-  padding: 12px; /* con valor fijo en px o 10% */ 
-  border: 1px solid var(--GRIS);
-  border-radius: 12px;
-  font-size: 12px;
-  margin-bottom: 15px;
-}
-
-.boton-general {
-  background-color: var(--NEGRO);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--BLANCO);
-  border-radius: 12px;
-  font-size: 12px;
-  padding: 10px;
-  margin: 5px;
-}
-
-
-
-/*las cosas aparecen en el mismo orden que en el html*/
-
-header{
-    background-color:  rgb(38, 39, 40);
-    
-}
-header img {
-    max-width: 10%; 
-    max-height: 10%; 
-    height: auto; 
-    
-  }
 body{
-    background-color:grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/imagenes/Foto44.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor-formulario{
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
+    backdrop-filter: blur(25px);  /*  efecto para que desenfoque fondo */
+    width: 30%;
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.titulo-formulario{
+    font-size: 36px;
+    text-align: center;
 }
 
 
-
-/*probablemente haya que editar este*/
-#boton-volver{
-    position: absolute;
-    left: 5px;
-    height: 40px;
-    width: 105px;
-    font-size: 22px;
-  }
-
-
-
-.el-section {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    max-width: 100%; 
-    margin: auto; 
-    font-size: 22px;
-  }
-
-.h2-crear-cuenta{
-    text-align: center;
-    font-size: 24px;
-}
-
-
-/*el div que contiene a la imagen y la imagen, la img se ajusta para ocupar el 100% del height sin deformarse*/
-
-.div-imagen-de-perfilperfil {
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+.contenedor-casilla{
+    position: relative;
     width: 100%;
-    height: auto;
-    margin: 10px;
-    border-radius: 50%;
-  }
-  .imagen-de-perfil{
-    border-radius: 50%;
-  }
+    height: 50px;   
+    margin: 30px 0;
+}
 
+.casilla-individal{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    outline: none;  /* para cuando ingresas datos, que no se haga borde interno */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    
+}
 
-  /*.inputsafecta a los inputs como grupo,// .input-individual afecta a cada  input de forma individual,//
-  .input-individual::placeholder solo afecta al texto que hay dentro de los input*/
-  .inputs{
-    box-sizing: border-box;
+/* :: se utiliza para pseudo-elementos / : se utiliza para pseudo-clases. */
+.casilla-individal::placeholder {
+    color: #fff;
+}
+
+.contenedor-casilla i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* moverá hacia arriba en un 50% de su propia altura, es una técnica común para centrar verticalmente un elemento.*/
+    font-size:20px;
+}
+
+.recuperar-contraseña{
     display: flex;
-    flex-direction: column;
-    width:350px ;
-    height: 50px;
-    margin: 5px;
-  }
-  .input-individual{
-    width:350px ;
-    height: 50px;
-    content: 360px 20px;
-    padding: 5px;
-    border: 1px solid black;
-    margin: 5px;
-  }
-  .input-individual::placeholder{
-    font-size: 22px;
-  }
+    justify-content: flex-end;
+    font-size: 14px;
+    margin: -15px 0px 15px;
+}
+
+.recuperar-contraseña a{
+    color: #fff;
+    text-decoration: none; /*elimina el subrayado del enlace */
+}
+
+.recuperar-contraseña a:hover{
+    text-decoration: underline;
+}
+
+.boton-registro{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .3);
+    cursor: pointer;
+    font-size: 16px;
+    color: 	 #404040;
+    font-weight: 600;
+    transition: .8s;
+}
+
+.boton-registro:hover{
+    font-size: 18px;
+}
 
 
-  /*el boton final*/
-  #boton-confirnar{
-    display: block;
-    margin: auto;
-    font-size: 22px;
-    border: 1px solid black;
-  }
+.link-registro{
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.link-registro a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 3px;
+}
+
+.link-registro a:hover{
+    text-decoration: underline;
+}
+
+.terminosCondiciones-checkbox{
+    display: flex;
+    justify-self: flex-start;
+    font-size: 15px;
+    margin: -10px 0px 15px;
+}
 
 
-/*aqui deveria ir el #boton-volver*/
-  @media screen and(min-width:361px) and (max-width:769px){
-
-  }
-  @media screen and (min-width:769px) and (max-width:1024px){
-
-  }
-  @media screen and (min-width:1024px){
-
-  }
+.terminosCondiciones-checkbox label input{
+    accent-color: #fff; /* color de la marca de verificación */
+    margin-right: 3px;
+}
 
 
-/* Hamburguesa animacion */
-#checkbox {
-  display: none;
+
+@media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
+    .contenedor-formulario{
+    width: 50%;
+    }
+    
+}
+
+
+@media screen and (max-width: 768px) {      /*    Mobile     */
+    .contenedor-formulario{
+        width: 90%;  /* para que no se deforme el formulario */
+    }
+
+    /* Todo mas pequeño */
+    .titulo-formulario{
+        font-size: 28px;
+    }
+    .contenedor-casilla{
+        margin: 20px 0;  
+    }
+    .casilla-individal{
+        font-size: 14px;
+        padding: 15px 35px 15px 15px;
+    }
+    .boton-registro{
+        height: 35px;
+        font-size: 14px;
+    }
+    .boton-registro:hover{
+        font-size: 16px;
+    }
+    .link-registro{
+        font-size: 13px;
+        margin: 15px 0 10px;
+    }
 }
