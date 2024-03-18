@@ -132,7 +132,16 @@ body{
 }
 
 
-@media screen and (max-width: 768px) {
+
+@media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
+    .contenedor-formulario{
+    width: 50%;
+    }
+    
+}
+
+
+@media screen and (max-width: 768px) {      /*    Mobile     */
     .contenedor-formulario{
         width: 90%;  /* para que no se deforme el formulario */
     }
