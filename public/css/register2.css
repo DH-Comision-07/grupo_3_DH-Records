@@ -19,7 +19,7 @@ body{
     background: transparent;
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
-    backdrop-filter: blur(25px);  /* temendo efecto para fondo borroso */
+    backdrop-filter: blur(25px);  /*  efecto para que desenfoque fondo */
     width: 30%;
     color: white;
     border-radius: 10px;
@@ -129,4 +129,34 @@ body{
 .terminosCondiciones-checkbox label input{
     accent-color: #fff; /* color de la marca de verificación */
     margin-right: 3px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contenedor-formulario{
+        width: 90%;  /* para que no se deforme el formulario */
+    }
+
+    /* Todo mas pequeño */
+    .titulo-formulario{
+        font-size: 28px;
+    }
+    .contenedor-casilla{
+        margin: 20px 0;  
+    }
+    .casilla-individal{
+        font-size: 14px;
+        padding: 15px 35px 15px 15px;
+    }
+    .boton-registro{
+        height: 35px;
+        font-size: 14px;
+    }
+    .boton-registro:hover{
+        font-size: 16px;
+    }
+    .link-registro{
+        font-size: 13px;
+        margin: 15px 0 10px;
+    }
 }
