@@ -79,6 +79,7 @@ Conoce al increíble equipo detrás de nuestra tienda:
   Hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena convivencia y hacer amigos y conocidos.
 
 - **Mariano Xinos**
+
   Hola soy Mariano, estudie 4 años en Arquitectura y actualmente trabajo en una empresa constructora. En mis tiempos libres me gusta cocinar y ir al gimnasio, me encanta la tecnología y decidi darme la oportunidad de aprender a programar.
 
 
