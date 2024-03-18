@@ -119,3 +119,39 @@ body{
 }
 
 
+@media screen and (min-width: 76px) and (max-width: 1024px) {    /*    Tablet    */
+    .contenedor-formulario{
+    width: 50%;
+    }
+    
+}
+
+
+@media screen and (max-width: 767px) {    /*    Mobile     */
+    .contenedor-formulario{ 
+        width: 90%;  /* para que no se deforme el formulario */
+    }
+
+    /* Todo mas pequeño */
+    .titulo-formulario{
+        font-size: 28px;
+    }
+    .contenedor-casilla{
+        margin: 20px 0;  
+    }
+    .casilla-individal{
+        font-size: 14px;
+        padding: 15px 35px 15px 15px;
+    }
+    .boton-login{
+        height: 35px;
+        font-size: 14px;
+    }
+    .boton-login:hover{
+        font-size: 16px;
+    }
+    .link-login{
+        font-size: 13px;
+        margin: 15px 0 10px;
+    }
+}
