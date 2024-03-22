@@ -1,5 +1,6 @@
 const path = require ('path');
 const productos = require ('../models/product');
+const productService = require ('../models/productService');
 
 
 let productsControllers = {
@@ -22,11 +23,12 @@ let productsControllers = {
     },
 
     AllProducts: function (req, res) {
-        res.render('products/productos', {products: productos.getAll()});
+        res.render('products/productos', {products: productService.getAll()});
 
     },
 
 
 }
+
 
 module.exports = productsControllers;
