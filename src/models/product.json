@@ -10,7 +10,11 @@
             "preciocosto": 15.99,
             "preciomostrador": 29.99,
             "stock": 50,
-            "imagen": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg"
+            "imagen": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",
+            "año": "1999",
+            "estilo": "rock,punk",
+            "canciones": "el sapo pepe/la jirafa fafa"
+
         },
         {
             "id": 2,
