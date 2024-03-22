@@ -7,7 +7,7 @@ let productsControllers = {
 
     productDetail: function (req, res) {
         let productId = (productService.getBy(req.params.id));
-        res.render('product-detail',{productId});
+        res.render('products/product-detail',{productId});
     },
 
     carrito: function (req, res) {
@@ -24,7 +24,7 @@ let productsControllers = {
     },
 
     AllProducts: function (req, res) {
-        res.render('productos', {products: productService.getAll()});
+        res.render('products/productos', {products: productService.getAll()});
 
     },
 
