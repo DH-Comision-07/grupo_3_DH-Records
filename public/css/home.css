@@ -11,29 +11,10 @@
 
 
 /* ------------------------------------- Banner Promociones ------------------------------------- */
-.banner {
-    display:flex;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-    height: 250px;
-    margin-bottom: 20px;
-}
 
-.banner__img {
-    width: 0px;
-    flex-grow: 1; 
-    object-fit: cover; /* para que no se deforme la foto y ocupe en su lugar todo el espacio */
-    opacity: .8;
-    transition: .7s ;
-}
 
-.banner__img:hover {
-    cursor: pointer;
-    width: 100%;
-    opacity: 1;
-    filter: contrast(120%);
-}
+
+
 
 /* ------------------------------------- Productos destacados ------------------------------------- */
 .productos__seccion {
@@ -89,15 +70,8 @@
 
 /* ------------------------------------- Medias Querys ------------------------------------- */
 @media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
-    /* banner-promociones */
-    .banner {
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 300px;
-        margin-bottom: 20px;
-    }
+    
+    
 
     .titulo-seccion-general {
         font-size: 25px;
@@ -125,15 +99,7 @@
 }
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
-    /* banner-promociones */
-    .banner{
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 500px;
-        margin-bottom: 20px;
-    }
+    
 
     .titulo-seccion-general{
         font-size: 25px;
