@@ -6,7 +6,8 @@ const productService = require ('../models/productService');
 let productsControllers = {
 
     productDetail: function (req, res) {
-        res.render('products/product-detail');
+        let productId = (productService.getBy(req.params.id));
+        res.render('products/product-detail',{productId});
     },
 
     carrito: function (req, res) {
