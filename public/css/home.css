@@ -3,7 +3,7 @@
 .main{
     max-width: 1200px;
     margin: auto;
-    background-color: var(--GRIS-OSCURO);
+    background-color: #B8BCBD;
 }
 .main__articulo {
     margin-bottom: 10px;
@@ -24,15 +24,18 @@
 }
 
 .productos__articulo {
-    background: linear-gradient(to right, #3c3c38, #ff614d);
+    background: linear-gradient(to right, #63635E, #8D8D86); 
     width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
     margin: 0 auto 20px auto; 
     padding: 15px; /* con valor fijo en px o 10% */
     border-radius: 6px; /* con valor fijo en px o 5% */
-    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+    box-shadow: 0 0 15px #5C271F;
     color: var(--NEGRO);
-    Background-color: var(--GRIS);
+    cursor: pointer;
+   
 }
+
+
 
 .productos__descripcion{
     font-size: 18px;
@@ -92,9 +95,9 @@
         margin: 0 auto 20px auto; 
         padding: 15px; /* con valor fijo en px o 10% */
         border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        box-shadow: 0 0 15px #5C271F;
         color: var(--NEGRO);
-        Background-color: var(--GRIS);
+     
         
     }
 }
@@ -121,10 +124,8 @@
         margin: 0 auto 20px auto; 
         padding: 15px; /* con valor fijo en px o 10% */
         border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        box-shadow: 0 0 15px #5C271F;
         color: var(--NEGRO);
-        Background-color: var(--GRIS);
-
        
     }
 
