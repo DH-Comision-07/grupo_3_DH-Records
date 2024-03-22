@@ -19,23 +19,22 @@
                     <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
                 </div>
                 <div class="vinilo">
-                    <h4 class="titulo__vinilo">Titulo: Snips</h4>
-                    <p>Grupo: Snips </p>
-                    <p>Año: 1980 </p>
-                    <p>Genero: Rock </p>
-                    <p>Estilo: New Wave/Pop Rock/Power Pop</p>
+                    <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
+                    <p>Grupo: <%= productId.autor %> </p>
+                    <p>Año: <%=productId.año %> </p>
+                    <p>Genero: <%=productId.categoria %> </p>
+                    <p>Estilo: <%= productId.estilo %></p>
                     <p>Calificación: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 </div>
                 <div class="canciones">
                     <h4 class="titulo__canciones">Canciones</h4>
                     <ol type="A">
-                        <li>9 O'Clock</li>
-                        <li>What's Your Number</li>
+                        <li><%= productId.canciones %></li>
                     </ol> 
                 </div>
                 <div class="precio">
                     <h4 class="titulo__precio">Precio</h4>
-                    <p class="num__precio">$123</p>
+                    <p class="num__precio"><%= productId.preciomostrador %></p>
                     <p class="agregar__carrito">
                         <a href="/products/carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i>
                         </a>

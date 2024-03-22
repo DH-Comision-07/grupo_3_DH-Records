@@ -15,66 +15,22 @@
         <h2 class="titulo-seccion-general">Lista de Productos</h1>
 
         <section class="productos__seccion">
+        
+            <% products.forEach(product=> { %>
                 
         <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail">
-                <img src="/imagenes/Vinilo1.png" class="productos__img">
+            <a href="/products/product-detail/<%= product.id %>">
+                <img src="/imagenes/<%=product.imagen%>" class="productos__img">
                     <div class="productos__info">
-                        <p class="productos__descripcion"> Poul Weller </p>
-                        <p class="productos__precio"> $5.000 </p>     
+                        <p class="productos__descripcion"> <%= product.autor %> </p>
+                        <p class="productos__precio"> <%= product.preciomostrador %> </p>     
                     </div>
             </a>
         </article>
 
-        <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail">
-                <img src="/imagenes/Vinilo2.png" class="productos__img">
-                    <div class="productos__info">
-                        <p class="productos__descripcion"> Poul Keane </p>
-                        <p class="productos__precio"> $5.000 </p>     
-                    </div>
-            </a>
-        </article>
+        <% }) %>
 
-        <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail">
-                <img src="/imagenes/Vinilo3.png" class="productos__img">
-                    <div class="productos__info">
-                        <p class="productos__descripcion"> AC/DC </p>
-                        <p class="productos__precio"> $5.000 </p>     
-                    </div>
-            </a>
-        </article>
-
-        <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail">
-                <img src="/imagenes/Vinilo4.png" class="productos__img">
-                    <div class="productos__info">
-                        <p class="productos__descripcion"> INXS </p>
-                        <p class="productos__precio"> $5.000 </p>     
-                    </div>
-            </a>
-        </article>
-
-        <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail">
-                <img src="/imagenes/Vinilo1.png" class="productos__img">
-                    <div class="productos__info">
-                        <p class="productos__descripcion"> Bernie Taupin </p>
-                        <p class="productos__precio"> $5.000 </p>     
-                    </div>
-            </a>
-        </article>
-
-        <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail">
-                <img src="/imagenes/Vinilo2.png" class="productos__img">
-                    <div class="productos__info">
-                        <p class="productos__descripcion"> Thin Lizzy </p>
-                        <p class="productos__precio"> $5.000 </p>     
-                    </div>
-            </a>
-        </article>
+        
         
     </section>
 
