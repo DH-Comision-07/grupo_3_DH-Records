@@ -95,6 +95,7 @@
         box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
         color: var(--NEGRO);
         Background-color: var(--GRIS);
+        
     }
 }
 
@@ -123,5 +124,10 @@
         box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
         color: var(--NEGRO);
         Background-color: var(--GRIS);
+
+       
     }
+
+    
+
 }
