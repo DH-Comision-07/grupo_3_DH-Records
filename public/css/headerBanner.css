@@ -1,0 +1,109 @@
+/* COLORES */
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: rgba(0, 0, 0, 0.6);
+    --GRIS-OSCURO: #282828;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+a{
+    text-decoration: none;  /* Sacarle el subrayado */
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: bold;
+    
+    
+}
+
+
+
+/* Header */
+
+.header-contenedor-general-tarjeta{
+    height: 90vh;
+    padding: 0 2rem; 
+    background-image: url("/imagenes/Foto26.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    
+}
+
+
+.header__navbar{
+   padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header__navbar__logo a{
+    font-size: 1.7rem;
+    font-weight: bold;
+    
+}
+
+
+.links{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    list-style: none;
+    
+}
+
+
+.links a:hover{
+    text-decoration: underline;
+   
+}
+
+
+.header__nabvar__user{   
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos al inicio del contenedor */
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__nabvar__user a:hover{
+    text-decoration: underline;
+   
+}
+
+.user__singUp{
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.8);   /* Simular el efecto del boton */
+    padding: 0.5rem 1rem;                     /* Simular el efecto del boton */
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .6);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user__logIn{
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+
+#checkbox {
+    display: none;
+}
+
+

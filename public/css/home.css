@@ -3,7 +3,7 @@
 .main{
     max-width: 1200px;
     margin: auto;
-    background-color: var(--GRIS-OSCURO);
+    background-color: #B8BCBD;
 }
 .main__articulo {
     margin-bottom: 10px;
@@ -11,29 +11,10 @@
 
 
 /* ------------------------------------- Banner Promociones ------------------------------------- */
-.banner {
-    display:flex;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-    height: 250px;
-    margin-bottom: 20px;
-}
 
-.banner__img {
-    width: 0px;
-    flex-grow: 1; 
-    object-fit: cover; /* para que no se deforme la foto y ocupe en su lugar todo el espacio */
-    opacity: .8;
-    transition: .7s ;
-}
 
-.banner__img:hover {
-    cursor: pointer;
-    width: 100%;
-    opacity: 1;
-    filter: contrast(120%);
-}
+
+
 
 /* ------------------------------------- Productos destacados ------------------------------------- */
 .productos__seccion {
@@ -43,15 +24,18 @@
 }
 
 .productos__articulo {
-    background: linear-gradient(to right, #3c3c38, #ff614d);
+    background: linear-gradient(to right, #63635E, #8D8D86); 
     width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
     margin: 0 auto 20px auto; 
     padding: 15px; /* con valor fijo en px o 10% */
     border-radius: 6px; /* con valor fijo en px o 5% */
-    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+    box-shadow: 0 0 15px #5C271F;
     color: var(--NEGRO);
-    Background-color: var(--GRIS);
+    cursor: pointer;
+   
 }
+
+
 
 .productos__descripcion{
     font-size: 18px;
@@ -89,15 +73,8 @@
 
 /* ------------------------------------- Medias Querys ------------------------------------- */
 @media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
-    /* banner-promociones */
-    .banner {
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 300px;
-        margin-bottom: 20px;
-    }
+    
+    
 
     .titulo-seccion-general {
         font-size: 25px;
@@ -118,22 +95,15 @@
         margin: 0 auto 20px auto; 
         padding: 15px; /* con valor fijo en px o 10% */
         border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        box-shadow: 0 0 15px #5C271F;
         color: var(--NEGRO);
-        Background-color: var(--GRIS);
+     
+        
     }
 }
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
-    /* banner-promociones */
-    .banner{
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 500px;
-        margin-bottom: 20px;
-    }
+    
 
     .titulo-seccion-general{
         font-size: 25px;
@@ -154,8 +124,11 @@
         margin: 0 auto 20px auto; 
         padding: 15px; /* con valor fijo en px o 10% */
         border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        box-shadow: 0 0 15px #5C271F;
         color: var(--NEGRO);
-        Background-color: var(--GRIS);
+       
     }
+
+    
+
 }
