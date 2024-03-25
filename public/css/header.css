@@ -1,10 +1,10 @@
-/* COLORES */
 :root {
     --FUCSIA: #720455;
     --VIOLETA-OSCURO: #3C0753;
     --GRIS:  #F5F5F5;
     --BLANCO: #FFF;
-    --NEGRO: rgba(0, 0, 0, 0.6);
+    --NEGRO: #202020;
+    --NEGRO-Claro: rgba(0, 0, 0, 0.6);
     --GRIS-OSCURO: #282828;
 }
 
@@ -13,204 +13,128 @@
     box-sizing: border-box;
 }
 
-.contenedor-general-home {
-    margin: 0 auto;
-    max-width: 1200px;
-    background: linear-gradient(to right, #858986, #b3b2b8); 
-}
 
 
-
-/*      Header.css : falta ver el error que salta cuando sacamos los elementos de esta Media Query, ver que dejamos   */
-.contenedor-general-tarjeta {
-    background: linear-gradient(to right, #3c3c38, #be3431); 
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border-radius: 6px; /* con valor fijo en px o 5% */ 
-    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
-    text-align: center;
-    color: var(--BLANCO);
-    font-size: 12px;
-}
-
-.input-general {
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border: 1px solid var(--GRIS);
-    border-radius: 12px;
-    font-size: 12px;
-}
-
-.boton-general {
-    background-color: var(--NEGRO);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--BLANCO);
-    border-radius: 12px;
-    font-size: 12px;
-    padding: 10px;
-    margin: 5px;
-}
-
-
-
-.header {
-    display: flex;
-    border-radius: 0;
-} 
-
-.header__contenedor-img-logo {
-    border-radius: 20px; 
-    padding: 10px;
-}
-
-.header__img-logo {
-    width: 80px;
-    height: auto;
-    margin: 0px;
-    border-radius: 10px;
-}
-
-.header__navbar {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: start;
-    width: 100%;
-    border-radius: 15px;
+a{
+    text-decoration: none;  /* Sacarle el subrayado */
+    color: var(--NEGRO);
+    font-size: 1.1rem;
+    font-weight: bold;
     
-
+    
 }
 
-.header__barra-superior {
-    width: 100%;
+
+
+/* Header */
+
+
+.header-contenedor-general-tarjeta{
+    padding: 0 2rem; 
+    background-color: #F9F9F9 ;
+
+  
+}
+
+
+.header__navbar{
+   padding: 1rem;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+
 }
 
-.barra-superior__sec-buscar-productos {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.sec-buscar-productos__input {
-    border-style: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    width: 80%;
-    padding: 5px;
-}
-
-.top-bar__sec-buscar-productos__btn-buscar {
-    background-color: var(--BLANCO);
-    border-style: none;
-    border-left: 1px solid var(--NEGRO);
-    color: var(--NEGRO);
-    padding: 2px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 20%
-}
-
-.barra-superior__sec-login {
-    display: none;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-
-.header__sec-lista-opciones {
-    list-style-type: none;
-    padding: 0px;
-    display: none;
-    justify-content: start;
-    margin: 0px;
-}
-
-.header__sec-lista-opciones__link {
-    text-decoration: none;
-    color: var(--BLANCO);
-}
-
-/* Hamburguesa animación */
-
-.hamburguesa {
+.header__navbar__logo a{
+    font-size: 1.7rem;
+    font-weight: bold;
+  
     
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-     gap: 5px;   /* Mi espacio entre las barras */
-    transition-duration: .5s; /* para cuando vuelva */
 }
 
-  /* Hamburguesa animacion */
+
+.links{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    list-style: none;
+    
+}
+
+
+.links a:hover{
+    text-decoration: underline;
+   
+}
+
+
+.header__nabvar__user{   
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos al inicio del contenedor */
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__nabvar__user a:hover{
+    text-decoration: underline;
+   
+}
+
+.user__singUp{
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.8);   /* Simular el efecto del boton */
+    padding: 0.5rem 1rem;                     /* Simular el efecto del boton */
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .6);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user__logIn{
+    color: var(--NEGRO);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
 #checkbox {
     display: none;
 }
 
-.barra {
-    width: 100%;
-    height: 4px;
-    background-color: 		#F0F0F0;
-    border-radius: 4px;
-}
-
-#bar2 {
-    transition-duration: .8s;
-}
-  
-#bar1,#bar3 {
-    width: 100%;
-}
-
-/* checked selecciona el elemento con el id checkbox solo cuando está marcado. */
- #checkbox:checked + .hamburguesa .barra {
-    position: absolute; /* me lo va a posicionar respecto a su elemento padre cuando se mueve */
-    transition-duration: .5s;
-}
-
-#checkbox:checked + .hamburguesa #bar2 {
-    transform: scaleX(0);  /* lo hago invisible en 0 , en el eje x */
-    transition-duration: .5s;
-}
 
 
-#checkbox:checked + .hamburguesa #bar1 {
-    width: 100%;
-    transform: rotate(45deg);
-    transition-duration: .5s;
-}
-  
-#checkbox:checked + .hamburguesa #bar3 {
-    width: 100%;
-    transform: rotate(-45deg);
-    transition-duration: .5s;
-}
-
-  
-#checkbox:checked + .hamburguesa {
-    transition-duration: .5s;
-    transform: rotate(180deg);
-}
-
-@media screen and (min-width: 461px) {
- /* Estilos específicos para pantallas mayores a 360px */
-.hamburguesa {
-    display: none;
-}
-
-.barra-superior__sec-login {
+/*       Barra Busqueda       */
+.barra-superior__sec-buscar-productos{
     display: flex;
+    line-height: 25px;
+    align-items: center;
+    max-width: 190px;
+    border-radius: 30px;
 }
-
-.header__sec-lista-opciones {
-    display: flex;
+   
+.sec-buscar-productos__input{
+    width: 100%;
+    height: 33px;
+    line-height: 25px;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s;
 }
+   
+.sec-buscar-productos__input:hover{
+   color: #9e9ea7;
+}
+   
+.sec-buscar-productos__input:hover, .sec-buscar-productos__input:focus{
+   outline: none;
+    border-color: rgba(0, 0, 0, 0.8); ;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .6);
 }
