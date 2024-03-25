@@ -7,8 +7,21 @@
     --NEGRO: rgba(0, 0, 0, 0.6);
 }
 
-* {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/imagenes/Foto49.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .contenedor-general-home {
