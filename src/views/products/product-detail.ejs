@@ -13,37 +13,37 @@
     <%- include('../partials/header.ejs') %>
     
     <main>
-        <h2 class="titulo_principal"> Detalle del Producto </h2>
+        <h2 class="titulo_principal"> Product Detail </h2>
         <section class="producto">
                 <div class="vinilo__img1">
                     <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
                 </div>
                 <div class="vinilo">
                     <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
-                    <p>Grupo: <%= productId.autor %> </p>
-                    <p>Año: <%=productId.año %> </p>
-                    <p>Genero: <%=productId.categoria %> </p>
-                    <p>Estilo: <%= productId.estilo %></p>
-                    <p>Calificación: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
+                    <p>Group: <%= productId.autor %> </p>
+                    <p>Year: <%=productId.año %> </p>
+                    <p>Gender: <%=productId.categoria %> </p>
+                    <p>Style: <%= productId.estilo %></p>
+                    <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 </div>
                 <div class="canciones">
-                    <h4 class="titulo__canciones">Canciones</h4>
+                    <h4 class="titulo__canciones">Songs</h4>
                     <ol type="A">
                         <li><%= productId.canciones %></li>
                     </ol> 
                 </div>
                 <div class="precio">
-                    <h4 class="titulo__precio">Precio</h4>
+                    <h4 class="titulo__precio">Price</h4>
                     <p class="num__precio"><%= productId.preciomostrador %></p>
                     <p class="agregar__carrito">
-                        <a href="/products/carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i>
+                        <a href="/products/carrito">Add to cart <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                     </p>
                 </div> 
         </section>
         <section class="sugerencias">
             <div class="sugerencias__titulo">
-                <h3>Sugerencias segun tu busqueda</h3>
+                <h3>Suggestions according to your search:</h3>
             </div>
             <br>
             <div class="vinilo__img2">
