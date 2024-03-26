@@ -4,75 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="\css\new-product.css" rel="stylesheet">
-    <link href="\css\home.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
     <title>Seccion  productos en carrito</title>
 </head>
+
 <body>
-
-        <main class="main">
-            <div class="contenedor-general">
-
-                <h2>Crear Nuevo Producto</h1>
-
-                <form class="form-general" action="/create-product" method="POST">
-                    <div class="form-section">
-                        <section class="section-izquierda">
-                            <div>
-                                <label class="label-general" for="id">Codigo o ID: </label>
-                                <input class="input-general" type="text" id="code" name="code">
-                            </div>
-                            
-                            <div>
-                                <label class="label-general" for="name">Nombre del disco: </label>
-                                <input class="input-general" type="text" id="name" name="name" required>
-                            </div>
-                            
-                            <div>
-                                <label class="label-general" for="genere">Género: </label>
-                                <input class="input-general" type="text" id="genere" name="genere" required>
-                            </div>
+    <section class="contenedor-formulario">
         
-                            <div>
-                                <label class="label-general" for="author">Autor: </label>
-                                <input class="input-general" type="text" id="author" name="author" required>
-                            </div>
-                
-                            <div>
-                                <label class="label-general" for="discography">Discografía: </label>
-                                <input class="input-general" type="number" id="discography" name="discography" required>
-                            </div>
-                            
-                            <div>
-                                <label class="label-general" for="description">Descripción: </label>
-                                <textarea class="input-general" id="description" name="description" rows="4" required></textarea>
-                            </div>
-                            
-                        </section>
-    
-                        <section class="section-derecha">
-                            <div>
-                                <label class="label-general" for="price">Precio ($): </label>
-                                <input class="input-general" type="number" id="price" name="price" required>
-                            </div>
+        <form  action="/create-product" method="POST">
             
-                            <div>
-                                <label class="label-general" for="stock">Cantidad en Stock: </label>                          
-                                <input class="input-general" type="number" id="stock" name="stock" required>
-                            </div>
-                
-                            <label class="label-general" for="image">Imagen: </label>
-                            <input class="input-general" type="file" id="image" name="image" accept="jpg, npg" required>
-                            <img id="imagePreview" src="#" alt="Vista previa de la imagen" style="max-width: 200px; display: none;">
-                            
-                        </section>
-                    </div>
-                
-                    <button class="boton-general" type="submit">Crear Producto</button>
-
-                </form>
+            <h1 class="titulo-formulario">Create a new Product</h1>
+            
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="nombreDisco" id="nombreDisco" placeholder="Nombre del Disco" required>
+            </div>  
+            
+            <div class="contenedor-casilla">
+                <select class="casilla-individal" name="generoDisco" id="generoDisco" required>
+                    <option value="" disabled selected hidden>Género</option>
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="jazz">Jazz</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
             </div>
-        </main>
+
+            <div class= "contenedor-casilla">
+                <textarea class="casilla-individal" type="text" name="descripcion" id="descripcion" placeholder="Descripción" required></textarea>
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="autor" id="autor" placeholder="Autor" required>
+            </div> 
             
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="discografica" id="discografica" placeholder="Discografica" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="precioCosto" id="precioCosto" placeholder="Precio de Costo, ej: 199.99" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="precioVenta" id="precioVenta" placeholder="Precio de Venta" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="stock" id="stock" placeholder="Cantidad en Stock" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <label class="label-individal">Seleccione imagen de portada del disco </label>
+                <input class="casilla-individal" type="file" name="imagen" id="imagen" accept="image/jpeg, image/png" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="anio" id="anio" placeholder="Año" required>
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="estilo" id="estilo" placeholder="Estilo">
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <textarea class="casilla-individal" type="text" name="canciones" id="canciones" placeholder="Lista de canciones (separadas por ';')"></textarea>
+            </div> 
+                
+            <button type="submit" class="boton-registro">Crear Producto</button>
+        </form>
+    </section>
+  
 </body>
 </html>
