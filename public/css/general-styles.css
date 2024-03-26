@@ -20,13 +20,7 @@
 }
 
 .contenedor-general-tarjeta {
-    background: linear-gradient(to right, #3c3c38, #be3431); 
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border-radius: 6px; /* con valor fijo en px o 5% */ 
-    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
-    text-align: center;
-    color: var(--BLANCO);
-    font-size: 12px;
+ 
 }
 
 .input-general {
