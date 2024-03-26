@@ -7,95 +7,138 @@
     --NEGRO: rgba(0, 0, 0, 0.6);
 }
 
-* {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.contenedor-general-home {
-    margin: 0 auto;
-    max-width: 1200px;
-    background: linear-gradient(to right, #858986, #b3b2b8); 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/imagenes/Foto49.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.contenedor-general {
-    width: 90%; 
-    margin-top: 20px; 
-    border: 1px solid var(--GRIS);
+.contenedor-formulario{
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
+    backdrop-filter: blur(100px);  /*  efecto para que desenfoque fondo */
+    width: 30%;
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.contenedor-general-tarjeta {
-    background: linear-gradient(to right, #3c3c38, #be3431); 
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border-radius: 6px; /* con valor fijo en px o 5% */ 
-    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+.titulo-formulario{
+    font-size: 36px;
     text-align: center;
-    color: var(--BLANCO);
-    font-size: 12px;
 }
 
-.form-general {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
+.contenedor-casilla{
+    position: relative;
+    width: 100%;
+    height: 50px;   
+    margin: 30px 0;
 }
 
-.label-general {
-    display: block;
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    color: var(--GRIS);
-    font-size: 12px;
+.casilla-individal {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    outline: none;  /* para cuando ingresas datos, que no se haga borde interno */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;   
 }
 
-.input-general {
-    display: block;
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border: 1px solid var(--GRIS);
-    border-radius: 12px;
-    font-size: 12px;
-}
-
-.boton-general {
-    background-color: var(--NEGRO);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--BLANCO);
-    border-radius: 12px;
-    font-size: 12px;
+.casilla-individal option {
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(30px);  /*  efecto para que desenfoque fondo */
     padding: 10px;
-    margin: 5px;
+    border-radius: 5px;
+}
+
+.label-individal {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;  /* para cuando ingresas datos, que no se haga borde interno */
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;   
+}
+
+/* :: se utiliza para pseudo-elementos / : se utiliza para pseudo-clases. */
+.casilla-individal::placeholder {
+    color: #fff;
+}
+
+.boton-registro{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba( 0, 0, 0, .3);
+    cursor: pointer;
+    font-size: 16px;
+    color: 	 #404040;
+    font-weight: 600;
+    transition: .8s;
+}
+
+.boton-registro:hover{
+    font-size: 18px;
 }
 
 
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
 
-.form-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} 
-
-.section-izquierda {
+@media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
+    .contenedor-formulario{
     width: 50%;
-    display: flex;
-    flex-direction: column;
+    }
+    
 }
 
-.section-derecha {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
 
-@media (min-width: 468px) {
-    .form-section {
-        flex-direction: row;
-        align-items: start;
-    } 
-  }
+@media screen and (max-width: 768px) {      /*    Mobile     */
+    .contenedor-formulario{
+        width: 90%;  /* para que no se deforme el formulario */
+    }
+
+    /* Todo mas pequeño */
+    .titulo-formulario{
+        font-size: 28px;
+    }
+    .contenedor-casilla{
+        margin: 20px 0;  
+    }
+    .casilla-individal{
+        font-size: 14px;
+        padding: 15px 35px 15px 15px;
+    }
+    .boton-registro{
+        height: 35px;
+        font-size: 14px;
+    }
+    .boton-registro:hover{
+        font-size: 16px;
+    }
+    .link-registro{
+        font-size: 13px;
+        margin: 15px 0 10px;
+    }
+}
