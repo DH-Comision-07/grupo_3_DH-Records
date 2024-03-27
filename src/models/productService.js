@@ -1,9 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const productFile = path.join(__dirname,'/product');
 
-const products = require('./product.json');
-
+const products = require('./products.json');
 
 let productService = {
     products: products,

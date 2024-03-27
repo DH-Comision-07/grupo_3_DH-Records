@@ -1,35 +1,31 @@
-const path = require ('path');
-const productos = require ('../models/product');
 const productService = require ('../models/productService');
 
 
 let productsControllers = {
 
-    productDetail: function (req, res) {
+    detail: function (req, res) {
         let productId = (productService.getBy(req.params.id));
-        res.render('products/product-detail',{productId});
+        res.render('products/detail', {productId});
     },
 
-    carrito: function (req, res) {
-        res.render('products/carrito');
+    cart: function (req, res) {
+        res.render('products/cart');
     },
 
 
-    newProduct: function (req, res) {
-        res.render('products/new-product');
+    create: function (req, res) {
+        res.render('products/create');
     },
 
-    editProduct: function (req, res) {
-        res.render('products/edit-product');
+    edit: function (req, res) {
+        res.render('products/edit');
     },
 
-    AllProducts: function (req, res) {
-        res.render('products/productos', {products: productService.getAll()});
+    getAll: function (req, res) {
+        res.render('products/products', {products: productService.getAll()});
 
-    },
-
+    }
 
 }
-
 
 module.exports = productsControllers;

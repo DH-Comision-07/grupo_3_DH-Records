@@ -1,20 +1,18 @@
 const express = require('express');
 const routes = express.Router();
-const path = require ('path');
 
 const productsControllers = require('../controllers/productsControllers');
 
 
-
-routes.get('/product-detail/:id', productsControllers.productDetail);
+routes.get('/detail/:id', productsControllers.detail);
   
-routes.get('/carrito', productsControllers.carrito);
+routes.get('/cart', productsControllers.cart);
 
-routes.get('/new-product', productsControllers.newProduct);
+routes.get('/create', productsControllers.create);
 
-routes.get("/edit-product", productsControllers.editProduct);
+routes.get("/edit", productsControllers.edit);
 
-routes.get('/', productsControllers.AllProducts);
+routes.get('/', productsControllers.getAll);
 
 
 module.exports = routes;

@@ -1,4 +1,4 @@
-const path = require ('path');
+const userService = require('../models/usersService');
 
 let usersControllers = {
 
@@ -10,8 +10,14 @@ let usersControllers = {
         res.render('users/login');
     },
     
-    perfilUsuario: function (req, res) {
-        res.render('users/perfil-usuario');
+    detail: function (req, res) {
+        let productId = (usersService.getBy(req.params.id));
+        res.render('users/detail', {userId});
+    },
+
+    getAll: function (req, res) {
+        res.render('users', {users: userService.getAll()});
+
     }
 }
 
