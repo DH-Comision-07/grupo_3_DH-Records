@@ -10,6 +10,40 @@
 }
 
 /* ------------------------------------- Productos destacados ------------------------------------- */
+.section_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+}
+
+.side-bar-filter{
+    width: 150px;
+    height: 500px;
+    background-color: #ff614d;
+}
+
+.side-bar__btn {
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .productos__seccion {
     display: flex;
     justify-content: center;

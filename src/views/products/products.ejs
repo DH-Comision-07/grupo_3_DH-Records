@@ -12,36 +12,47 @@
     <%- include('../partials/header.ejs') %>
     
     <main class="main">
+
         <h2 class="titulo-seccion-general">List of products</h1>
 
-        <section class="productos__seccion">
-        
-            <% products.forEach(product=> { %>
+        <div class="section_container">
+
+            <section class="side-bar">
+                <p class="side-bar-filter"> Barra lateral de filtros</p>
+                <a href="#" class="side-bar__btn"> Aplicar Filtros </a>
+                <a href="/products/create" class="side-bar__btn"> Crear Nuevo Producto </a>
+
+            </section>
+    
+            <section class="productos__seccion">
                 
-        <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail/<%= product.id %>">
-                <img src="/imagenes/<%=product.imagen%>" class="productos__img">
-                    <div class="productos__info">
-                        <p class="productos__descripcion"> <%= product.autor %> </p>
-                        <p class="productos__precio"> <%= product.preciomostrador %> </p>     
-                    </div>
-            </a>
-        </article>
+                <% products.forEach(product=> { %>
+                    
+                    <article class="productos__articulo main__articulo">
+                        <a href="/products/detail/<%= product.id %>">
+                            <img src="/imagenes/<%=product.imagen%>" class="productos__img">
+                            <div class="productos__info">
+                                <p class="productos__descripcion"> <%= product.autor %> </p>
+                                <p class="productos__precio"> <%= product.preciomostrador %> </p>     
+                            </div>
+                        </a>
+                    </article>
+    
+                 <% }) %>
+     
+                 <section class="productos__section-boton">
+                    <form action="/" method="post">
+                        <div class="productos__botonPadre">
+                            <button class="productos__boton" type="submit" value="Ver Mas Productos"> See More Products </button>
+                        </div>
+                    </form>
+                </section>
+                
+            </section>
 
-        <% }) %>
 
-        
-        
-    </section>
+        </div>
 
-
-    <section class="productos__section-boton">
-        <form action="/" method="post">
-            <div class="productos__botonPadre">
-                <button class="productos__boton" type="submit" value="Ver Mas Productos"> See More Products </button>
-            </div>
-          </form>
-    </section>
     </main>
     
     <%- include('../partials/footer.ejs') %>
