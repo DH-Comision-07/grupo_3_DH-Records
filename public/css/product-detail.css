@@ -20,7 +20,10 @@ body{
     Background-color: var(--GRIS-OSCURO);
     max-width: 1200px;
     margin: auto;
-    color: var(--GRIS)
+    background-image: url("/imagenes/Foto18.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
 }
 
 main{
@@ -29,18 +32,29 @@ main{
 
 .titulo_principal{
     font-size: 27px;
+    color: var(--BLANCO);
+    text-decoration: underline;
+    text-underline-offset: 3px; 
+   
 }
 
 p{
     color: var(--GRIS);
     padding-top: 5px;
-    padding-bottom: 5px;
-   
+    padding-bottom: 5px;  
 }
 
 h4{
     font-size: 22px;
     text-align: left;
+    color: var(--BLANCO);
+    text-decoration: underline;
+    text-underline-offset: 3px;  /* bajar subrallado */
+}
+
+main{
+    background: transparent;
+    backdrop-filter: blur(15px);
 }
 
 .producto{
@@ -50,15 +64,15 @@ h4{
     text-align: center;
     padding: 20px;
     flex-wrap: wrap;
-    background-color: #202020;
 }
 
 .vinilo{
     display: flex; 
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--NEGRO-Claro);
+    background-color:var(--NEGRO);
     border-radius: 25px;
+    margin-top: 20px;
 }
 
 .vinilo p{
@@ -68,7 +82,7 @@ h4{
 }
 
 .vinilo__img1 img{
-    width: 70%;
+    width: 75%;
     height: auto;
     display: flex; 
     justify-content: flex-start;
@@ -96,8 +110,9 @@ h4{
 .precio{
     display: flex; 
     flex-direction: column;
-    background-color: var(--NEGRO-Claro);
+    background-color: var(--NEGRO);
     border-radius: 25px;
+    margin-top: 20px;
 }
 
 .precio p{
@@ -111,7 +126,7 @@ h4{
 }
 
 .fa-star{
-    color: var(--FUCSIA-CLARO);
+    color: #FFBA18;
 }
 
 .fa-cart-shopping{
@@ -123,7 +138,7 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--FUCSIA);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 25px; 
 }
 
@@ -140,11 +155,13 @@ h4{
     padding: 5px;
     flex-wrap: wrap;
     margin: auto;
+    
 }
 
 .sugerencias__titulo{
     align-items: center;
     width: 80vw;
+    color: var(--BLANCO);
 }
 
 .sugerencias__titulo h3{
