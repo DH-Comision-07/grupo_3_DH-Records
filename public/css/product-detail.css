@@ -6,6 +6,7 @@
     --BLANCO: #FFF;
     --NEGRO: #000;
     --GRIS-OSCURO: #282828;
+    --NEGRO-Claro: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -34,12 +35,12 @@ p{
     color: var(--GRIS);
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: center;
-    margin: auto;
+   
 }
 
 h4{
-    font-size: 20px;
+    font-size: 22px;
+    text-align: left;
 }
 
 .producto{
@@ -49,16 +50,33 @@ h4{
     text-align: center;
     padding: 20px;
     flex-wrap: wrap;
+    background-color: #202020;
 }
 
 .vinilo{
     display: flex; 
     flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--NEGRO-Claro);
+    border-radius: 25px;
+}
+
+.vinilo p{
+    text-align: left;
+    font-size: 16px;
+    
 }
 
 .vinilo__img1 img{
     width: 70%;
     height: auto;
+    display: flex; 
+    justify-content: flex-start;
+    transition: transform 2s;
+}
+
+.vinilo__img1 img:hover{
+    transform: scale(0.8) rotate(360deg);
 }
 
 .canciones{
@@ -78,17 +96,18 @@ h4{
 .precio{
     display: flex; 
     flex-direction: column;
+    background-color: var(--NEGRO-Claro);
+    border-radius: 25px;
 }
 
 .precio p{
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: center;
-    margin: auto;
+     text-align: left; 
 }
 
 .num__precio{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .fa-star{
@@ -97,13 +116,20 @@ h4{
 
 .fa-cart-shopping{
     color: var(--BLANCO);
+    text-align: center;
 }
 
-.agregar__carrito{
+.centrar-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--FUCSIA);
+    border-radius: 25px; 
+}
+
+.centrar-texto a{
     color: var(--BLANCO);
-    text-align: center;
-    padding: 0.7rem;
+    font-size: 15px;
 }
 
 .sugerencias{
@@ -130,7 +156,8 @@ h4{
     height: auto;
 }
 
-@media (768px <= width <= 1024px){
+
+@media (768px <= width <= 1024px){    /* Tablet */
     .producto{
         justify-content: space-around;
     }
@@ -143,7 +170,7 @@ h4{
     }
 } 
 
-@media(min-width:1025px){
+@media(min-width:1025px){     /* Desktop */
     .titulo_principal{
         font-size: 30px;
     }
