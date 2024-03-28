@@ -17,7 +17,7 @@ let productsControllers = {
     },
 
     store: function (req, res) {
-        //productService.save(req.body);
+        productService.save(req.body);
         res.send(req.body);
         //res.redirect('/');
     },

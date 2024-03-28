@@ -7,10 +7,13 @@ let productService = {
     products: products,
 
     getAll: function() {
-    return this.products;
+        return this.products;
     },
     getBy: function(id) {
-    return this.products.find(product => product.id == id);
+        return this.products.find(product => product.id == id);
+    },
+    save: function(product) {
+        this.products.push(product);
     }
 }
 
