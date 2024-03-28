@@ -16,23 +16,9 @@ let productsControllers = {
         res.render('products/create');
     },
 
-    save: function (req, res) {
-        let product = {
-            nombre: req.body.nombreDisco,
-            genero: req.body.generoDisco,
-            descripcion: req.body.descripcion,
-            autor: req.body.autor,
-            discografica: req.body.discografica,
-            precioCosto: req.body.precioCosto,
-            precioVenta: req.body.precioVenta,
-            stock: req.body.stock,
-            imagen: req.body.imagen,
-            anio: req.body.anio,
-            estilo: req.body.estilo,
-            canciones: req.body.canciones,
-        }
-        
-        res.send(product);
+    store: function (req, res) {
+        //productService.save(req.body);
+        res.send(req.body);
         //res.redirect('/');
     },
 

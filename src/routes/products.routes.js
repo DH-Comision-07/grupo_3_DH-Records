@@ -14,7 +14,7 @@ routes.get("/edit", productsControllers.edit);
 
 routes.get('/', productsControllers.getAll);
 
-routes.post('/create', productsControllers.save);
+routes.post('/', productsControllers.store);
 
 
 module.exports = routes;
