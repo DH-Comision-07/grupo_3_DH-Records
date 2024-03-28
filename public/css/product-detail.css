@@ -17,43 +17,37 @@
 }
 
 body{
-    Background-color: var(--GRIS-OSCURO);
     max-width: 1200px;
     margin: auto;
-    background-image: url("/imagenes/Foto41.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;  
+
 }
 
 main{
-    width: 100%;  
+    width: 100%; 
 }
 
 .titulo_principal{
-    font-size: 27px;
+    font-size: 28px;
     color: var(--NEGRO);
     text-decoration: underline;
     text-underline-offset: 3px;  
+    margin-top: 20px;
 }
 
 p{
-    color: var(--GRIS);
+    color: var(--NEGRO);
     padding-top: 5px;
     padding-bottom: 5px;  
 }
 
 h4{
-    font-size: 22px;
+    font-size: 20px;
     text-align: left;
-    color: var(--BLANCO);
+    color: var(--NEGRO);
     text-decoration: underline;
     text-underline-offset: 3px;  /* bajar subrallado */
 }
 
-.titulo__canciones{
-    color:var(--NEGRO);
-}
 
 .producto{
     display: flex; 
@@ -62,16 +56,14 @@ h4{
     text-align: center;
     padding: 20px;
     flex-wrap: wrap;
- 
 }
 
 .vinilo{
     display: flex; 
     flex-direction: column;
     align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.9);
-    border-radius: 25px;
     margin-top: 20px;
+  
 }
 
 .vinilo p{
@@ -79,49 +71,26 @@ h4{
     font-size: 16px;
 }
 
+.producto .num__precio{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
 .vinilo__img1 img{
-    width: 75%;
+    width: 100%;
     height: auto;
     display: flex; 
     justify-content: flex-start;
     transition: transform 2s;
+ 
 }
 
 .vinilo__img1 img:hover{
     transform: scale(0.8) rotate(360deg);
 }
 
-.canciones{
-    display: flex; 
-    flex-direction: column;
-    padding-left: 15px;
-    padding-right: 13px;
-}
 
-.canciones li{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    margin: auto;
-}
-
-.precio{
-    display: flex; 
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    border-radius: 25px;
-    margin-top: 20px;
-}
-
-.precio p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-     text-align: left; 
-}
-
-.num__precio{
-    font-size: 20px;
-}
 
 .fa-star{
     color: #FFBA18;
@@ -138,6 +107,8 @@ h4{
     align-items: center;
     background-color: #202020;
     border-radius: 25px; 
+    margin-top: 0;
+    width: 100%;
 }
 
 .centrar-texto a{
@@ -147,8 +118,10 @@ h4{
 }
 
 .centrar-texto a:hover{
-    font-size: 18px;
+    font-size: 17px;
 }
+
+
 
 .sugerencias{
     display: flex; 
@@ -176,21 +149,30 @@ h4{
 .vinilo__img2 img{
     width: 35%;
     height: auto;
+    transition: 2s;
 }
+
+.vinilo__img2:hover{
+    transform: scale(0.8) rotate(360deg);
+}
+
 
 
 @media (768px <= width <= 1024px){    /* Tablet */
     .producto{
         justify-content: space-around;
     }
-    .canciones{
-        transform: translate(-10px);
-    }
+  
     .vinilo__img2{
         flex-wrap: nowrap;
         justify-content: space-around;
+        transition: 2s;
+    }
+    .vinilo__img2:hover{
+        transform: scale(0.8) rotate(360deg);
     }
 } 
+
 
 @media(min-width:1025px){     /* Desktop */
     .titulo_principal{
@@ -198,19 +180,13 @@ h4{
     }
     .vinilo__img1{
         width: 45%;
+        transform: translate(-100px, -10px);
     }
     .vinilo{
         width: 40%;
-        transform: translate(0px, -90px);
+        
     }
-    .precio{
-        width: 40%;
-        transform: translate(80px, -130px);
-    }
-    .canciones{
-        width: 30%;
-        transform: translate(-70px);
-    }    
+ 
     .sugerencias{
         width: 90%;
     }
@@ -228,3 +204,6 @@ h4{
         transform: scale(0.8) rotate(360deg);
     }
 }
+
+
+

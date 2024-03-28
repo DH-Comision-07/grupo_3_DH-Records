@@ -8,6 +8,15 @@ let productsControllers = {
         res.render('products/detail', {productId});
     },
 
+    detailEdit: function (req, res) {
+        res.redirect('/products/edit')
+    },
+
+    detailAll: function (req, res) {
+        res.send('Producto agregado al carrito');
+    },
+
+
     cart: function (req, res) {
         res.render('products/cart');
     },
