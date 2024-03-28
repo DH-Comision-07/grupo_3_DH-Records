@@ -20,7 +20,7 @@ body{
     Background-color: var(--GRIS-OSCURO);
     max-width: 1200px;
     margin: auto;
-    background-image: url("/imagenes/Foto18.jpg");
+    background-image: url("/imagenes/Foto41.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;  
@@ -32,10 +32,9 @@ main{
 
 .titulo_principal{
     font-size: 27px;
-    color: var(--BLANCO);
+    color: var(--NEGRO);
     text-decoration: underline;
-    text-underline-offset: 3px; 
-   
+    text-underline-offset: 3px;  
 }
 
 p{
@@ -52,9 +51,8 @@ h4{
     text-underline-offset: 3px;  /* bajar subrallado */
 }
 
-main{
-    background: transparent;
-    backdrop-filter: blur(15px);
+.titulo__canciones{
+    color:var(--NEGRO);
 }
 
 .producto{
@@ -64,13 +62,14 @@ main{
     text-align: center;
     padding: 20px;
     flex-wrap: wrap;
+ 
 }
 
 .vinilo{
     display: flex; 
     flex-direction: column;
     align-items: flex-start;
-    background-color:var(--NEGRO);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 25px;
     margin-top: 20px;
 }
@@ -110,7 +109,7 @@ main{
 .precio{
     display: flex; 
     flex-direction: column;
-    background-color: var(--NEGRO);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 25px;
     margin-top: 20px;
 }
@@ -138,13 +137,18 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #202020;
     border-radius: 25px; 
 }
 
 .centrar-texto a{
     color: var(--BLANCO);
-    font-size: 15px;
+    font-size: 16px;
+    transition: .8s;
+}
+
+.centrar-texto a:hover{
+    font-size: 18px;
 }
 
 .sugerencias{
@@ -161,7 +165,9 @@ main{
 .sugerencias__titulo{
     align-items: center;
     width: 80vw;
-    color: var(--BLANCO);
+    color: var(--NEGRO);
+    text-decoration: underline;
+    text-underline-offset: 3px; 
 }
 
 .sugerencias__titulo h3{
@@ -216,5 +222,10 @@ main{
         flex-wrap: nowrap;
         width: 30%;
         padding: 1px;
+        transition: 2s;
+    }
+
+    .vinilo__img2:hover{
+        transform: scale(0.8) rotate(360deg);
     }
 }
