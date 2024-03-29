@@ -10,10 +10,13 @@ let productsControllers = {
     },
 
     detailDelete: function (req, res) {
-        console.log("estoy llegando al controler")
         let productId = req.params.id;
-        let message = productService.delete(productId);
-        res.send(message);
+        let productDeleted = productService.delete(productId);
+        if (productDeleted) {
+            res.redirect('/products');
+        } else {
+            returnres.status(404).send('Product not found');
+        }    
     },
 
     cart: function (req, res) {

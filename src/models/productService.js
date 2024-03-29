@@ -4,6 +4,7 @@ const fs = require('fs');
 const products = require('./products.json');
 
 let productService = {
+
     products: products,
 
     getAll: function() {
@@ -15,8 +16,16 @@ let productService = {
     },
 
     delete: function (id) {
-        return this.products.filter(product => product.id != id); 
-    },
+        const initialLength = this.products.length;
+        this.products = this.products.filter(product => product.id != id);                          //filter no modifica el array ooriginal por eso el this.products=
+          
+        if (this.products.length < initialLength) {
+           fs.writeFileSync(path.join(__dirname, 'products.json'), JSON.stringify(this.products)) ;
+              return true;
+        }  else {
+            return false;
+        }                                
+    }
 }
 
 module.exports = productService;
