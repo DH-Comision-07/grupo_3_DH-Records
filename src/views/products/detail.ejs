@@ -15,35 +15,33 @@
     <main class="main">
         <h2 class="titulo_principal"> Product Detail </h2>
         <section class="producto">
-                <div class="vinilo__img1">
-                    <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
-                </div>
-                <div class="vinilo">
-                    <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
-                        <p>Group: <%= productId.autor %> </p>
-                        <p>Year: <%=productId.año %> </p>
-                        <p>Gender: <%=productId.categoria %> </p>
-                        <p>Style: <%= productId.estilo %></p>
-                        <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
-                        <br>
-                    <h4 class="titulo__precio">Price</h4>
-                        <p class="num__precio"><%= productId.preciomostrador %></p>
-                        <p class="agregar__carrito">
+            <div class="vinilo__img1">
+                <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
+            </div>
+            <div class="vinilo">
+                <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
+                    <p>Group: <%= productId.autor %> </p>
+                    <p>Year: <%=productId.año %> </p>
+                    <p>Gender: <%=productId.categoria %> </p>
+                    <p>Style: <%= productId.estilo %></p>
+                    <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
+                <br>
+                <h4 class="titulo__precio">Price</h4>
+                    <p class="num__precio"><%= productId.preciomostrador %></p>
+                    <p class="agregar__carrito">
+                    <div class="centrar-texto">
+                        <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    </p> 
+                    <div class="centrar-texto">
+                         <a href="/products/edit/<%= productId.id %>">Edit Product</a>
+                    </div>
+                    <form action="./products.ejs" method="POST">
+                    <br>
                         <div class="centrar-texto">
-                          <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
+                            <input type="submit" value="Delete Product">
                         </div>
-                        </p>  
-                        <form action="./edit-product.ejs" method="POST">
-                             <div class="centrar-texto">
-                                <input type="submit" value="Edit Product">
-                            </div>
-                        </form> 
-                        <form action="./products.ejs" method="POST">
-                        <br>
-                            <div class="centrar-texto">
-                                <input type="submit" value="Delete Product">
-                            </div>
-                        </form>       
+                    </form>       
                 </div> 
         </section>
 
