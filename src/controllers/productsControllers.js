@@ -1,3 +1,4 @@
+
 const productService = require ('../models/productService');
 
 
@@ -8,14 +9,11 @@ let productsControllers = {
         res.render('products/detail', {productId});
     },
 
-    detailEdit: function (req, res) {
-        res.redirect('/products/edit')
+    detailDelete: function (req, res) {
+        let productId = req.params.id;
+        let message = productService.delete(productId);
+        res.redirect('/products');
     },
-
-    detailAll: function (req, res) {
-        res.send('Producto agregado al carrito');
-    },
-
 
     cart: function (req, res) {
         res.render('products/cart');

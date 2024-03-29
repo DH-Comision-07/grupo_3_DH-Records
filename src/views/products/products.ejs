@@ -19,7 +19,7 @@
             <% products.forEach(product=> { %>
                 
         <article class="productos__articulo main__articulo">
-            <a href="/products/product-detail/<%= product.id %>">
+            <a href="/products/detail/<%= product.id %>">
                 <img src="/imagenes/<%=product.imagen%>" class="productos__img">
                     <div class="productos__info">
                         <p class="productos__descripcion"> <%= product.autor %> </p>

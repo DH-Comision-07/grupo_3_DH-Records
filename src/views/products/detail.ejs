@@ -27,21 +27,18 @@
                     <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 <br>
                 <h4 class="titulo__precio">Price</h4>
-                    <p class="num__precio"><%= productId.preciomostrador %></p>
-                    <p class="agregar__carrito">
-                    <div class="centrar-texto">
-                        <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                    </p> 
-                    <div class="centrar-texto">
-                         <a href="/products/edit/<%= productId.id %>">Edit Product</a>
-                    </div>
-                    <form action="./products.ejs" method="POST">
-                    <br>
-                        <div class="centrar-texto">
-                            <input type="submit" value="Delete Product">
-                        </div>
-                    </form>       
+                <p class="num__precio"><%= productId.preciomostrador %></p>
+                <p class="agregar__carrito">
+                <div class="centrar-texto">
+                    <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                </p> 
+                <div class="centrar-texto">
+                    <a href="/products/edit/<%= productId.id %>">Edit Product</a>
+                </div>
+                <form method="POST" action="/products/detail/<%= productId.id %>?_method=DELETE">
+                    <button type="submit">Delete product</button>
+                </form>
                 </div> 
         </section>
 
