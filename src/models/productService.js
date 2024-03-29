@@ -8,7 +8,7 @@ let productService = {
     products: products,
 
     getAll: function() {
-    return this.products;
+        return this.products;
     },
 
     getBy: function(id) {
@@ -24,7 +24,19 @@ let productService = {
               return true;
         }  else {
             return false;
-        }                                
+        }                                 
+    },
+    
+    save: function(product) {
+        let lastId = 0;
+        for (let existingProduct of this.products) {
+            if (existingProduct.id > lastId) {
+                lastId = existingProduct.id;
+            }
+        }
+        product.id = lastId + 1;
+        
+        this.products.push(product);
     }
 }
 
