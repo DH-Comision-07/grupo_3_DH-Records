@@ -23,7 +23,8 @@ let productsControllers = {
     },
 
     edit: function (req, res) {
-        res.render('products/edit');
+        let productId = (productService.getBy(req.params.id));
+        res.render('products/edit', {productId});
     },
 
     getAll: function (req, res) {
