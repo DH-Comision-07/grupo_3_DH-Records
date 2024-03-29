@@ -6,6 +6,7 @@
     --BLANCO: #FFF;
     --NEGRO: #000;
     --GRIS-OSCURO: #282828;
+    --NEGRO-Claro: rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -16,31 +17,37 @@
 }
 
 body{
-    Background-color: var(--GRIS-OSCURO);
     max-width: 1200px;
     margin: auto;
-    color: var(--GRIS)
+
 }
 
 main{
-    width: 100%;  
+    width: 100%; 
 }
 
 .titulo_principal{
-    font-size: 27px;
+    font-size: 28px;
+    color: var(--NEGRO);
+    text-decoration: underline;
+    text-underline-offset: 3px;  
+    margin-top: 20px;
 }
 
 p{
-    color: var(--GRIS);
+    color: var(--NEGRO);
     padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    margin: auto;
+    padding-bottom: 5px;  
 }
 
 h4{
     font-size: 20px;
+    text-align: left;
+    color: var(--NEGRO);
+    text-decoration: underline;
+    text-underline-offset: 3px;  /* bajar subrallado */
 }
+
 
 .producto{
     display: flex; 
@@ -54,68 +61,67 @@ h4{
 .vinilo{
     display: flex; 
     flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  
 }
+
+.vinilo p{
+    text-align: left;
+    font-size: 16px;
+}
+
+.producto .num__precio{
+    font-size: 22px;
+    font-weight: bold;
+}
+
 
 .vinilo__img1 img{
-    width: 70%;
+    width: 100%;
     height: auto;
-}
-
-.canciones{
     display: flex; 
-    flex-direction: column;
-    padding-left: 15px;
-    padding-right: 13px;
+    justify-content: flex-start;
+    transition: transform 2s;
+ 
 }
 
-.canciones li{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    margin: auto;
+.vinilo__img1 img:hover{
+    transform: scale(0.8) rotate(360deg);
 }
 
-.precio{
-    display: flex; 
-    flex-direction: column;
-}
 
-.precio p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    margin: auto;
-}
-
-.num__precio{
-    font-size: 30px;
-}
 
 .fa-star{
-    color: var(--FUCSIA-CLARO);
+    color: #FFBA18;
 }
 
 .fa-cart-shopping{
     color: var(--BLANCO);
-}
-
-.agregar__carrito{
-    background-color: var(--FUCSIA);
-    color: var(--BLANCO);
     text-align: center;
-    padding: 0.7rem;
 }
 
-.boton__editar__p{
-    color: var(--BLANCO);
-    background-color: var(--VIOLETA-OSCURO);
-    text-align: center;
-    padding: 0.7rem;
+.centrar-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 25px; 
+    margin-top: 0;
+    width: 100%;
 }
 
-.boton__editar a{
+.centrar-texto a{
     color: var(--BLANCO);
+    font-size: 16px;
+    transition: .8s;
 }
+
+.centrar-texto a:hover{
+    font-size: 17px;
+}
+
+
 
 .sugerencias{
     display: flex; 
@@ -125,11 +131,15 @@ h4{
     padding: 5px;
     flex-wrap: wrap;
     margin: auto;
+    
 }
 
 .sugerencias__titulo{
     align-items: center;
     width: 80vw;
+    color: var(--NEGRO);
+    text-decoration: underline;
+    text-underline-offset: 3px; 
 }
 
 .sugerencias__titulo h3{
@@ -139,40 +149,44 @@ h4{
 .vinilo__img2 img{
     width: 35%;
     height: auto;
+    transition: 2s;
 }
 
-@media (768px <= width <= 1024px){
+.vinilo__img2:hover{
+    transform: scale(0.8) rotate(360deg);
+}
+
+
+
+@media (768px <= width <= 1024px){    /* Tablet */
     .producto{
         justify-content: space-around;
     }
-    .canciones{
-        transform: translate(-10px);
-    }
+  
     .vinilo__img2{
         flex-wrap: nowrap;
         justify-content: space-around;
+        transition: 2s;
+    }
+    .vinilo__img2:hover{
+        transform: scale(0.8) rotate(360deg);
     }
 } 
 
-@media(min-width:1025px){
+
+@media(min-width:1025px){     /* Desktop */
     .titulo_principal{
         font-size: 30px;
     }
     .vinilo__img1{
         width: 45%;
+        transform: translate(-100px, -10px);
     }
     .vinilo{
         width: 40%;
-        transform: translate(0px, -90px);
+        
     }
-    .precio{
-        width: 40%;
-        transform: translate(80px, -130px);
-    }
-    .canciones{
-        width: 30%;
-        transform: translate(-70px);
-    }    
+ 
     .sugerencias{
         width: 90%;
     }
@@ -183,5 +197,13 @@ h4{
         flex-wrap: nowrap;
         width: 30%;
         padding: 1px;
+        transition: 2s;
+    }
+
+    .vinilo__img2:hover{
+        transform: scale(0.8) rotate(360deg);
     }
 }
+
+
+

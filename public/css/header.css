@@ -23,7 +23,12 @@ a {
 
 .header-contenedor-general-tarjeta {
     padding: 0 1rem;
-    background-color: #F9F9F9;
+    background-color: rgba(255, 255, 255, 0);    
+    box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
 }
 
 .header__navbar {
@@ -62,7 +67,7 @@ a {
 }
 
 .user__singUp {
-    color: #FFF;
+    color: var(--BLANCO);
     background-color: rgba(0, 0, 0, 0.8);
     padding: 0.5rem 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, .6);
@@ -103,7 +108,7 @@ a {
     border: 2px solid transparent;
     border-radius: 30px;
     outline: none;
-    background-color: #f3f3f4;
+    background-color: var(--BLANCO);
     color: #0d0c22;
     transition: .3s;
 }
@@ -178,5 +183,18 @@ a {
         max-width: 190px;
     }
 
+    a {
+        font-size: 1.3rem;
+     
+    }
+
+    .user__logIn {
+        font-size: 1.3rem;
+    }
+
+    .user__singUp {
+        font-size: 1.3rem;
+        
+    }
     
 }

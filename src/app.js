@@ -12,6 +12,10 @@ app.set('views', path.join(__dirname,"/views"));
 
 app.use(express.static(publicPath));
 
+app.use(express.urlencoded({ extended: false }));  //Post
+app.use(express.json());                       
+const methodOverride = require('method-override'); //PUT/Delete
+app.use(methodOverride('_method')); 
 
 const PORT = 3030; 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
@@ -20,3 +24,4 @@ app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 const homeRoutes= require('./routes/home.routes');
 app.use('/', homeRoutes);
 
+ 
