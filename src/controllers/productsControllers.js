@@ -12,9 +12,14 @@ let productsControllers = {
         res.render('products/cart');
     },
 
-
     create: function (req, res) {
         res.render('products/create');
+    },
+
+    store: function (req, res) {
+        productService.save(req.body);
+        res.send(req.body);
+        //res.redirect('/');
     },
 
     edit: function (req, res) {

@@ -7,10 +7,21 @@ let productService = {
     products: products,
 
     getAll: function() {
-    return this.products;
+        return this.products;
     },
     getBy: function(id) {
-    return this.products.find(product => product.id == id);
+        return this.products.find(product => product.id == id);
+    },
+    save: function(product) {
+        let lastId = 0;
+        for (let existingProduct of this.products) {
+            if (existingProduct.id > lastId) {
+                lastId = existingProduct.id;
+            }
+        }
+        product.id = lastId + 1;
+        
+        this.products.push(product);
     }
 }
 
