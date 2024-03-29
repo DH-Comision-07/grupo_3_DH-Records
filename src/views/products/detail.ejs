@@ -36,7 +36,7 @@
                 <div class="centrar-texto">
                     <a href="/products/edit/<%= productId.id %>">Edit Product</a>
                 </div>
-                <form method="POST" action="/products/detail/<%= productId.id %>?_method=DELETE">
+                <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
                     <button type="submit">Delete product</button>
                 </form>
                 </div> 

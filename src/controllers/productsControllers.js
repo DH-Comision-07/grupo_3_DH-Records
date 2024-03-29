@@ -10,9 +10,10 @@ let productsControllers = {
     },
 
     detailDelete: function (req, res) {
+        console.log("estoy llegando al controler")
         let productId = req.params.id;
         let message = productService.delete(productId);
-        res.redirect('/products');
+        res.send(message);
     },
 
     cart: function (req, res) {
