@@ -1,27 +1,44 @@
+
 const productService = require ('../models/productService');
 
 
 let productsControllers = {
 
-    detail: function (req, res) {
+    detail: function(req, res) {
         let productId = (productService.getBy(req.params.id));
         res.render('products/detail', {productId});
     },
 
-    cart: function (req, res) {
+    detailDelete: function(req, res) {
+        let productId = req.params.id;
+        let productDeleted = productService.delete(productId);
+        if (productDeleted) {
+            res.redirect('/products');
+        } else {
+            returnres.status(404).send('Product not found');
+        }    
+    },
+
+    cart: function(req, res) {
         res.render('products/cart');
     },
 
-
-    create: function (req, res) {
+    create: function(req, res) {
         res.render('products/create');
     },
 
-    edit: function (req, res) {
-        res.render('products/edit');
+    store: function(req, res) {
+        productService.save(req.body);
+        res.send(req.body);
+        //res.redirect('/');
     },
 
-    getAll: function (req, res) {
+    edit: function(req, res) {
+        let productId = (productService.getBy(req.params.id));
+        res.render('products/edit', {productId});
+    },
+
+    getAll: function(req, res) {
         res.render('products/products', {products: productService.getAll()});
 
     }

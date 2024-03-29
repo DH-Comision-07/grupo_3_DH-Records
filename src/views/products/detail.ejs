@@ -12,35 +12,36 @@
 
     <%- include('../partials/header.ejs') %>
     
-    <main>
+    <main class="main">
         <h2 class="titulo_principal"> Product Detail </h2>
         <section class="producto">
-                <div class="vinilo__img1">
-                    <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
-                </div>
-                <div class="vinilo">
-                    <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
+            <div class="vinilo__img1">
+                <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
+            </div>
+            <div class="vinilo">
+                <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
                     <p>Group: <%= productId.autor %> </p>
                     <p>Year: <%=productId.año %> </p>
                     <p>Gender: <%=productId.categoria %> </p>
                     <p>Style: <%= productId.estilo %></p>
                     <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
+                <br>
+                <h4 class="titulo__precio">Price</h4>
+                <p class="num__precio"><%= productId.precioMostrador %></p>
+                <p class="agregar__carrito">
+                <div class="centrar-texto">
+                    <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="canciones">
-                    <h4 class="titulo__canciones">Songs</h4>
-                    <ol type="A">
-                        <li><%= productId.canciones %></li>
-                    </ol> 
+                </p> 
+                <div class="centrar-texto">
+                    <a href="/products/edit/<%= productId.id %>">Edit Product</a>
                 </div>
-                <div class="precio">
-                    <h4 class="titulo__precio">Price</h4>
-                    <p class="num__precio"><%= productId.preciomostrador %></p>
-                    <p class="agregar__carrito">
-                        <a href="/products/carrito">Add to cart <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-                    </p>
+                <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
+                    <button type="submit">Delete product</button>
+                </form>
                 </div> 
         </section>
+
         <section class="sugerencias">
             <div class="sugerencias__titulo">
                 <h3>Suggestions according to your search:</h3>
