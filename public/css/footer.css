@@ -1,49 +1,71 @@
+
 /*               Footer              */
+*{
+    box-sizing: border-box;
+}
 
 .footer{
+    display: flex;
+    flex-direction: column;
+   
     font-size: 12px;
-    background: linear-gradient(to right, #642829, #cc4b46); 
-    padding: 12px; /* con valor fijo en px o 10% */
-    box-shadow: 0 0 15px #3C0753;
+    background: linear-gradient(to right, #BCBFBD, #C1C1C1); 
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     text-align:left;
     color: #FFF;
-    font-size: 12px;
-    display: flex;
-    justify-content:space-between;
-    margin: 0 auto;
     max-width: 1200px;
+    width: 100%;
 }
+
+.top-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 .navbar-footer{
-    
-    margin: 0;
-    padding: 0;
-    width: 40%;
     display: flex;
-    justify-content: left;
-
-
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50%;
 }
-ul{
-    text-align: left;
-    margin: 10px 0px;
+
+.navbar-footer ul{
     padding: 0;
-
 }
+
 .navbar-footer li{
     list-style-type: none;
     margin-bottom: 5px;
-    }
-a{
-    text-decoration: none;
+}
+
+.link-footer a{
     color:#FFF;
+    margin: 0 0 0 10px;   
 }    
 
+
+
 .redes-sociales{
-    display:inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
-   
 }
+
+.tittle-footer{
+    width: 100%; 
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%; 
+}
+
 .redes-sociales h2{
     margin-top: 0;
 }
@@ -51,4 +73,34 @@ a{
 .redes-sociales i{
     font-size: 30px;
     margin: 5px 5px;
+}
+
+
+.footer-enlaces{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-enlaces-izq{
+    margin: 0 0 0 10px;   
+    padding: 0;
+    width: 50%;
+
+}
+
+.footer-enlaces-derecha{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%; 
+    gap: 20px;  
+    
+}
+
+.separator{
+    border-bottom: 1px solid #FFF;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
