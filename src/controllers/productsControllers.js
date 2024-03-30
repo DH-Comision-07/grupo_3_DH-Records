@@ -15,7 +15,7 @@ let productsControllers = {
         if (productDeleted) {
             res.redirect('/products');
         } else {
-            returnres.status(404).send('Product not found');
+            return res.status(404).send('Product not found');
         }    
     },
 
@@ -28,9 +28,12 @@ let productsControllers = {
     },
 
     store: function(req, res) {
-        productService.save(req.body);
-        res.send(req.body);
-        //res.redirect('/');
+        let productStored = productService.store(req.body);
+        if (productStored) {
+            res.redirect('/products');
+        } else {
+            return res.status(404).send('Product not Created');
+        } 
     },
 
     edit: function(req, res) {

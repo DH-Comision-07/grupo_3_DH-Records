@@ -12,7 +12,7 @@ let productService = {
     },
 
     getBy: function(id) {
-    return this.products.find(product => product.id == id);
+        return this.products.find(product => product.id == id);
     },
 
     delete: function (id) {
@@ -21,13 +21,15 @@ let productService = {
           
         if (this.products.length < initialLength) {
            fs.writeFileSync(path.join(__dirname, 'products.json'), JSON.stringify(this.products)) ;
-              return true;
-        }  else {
+            return true;
+        } else {
             return false;
         }                                 
     },
     
-    save: function(product) {
+    store: function(product) {
+        const initialLength = this.products.length;
+       
         let lastId = 0;
         for (let existingProduct of this.products) {
             if (existingProduct.id > lastId) {
@@ -37,6 +39,12 @@ let productService = {
         product.id = lastId + 1;
         
         this.products.push(product);
+        if (this.products.length > initialLength) {
+            fs.writeFileSync(path.join(__dirname, 'products.json'), JSON.stringify(this.products)) ;
+             return true;
+         } else {
+             return false;
+         }
     }
 }
 
