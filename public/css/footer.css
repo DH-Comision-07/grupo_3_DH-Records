@@ -7,7 +7,6 @@
 .footer{
     display: flex;
     flex-direction: column;
-   
     font-size: 12px;
     background: linear-gradient(to right, #BCBFBD, #C1C1C1); 
     padding: 20px;
@@ -16,6 +15,8 @@
     color: #FFF;
     max-width: 1200px;
     width: 100%;
+    /* border-top-right-radius: 100px;  */
+
 }
 
 .top-footer {
@@ -44,7 +45,7 @@
 
 .link-footer a{
     color:#FFF;
-    margin: 0 0 0 10px;   
+    margin: 0 0 0 10px;  
 }    
 
 
@@ -64,6 +65,19 @@
     display: flex;
     justify-content: flex-start;
     width: 100%; 
+    cursor: pointer;
+}
+
+.fa-square-facebook:hover{
+    transform: translateY(-10px);
+}
+
+.fa-x-twitter:hover{
+    transform: translateY(-10px);
+}
+
+.fa-whatsapp:hover{
+    transform: translateY(-10px);
 }
 
 .redes-sociales h2{
@@ -83,11 +97,16 @@
     align-items: center;
 }
 
+.footer-enlaces p{
+    color: #FFF;
+}
+
+
+
 .footer-enlaces-izq{
     margin: 0 0 0 10px;   
     padding: 0;
     width: 50%;
-
 }
 
 .footer-enlaces-derecha{
