@@ -32,7 +32,22 @@ let productsControllers = {
         if (productStored) {
             res.redirect('/products');
         } else {
-            return res.status(404).send('Product not Created');
+            res.status(404).send('Product not Created');
+        } 
+    },
+
+    store: function(req, res) {
+        // datos del formulario y el archivo de imagen
+        const productData = req.body;
+        const imagen = req.files.imagen[0];
+    
+        // Llamada al service
+        let productStored = productService.store(productData, imagen);
+    
+        if (productStored) {
+            res.redirect('/products');
+        } else {
+            res.status(404).send('Product not Created');
         } 
     },
 

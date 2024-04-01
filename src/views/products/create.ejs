@@ -15,7 +15,7 @@
 
     <section class="contenedor-formulario">
         
-        <form  action="/products/" method="POST">
+        <form  action="/products/" method="POST" enctype="multipart/form-data">
             
             <h1 class="titulo-formulario">Create a new Product</h1>
             
@@ -59,7 +59,7 @@
 
             <div class= "contenedor-casilla">
                 <label class="label-individal">Seleccione imagen de portada del disco </label>
-                <input class="casilla-individal" type="file" name="imagen" id="imagen" accept="image/jpeg, image/png">
+                <input class="casilla-individal" type="file" name="imagen" id="imagen" accept="jpeg, png">
             </div>  
 
             <div class= "contenedor-casilla">
