@@ -1,15 +1,31 @@
 const userService = require('../models/usersService');
+const { validationResult } = require('express-validator');
 
 let usersControllers = {
 
     register: function (req, res) {
-        res.render('users/register');
+        return res.render('users/register',{ errores: [], oldData: {} });
+    },
+
+    processRegister: function (req, res) {
+        const errors = validationResult(req);
+        
+        if (!errors.isEmpty()) {
+            res.render('users/register', { errores: errors.mapped(), oldData: req.body });
+        } else {
+             return res.redirect('/users/login');
+        };
     },
 
     login: function (req, res) {
         res.render('users/login');
     },
+
+    processLogin: function (req, res) {
+       const errores=  validationResult(req);
+    },
     
+
     detail: function (req, res) {
         let productId = (usersService.getBy(req.params.id));
         res.render('users/detail', {userId});
@@ -19,6 +35,6 @@ let usersControllers = {
         res.render('users', {users: userService.getAll()});
 
     }
-}
+};
 
 module.exports = usersControllers;

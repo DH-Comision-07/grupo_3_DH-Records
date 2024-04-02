@@ -24,7 +24,7 @@ body{
     color: white;
     border-radius: 10px;
     padding: 30px 40px;
-    margin-top: 150px;
+    margin-top: 70px;
 }
 
 .titulo-formulario{
@@ -37,7 +37,7 @@ body{
     position: relative;
     width: 100%;
     height: 50px;   
-    margin: 30px 0;
+    margin: 40px 0;
 }
 
 .casilla-individal{
@@ -64,6 +64,7 @@ body{
     top: 50%;
     transform: translateY(-50%); /* moverá hacia arriba en un 50% de su propia altura, es una técnica común para centrar verticalmente un elemento.*/
     font-size:20px;
+
 }
 
 .recuperar-contraseña{
@@ -93,6 +94,7 @@ body{
     cursor: pointer;
     font-size: 16px;
     color: 	 #404040;
+    margin-top: 10px;
     font-weight: 600;
     transition: .8s;
 }
@@ -123,7 +125,7 @@ body{
     display: flex;
     justify-self: flex-start;
     font-size: 15px;
-    margin: -10px 0px 15px;
+    margin: 10px 10px 15px;
 }
 
 
@@ -132,6 +134,11 @@ body{
     margin-right: 3px;
 }
 
+.error{
+    margin-left: 15px;
+    margin-top: 5px;
+   color:#FF0000; 
+}
 
 
 @media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
