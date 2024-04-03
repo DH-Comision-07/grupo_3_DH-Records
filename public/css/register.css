@@ -19,12 +19,12 @@ body{
     background: transparent;
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
-    backdrop-filter: blur(25px);  /*  efecto para que desenfoque fondo */
+    backdrop-filter: blur(35px);  /*  efecto para que desenfoque fondo */
     width: 30%;
     color: white;
     border-radius: 10px;
     padding: 30px 40px;
-    margin-top: 150px;
+    margin-top: 70px;
 }
 
 .titulo-formulario{
@@ -64,6 +64,7 @@ body{
     top: 50%;
     transform: translateY(-50%); /* moverá hacia arriba en un 50% de su propia altura, es una técnica común para centrar verticalmente un elemento.*/
     font-size:20px;
+
 }
 
 .recuperar-contraseña{
@@ -93,6 +94,7 @@ body{
     cursor: pointer;
     font-size: 16px;
     color: 	 #404040;
+    margin-top: 10px;
     font-weight: 600;
     transition: .8s;
 }
@@ -123,7 +125,7 @@ body{
     display: flex;
     justify-self: flex-start;
     font-size: 15px;
-    margin: -10px 0px 15px;
+    margin: 10px 10px 5px;
 }
 
 
@@ -132,6 +134,11 @@ body{
     margin-right: 3px;
 }
 
+.error{
+    margin-left: 15px;
+    margin-top: 2px;
+   color:#E54D2E; 
+}
 
 
 @media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
@@ -151,9 +158,7 @@ body{
     .titulo-formulario{
         font-size: 28px;
     }
-    .contenedor-casilla{
-        margin: 20px 0;  
-    }
+ 
     .casilla-individal{
         font-size: 14px;
         padding: 15px 35px 15px 15px;

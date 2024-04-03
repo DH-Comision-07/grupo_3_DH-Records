@@ -11,16 +11,26 @@
 
 <body>
   <section class="contenedor-formulario">
-        <form action="">
+        <form action="/users/login" method="post">
             <h1 class="titulo-formulario">DH-Records</h1>
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="usuario" id="usuario" placeholder="Username or email address" required>
+                <input class="casilla-individal" type="text" name="usuario" id="usuario" placeholder="Username or email address" value="<%= oldData ? oldData.usuario : '' %>" >
                 <i class='bx bxs-user'></i>
+                <% if( locals.errores && errores.usuario) { %>
+                    <div class="error">
+                        <%= errores.usuario.msg %>
+                    </div>
+                <% } %>
             </div>  
 
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="password" name="contraseña" id="contraseña" placeholder="Password" required>
+                <input class="casilla-individal" type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= oldData ? oldData.contraseña : '' %>">
                 <i class='bx bxs-lock-alt'></i>
+                <% if( locals.errores && errores.contraseña) { %>
+                    <div class="error">
+                        <%= errores.contraseña.msg %>
+                    </div>
+                <% } %>
             </div> 
 
             <div class= "recuperar-contraseña">
