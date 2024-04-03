@@ -15,7 +15,7 @@
 
     <section class="contenedor-formulario">
         
-        <form  action="/products/" method="POST">
+        <form  action="/products/" method="POST" enctype="multipart/form-data">
             
             <h1 class="titulo-formulario">Create a new Product</h1>
             
@@ -34,7 +34,7 @@
             </div>
 
             <div class= "contenedor-casilla">
-                <textarea class="casilla-individal" type="text" name="descripcion" id="descripcion" placeholder="Descripción" required></textarea>
+                <textarea class="casilla-individal" type="text" name="descripcion" id="descripcion" placeholder="Descripción" ></textarea>
             </div> 
 
             <div class= "contenedor-casilla">
@@ -42,7 +42,7 @@
             </div> 
             
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="discografica" id="discografica" placeholder="Discografica" required>
+                <input class="casilla-individal" type="text" name="discografica" id="discografica" placeholder="Discografica" >
             </div>  
 
             <div class= "contenedor-casilla">
@@ -50,7 +50,7 @@
             </div>  
 
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="number" name="precioMostrador" id="precioVenta" placeholder="Precio de Venta" required>
+                <input class="casilla-individal" type="number" name="precioMostrador" id="precioVenta" placeholder="Precio de Venta">
             </div>  
 
             <div class= "contenedor-casilla">
@@ -59,11 +59,11 @@
 
             <div class= "contenedor-casilla">
                 <label class="label-individal">Seleccione imagen de portada del disco </label>
-                <input class="casilla-individal" type="file" name="imagen" id="imagen" accept="image/jpeg, image/png" required>
+                <input class="casilla-individal" type="file" name="imagen" id="imagen" accept="jpeg, png">
             </div>  
 
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="number" name="anio" id="anio" placeholder="Año" required>
+                <input class="casilla-individal" type="number" name="anio" id="anio" placeholder="Año">
             </div> 
 
             <div class= "contenedor-casilla">
