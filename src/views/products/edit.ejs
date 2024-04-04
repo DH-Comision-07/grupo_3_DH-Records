@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/edit-product.css">
 </head>
 <body>
-    <form action="/create-product" method="POST">
+    <form action="/editar-producto/<%= producto.id %>" method="PUT"></form>
         <h1>Edit Product </h1>
         <label for="name">Product name::</label>
         <input type="text" id="name" name="name" required>
