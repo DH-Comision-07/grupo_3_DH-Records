@@ -28,15 +28,6 @@ let productsControllers = {
     },
 
     store: function(req, res) {
-        let productStored = productService.store(req.body);
-        if (productStored) {
-            res.redirect('/products');
-        } else {
-            res.status(404).send('Product not Created');
-        } 
-    },
-
-    store: function(req, res) {
         // datos del formulario y el archivo de imagen
         const productData = req.body;
         const imagen = req.files.imagen[0];
