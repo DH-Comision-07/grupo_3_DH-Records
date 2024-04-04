@@ -51,7 +51,7 @@ let productService = {
             estilo: productData.estilo,
             canciones: productData.canciones,
             // Almacena la ruta de la imagen ???
-            imagen: imagen ? path.relative(__dirname, imagen.path) : null
+            imagen: imagen ? imagen.filename : null
         };
         
         this.products.push(newProduct);
