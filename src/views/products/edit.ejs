@@ -38,4 +38,9 @@
         
         <button type="submit">Save Changes</button>
     </form>
+
+    <form action="/eliminar-producto/<%= producto.id %>" method="POST">
+        <button type="submit" onclick="return confirm('¿Estás seguro que quieres eliminar este producto?')">Eliminar Producto</button>
+    </form>
+
 </body>
