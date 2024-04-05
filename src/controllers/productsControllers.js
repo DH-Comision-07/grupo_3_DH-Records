@@ -51,7 +51,6 @@ let productsControllers = {
         res.render('products/products', {products: productService.getAll()});
 
     }
-
 }
 
 module.exports = productsControllers;
