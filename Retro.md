@@ -39,3 +39,22 @@
 ## Stop Doing
 - Dejar de trabajar de manera aislada y empezar a integrar mas las tareas con las de los otros integrantes del grupo.
 - Asegurarse a la hora de hacer un PR que el sitio este funcionando de manera correcta.
+
+-------------------------------------------
+# Retrospectiva del Sprint 3
+
+## Start Doing
+- Mejorar las comunicaciones generales del grupo por Whatsapp y retomar las reuniones semanales.
+
+## More of
+- Seguir generando las subtareas en el Trello para una mejor organización.
+- Seguir ayudandonos a través de los profes.
+
+## Keep Doing
+- Seguir organizando las tareas en el Trello y su organización respectiva según el miembro del equipo.
+
+## Less Of
+- Tratar de no dejar las tareas para ultimo momento.
+
+## Stop Doing
+- No trabajar sin comunicarme con el equipo.
