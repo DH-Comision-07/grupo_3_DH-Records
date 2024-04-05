@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHRecords</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/css/register.css">
-</head>
-<!--cosas por defecto-->
-
-
-
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
-    <main>
+  <section class="contenedor-formulario">
 
-        <!-- este boton no es responsive, es (en teoria) lo unico que falta -->
-        <div class="boton-volver">
-            <button id="boton-volver"><a href="">volver</a></button>
-        </div>       
-            <section class="el-section">
-                
-                    <h2 class="h2-crear-cuenta">crear cuenta</h2>
-                    
-                 <!-- varios div para mas flexibilidad a la hora de acomodar el contenido -->
-                    <div class="div-imagen-de-perfil">
-                        
-                        <!--foto de perfil, imagen de referencia sacada de google-->
-                        <img src="https://picsum.photos/id/237/200/300" alt="" class="imagen-de-perfil">
-                    </div>
-
-
-
-                    <!--  todos los input tienen la clase "input-individual" -->
-                   <div class="inputs" >
-
-                    <section>
-                        <input type="text" class="input-general" name="nombre" placeholder="usuario">
-                    </section>
-                    <section>
-                        <input type="email" class="input-general" name="email" placeholder="Correo electrónico">
-                    </section>
-                    <section>
-                        <input type="text" class="input-general" name="contraseña" placeholder="contraseña">
-                    </section>
-                    <section>
-                        <!-- los button cuentan con un <a> link aunque no se si es util pero ahí esta -->
-                        <button id="boton-confirnar" class="boton-general" onclick="alert('tu cuenta a sido creada')"><a href="">confirmar</a></button>
-                    </section>
-
-                        <p>¿ya tienes cuenta?<a href=""> conectate</a></p>
-                    </div>
-
-
-            </section>
-    </main>
     
-        <%- include('../partials/footer.ejs') %>
-    
+        <form action="/users/register" method="post">
+            <h1 class="titulo-formulario">DH-Records</h1>
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= oldData ? oldData.nombreUsuario : '' %>">
+                <i class='bx bxs-user'></i>
+                <% if( locals.errores && errores.nombreUsuario) { %>
+                    <div class="error">
+                        <%= errores.nombreUsuario.msg %>
+                    </div>
+                <% } %>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="email" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>">                
+                <i class='bx bxs-envelope'></i>
+                <% if( locals.errores && errores.email) { %>
+                    <div class="error">
+                        <%= errores.email.msg %>
+                    </div>
+                <% } %>
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= oldData ? oldData.contraseña : '' %>">
+                <i class='bx bxs-lock-alt'></i>
+                <% if( locals.errores && errores.contraseña) { %>
+                    <div class="error">
+                        <%= errores.contraseña.msg %>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="terminosCondiciones-checkbox">
+                <label>
+                    <input type="checkbox" name="terminosCondiciones">
+                    I accept the terms and conditions
+                </label>
+            </div>
+
+            <button type="submit" class="boton-registro">Sing Up</button>
+
+            <div class= "link-registro">
+                <p>Have an account? <a href="/users/login"> Log in</a> </p>
+            </div> 
+             
+             
+        </form>
+    </section>
 </body>
-</html>
+
+      

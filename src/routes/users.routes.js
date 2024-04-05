@@ -1,15 +1,22 @@
 const express = require('express');
 const routes = express.Router();
-const path = require ('path');
 
 const usersControllers = require('../controllers/usersControllers');
 
+const validacionesRegister = require('../middlewares/registerMid');
+const validacionesLogin = require('../middlewares/loginMid');
+
 
 routes.get("/register", usersControllers.register);
+routes.post("/register", validacionesRegister, usersControllers.processRegister);
 
-routes.get("/login", usersControllers.login);   
+routes.get("/login", usersControllers.login); 
+routes.post("/login", validacionesLogin, usersControllers.processLogin);  
 
-routes.get("/perfil-usuario", usersControllers.perfilUsuario);
+routes.get("/detail/:id", usersControllers.detail);
+
+routes.get("/", usersControllers.getAll);
+
 
 module.exports = routes;
 

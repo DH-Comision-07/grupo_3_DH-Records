@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head-1.ejs') %>   
+<!-- aca se inserta la hoja de estilo correspondiente a la vista -->
+<link href="/css/product-detail.css" rel="stylesheet">
+<%- include('../partials/head-2.ejs') %>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+    
+    <main class="main">
+        <h2 class="titulo_principal"> Product Detail </h2>
+        <section class="producto">
+            <div class="vinilo__img1">
+                <img src="/imagenes/Vinilo1.png" alt="Vinilo1">
+            </div>
+            <div class="vinilo">
+                <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
+                    <p>Group: <%= productId.autor %> </p>
+                    <p>Year: <%=productId.año %> </p>
+                    <p>Gender: <%=productId.categoria %> </p>
+                    <p>Style: <%= productId.estilo %></p>
+                    <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
+                <br>
+                <h4 class="titulo__precio">Price</h4>
+                <p class="num__precio"><%= productId.precioMostrador %></p>
+                <p class="agregar__carrito">
+                <div class="centrar-texto">
+                    <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                </p> 
+                <div class="centrar-texto">
+                    <a href="/products/edit/<%= productId.id %>">Edit Product</a>
+                </div>
+                <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
+                    <button type="submit">Delete product</button>
+                </form>
+                </div> 
+        </section>
+
+        <section class="sugerencias">
+            <div class="sugerencias__titulo">
+                <h3>Suggestions according to your search:</h3>
+            </div>
+            <br>
+            <div class="vinilo__img2">
+                <img src="/imagenes/Vinilo2.png" alt="Vinilo2">
+            </div>
+            <div class="vinilo__img2">
+                <img src="/imagenes/Vinilo3.png" alt="Vinilo3">
+            </div>
+            <div class="vinilo__img2">
+                <img src="/imagenes/Vinilo4.png" alt="Vinilo4">
+            </div>
+         </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+    
+</html>

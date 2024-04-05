@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head-1.ejs') %> 
+    <link href="\css\new-product.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <%- include('../partials/head-2.ejs') %>
+
+    <title>Seccion  productos en carrito</title>
+</head>
+
+<body>
+
+    <%- include('../partials/header.ejs') %>
+
+    <section class="contenedor-formulario">
+        
+        <form  action="/products/" method="POST" enctype="multipart/form-data">
+            
+            <h1 class="titulo-formulario">Create a new Product</h1>
+            
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="titulo" id="nombreDisco" placeholder="Nombre del Disco" required>
+            </div>  
+            
+            <div class="contenedor-casilla">
+                <select class="casilla-individal" name="generoDisco" id="generoDisco" required>
+                    <option value="" disabled selected hidden>Género</option>
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="jazz">Jazz</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+            </div>
+
+            <div class= "contenedor-casilla">
+                <textarea class="casilla-individal" type="text" name="descripcion" id="descripcion" placeholder="Descripción" ></textarea>
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="autor" id="autor" placeholder="Autor" required>
+            </div> 
+            
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="discografica" id="discografica" placeholder="Discografica" >
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="precioCosto" id="precioCosto" placeholder="Precio de Costo, ej: 199.99" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="precioMostrador" id="precioVenta" placeholder="Precio de Venta">
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="stock" id="stock" placeholder="Cantidad en Stock" required>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <label class="label-individal">Seleccione imagen de portada del disco </label>
+                <input class="casilla-individal" type="file" name="imagen" id="imagen" accept="jpeg, png">
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="number" name="anio" id="anio" placeholder="Año">
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="estilo" id="estilo" placeholder="Estilo">
+            </div> 
+
+            <div class= "contenedor-casilla">
+                <textarea class="casilla-individal" type="text" name="canciones" id="canciones" placeholder="Lista de canciones (separadas por ';')"></textarea>
+            </div> 
+                
+            <button type="submit" class="boton-registro">Crear Producto</button>
+        </form>
+    </section>
+  
+
+</body>
+</html>

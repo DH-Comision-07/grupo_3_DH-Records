@@ -1,195 +1,41 @@
 
-/* COLORES */
-:root {
-    --FUCSIA: #720455;
-    --VIOLETA-OSCURO: #3C0753;
-    --GRIS:  #F5F5F5;
-    --BLANCO: #FFF;
-    --NEGRO: rgba(0, 0, 0, 0.6);
-    --GRIS-OSCURO: #282828;
-}
-
-
-* {
-    box-sizing: border-box;
-}
-
-.contenedor-general-home {
-    margin: 0 auto;
-    max-width: 1200px;
-    background: linear-gradient(to right, #858986, #b3b2b8); 
-}
-
-/* Hamburguesa animacion */
-#checkbox {
-    display: none;
-  }
-
-
-
-/*      Header.css : falta ver el error que salta cuando sacamos los elementos de esta Media Query, ver que dejamos   */
-.contenedor-general-tarjeta {
-    background: linear-gradient(to right, #3c3c38, #be3431); 
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border-radius: 6px; /* con valor fijo en px o 5% */ 
-    box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
-    text-align: center;
-    color: var(--BLANCO);
-    font-size: 12px;
-}
-
-.input-general {
-    padding: 12px; /* con valor fijo en px o 10% */ 
-    border: 1px solid var(--GRIS);
-    border-radius: 12px;
-    font-size: 12px;
-}
-
-.boton-general {
-    background-color: var(--NEGRO);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--BLANCO);
-    border-radius: 12px;
-    font-size: 12px;
-    padding: 10px;
-    margin: 5px;
-}
-
-
-
-.header {
-    display: flex;
-    border-radius: 0;
-} 
-
-.header__contenedor-img-logo {
-    border-radius: 20px; 
-    padding: 10px;
-}
-
-.header__img-logo {
-    width: 80px;
-    height: auto;
-    margin: 0px;
-    border-radius: 10px;
-}
-
-.header__navbar {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: start;
-    width: 100%;
-    border-radius: 15px;
-    
-
-}
-
-.header__barra-superior {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.barra-superior__sec-buscar-productos {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.sec-buscar-productos__input {
-    border-style: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    width: 80%;
-    padding: 5px;
-}
-
-.top-bar__sec-buscar-productos__btn-buscar {
-    background-color: var(--BLANCO);
-    border-style: none;
-    border-left: 1px solid var(--NEGRO);
-    color: var(--NEGRO);
-    padding: 2px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 20%
-}
-
-.barra-superior__sec-login {
-    display: none;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-
-.header__burger-menu {
-    background-color: var(--NEGRO);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--BLANCO);
-    border-radius: 12px;
-    font-size: 12px;
-    padding: 10px;
-    margin: 5px;
-}
-
-.header__sec-lista-opciones {
-    list-style-type: none;
-    padding: 0px;
-    display: none;
-    justify-content: start;
-    margin: 0px;
-}
-
-.header__sec-lista-opciones__link {
-    text-decoration: none;
-    color: var(--BLANCO);
-}
-
-main{
+/* ------------------------------------- Main ------------------------------------- */
+.main{
     max-width: 1200px;
     margin: auto;
-    background-color: var(--GRIS-OSCURO);
+    background-color: #B8BCBD;
 }
-
-/* banner-promociones */
-
-.banner__img{
-    width: 0px;
-    flex-grow: 1; 
-    object-fit: cover; /* para que no se deforme la foto y ocupe en su lugar todo el espacio */
-    opacity: .8;
-    transition: .7s ;
-}
-
-
-.banner__img:hover{
-    cursor: pointer;
-    width: 100%;
-    opacity: 1;
-    filter: contrast(120%);
-}
-
-/* productos-destacados */
-
-main article {
+.main__articulo {
     margin-bottom: 10px;
-  
 }
 
 
-.productos__articulo{
+/* ------------------------------------- Banner Promociones ------------------------------------- */
+
+
+
+
+
+/* ------------------------------------- Productos destacados ------------------------------------- */
+.productos__seccion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+}
+
+.productos__articulo {
+    background: linear-gradient(to right, #63635E, #8D8D86); 
+    width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
+    margin: 0 auto 20px auto; 
+    padding: 15px; /* con valor fijo en px o 10% */
+    border-radius: 6px; /* con valor fijo en px o 5% */
+    box-shadow: 0 0 15px #5C271F;
+    color: var(--NEGRO);
+    cursor: pointer;
    
-    background: linear-gradient(to right, #3c3c38, #ff614d);
-       
-} 
+}
+
+
 
 .productos__descripcion{
     font-size: 18px;
@@ -202,7 +48,6 @@ main article {
     color: var(--BLANCO)
 }
 
-
 .productos__img {
     width: 100%;
     margin: auto;
@@ -213,8 +58,7 @@ main article {
     transform: scale(0.8) rotate(360deg);
 }
 
-
-  .productos__section-boton {
+.productos__section-boton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,95 +71,12 @@ main article {
     border-radius: 5px;
 }
 
-
-/*               Footer              */
-
-.footer{
-    font-size: 12px;
-    background: linear-gradient(to right, #642829, #cc4b46); 
-    padding: 12px; /* con valor fijo en px o 10% */
-    box-shadow: 0 0 15px #3C0753;
-    text-align:left;
-    color: #FFF;
-    font-size: 12px;
-    display: flex;
-    justify-content:space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.navbar-footer{
+/* ------------------------------------- Medias Querys ------------------------------------- */
+@media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
     
-    margin: 0;
-    padding: 0;
-    width: 40%;
-    display: flex;
-    justify-content: left;
+    
 
-
-}
-ul{
-    text-align: left;
-    margin: 10px 0px;
-    padding: 0;
-
-}
-.navbar-footer li{
-    list-style-type: none;
-    margin-bottom: 5px;
-    }
-a{
-    text-decoration: none;
-    color:#FFF;
-}    
-
-.redes-sociales{
-    display:inline-block;
-    width: 50%;
-   
-}
-.redes-sociales h2{
-    margin-top: 0;
-}
-
-.redes-sociales i{
-    font-size: 30px;
-    margin: 5px 5px;
-}
-
-
-@media screen and (min-width: 461px) {
-    /* Estilos específicos para pantallas mayores a 360px */
-    .header__burger-menu {
-        display: none;
-    }
-
-    .barra-superior__sec-login {
-        display: flex;
-    }
-
-    .header__sec-lista-opciones {
-        display: flex;
-    }
-}
-
-
-
-/* Home.css */
-
-
-@media screen and (min-width: 1024px) {    /*    Desktop   */
-      /* banner-promociones */
-      .banner{
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 500px;
-        margin-bottom: 20px;
-    }
-
-    h2{
+    .titulo-seccion-general {
         font-size: 25px;
         margin: 30px 0px;
         text-align: center;
@@ -323,7 +84,35 @@ a{
     }
 
     /* productos-destacados */
+    .productos__seccion {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
 
+    .productos__articulo {
+        flex-basis: calc(40% - 20px); 
+        margin: 0 auto 20px auto; 
+        padding: 15px; /* con valor fijo en px o 10% */
+        border-radius: 6px; /* con valor fijo en px o 5% */
+        box-shadow: 0 0 15px #5C271F;
+        color: var(--NEGRO);
+     
+        
+    }
+}
+
+@media screen and (min-width: 1024px) {    /*    Desktop   */
+    
+
+    .titulo-seccion-general{
+        font-size: 25px;
+        margin: 30px 0px;
+        text-align: center;
+        color: white;
+    }
+
+    /* productos-destacados */
     .productos__seccion{
         display: flex;
         flex-flow: row wrap;
@@ -335,150 +124,11 @@ a{
         margin: 0 auto 20px auto; 
         padding: 15px; /* con valor fijo en px o 10% */
         border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
+        box-shadow: 0 0 15px #5C271F;
         color: var(--NEGRO);
-        Background-color: var(--GRIS);
-    }
-  
-}
-
-
-@media screen and (min-width: 76px) and (max-width: 1024px) {      /*    Tablet    */
-      /* banner-promociones */
-      .banner{
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 300px;
-        margin-bottom: 20px;
+       
     }
 
-    h2{
-        font-size: 25px;
-        margin: 30px 0px;
-        text-align: center;
-        color: white;
-    }
-
-    /* productos-destacados */
-
-    .productos__seccion{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-
-    .productos__articulo{
-        flex-basis: calc(40% - 20px); 
-        margin: 0 auto 20px auto; 
-        padding: 15px; /* con valor fijo en px o 10% */
-        border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
-        color: var(--NEGRO);
-        Background-color: var(--GRIS);
-    }
-
-
-}
-
-
-@media screen and (max-width: 768px){   /*    Mobile     */
-
-    /* banner-promociones */
-    .banner{
-        display:flex;
-        justify-content: center;
-        width: 100%;
-        margin: auto;
-        height: 250px;
-        margin-bottom: 20px;
-    }
     
-    /* productos-destacados */
-
-    h2{
-        font-size: 30px;
-        margin: 30px 0px;
-        text-align: center;
-        color: white;
-    }
-
-    .productos__seccion{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;  
-    }
-
-    .productos__articulo{
-        width: calc(80% - 20px);  /* si no fuera 80% no se podria repartir el espacio libre con el margin ya que ocuparioa todo el contenedor al 100% */
-        margin: 0 auto 20px auto; 
-        padding: 15px; /* con valor fijo en px o 10% */
-        border-radius: 6px; /* con valor fijo en px o 5% */
-        box-shadow: 0 0 15px var(--VIOLETA-OSCURO);
-        color: var(--NEGRO);
-        Background-color: var(--GRIS);
-
-    }
-
-    /* Hamburguesa animación */
-
-  .hamburguesa {
-    
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-     gap: 5px;   /* Mi espacio entre las barras */
-    transition-duration: .5s; /* para cuando vuelva */
-  }
-
-  .barra {
-    width: 100%;
-    height: 4px;
-    background-color: 		#F0F0F0;
-    border-radius: 4px;
-  }
-
-  #bar2 {
-    transition-duration: .8s;
-  }
-  
-  #bar1,#bar3 {
-    width: 100%;
-  }
-
-  /* checked selecciona el elemento con el id checkbox solo cuando está marcado. */
- #checkbox:checked + .hamburguesa .barra {
-    position: absolute; /* me lo va a posicionar respecto a su elemento padre cuando se mueve */
-    transition-duration: .5s;
-  }
-
-  #checkbox:checked + .hamburguesa #bar2 {
-    transform: scaleX(0);  /* lo hago invisible en 0 , en el eje x */
-    transition-duration: .5s;
-  }
-
-
-  #checkbox:checked + .hamburguesa #bar1 {
-    width: 100%;
-    transform: rotate(45deg);
-    transition-duration: .5s;
-  }
-  
-  #checkbox:checked + .hamburguesa #bar3 {
-    width: 100%;
-    transform: rotate(-45deg);
-    transition-duration: .5s;
-  }
-
-  
-  #checkbox:checked + .hamburguesa {
-    transition-duration: .5s;
-    transform: rotate(180deg);
-  }
 
 }

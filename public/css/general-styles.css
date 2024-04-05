@@ -1,0 +1,50 @@
+/* ------------------------------------- COLORES ------------------------------------- */
+:root {
+    --FUCSIA: #720455;
+    --VIOLETA-OSCURO: #3C0753;
+    --GRIS:  #F5F5F5;
+    --BLANCO: #FFF;
+    --NEGRO: rgba(0, 0, 0, 0.6);
+    --GRIS-OSCURO: #282828;
+}
+
+/* ------------------------------------- Estilos Generales ------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+.contenedor-general-home {
+    margin: 0 auto;
+    max-width: 1200px;
+    background: linear-gradient(to right, #858986, #b3b2b8); 
+}
+
+.contenedor-general-tarjeta {
+ 
+}
+
+.input-general {
+    padding: 12px; /* con valor fijo en px o 10% */ 
+    border: 1px solid var(--GRIS);
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.boton-general {
+    background-color: var(--NEGRO);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--BLANCO);
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.titulo-seccion-general{
+    font-size: 30px;
+    margin: 30px 0px;
+    text-align: center;
+    color: white;
+}
