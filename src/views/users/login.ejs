@@ -14,7 +14,7 @@
         <form action="/users/login" method="post">
             <h1 class="titulo-formulario">DH-Records</h1>
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="usuario" id="usuario" placeholder="Username or email address" value="<%= oldData ? oldData.usuario : '' %>" >
+                <input class="casilla-individal" type="text" name="usuario" id="usuario" placeholder="Email address" value="<%= oldData ? oldData.usuario : '' %>" >
                 <i class='bx bxs-user'></i>
                 <% if( locals.errores && errores.usuario) { %>
                     <div class="error">
