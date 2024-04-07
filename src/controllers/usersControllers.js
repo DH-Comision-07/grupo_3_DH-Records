@@ -41,7 +41,6 @@ let usersControllers = {
 
     getAll: function (req, res) {
         res.render('users', {users: usersService.getAll()});
-
     }
 };
 

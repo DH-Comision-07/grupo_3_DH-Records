@@ -12,7 +12,7 @@ let productService = {
     },
 
     getBy: function(id) {
-        return this.products.find(product => product.id == id);
+        return this.products.find(product => product.id === id);
     },
 
     delete: function (id) {
