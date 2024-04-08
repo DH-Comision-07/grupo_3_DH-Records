@@ -93,12 +93,12 @@
     "id": 11,
     "nombreUsuario": "as",
     "email": "pepe@hotmail.com",
-    "contraseña": "as"
+    "contraseña": "$2a$10$4NGtEqnP.7nqHoGp7x8.r.wOTU/f6GKDKAV/6vEoZDqe1grNvzwa2"
   },
   {
     "id": 12,
-    "nombreUsuario": "as",
+    "nombreUsuario": "asas",
     "email": "pepe@hotmail.com",
-    "contraseña": "dssd"
+    "contraseña": "$2a$10$qXy3wbpBKu7P58/B65xSkuTyUUD4O/I/PcI4.cISblGNKkG.2/Bo."
   }
 ]
