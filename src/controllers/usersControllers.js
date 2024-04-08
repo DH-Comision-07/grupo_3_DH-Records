@@ -13,6 +13,13 @@ let usersControllers = {
     processRegister: function (req, res) {
         const errors = validationResult(req);
         
+        let userEmail= userService.getByField('email', req.body.email);
+    
+        if(userEmail) {
+            res.render('users/register', { errores:{email:{ msg: 'This email is already registered'}}, oldData: req.body });
+        }
+
+
         if (!errors.isEmpty()) {
             res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         } else {
