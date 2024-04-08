@@ -19,11 +19,10 @@ let usersControllers = {
             res.render('users/register', { errores:{email:{ msg: 'This email is already registered'}}, oldData: req.body });
         }
 
-
         if (!errors.isEmpty()) {
             res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         } else {
-            req.body.contraseña = usersService.hashPassword(req.body.contraseña);
+            req.body.contraseña = userService.hashPassword(req.body.contraseña);
             usersService.create(req.body);
             return res.redirect('/users/login');
         };
@@ -36,13 +35,20 @@ let usersControllers = {
     },
 
     processLogin: function (req, res) {
-       const errors=  validationResult(req);
+        const errors=  validationResult(req);
+     
 
-       if(!errors.isEmpty()){
-        res.render('users/login', { errores: errors.mapped(), oldData: req.body });
-       } else{
-            return res.redirect('/users/detail/:id')
-       }
+        if(!errors.isEmpty()){
+            return res.render('users/login', { errores: errors.mapped(), oldData: req.body });
+        }
+
+        let userLogin= userService.getByField('email', req.body.email);
+
+        if(!userLogin){
+            return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
+        };
+
+        return res.redirect('/users/detail/:id') 
     },
     
 
@@ -57,3 +63,4 @@ let usersControllers = {
 };
 
 module.exports = usersControllers;
+
