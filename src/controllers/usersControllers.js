@@ -14,10 +14,11 @@ let usersControllers = {
         if (!errors.isEmpty()) {
             res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         } else {
-             return res.redirect('/users/login');
+            usersService.create(req.body);
+            return res.redirect('/users/login');
         };
-    },
 
+    },
 
     login: function (req, res) {
         res.render('users/login',{ errores: [], oldData: {} });
@@ -41,7 +42,6 @@ let usersControllers = {
 
     getAll: function (req, res) {
         res.render('users', {users: usersService.getAll()});
-
     }
 };
 
