@@ -88,5 +88,17 @@
     "password": "lucia123",
     "category": "cliente",
     "image": "https://example.com/images/lucia.jpg"
+  },
+  {
+    "id": 11,
+    "nombreUsuario": "as",
+    "email": "pepe@hotmail.com",
+    "contraseña": "as"
+  },
+  {
+    "id": 12,
+    "nombreUsuario": "as",
+    "email": "pepe@hotmail.com",
+    "contraseña": "dssd"
   }
 ]

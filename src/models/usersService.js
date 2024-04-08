@@ -22,23 +22,23 @@ let userService = {
     return this.users.find(user => user.id === id);
     },
     getByField: function(field,text) {
-        return this.users.find(user => user[field] === text);          // user[field] encuentra el valor de la propiedad buscada y user.field es para usar literalmente una propiedad con nombre field.
+        return this.users.find(user => user[field] === text);          
     },
 
 
     createId: function() {
-        let lastUser = this.users[this.users.length - 1];             // Encontrar ultimo usuario
+        let lastUser = this.users[this.users.length - 1];             
         if(lastUser) {                                               
         return lastUser.id + 1;
         } else {
-            return 1;                                                // Por si esta vacio Array que haga 1
+            return 1;                                                
         }
     },
 
     create: function(user) {
         let newUser= {
             id: this.createId(),
-            ...user                                                   // Copia todas las propiedades enumerables propias de user al nuevo objeto newUser
+            ...user                                                   
         }
         this.users.push(newUser);
         fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
@@ -54,7 +54,7 @@ let userService = {
 
 }
 
-console.log(userService.delete(11));
+
 
 module.exports = userService;
 
