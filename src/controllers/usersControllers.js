@@ -49,9 +49,10 @@ let usersControllers = {
         };
 
         if(userLogin && userLogin.contraseña){
-            let passwordMatch= bcryptjs.compareSync(req.body.contraseña, userLogin.contraseña);
+            let passwordMatch = userService.comparePassword(req.body.contraseña, userLogin.contraseña);
+
             if(passwordMatch){
-                return res.send('Okay puedes ingresar')
+                return res.redirect('/users/detail/:id') 
             } else {
                 return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
             }

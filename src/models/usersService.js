@@ -57,6 +57,10 @@ let userService = {
     hashPassword: function(password){
         return bcryptjs.hashSync( password, 10);
        
+    },
+
+    comparePassword: function(inputPassword, userPassword){
+        return bcryptjs.compareSync(inputPassword, userPassword);
     }
     
 }
