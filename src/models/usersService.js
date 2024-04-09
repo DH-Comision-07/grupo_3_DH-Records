@@ -3,12 +3,14 @@
 // 3. Buscar al usuario en la DB por su ID ✔
 // 4. Buscar a todos los usuarios ✔
 // 5. Editar la informacion de un usuario
-// 6. Eliminar un usuario DB
+// 6. Eliminar un usuario DB ✔
 
 
 const fs = require('fs');
 const path = require('path');
 const users = require('./users.json');
+const bcryptjs= require('bcryptjs');
+
 
 
 let userService = {
@@ -50,10 +52,18 @@ let userService = {
         this.users = this.users.filter(user => user.id !== id);                                 
         fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
         return this.users;
+    },
+
+    hashPassword: function(password){
+        return bcryptjs.hashSync( password, 10);
+       
+    },
+
+    comparePassword: function(inputPassword, userPassword){
+        return bcryptjs.compareSync(inputPassword, userPassword);
     }
-
+    
 }
-
 
 
 module.exports = userService;

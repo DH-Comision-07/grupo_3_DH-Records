@@ -1,5 +1,7 @@
 const usersService = require('../models/usersService');
 const { validationResult } = require('express-validator');
+const bcryptjs= require('bcryptjs');
+const userService = require('../models/usersService');
 
 
 let usersControllers = {
@@ -11,27 +13,52 @@ let usersControllers = {
     processRegister: function (req, res) {
         const errors = validationResult(req);
         
+        let userEmail= userService.getByField('email', req.body.email);
+    
+        if(userEmail) {
+            res.render('users/register', { errores:{email:{ msg: 'This email is already registered'}}, oldData: req.body });
+        }
+
         if (!errors.isEmpty()) {
             res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         } else {
+            req.body.contraseña = userService.hashPassword(req.body.contraseña);
             usersService.create(req.body);
             return res.redirect('/users/login');
         };
 
-    },
+    },  
+
 
     login: function (req, res) {
         res.render('users/login',{ errores: [], oldData: {} });
     },
 
     processLogin: function (req, res) {
-       const errors=  validationResult(req);
+        const errors=  validationResult(req);
+     
 
-       if(!errors.isEmpty()){
-        res.render('users/login', { errores: errors.mapped(), oldData: req.body });
-       } else{
-            return res.redirect('/users/detail/:id')
-       }
+        if(!errors.isEmpty()){
+            return res.render('users/login', { errores: errors.mapped(), oldData: req.body });
+        }
+
+        let userLogin= userService.getByField('email', req.body.email);
+        
+        if(!userLogin){
+            return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
+        };
+
+        if(userLogin && userLogin.contraseña){
+            let passwordMatch = userService.comparePassword(req.body.contraseña, userLogin.contraseña);
+
+            if(passwordMatch){
+                return res.redirect('/users/detail/:id') 
+            } else {
+                return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
+            }
+        }
+
+        return res.redirect('/users/detail/:id') 
     },
     
 
@@ -46,3 +73,4 @@ let usersControllers = {
 };
 
 module.exports = usersControllers;
+
