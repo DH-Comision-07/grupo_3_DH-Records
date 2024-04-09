@@ -43,10 +43,19 @@ let usersControllers = {
         }
 
         let userLogin= userService.getByField('email', req.body.email);
-
+        
         if(!userLogin){
             return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
         };
+
+        if(userLogin && userLogin.contraseña){
+            let passwordMatch= bcryptjs.compareSync(req.body.contraseña, userLogin.contraseña);
+            if(passwordMatch){
+                return res.send('Okay puedes ingresar')
+            } else {
+                return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
+            }
+        }
 
         return res.redirect('/users/detail/:id') 
     },

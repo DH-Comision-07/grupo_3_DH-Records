@@ -56,10 +56,10 @@ let userService = {
 
     hashPassword: function(password){
         return bcryptjs.hashSync( password, 10);
+       
     }
-
+    
 }
-
 
 
 module.exports = userService;

@@ -1,99 +1,38 @@
 [
   {
     "id": 1,
-    "firstName": "Juan",
-    "lastName": "Perez",
-    "email": "juan.perez@example.com",
-    "password": "password123",
-    "category": "cliente",
-    "image": "https://example.com/images/juan.jpg"
-  },
-  {
-    "id": 2,
-    "firstName": "María",
-    "lastName": "González",
-    "email": "maria.gonzalez@example.com",
-    "password": "securepass",
-    "category": "cliente",
-    "image": "https://example.com/images/maria.jpg"
-  },
-  {
-    "id": 3,
-    "firstName": "Luis",
-    "lastName": "Martínez",
-    "email": "luis.martinez@example.com",
-    "password": "luis1234",
-    "category": "cliente",
-    "image": "https://example.com/images/luis.jpg"
-  },
-  {
-    "id": 4,
-    "firstName": "Ana",
-    "lastName": "Rodríguez",
-    "email": "ana.rodriguez@example.com",
-    "password": "mypassword",
-    "category": "cliente",
-    "image": "https://example.com/images/ana.jpg"
-  },
-  {
-    "id": 5,
-    "firstName": "Carlos",
-    "lastName": "López",
-    "email": "carlos.lopez@example.com",
-    "password": "pass123",
-    "category": "cliente",
-    "image": "https://example.com/images/carlos.jpg"
-  },
-  {
-    "id": 6,
-    "firstName": "Laura",
-    "lastName": "Sánchez",
-    "email": "laura.sanchez@example.com",
-    "password": "laura456",
-    "category": "cliente",
-    "image": "https://example.com/images/laura.jpg"
-  },
-  {
-    "id": 7,
-    "firstName": "Diego",
-    "lastName": "Hernández",
-    "email": "diego.hernandez@example.com",
-    "password": "diego789",
-    "category": "cliente",
-    "image": "https://example.com/images/diego.jpg"
-  },
-  {
-    "id": 8,
     "firstName": "Sofía",
     "lastName": "Díaz",
     "email": "sofia.diaz@example.com",
-    "password": "password321",
+    "password": "$2a$10$KestP2.SeMScVlfIrs06.O.zHOVMIFASb/MKnw8x4x33P.4mphQz6",
     "category": "cliente",
     "image": "https://example.com/images/sofia.jpg"
   },
   {
-    "id": 9,
+    "id": 2,
     "firstName": "Pedro",
     "lastName": "Gómez",
     "email": "pedro.gomez@example.com",
-    "password": "123456",
+    "password": "$2a$10$WU0jTFjVGJPgWPJmtHR.9OUmA1Vg1EoJV7t1SQ4/LIZW9BQGQEJiG",
     "category": "cliente",
     "image": "https://example.com/images/pedro.jpg"
   },
   {
-    "id": 10,
-    "firstName": "Lucía",
-    "lastName": "Fernández",
-    "email": "lucia.fernandez@example.com",
-    "password": "lucia123",
-    "category": "cliente",
-    "image": "https://example.com/images/lucia.jpg"
-  },
-  {
-    "id": 11,
+    "id": 3,
     "nombreUsuario": "as",
     "email": "pepe@hotmail.com",
     "contraseña": "$2a$10$4NGtEqnP.7nqHoGp7x8.r.wOTU/f6GKDKAV/6vEoZDqe1grNvzwa2"
+  },
+  {
+    "id": 4,
+    "nombreUsuario": "Lucía",
+    "email": "lucia.fernandez@example.com",
+    "contraseña": "$2a$10$HUW4WJO9lqwvb6fNGFt67OEFQqroj8rpeQJHLIB3Nv69.i2Odji8q"
+  },
+  {
+    "id": 5,
+    "nombreUsuario": "Lautaro",
+    "email": "lauti@hotmail.com",
+    "contraseña": "$2a$10$P1T.i6oztu5qfKw5FIejPOIQTK1tzOgZB0lJFD9xsv5ZBX1oAQPRG"
   }
-  
 ]
