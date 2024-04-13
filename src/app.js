@@ -1,27 +1,37 @@
 const express = require ('express');
 const app = express();
 const path = require ('path');
-const publicPath = path.resolve(__dirname, '../public');
+const session = require ('express-session');
 
-// Captura info formulario POST para req.body
-app.use(express.urlencoded({ extended: false}));   
-app.use(express.json());
+//Config de ruta para arvhicos estaticos
+const publicPath = path.resolve(__dirname, '../public');
+app.use(express.static(publicPath));
 
 //Template Engine
 app.set("view engine","ejs");
 app.set('views', path.join(__dirname,"/views"));
 
+//Config de session
+app.use(session({
+    secret: 'mySecretKey',
+    resave: false,
+    saveUninitialized: false
+}));
 
-app.use(express.static(publicPath));
+//Config para capturar la info del formulario con POST en req.body
+app.use(express.urlencoded({ extended: false}));   
+app.use(express.json());
 
 //PUT/Delete
 const methodOverride = require('method-override'); 
 app.use(methodOverride('_method')); 
 
+
+//Config del puerto
 const PORT = 3030; 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
-//Routers
+//Confir de rutas
 const homeRoutes= require('./routes/home.routes');
 app.use('/', homeRoutes);
 

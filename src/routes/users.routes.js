@@ -3,6 +3,7 @@ const routes = express.Router();
 
 const usersControllers = require('../controllers/usersControllers');
 
+//Validaciones de express-validator
 const validacionesRegister = require('../middlewares/registerMid');
 const validacionesLogin = require('../middlewares/loginMid');
 
