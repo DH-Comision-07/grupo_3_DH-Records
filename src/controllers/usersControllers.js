@@ -31,7 +31,7 @@ let usersControllers = {
 
 
     login: function (req, res) {
-        res.render('users/login',{ errores: [], oldData: {} });
+        return res.render('users/login',{ errores: [], oldData: {} });
     },
 
     processLogin: function (req, res) {
@@ -68,15 +68,19 @@ let usersControllers = {
         return res.redirect('/users/detail/:id') 
     },
     
-
     detail: function (req, res) {
         console.log("estas en el detalle de usuario");
         console.log(req.session);
-        res.render('users/detail', { user: req.session.userLogged });
+        return res.render('users/detail', { user: req.session.userLogged });
+    },
+
+    logOut: function (req, res) {
+        req.session.destroy();
+        return res.redirect('/');
     },
 
     getAll: function (req, res) {
-        res.render('users', {users: usersService.getAll()});
+        return res.render('users', {users: usersService.getAll()});
     }
 };
 

@@ -25,6 +25,9 @@ routes.post("/login", validacionesLogin, usersControllers.processLogin);
 //detalle del usuario. TODO:FIX: no se esta usando el id para nada
 routes.get("/detail/:id", userUnloggedMid, usersControllers.detail);
 
+//Cerrar sesion de usuario
+routes.get("/logout", usersControllers.logOut);
+
 //lista de usuarios, vista NO implementada aun
 routes.get("/", usersControllers.getAll);
 
