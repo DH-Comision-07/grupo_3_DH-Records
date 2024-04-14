@@ -64,6 +64,19 @@ body{
     font-size:20px;
 }
 
+.rememberMe-checkbox{
+    display: flex;
+    justify-self: flex-start;
+    font-size: 15px;
+    margin: 10px 10px 5px;
+}
+
+
+.rememberMe-checkbox label input{
+    accent-color: #fff; /* color de la marca de verificación */
+    margin-right: 3px;
+}
+
 .recuperar-contraseña{
     display: flex;
     justify-content: flex-end;

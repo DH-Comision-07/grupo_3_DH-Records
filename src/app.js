@@ -18,6 +18,10 @@ app.use(session({
     saveUninitialized: false
 }));
 
+//Config estado de Log del usuario
+const userLoggedMid = require('./middlewares/userLoggedMid');
+app.use(userLoggedMid);
+
 //Config para capturar la info del formulario con POST en req.body
 app.use(express.urlencoded({ extended: false}));   
 app.use(express.json());

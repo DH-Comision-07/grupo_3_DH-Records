@@ -1,7 +1,11 @@
 function userLoggedMid(req, res, next) {
+    res.locals.isLogged = false;
+
     if(req.session.userLogged){
-        return res.redirect('/users/detail/:id');
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged;
     }
+
     next();
 }
 

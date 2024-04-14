@@ -8,22 +8,22 @@ const validacionesRegister = require('../middlewares/registerMid');
 const validacionesLogin = require('../middlewares/loginMid');
 
 //Validaciones de rutas segun usuario logueado
-const userLoggedMid = require('../middlewares/userLoggedMid');
-const userUnloggedMid = require('../middlewares/userUnloggedMid');
+const userLoggedValidationMid = require('../middlewares/userLoggedValidationMid');
+const userUnloggedValidationMid = require('../middlewares/userUnloggedValidationMid');
 
 
 //Formulario de registro
-routes.get("/register", userLoggedMid, usersControllers.register);
+routes.get("/register", userLoggedValidationMid, usersControllers.register);
 //Proceso de registro
 routes.post("/register", validacionesRegister, usersControllers.processRegister);
 
 //Formulario de logueo
-routes.get("/login", userLoggedMid, usersControllers.login); 
+routes.get("/login", userLoggedValidationMid, usersControllers.login); 
 //Proceso de logueo
 routes.post("/login", validacionesLogin, usersControllers.processLogin);  
 
 //detalle del usuario. TODO:FIX: no se esta usando el id para nada
-routes.get("/detail/:id", userUnloggedMid, usersControllers.detail);
+routes.get("/detail/:id", userUnloggedValidationMid, usersControllers.detail);
 
 //Cerrar sesion de usuario
 routes.get("/logout", usersControllers.logOut);
