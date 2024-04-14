@@ -7,15 +7,25 @@ const usersControllers = require('../controllers/usersControllers');
 const validacionesRegister = require('../middlewares/registerMid');
 const validacionesLogin = require('../middlewares/loginMid');
 
+//Validaciones de rutas segun usuario logueado
+const userLoggedMid = require('../middlewares/userLoggedMid');
+const userUnloggedMid = require('../middlewares/userUnloggedMid');
 
-routes.get("/register", usersControllers.register);
+
+//Formulario de registro
+routes.get("/register", userLoggedMid, usersControllers.register);
+//Proceso de registro
 routes.post("/register", validacionesRegister, usersControllers.processRegister);
 
-routes.get("/login", usersControllers.login); 
+//Formulario de logueo
+routes.get("/login", userLoggedMid, usersControllers.login); 
+//Proceso de logueo
 routes.post("/login", validacionesLogin, usersControllers.processLogin);  
 
-routes.get("/detail/:id", usersControllers.detail);
+//detalle del usuario. TODO:FIX: no se esta usando el id para nada
+routes.get("/detail/:id", userUnloggedMid, usersControllers.detail);
 
+//lista de usuarios, vista NO implementada aun
 routes.get("/", usersControllers.getAll);
 
 
