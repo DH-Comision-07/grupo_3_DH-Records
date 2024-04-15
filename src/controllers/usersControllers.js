@@ -45,7 +45,7 @@ let usersControllers = {
 
         //Si pasa las validaciones y no hay errores busco en la DB el usuario que se corresponda con el email ingresado
         let userLogin= userService.getByField('email', req.body.email);
-        //Si no encuentro usuario registrada vuelvo al Login y lo mando a registrarse
+        //Si no encuentro usuario registrado vuelvo al Login y lo mando a registrarse
         if(!userLogin){
             return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
         };
@@ -59,6 +59,11 @@ let usersControllers = {
             if(passwordMatch){
                 delete userLogin.contraseña;
                 req.session.userLogged = userLogin;
+
+                if(req.body.rememberUser){
+                    res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
+                }
+
                 return res.redirect('/users/detail/:id') 
             } else {
                 return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
@@ -70,11 +75,12 @@ let usersControllers = {
     
     detail: function (req, res) {
         console.log("estas en el detalle de usuario");
-        console.log(req.session);
+        console.log(req.cookies.userEmail);
         return res.render('users/detail', { user: req.session.userLogged });
     },
 
     logOut: function (req, res) {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     },

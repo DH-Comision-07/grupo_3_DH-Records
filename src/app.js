@@ -18,7 +18,11 @@ app.use(session({
     saveUninitialized: false
 }));
 
-//Config estado de Log del usuario
+//Config de cookies
+const cookies = require('cookie-parser');
+app.use(cookies());
+
+//Config estado de Log del usuario 
 const userLoggedMid = require('./middlewares/userLoggedMid');
 app.use(userLoggedMid);
 
