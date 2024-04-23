@@ -1,7 +1,6 @@
 const express = require ('express');
 const app = express();
 const path = require ('path');
-const session = require ('express-session');
 
 //Config de ruta para arvhicos estaticos
 const publicPath = path.resolve(__dirname, '../public');
@@ -12,6 +11,7 @@ app.set("view engine","ejs");
 app.set('views', path.join(__dirname,"/views"));
 
 //Config de session
+const session = require ('express-session');
 app.use(session({
     secret: 'mySecretKey',
     resave: false,

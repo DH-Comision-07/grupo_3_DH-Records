@@ -8,14 +8,12 @@
 
 const fs = require('fs');
 const path = require('path');
-const users = require('./users.json');
 const bcryptjs= require('bcryptjs');
-
 
 
 let userService = {
 
-    users: users,
+    users: require('./users.json'),
 
     getAll: function() {
     return this.users;
@@ -56,7 +54,7 @@ let userService = {
 
     hashPassword: function(password){
         return bcryptjs.hashSync( password, 10);
-       
+        
     },
 
     comparePassword: function(inputPassword, userPassword){

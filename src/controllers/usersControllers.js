@@ -45,16 +45,17 @@ let usersControllers = {
 
         //Si pasa las validaciones y no hay errores busco en la DB el usuario que se corresponda con el email ingresado
         let userLogin= userService.getByField('email', req.body.email);
+        console.log(userLogin);
         //Si no encuentro usuario registrado vuelvo al Login y lo mando a registrarse
         if(!userLogin){
             return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
         };
-
+        
         //Si tengo un usuario registrado
         if(userLogin && userLogin.contraseña){
             //comparo la contraseña ingresada con la guardada en la DB
             let passwordMatch = userService.comparePassword(req.body.contraseña, userLogin.contraseña);
-
+ 
             //Si la contraseña coincide se loguea el usuario
             if(passwordMatch){
                 delete userLogin.contraseña;
@@ -63,7 +64,7 @@ let usersControllers = {
                 if(req.body.rememberUser){
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
                 }
-
+                
                 return res.redirect('/users/detail/:id') 
             } else {
                 return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
