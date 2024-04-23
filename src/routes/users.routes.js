@@ -3,18 +3,32 @@ const routes = express.Router();
 
 const usersControllers = require('../controllers/usersControllers');
 
+//Validaciones de express-validator
 const validacionesRegister = require('../middlewares/registerMid');
 const validacionesLogin = require('../middlewares/loginMid');
 
+//Validaciones de rutas segun usuario logueado
+const userLoggedValidationMid = require('../middlewares/userLoggedValidationMid');
+const userUnloggedValidationMid = require('../middlewares/userUnloggedValidationMid');
 
-routes.get("/register", usersControllers.register);
+
+//Formulario de registro
+routes.get("/register", userLoggedValidationMid, usersControllers.register);
+//Proceso de registro
 routes.post("/register", validacionesRegister, usersControllers.processRegister);
 
-routes.get("/login", usersControllers.login); 
+//Formulario de logueo
+routes.get("/login", userLoggedValidationMid, usersControllers.login); 
+//Proceso de logueo
 routes.post("/login", validacionesLogin, usersControllers.processLogin);  
 
-routes.get("/detail/:id", usersControllers.detail);
+//detalle del usuario. TODO:FIX: no se esta usando el id para nada
+routes.get("/detail/:id", userUnloggedValidationMid, usersControllers.detail);
 
+//Cerrar sesion de usuario
+routes.get("/logout", usersControllers.logOut);
+
+//lista de usuarios, vista NO implementada aun
 routes.get("/", usersControllers.getAll);
 
 
