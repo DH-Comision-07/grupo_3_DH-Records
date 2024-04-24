@@ -13,21 +13,20 @@ const bcryptjs= require('bcryptjs');
 
 let userService = {
 
-    users: require('./users.json'),
-
     getAll: function() {
-    return this.users;
+    return JSON.parse(fs.readFileSync(path.resolve(__dirname, './users.json'), 'utf-8'));
     },
     getBy: function(id) {
-    return this.users.find(user => user.id === id);
+    return this.getAll().find(user => user.id === id);
     },
     getByField: function(field,text) {
-        return this.users.find(user => user[field] === text);          
+        return this.getAll().find(user => user[field] === text);          
     },
 
 
     createId: function() {
-        let lastUser = this.users[this.users.length - 1];             
+        let users = this.getAll();
+        let lastUser = users[users.length - 1];             
         if(lastUser) {                                               
         return lastUser.id + 1;
         } else {
@@ -36,20 +35,22 @@ let userService = {
     },
 
     create: function(user) {
+        let users = this.getAll();
         let newUser= {
             id: this.createId(),
             ...user                                                   
         }
-        this.users.push(newUser);
-        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
-        return this.users;
+        users.push(newUser);
+        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(users));
+        return users;
     },
 
 
     delete: function(id) {
-        this.users = this.users.filter(user => user.id !== id);                                 
-        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
-        return this.users;
+        let users = this.getAll(); 
+        users = users.filter(user => user.id !== id);                                 
+        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(users));
+        return users;
     },
 
     hashPassword: function(password){
