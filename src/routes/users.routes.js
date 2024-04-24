@@ -10,6 +10,7 @@ const validacionesLogin = require('../middlewares/loginMid');
 //Validaciones de rutas segun usuario logueado
 const userLoggedValidationMid = require('../middlewares/userLoggedValidationMid');
 const userUnloggedValidationMid = require('../middlewares/userUnloggedValidationMid');
+const multerMid = require('../middlewares/multerMid');
 
 
 //Formulario de registro
@@ -31,6 +32,7 @@ routes.get("/logout", usersControllers.logOut);
 //lista de usuarios, vista NO implementada aun
 routes.get("/", usersControllers.getAll);
 
+routes.post("/uploadProfilePicture", multerMid.single('profilePicture'), usersControllers.uploadProfilePicture);
 
 module.exports = routes;
 
