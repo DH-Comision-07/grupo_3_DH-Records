@@ -48,6 +48,10 @@ h3{
     margin-top: 20px;
 }
 
+form{
+    color:var(--BLANCO) ;
+}
+
 
 /*PERFIL*/
 
@@ -60,6 +64,7 @@ h3{
 .contenedor__perfil{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .perfil__img{

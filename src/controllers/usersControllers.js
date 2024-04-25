@@ -58,8 +58,11 @@ let usersControllers = {
  
             //Si la contraseña coincide se loguea el usuario
             if(passwordMatch){
-                delete userLogin.contraseña;
-                req.session.userLogged = userLogin;
+              // Crea una copia del objeto userLogin sin la contraseña
+                let userLoginForSession = {...userLogin};
+                delete userLoginForSession.contraseña;
+
+                req.session.userLogged = userLoginForSession;
 
                 if(req.body.rememberUser){
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
@@ -74,21 +77,42 @@ let usersControllers = {
         return res.redirect('/users/detail/:id') 
     },
     
-    detail: function (req, res) {
+    detail: function(req, res) {
         console.log("estas en el detalle de usuario");
         console.log(req.cookies.userEmail);
         return res.render('users/detail', { user: req.session.userLogged });
     },
 
-    logOut: function (req, res) {
+    logOut: function(req, res) {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     },
 
-    getAll: function (req, res) {
+    getAll: function(req, res) {
         return res.render('users', {users: usersService.getAll()});
+    },
+
+
+    edit: function(req, res) {
+        
+        let userId = req.params.id;
+        let newUserData = {};
+
+        if (req.file) {
+            newUserData.image = req.file.filename;
+        }
+    
+        let userUpdated = userService.update(userId, newUserData);
+    
+        if (userUpdated) {
+            return res.redirect('/users/detail/' + userId);
+        } else {
+            return res.redirect('/');
+        }
     }
+
+
 };
 
 module.exports = usersControllers;
