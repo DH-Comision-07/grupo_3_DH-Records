@@ -11,9 +11,6 @@
 
 * {
     box-sizing: border-box;
-    font-size: 12px;
-    margin: 0px;
-    padding: 0px;
 }
 
 body{
@@ -46,6 +43,11 @@ h3{
     text-align: center;
     color: var(--GRIS);
 }
+
+.header{
+    margin-top: 20px;
+}
+
 
 /*PERFIL*/
 
