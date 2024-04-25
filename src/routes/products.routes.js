@@ -19,7 +19,7 @@ routes.get("/edit/:id", productsControllers.edit);
 
 routes.get('/', productsControllers.getAll);
 
-routes.post('/', upload.fields([{ name: 'imagen' }]), productsControllers.store);
+//routes.post('/', upload.fields([{ name: 'imagen' }]), productsControllers.store);
 
 
 

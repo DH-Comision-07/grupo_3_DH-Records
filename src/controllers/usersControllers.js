@@ -74,21 +74,33 @@ let usersControllers = {
         return res.redirect('/users/detail/:id') 
     },
     
-    detail: function (req, res) {
+    detail: function(req, res) {
         console.log("estas en el detalle de usuario");
         console.log(req.cookies.userEmail);
         return res.render('users/detail', { user: req.session.userLogged });
     },
 
-    logOut: function (req, res) {
+    logOut: function(req, res) {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     },
 
-    getAll: function (req, res) {
+    getAll: function(req, res) {
         return res.render('users', {users: usersService.getAll()});
+    },
+
+
+    uploadProfilePicture: function(req, res) {
+        console.log(req.file);
+        // req.file es el archivo 'profilePicture'
+        // Toda la información del archivo subido está disponible en req.file
+        // Por ejemplo, para obtener el nombre del archivo, puedes hacer req.file.filename
+    
+        // Aquí puedes escribir el código para procesar el archivo subido y responder a la solicitud
     }
+
+
 };
 
 module.exports = usersControllers;
