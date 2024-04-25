@@ -45,7 +45,6 @@ let userService = {
         return this.users;
     },
 
-
     delete: function(id) {
         this.users = this.users.filter(user => user.id !== id);                                 
         fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
@@ -59,7 +58,28 @@ let userService = {
 
     comparePassword: function(inputPassword, userPassword){
         return bcryptjs.compareSync(inputPassword, userPassword);
-    }
+    },
+
+    update: function(userId, newUserData) {
+        console.log(newUserData);
+        console.log(userId);
+        
+        let users = this.getAll();
+
+        let userIndex = users.findIndex(user => user.id == userId);
+    
+        // Si el usuario existe...
+        if (userIndex != -1) {
+            
+            users[userIndex].image = newUserData.image;
+            
+            fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(users));
+    
+            return true;
+        }
+    
+        return false;
+    },
     
 }
 

@@ -32,7 +32,7 @@ routes.get("/logout", usersControllers.logOut);
 //lista de usuarios, vista NO implementada aun
 routes.get("/", usersControllers.getAll);
 
-routes.post("/uploadProfilePicture", multerMid.single('profilePicture'), usersControllers.uploadProfilePicture);
+routes.post("/uploadProfilePicture/:id", multerMid.single('profilePicture'), usersControllers.edit);
 
 module.exports = routes;
 

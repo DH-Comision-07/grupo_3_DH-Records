@@ -14,7 +14,7 @@
                 <img src="/images/Logo.jpg" alt="logo" class="perfil__img">
                 <h2>Name: <%= user.nombreUsuario %> </h2>
                 <h3 class="subtitulo"><%= user.email %></h3>
-                <form action='/users/uploadProfilePicture' method='POST' enctype='multipart/form-data'>
+                <form action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
                     <input type='file' name='profilePicture' accept='image/*'>  
                     <button type='submit'> Upload</button>
                 </form>

@@ -58,8 +58,11 @@ let usersControllers = {
  
             //Si la contraseña coincide se loguea el usuario
             if(passwordMatch){
-                delete userLogin.contraseña;
-                req.session.userLogged = userLogin;
+              // Crea una copia del objeto userLogin sin la contraseña
+                let userLoginForSession = {...userLogin};
+                delete userLoginForSession.contraseña;
+
+                req.session.userLogged = userLoginForSession;
 
                 if(req.body.rememberUser){
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
@@ -91,13 +94,22 @@ let usersControllers = {
     },
 
 
-    uploadProfilePicture: function(req, res) {
-        console.log(req.file);
-        // req.file es el archivo 'profilePicture'
-        // Toda la información del archivo subido está disponible en req.file
-        // Por ejemplo, para obtener el nombre del archivo, puedes hacer req.file.filename
+    edit: function(req, res) {
+        
+        let userId = req.params.id;
+        let newUserData = {};
+
+        if (req.file) {
+            newUserData.image = req.file.filename;
+        }
     
-        // Aquí puedes escribir el código para procesar el archivo subido y responder a la solicitud
+        let userUpdated = userService.update(userId, newUserData);
+    
+        if (userUpdated) {
+            return res.redirect('/users/detail/' + userId);
+        } else {
+            return res.redirect('/');
+        }
     }
 
 
