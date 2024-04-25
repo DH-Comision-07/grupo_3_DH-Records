@@ -10,7 +10,7 @@ const validacionesLogin = require('../middlewares/loginMid');
 //Validaciones de rutas segun usuario logueado
 const userLoggedValidationMid = require('../middlewares/userLoggedValidationMid');
 const userUnloggedValidationMid = require('../middlewares/userUnloggedValidationMid');
-const multerMid = require('../middlewares/multerMid');
+const multerMid = require('../middlewares/multerUsersMid');
 
 
 //Formulario de registro

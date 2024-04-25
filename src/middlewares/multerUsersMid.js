@@ -10,6 +10,6 @@ const storage = multer.diskStorage({
     }
 });
 
-const multerMid = multer({ storage: storage });
+const multerUsersMid = multer({ storage: storage });
 
-module.exports = multerMid;
+module.exports = multerUsersMid;

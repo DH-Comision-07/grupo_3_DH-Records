@@ -148,5 +148,20 @@
         "estilo": "",
         "canciones": "",
         "imagen": "imagen-1712232293259.png"
+    },
+    {
+        "id": 11,
+        "titulo": "pepo",
+        "generoDisco": "pop",
+        "descripcion": "pepoooooooooooooooooooo",
+        "autor": "Pepe",
+        "discografica": "Dani",
+        "precioCosto": "6000",
+        "precioMostrador": "60000",
+        "stock": "1",
+        "anio": "1995",
+        "estilo": "we",
+        "canciones": "pepe",
+        "imagen": "imageProducts-1714084672942.jpg"
     }
 ]
