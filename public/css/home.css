@@ -51,12 +51,10 @@
 .productos__img {
     width: 100%;
     margin: auto;
-    transition: transform 2s;
+    
 }
   
-.productos__img:hover {
-    transform: scale(0.8) rotate(360deg);
-}
+
 
 .productos__section-boton {
     display: flex;
