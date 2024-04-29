@@ -13,7 +13,7 @@ const bcryptjs= require('bcryptjs');
 
 let userService = {
 
-    users: require('./users.json'),
+    users: require('./Data/users.json'),
 
     getAll: function() {
     return this.users;
