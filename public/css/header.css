@@ -86,6 +86,20 @@ a {
     font-size: 1rem;
 }
 
+.user__avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.user__avatar img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 50%; 
+}
+
 #checkbox {
     display: none;
 }

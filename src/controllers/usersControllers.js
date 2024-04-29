@@ -78,8 +78,6 @@ let usersControllers = {
     },
     
     detail: function(req, res) {
-        console.log("estas en el detalle de usuario");
-        console.log(req.cookies.userEmail);
         return res.render('users/detail', { user: req.session.userLogged });
     },
 

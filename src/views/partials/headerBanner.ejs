@@ -24,10 +24,17 @@
             </label>
             
             <% if(locals.isLogged) { %>
-                <a href="/users/detail/:id" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
+                <a href="/users/detail/:id" class="user__logIn"> 
+                    Hola <%= locals.userLogged.nombreUsuario %>
+                </a>
+                <a href="/users/detail/:id" class="user__logIn"> 
+                    <div class="user__avatar">
+                        <img src="Images/users/<%= locals.userLogged.image %>" alt="user-avatar">
+                    </div>
+                </a>
                 <a href="/users/logout" class="user__singUp"> LogOut </a>
             <% }else{ %>
-                <a href="/users/login" class="user__logIn"> Log in</i></a>
+                <a href="/users/login" class="user__logIn"> Log in</a>
                 <a href="/users/register" class="user__singUp"> Sing up </a>
             <% } %>
         </div>
