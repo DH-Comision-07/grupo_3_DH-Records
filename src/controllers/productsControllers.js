@@ -50,7 +50,26 @@ let productsControllers = {
     getAll: function(req, res) {
         res.render('products/products', {products: productService.getAll()});
 
+    },
+    getProductDetail: function(req, res) {
+        const productId = req.params.id;
+        const product = productService.getBy(productId);
+    
+        if (!product) {
+          return res.status(404).send('Product not found');
+        }
+    
+        res.render('products/detail', { product });
+      },
+
+      home: function(req, res) {
+        const products = productService.getAll();
+        res.render('home', { products });
     }
-}
+
+
+    };
+    
+
 
 module.exports = productsControllers;
