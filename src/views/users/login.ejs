@@ -14,11 +14,11 @@
         <form action="/users/login" method="post">
             <h1 class="titulo-formulario">DH-Records</h1>
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="usuario" id="usuario" placeholder="Username or email address" value="<%= oldData ? oldData.usuario : '' %>" >
+                <input class="casilla-individal" type="text" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>" >
                 <i class='bx bxs-user'></i>
-                <% if( locals.errores && errores.usuario) { %>
+                <% if( locals.errores && errores.email) { %>
                     <div class="error">
-                        <%= errores.usuario.msg %>
+                        <%= errores.email.msg %>
                     </div>
                 <% } %>
             </div>  
@@ -32,6 +32,13 @@
                     </div>
                 <% } %>
             </div> 
+
+            <div class="rememberMe-checkbox">
+                <label>
+                    <input type="checkbox" name="rememberUser">
+                    Remember me
+                </label>
+            </div>
 
             <div class= "recuperar-contraseña">
                 <a href="#" class="olvidaste-contraseña">¿Forgot your password?</a>
