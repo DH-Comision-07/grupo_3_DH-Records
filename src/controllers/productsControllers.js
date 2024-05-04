@@ -1,5 +1,5 @@
 
-const productService = require ('../models/productService');
+const productService = require ('../models/db/services/productService');
 
 
 let productsControllers = {
