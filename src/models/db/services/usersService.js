@@ -29,6 +29,17 @@ let userService = {
         return await db.Users.create(userData);
     },
 
+    getAll2: async function (){
+        try {
+            const users = await db.Users.findAll();
+            return users;
+        } catch (error) {
+            console.log('error');
+            return [];
+        }
+         
+    },
+
 
     delete: function(id) {
         this.users = this.users.filter(user => user.id !== id);                                 
