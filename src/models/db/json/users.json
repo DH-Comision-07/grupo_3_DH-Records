@@ -71,5 +71,23 @@
         "nombreUsuario": "alex",
         "email": "alex@hotmail.com",
         "contraseña": "$2a$10$Lt6yIfKKoLDw/Ud25KprnuJNV53iygx/Vki43r4R8kuYWP5R6O4zO"
+    },
+    {
+        "id": 11,
+        "nombreUsuario": "octavio",
+        "email": "octa@hotmail.com",
+        "contraseña": "$2a$10$0C3qc1dBlVFtseCGzn9WreoqIID58sioPqxXxBvoWrXMJIdECk4ly"
+    },
+    {
+        "id": 12,
+        "nombreUsuario": "juan",
+        "email": "jancho@hotmail.com",
+        "contraseña": "$2a$10$yGAThjKS1df5FSYneCrpAekTRPQSDFgW/3HofwCrbVpEr8Sl1/rV2"
+    },
+    {
+        "id": 13,
+        "nombreUsuario": "cacho",
+        "email": "cachoo@hotmail.com",
+        "contraseña": "$2a$10$nc5saO9P832t75NsTITbQeHd/3HmJHdmGA8ec.WclE3eRZ6NidjKm"
     }
 ]

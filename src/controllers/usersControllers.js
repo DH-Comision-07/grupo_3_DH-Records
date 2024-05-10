@@ -22,13 +22,15 @@ let usersControllers = {
         if (!errors.isEmpty()) {
             res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         } else {
-            req.body.contraseña = userService.hashPassword(req.body.contraseña);
+            req.body.contraseña  = userService.hashPassword(req.body.contraseña);
+
+            let { nombreUsuario, email, contraseña, terminosCondiciones } = req.body;  
 
             await db.Users.create({
-                nombreUsuario: req.body.nombreUsuario,
-                email: req.body.email,
-                contraseña: req.body.contraseña,
-                terminosCondiciones: req.body.terminosCondiciones,
+                nombreUsuario,
+                email,
+                contraseña,
+                terminosCondiciones,
             });
 
             usersService.create(req.body);
