@@ -2,7 +2,7 @@ const usersService = require('../models/db/services/usersService');
 const { validationResult } = require('express-validator');
 const bcryptjs= require('bcryptjs');
 const userService = require('../models/db/services/usersService');
-
+const db = require('../models/db/models');
 
 let usersControllers = {
 
@@ -10,7 +10,7 @@ let usersControllers = {
         return res.render('users/register',{ errores: [], oldData: {} });
     },
 
-    processRegister: function (req, res) {
+    processRegister: async function (req, res) {
         const errors = validationResult(req);
         
         let userEmail= userService.getByField('email', req.body.email);
@@ -23,7 +23,16 @@ let usersControllers = {
             res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         } else {
             req.body.contraseña = userService.hashPassword(req.body.contraseña);
+
+            await db.Users.create({
+                nombreUsuario: req.body.nombreUsuario,
+                email: req.body.email,
+                contraseña: req.body.contraseña,
+                terminosCondiciones: req.body.terminosCondiciones,
+            });
+
             usersService.create(req.body);
+            
             return res.redirect('/users/login');
         };
 
@@ -76,10 +85,12 @@ let usersControllers = {
 
         return res.redirect('/users/detail/:id') 
     },
+
     
     detail: function(req, res) {
         return res.render('users/detail', { user: req.session.userLogged });
     },
+
 
     logOut: function(req, res) {
         res.clearCookie('userEmail');
@@ -87,13 +98,13 @@ let usersControllers = {
         return res.redirect('/');
     },
 
+
     getAll: function(req, res) {
         return res.render('users', {users: usersService.getAll()});
     },
 
 
     edit: function(req, res) {
-        
         let userId = req.params.id;
         let newUserData = {};
 
@@ -108,10 +119,32 @@ let usersControllers = {
         } else {
             return res.redirect('/');
         }
-    }
+    },
 
 
-};
+    // create: async function(req, res) {
+    //     db.Users.findAll()
+    //     .then(users => {
+    //         res.render('users', { users });    // forma abreviada de {users: users}, ES6
+    //     })
+        
+    // },
+
+    // save: async function(req, res) {
+    //     console.log(req.body); 
+    
+    //     await db.Users.create({
+    //         nombreUsuario: req.body.nombreUsuario,
+    //         email: req.body.email,
+    //         contraseña: req.body.contraseña,
+    //         terminosCondiciones: req.body.terminosCondiciones,
+    //     });
+    //     res.redirect('/users/login');
+      
+    // }
+
+
+}
 
 module.exports = usersControllers;
 

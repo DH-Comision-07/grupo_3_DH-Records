@@ -40,13 +40,13 @@ let userService = {
             ...user                                                   
         }
         this.users.push(newUser);
-        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
+        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
         return this.users;
     },
 
     delete: function(id) {
         this.users = this.users.filter(user => user.id !== id);                                 
-        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
+        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
         return this.users;
     },
 
@@ -72,7 +72,7 @@ let userService = {
             
             users[userIndex].image = newUserData.image;
             
-            fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(users));
+            fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(users));
     
             return true;
         }

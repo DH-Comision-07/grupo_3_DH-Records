@@ -26,13 +26,17 @@ routes.post("/login", validacionesLogin, usersControllers.processLogin);
 //detalle del usuario. TODO:FIX: no se esta usando el id para nada
 routes.get("/detail/:id", userUnloggedValidationMid, usersControllers.detail);
 
+routes.post("/uploadProfilePicture/:id", multerMid.single('profilePicture'), usersControllers.edit);
+
 //Cerrar sesion de usuario
 routes.get("/logout", usersControllers.logOut);
 
 //lista de usuarios, vista NO implementada aun
 routes.get("/", usersControllers.getAll);
 
-routes.post("/uploadProfilePicture/:id", multerMid.single('profilePicture'), usersControllers.edit);
+
+
+
 
 module.exports = routes;
 

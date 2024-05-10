@@ -61,15 +61,8 @@
     },
     {
         "id": 9,
-        "nombreUsuario": "tomas",
-        "email": "tomas@hotmail.com",
-        "contraseña": "$2a$10$bfCHHn07dcemXlhU5yXqCeg//Kh6yrF./.62UnHO6KkWL8Mz0Gb.a",
-        "image": "userProfile-1715308496257.jpg"
-    },
-    {
-        "id": 10,
-        "nombreUsuario": "alex",
-        "email": "alex@hotmail.com",
-        "contraseña": "$2a$10$Lt6yIfKKoLDw/Ud25KprnuJNV53iygx/Vki43r4R8kuYWP5R6O4zO"
+        "nombreUsuario": "asd",
+        "email": "asdasd@hotmail.com",
+        "contraseña": "$2a$10$kWDJ0CGUszgYUylIVOLrpuunedwrbtLbk2veSTWwoSzdnQ3ZlJwz2"
     }
 ]
