@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs= require('bcryptjs');
-
+const db = require('..//models');
 
 let userService = {
 
@@ -24,25 +24,11 @@ let userService = {
         return this.users.find(user => user[field] === text);          
     },
 
-
-    createId: function() {
-        let lastUser = this.users[this.users.length - 1];             
-        if(lastUser) {                                               
-        return lastUser.id + 1;
-        } else {
-            return 1;                                                
-        }
+    //Sequelize 
+    createUser: async function (userData) {
+        return await db.Users.create(userData);
     },
 
-    create: function(user) {
-        let newUser= {
-            id: this.createId(),
-            ...user                                                   
-        }
-        this.users.push(newUser);
-        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
-        return this.users;
-    },
 
     delete: function(id) {
         this.users = this.users.filter(user => user.id !== id);                                 
@@ -78,6 +64,28 @@ let userService = {
         }
     
         return false;
+    },
+
+
+    //         JSON
+
+     createId: function() {
+        let lastUser = this.users[this.users.length - 1];             
+        if(lastUser) {                                               
+        return lastUser.id + 1;
+        } else {
+            return 1;                                                
+        }
+    },
+
+    create: function(user) {
+        let newUser= {
+            id: this.createId(),
+            ...user                                                   
+        }
+        this.users.push(newUser);
+        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
+        return this.users;
     },
     
 }

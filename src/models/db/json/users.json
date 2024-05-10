@@ -89,5 +89,11 @@
         "nombreUsuario": "cacho",
         "email": "cachoo@hotmail.com",
         "contraseña": "$2a$10$nc5saO9P832t75NsTITbQeHd/3HmJHdmGA8ec.WclE3eRZ6NidjKm"
+    },
+    {
+        "id": 14,
+        "nombreUsuario": "jere",
+        "email": "jere@hotmail.com",
+        "contraseña": "$2a$10$HyS55Qe0Kx.cdQI6wT/N2.c.5gSoCM7XbEoumiYF0EpoRc82UtgNO"
     }
 ]

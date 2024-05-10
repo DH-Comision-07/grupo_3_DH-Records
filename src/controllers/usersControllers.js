@@ -2,7 +2,7 @@ const usersService = require('../models/db/services/usersService');
 const { validationResult } = require('express-validator');
 const bcryptjs= require('bcryptjs');
 const userService = require('../models/db/services/usersService');
-const db = require('../models/db/models');
+
 
 let usersControllers = {
 
@@ -26,7 +26,7 @@ let usersControllers = {
 
             let { nombreUsuario, email, contraseña, terminosCondiciones } = req.body;  
 
-            await db.Users.create({
+            await userService.createUser({
                 nombreUsuario,
                 email,
                 contraseña,
@@ -124,26 +124,6 @@ let usersControllers = {
     },
 
 
-    // create: async function(req, res) {
-    //     db.Users.findAll()
-    //     .then(users => {
-    //         res.render('users', { users });    // forma abreviada de {users: users}, ES6
-    //     })
-        
-    // },
-
-    // save: async function(req, res) {
-    //     console.log(req.body); 
-    
-    //     await db.Users.create({
-    //         nombreUsuario: req.body.nombreUsuario,
-    //         email: req.body.email,
-    //         contraseña: req.body.contraseña,
-    //         terminosCondiciones: req.body.terminosCondiciones,
-    //     });
-    //     res.redirect('/users/login');
-      
-    // }
 
 
 }
