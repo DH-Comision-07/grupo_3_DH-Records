@@ -32,7 +32,8 @@ routes.post("/uploadProfilePicture/:id", multerMid.single('profilePicture'), use
 routes.get("/logout", usersControllers.logOut);
 
 //lista de usuarios, vista NO implementada aun
-routes.get("/", usersControllers.getAll);
+routes.get("/", usersControllers.list);
+
 
 
 

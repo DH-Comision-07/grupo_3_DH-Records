@@ -126,9 +126,9 @@ let usersControllers = {
     list: async function (req, res) {
         try {
             const users = await userService.getAll2();
-            res.render('users', { users });
+            res.render('users/users', { users });
         } catch (error) {
-            res.render('users', { users:error });
+            res.render('users/users', { users:error });
         }
     }
 
