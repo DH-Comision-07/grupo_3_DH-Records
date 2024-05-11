@@ -96,5 +96,11 @@
         "email": "jere@hotmail.com",
         "contraseña": "$2a$10$HyS55Qe0Kx.cdQI6wT/N2.c.5gSoCM7XbEoumiYF0EpoRc82UtgNO",
         "image": "userProfile-1715372016140.jpg"
+    },
+    {
+        "id": 15,
+        "nombreUsuario": "homero",
+        "email": "homero@hotmail.com",
+        "contraseña": "$2a$10$9lo8Jh0hQ6D2pqtacnOFIeIEXnj2ZpTWJlhosk/jfE5YCI8flCaXW"
     }
 ]

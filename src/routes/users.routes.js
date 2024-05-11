@@ -34,7 +34,7 @@ routes.get("/edit/:id", usersControllers.edit);
 
 routes.get("/:id", userUnloggedValidationMid, usersControllers.detail);
 
-
+routes.put('/:id',usersControllers.update);
 
 
 //38

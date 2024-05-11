@@ -24,20 +24,12 @@ let usersControllers = {
         } else {
             req.body.contraseña  = userService.hashPassword(req.body.contraseña);
 
-            let { nombreUsuario, email, contraseña, terminosCondiciones } = req.body;  
-
-            await userService.createUser({
-                nombreUsuario,
-                email,
-                contraseña,
-                terminosCondiciones,
-            });
+            const newUser = await userService.createUser(req.body);
 
             usersService.create(req.body);
             
             return res.redirect('/users/login');
         };
-
     },  
 
 
@@ -135,7 +127,7 @@ let usersControllers = {
         }
     },
 
- 
+
 }
 
 module.exports = usersControllers;

@@ -42,10 +42,6 @@ let userService = {
     },
 
     //Sequelize 
-    createUser: async function (userData) {
-        return await db.Users.create(userData);
-    },
-
     getAll2: async function (){
         try {
             const users = await db.Users.findAll();
@@ -56,17 +52,16 @@ let userService = {
         }
     },
 
-
-
-    update: async function (id, body) {
-        try {
-            await db.Users.update(body, {where: { id:id }})   // Ver si body esta bien como parametro
-        } catch (error) {
-            
-        }
+    createUser: async function (userData) {
+        let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
+        const newUser = await db.Users.create({
+            nombreUsuario,
+            email,
+            contraseña,
+            terminosCondiciones,
+         });
+        return newUser;
     },
-
-
  
     hashPassword: function(password){
         return bcryptjs.hashSync( password, 10);
