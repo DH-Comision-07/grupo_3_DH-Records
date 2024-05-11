@@ -14,7 +14,7 @@ let usersControllers = {
         const errors = validationResult(req);
         
         let userEmail= userService.getByField('email', req.body.email);
-    
+
         if(userEmail) {
             res.render('users/register', { errores:{email:{ msg: 'This email is already registered'}}, oldData: req.body });
         }
@@ -101,20 +101,14 @@ let usersControllers = {
     },
 
 
-    getAll: function(req, res) {
-        return res.render('users', {users: usersService.getAll()});
-    },
-
-
-    edit: function(req, res) {
+    editImage: function(req, res) {
         let userId = req.params.id;
         let newUserData = {};
 
         if (req.file) {
             newUserData.image = req.file.filename;
         }
-    
-        let userUpdated = userService.update(userId, newUserData);
+        let userUpdated = userService.updateImage(userId, newUserData);
     
         if (userUpdated) {
             return res.redirect('/users/detail/' + userId);
@@ -130,11 +124,19 @@ let usersControllers = {
         } catch (error) {
             res.render('users/users', { users:error });
         }
-    }
+    },
 
+    edit: async function (req, res) {
+        try {
+            let user = await userService.getBy2(req.params.id);
+           res.render('users/edit', {user})
+        } catch (error) {
+            res.send('Error inesperado').status(500);
+        }
+    },
 
+  
 }
-
 
 module.exports = usersControllers;
 

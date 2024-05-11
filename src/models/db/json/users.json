@@ -94,6 +94,7 @@
         "id": 14,
         "nombreUsuario": "jere",
         "email": "jere@hotmail.com",
-        "contraseña": "$2a$10$HyS55Qe0Kx.cdQI6wT/N2.c.5gSoCM7XbEoumiYF0EpoRc82UtgNO"
+        "contraseña": "$2a$10$HyS55Qe0Kx.cdQI6wT/N2.c.5gSoCM7XbEoumiYF0EpoRc82UtgNO",
+        "image": "userProfile-1715372016140.jpg"
     }
 ]

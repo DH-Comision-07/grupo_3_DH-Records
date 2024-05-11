@@ -14,12 +14,29 @@ const db = require('..//models');
 let userService = {
 
     users: require('../json/users.json'),
+
     getAll: function() {
     return this.users;
     },
+
     getBy: function(id) {
     return this.users.find(user => user.id === id);
     },
+    //Sequelize
+    getBy2: async function(id) {
+        try {
+            return await db.Users.findByPk(id);
+        } catch (error) {
+            console.log(error);
+            return {      // objeto falso
+                id: 0,
+                nombreUsuario: "No encontrado",
+                
+            }
+        } 
+    },
+        
+
     getByField: function(field,text) {
         return this.users.find(user => user[field] === text);          
     },
@@ -37,16 +54,20 @@ let userService = {
             console.log('error');
             return [];
         }
-         
     },
 
 
-    delete: function(id) {
-        this.users = this.users.filter(user => user.id !== id);                                 
-        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
-        return this.users;
+
+    update: async function (id, body) {
+        try {
+            await db.Users.update(body, {where: { id:id }})   // Ver si body esta bien como parametro
+        } catch (error) {
+            
+        }
     },
 
+
+ 
     hashPassword: function(password){
         return bcryptjs.hashSync( password, 10);
         
@@ -56,7 +77,7 @@ let userService = {
         return bcryptjs.compareSync(inputPassword, userPassword);
     },
 
-    update: function(userId, newUserData) {
+    updateImage: function(userId, newUserData) {
         console.log(newUserData);
         console.log(userId);
         
@@ -98,6 +119,13 @@ let userService = {
         fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
         return this.users;
     },
+
+    delete: function(id) {
+        this.users = this.users.filter(user => user.id !== id);                                 
+        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
+        return this.users;
+    },
+
     
 }
 
