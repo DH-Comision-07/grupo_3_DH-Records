@@ -79,13 +79,13 @@ let usersControllers = {
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
                 }
                 
-                return res.redirect('/users/detail/:id') 
+                return res.redirect('/users/:id') 
             } else {
                 return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
             }
         }
 
-        return res.redirect('/users/detail/:id') 
+        return res.redirect('/users/:id') 
     },
 
     
@@ -135,7 +135,7 @@ let usersControllers = {
         }
     },
 
-  
+ 
 }
 
 module.exports = usersControllers;

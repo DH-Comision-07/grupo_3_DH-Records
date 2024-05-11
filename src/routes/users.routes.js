@@ -30,9 +30,10 @@ routes.get("/logout", usersControllers.logOut);
 
 routes.get("/", usersControllers.list);
 
-routes.get("/detail/:id", userUnloggedValidationMid, usersControllers.detail);
-
 routes.get("/edit/:id", usersControllers.edit);
+
+routes.get("/:id", userUnloggedValidationMid, usersControllers.detail);
+
 
 
 
