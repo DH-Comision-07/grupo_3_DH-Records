@@ -128,6 +128,16 @@ let usersControllers = {
     },
 
 
+   update: async function (req, res) {
+    try {
+        await userService.update(req.params.id, req.body);
+        res.redirect(`/users/${req.params.id}`)  // vista del detalle de la vista que edite
+    } catch(error) {
+        res.send('No se pudo editar');
+    }
+    }
+
+
 }
 
 module.exports = usersControllers;

@@ -36,7 +36,6 @@ let userService = {
         } 
     },
         
-
     getByField: function(field,text) {
         return this.users.find(user => user[field] === text);          
     },
@@ -51,8 +50,16 @@ let userService = {
             return [];
         }
     },
+//55
+    update: async function (id, body) {
+        try {
+           return await db.Users.update(body, {where: { id:id }})  ; 
+        } catch (error) {
+            
+        }
+    },
 
-    createUser: async function (userData) {
+    createUser: async function(userData) {
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
         const newUser = await db.Users.create({
             nombreUsuario,
@@ -65,7 +72,6 @@ let userService = {
  
     hashPassword: function(password){
         return bcryptjs.hashSync( password, 10);
-        
     },
 
     comparePassword: function(inputPassword, userPassword){

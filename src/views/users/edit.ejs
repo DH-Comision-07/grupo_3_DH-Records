@@ -1,89 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    ead>
     <%- include('../partials/head-1.ejs') %> 
-    <link rel="stylesheet" href="/css/perfil-usuario.css">
+    <link rel="stylesheet" href="/css/product.css">
     <%- include('../partials/head-2.ejs') %>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
-        <section class="seccion__perfil">
-            <div class="contenedor__perfil">
-                <img src="/Images/users/<%= user.image %>" alt="user-avatar" class="perfil__img">
-                <h2>Name: <%= user.nombreUsuario %> </h2>
-                <h3 class="subtitulo"><%= user.email %></h3>
-                <form action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
-                    <input type='file' name='profilePicture' accept='image/*'>  
-                    <button type='submit'> Upload</button>
-                </form>
-            </div>
-        </section>
-        <section class="seccion__info">
-            <h3 class="titulo__info">My information</h3>
-            <div class="bloque__info">
-                <div class="grupo__info">
-                    <p>Name and Surname</p>
-                    <p>E-Mail</p>
-                    <p>DNI</p>
-                    <p>Address</p>
-                </div>
-                <div class="datos__info">
-                    <p><%= user.nombreUsuario %></p>
-                    <p><%= user.email %></p>
-                    <p>12345678</p>
-                    <p> Street 123</p>
-                </div>
-            </div>
-        </section>
-        <section class="seccion__compras">
-            <h3 class="titulo__compras">Mis Compras</h3>
-            <div class="bloque__compras">
-                <div class="grupo__compras">
-                    <p>Buy 1</p>
-                    <p>State</p>
-                    <p>Deliver date</p>
-                    <p>Products</p>
-                </div>
-                <div class="datos__compras">
-                    <p>N Articles</p>
-                    <p>Delivered</p>
-                    <p>Delivered on February 20</p>
-                    <p>Disk 1, Disk 2...</p>
-                </div>
-            </div>
-            <div class="bloque__compras">
-                <div class="grupo__compras">
-                    <p>Buy 2</p>
-                    <p>State</p>
-                    <p>Delivery date</p>
-                    <p>Products</p>
-                </div>
-                <div class="datos__compras">
-                    <p>N Articles</p>
-                    <p>In travel</p>
-                    <p>Arrives on February 29</p>
-                    <p>Disck 1, Disck 2...</p>
-                </div>
-            </div>
-        </section>
-        <section class="seccion__seguridad">
-            <h3 class="titulo__seguridad">Segcurity</h3>
-            <div class="bloque__seguridad">
-                <div class="grupo__seguridad">
-                    <p>Change Password</p>
-                    <p>Change E-Mail</p>
-                    <p>Delete Account</p>
-                </div>
-                <div class="datos__seguridad">
-                    <p>********</p>
-                    <p>********</p>
-                    <p>********</p>
-                </div>
-            </div>
-        </section>
+        <h1>Edit Profile</h1>
+
+        <form action="/users/<%= user.id %>?_method=PUT" method="POST">
+            <label for="title">Name:</label>
+            <input  type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= user.nombreUsuario %>" required>
+        
+            <label for="awards">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email address" value="<%= user.email %>" required>
+        
+            <label for="awards">Password:</label>
+            <input type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= user.contraseña %>" required>
+        
+        
+            <button type="submit">Save the edit</button>
+        </form>
     </main>
 
-    <%- include('../partials/footer.ejs') %>
+  <!--   <%- include('../partials/footer.ejs') %>  -->
 </body>

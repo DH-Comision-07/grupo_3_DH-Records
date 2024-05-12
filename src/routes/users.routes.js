@@ -37,9 +37,6 @@ routes.get("/:id", userUnloggedValidationMid, usersControllers.detail);
 routes.put('/:id',usersControllers.update);
 
 
-//38
-//46
-
 
 
 
