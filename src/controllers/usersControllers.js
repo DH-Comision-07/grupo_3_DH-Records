@@ -111,7 +111,7 @@ let usersControllers = {
 
     list: async function (req, res) {
         try {
-            const users = await userService.getAll2();
+            const users = await userService.getAll();
             res.render('users/users', { users });
         } catch (error) {
             res.render('users/users', { users:error });
@@ -120,7 +120,7 @@ let usersControllers = {
 
     edit: async function (req, res) {
         try {
-            let user = await userService.getBy2(req.params.id);
+            let user = await userService.getBy(req.params.id);
            res.render('users/edit', {user})
         } catch (error) {
             res.send('Error inesperado').status(500);

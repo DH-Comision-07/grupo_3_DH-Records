@@ -14,16 +14,23 @@ const db = require('..//models');
 let userService = {
 
     users: require('../json/users.json'),
-
-    getAll: function() {
-    return this.users;
+   
+    getByField: function(field,text) {
+        return this.users.find(user => user[field] === text);          
     },
 
-    getBy: function(id) {
-    return this.users.find(user => user.id === id);
+    //Sequelize 
+    getAll: async function (){
+        try {
+            const users = await db.Users.findAll();
+            return users;
+        } catch (error) {
+            console.log('error');
+            return [];
+        }
     },
-    //Sequelize
-    getBy2: async function(id) {
+
+    getBy: async function(id) {
         try {
             return await db.Users.findByPk(id);
         } catch (error) {
@@ -36,27 +43,15 @@ let userService = {
         } 
     },
         
-    getByField: function(field,text) {
-        return this.users.find(user => user[field] === text);          
-    },
-
-    //Sequelize 
-    getAll2: async function (){
-        try {
-            const users = await db.Users.findAll();
-            return users;
-        } catch (error) {
-            console.log('error');
-            return [];
-        }
-    },
-//55
     update: async function (id, body) {
         try {
-           return await db.Users.update(body, {where: { id:id }})  ; 
+            if (body.contraseña) {
+                body.contraseña = bcryptjs.hashSync(body.contraseña, 10);
+            }
+            return await db.Users.update(body, {where: { id:id }})  ; 
         } catch (error) {
-            
-        }
+            console.log(error);
+        }   
     },
 
     createUser: async function(userData) {
@@ -126,6 +121,15 @@ let userService = {
         fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
         return this.users;
     },
+
+    //getBy: function(id) {
+    //    return this.users.find(user => user.id === id);
+    //    },
+
+    // getAll: function() {
+    //     return this.users;
+    //     },
+    
 
     
 }
