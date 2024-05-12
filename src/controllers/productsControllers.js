@@ -1,5 +1,5 @@
 
-const productService = require ('../models/productService');
+const productService = require ('../models/db/services/productService');
 
 
 let productsControllers = {
@@ -15,7 +15,7 @@ let productsControllers = {
         if (productDeleted) {
             res.redirect('/products');
         } else {
-            returnres.status(404).send('Product not found');
+            return res.status(404).send('Product not found');
         }    
     },
 
@@ -28,9 +28,18 @@ let productsControllers = {
     },
 
     store: function(req, res) {
-        productService.save(req.body);
-        res.send(req.body);
-        //res.redirect('/');
+        // datos del formulario y el archivo de imagen
+        const productData = req.body;
+        const imagen = req.files.imagen[0];
+    
+        // Llamada al service
+        let productStored = productService.store(productData, imagen);
+    
+        if (productStored) {
+            res.redirect('/products');
+        } else {
+            res.status(404).send('Product not Created');
+        } 
     },
 
     edit: function(req, res) {
@@ -41,8 +50,26 @@ let productsControllers = {
     getAll: function(req, res) {
         res.render('products/products', {products: productService.getAll()});
 
+    },
+    getProductDetail: function(req, res) {
+        const productId = req.params.id;
+        const product = productService.getBy(productId);
+    
+        if (!product) {
+          return res.status(404).send('Product not found');
+        }
+    
+        res.render('products/detail', { product });
+      },
+
+      home: function(req, res) {
+        const products = productService.getAll();
+        res.render('home', { products });
     }
 
-}
+
+    };
+    
+
 
 module.exports = productsControllers;

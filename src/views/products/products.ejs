@@ -29,7 +29,7 @@
                     
                     <article class="productos__articulo main__articulo">
                         <a href="/products/detail/<%= product.id %>">
-                            <img src="/imagenes/<%=product.imagen%>" class="productos__img">
+                            <img src="Images/main-img-product/<%=product.imagen%>" class="productos__img">
                             <div class="productos__info">
                                 <p class="productos__descripcion"> <%= product.autor %> </p>
                                 <p class="productos__precio"> <%= product.preciomostrador %> </p>     
@@ -52,11 +52,9 @@
 
         </div>
 
+        <%- include('../partials/footer.ejs') %>
     </main>
     
-    <%- include('../partials/footer.ejs') %>
-
-   
 </body>
 </html>
 

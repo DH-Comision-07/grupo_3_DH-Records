@@ -12,79 +12,18 @@
     
         <main class="main">
            
-            <!-- <h2 class="titulo-seccion-general"> Más Vendidos</h2> -->
-            
             <section id="destacados" class="productos__seccion">
-                
-                <article class="productos__articulo main__articulo">
-                    <a href="/products/product-detail">
-                        <img src="/imagenes/Vinilo1.png" class="productos__img">
-                            <div class="productos__info">
-                                <p class="productos__descripcion"> Poul Weller </p>
-                                <p class="productos__precio"> $5.000 </p>     
-                            </div>
-                    </a>
-                </article>
-    
-                <article class="productos__articulo main__articulo">
-                    <a href="/products/detail">
-                        <img src="/imagenes/Vinilo2.png" class="productos__img">
-                            <div class="productos__info">
-                                <p class="productos__descripcion"> Poul Keane </p>
-                                <p class="productos__precio"> $5.000 </p>     
-                            </div>
-                    </a>
-                </article>
-    
-                <article class="productos__articulo main__articulo">
-                    <a href="/products/product-detail">
-                        <img src="/imagenes/Vinilo3.png" class="productos__img">
-                            <div class="productos__info">
-                                <p class="productos__descripcion"> AC/DC </p>
-                                <p class="productos__precio"> $5.000 </p>     
-                            </div>
-                    </a>
-                </article>
-    
-                <article class="productos__articulo main__articulo">
-                    <a href="/products/product-detail">      
-                        <img src="/imagenes/Vinilo4.png" class="productos__img">
-                            <div class="productos__info">
-                                <p class="productos__descripcion"> INXS </p>
-                                <p class="productos__precio"> $5.000 </p>     
-                            </div>
-                    </a>
-                </article>
-    
-                <article class="productos__articulo main__articulo">
-                    <a href="/products/product-detail">
-                        <img src="/imagenes/Vinilo1.png" class="productos__img">
-                            <div class="productos__info">
-                                <p class="productos__descripcion"> Bernie Taupin </p>
-                                <p class="productos__precio"> $5.000 </p>     
-                            </div>
-                    </a>
-                </article>
-    
-                <article class="productos__articulo main__articulo">
-                    <a href="/products/product-detail">
-                        <img src="/imagenes/Vinilo2.png" class="productos__img">
-                            <div class="productos__info">
-                                <p class="productos__descripcion"> Thin Lizzy </p>
-                                <p class="productos__precio"> $5.000 </p>     
-                            </div>
-                    </a>
-                </article>
-                
-            </section>
-    
-    
-            <section class="productos__section-boton">
-                <form action="/" method="post">
-                    <div class="productos__botonPadre">
-                        <button class="productos__boton" type="submit" value="Ver Mas Productos"> See More Products </button>
-                    </div>
-                  </form>
+                <% products.slice(0,6).forEach(product => { %>
+                    <article class="productos__articulo main__articulo">
+                      <a href="/products/detail/<%= product.id %>"> 
+                        <img src="/Images/main-img-product/<%= product.imagen %>" class="productos__img">
+                        <div class="productos__info">
+                          <p class="productos__descripcion"><%= product.titulo %></p>
+                          <p class="productos__precio">$<%= product.precioMostrador %></p>
+                        </div>
+                      </a>
+                    </article>
+                  <% }) %>
             </section>
             
     
