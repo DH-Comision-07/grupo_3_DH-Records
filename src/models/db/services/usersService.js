@@ -9,23 +9,95 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs= require('bcryptjs');
-
+const db = require('..//models');
 
 let userService = {
 
     users: require('../json/users.json'),
-    getAll: function() {
-    return this.users;
-    },
-    getBy: function(id) {
-    return this.users.find(user => user.id === id);
-    },
+   
     getByField: function(field,text) {
         return this.users.find(user => user[field] === text);          
     },
 
+    //Sequelize 
+    getAll: async function (){
+        try {
+            const users = await db.Users.findAll();
+            return users;
+        } catch (error) {
+            console.log('error');
+            return [];
+        }
+    },
 
-    createId: function() {
+    getBy: async function(id) {
+        try {
+            return await db.Users.findByPk(id);
+        } catch (error) {
+            console.log(error);
+            return {      // objeto falso
+                id: 0,
+                nombreUsuario: "No encontrado",
+                
+            }
+        } 
+    },
+        
+    update: async function (id, body) {
+        try {
+            if (body.contraseña) {
+                body.contraseña = bcryptjs.hashSync(body.contraseña, 10);
+            }
+            return await db.Users.update(body, {where: { id:id }})  ; 
+        } catch (error) {
+            console.log(error);
+        }   
+    },
+
+    createUser: async function(userData) {
+        let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
+        const newUser = await db.Users.create({
+            nombreUsuario,
+            email,
+            contraseña,
+            terminosCondiciones,
+         });
+        return newUser;
+    },
+ 
+    hashPassword: function(password){
+        return bcryptjs.hashSync( password, 10);
+    },
+
+    comparePassword: function(inputPassword, userPassword){
+        return bcryptjs.compareSync(inputPassword, userPassword);
+    },
+
+    updateImage: function(userId, newUserData) {
+        console.log(newUserData);
+        console.log(userId);
+        
+        let users = this.getAll();
+
+        let userIndex = users.findIndex(user => user.id == userId);
+    
+        // Si el usuario existe...
+        if (userIndex != -1) {
+            
+            users[userIndex].image = newUserData.image;
+            
+            fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(users));
+    
+            return true;
+        }
+    
+        return false;
+    },
+
+
+    //         JSON
+
+     createId: function() {
         let lastUser = this.users[this.users.length - 1];             
         if(lastUser) {                                               
         return lastUser.id + 1;
@@ -40,45 +112,25 @@ let userService = {
             ...user                                                   
         }
         this.users.push(newUser);
-        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
+        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
         return this.users;
     },
 
     delete: function(id) {
         this.users = this.users.filter(user => user.id !== id);                                 
-        fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(this.users));
+        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
         return this.users;
     },
 
-    hashPassword: function(password){
-        return bcryptjs.hashSync( password, 10);
-        
-    },
+    //getBy: function(id) {
+    //    return this.users.find(user => user.id === id);
+    //    },
 
-    comparePassword: function(inputPassword, userPassword){
-        return bcryptjs.compareSync(inputPassword, userPassword);
-    },
+    // getAll: function() {
+    //     return this.users;
+    //     },
+    
 
-    update: function(userId, newUserData) {
-        console.log(newUserData);
-        console.log(userId);
-        
-        let users = this.getAll();
-
-        let userIndex = users.findIndex(user => user.id == userId);
-    
-        // Si el usuario existe...
-        if (userIndex != -1) {
-            
-            users[userIndex].image = newUserData.image;
-            
-            fs.writeFileSync(path.join(__dirname, 'users.json'), JSON.stringify(users));
-    
-            return true;
-        }
-    
-        return false;
-    },
     
 }
 
