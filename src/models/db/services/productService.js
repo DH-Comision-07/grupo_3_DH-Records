@@ -8,12 +8,43 @@ let productService = {
 
     products: products,
 
-    getAll: function() {
-        return this.products;
+    getAll: async function() {
+        try {
+            return await db.Productos.findAll({
+                include: [
+                    {association: "generos"},
+                    {association: "autores"},
+                    {association: "imagenesProductos"}
+                ]
+            })
+        } catch (error) {
+            console.log(error);
+            return([]);
+        }
     },
 
-    getBy: function(id) {
-        return this.products.find(product => product.id == id);
+    getBy: async function(id) {
+        try {
+            return await db.Productos.findByPk(id, {
+                include: [
+                  { association: "generos" },
+                  { association: "autores" },
+                  { association: "imagenesProductos" }
+                ]
+            })
+            //return this.products.find(product => product.id == id);
+        } catch (error) {
+            console.log(error);
+            return {
+                id: 0, 
+                titulo: '-',
+                descripcion: '-',
+                precio_costo: '-',
+                precio_venta: '-',
+                release_date: '-',
+                estilo: '-'
+            }
+        }
     },
 
     delete: function (id) {

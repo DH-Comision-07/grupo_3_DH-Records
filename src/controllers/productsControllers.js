@@ -4,9 +4,24 @@ const productService = require ('../models/db/services/productService');
 
 let productsControllers = {
 
-    detail: function(req, res) {
-        let productId = (productService.getBy(req.params.id));
-        res.render('products/detail', {productId});
+    listAll: async function(req, res) {
+        try { //si todo sale bien
+            let productsArray = await productService.getAll()
+            res.render('products/products', {products: productsArray});
+        } catch (error) { //si sale mal
+            res.send('Error inesperado').status(500);
+        }
+
+    },
+
+    detail: async function(req, res) {
+        try { //si todo sale bien
+            let productId = await productService.getBy(req.params.id)
+            res.render('products/detail', {productId});
+        } catch (error) { //si sale mal
+            res.send('Error inesperado').status(500);
+        }
+
     },
 
     detailDelete: function(req, res) {
@@ -47,15 +62,6 @@ let productsControllers = {
         res.render('products/edit', {productId});
     },
 
-    listAll: async function(req, res) {
-        try { //si todo sale bien
-            let productsArray = await productService.getAll()
-            res.render('products/products', {products: productsArray});
-        } catch (error) { //si sale mal
-            
-        }
-
-    },
     getProductDetail: function(req, res) {
         const productId = req.params.id;
         const product = productService.getBy(productId);
@@ -67,9 +73,15 @@ let productsControllers = {
         res.render('products/detail', { product });
       },
 
-      home: function(req, res) {
-        const products = productService.getAll();
-        res.render('home', { products });
+      home: async function(req, res) {
+        try { //si todo sale bien
+            let productsArray = await productService.getAll()
+            //res.send(productsArray);
+            //res.send(productsArray[0].imagenesProductos[0].nombre);
+            res.render('home', {products: productsArray});
+        } catch (error) { //si sale mal
+            res.send('Error inesperado').status(500);
+        }
     }
 
 
