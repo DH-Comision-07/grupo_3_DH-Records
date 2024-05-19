@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = "Imagenes_productos";
+    let alias = "ImagenesProductos";
 
-    cols = {
+    let cols = {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -18,19 +18,19 @@ module.exports = (sequelize, DataTypes) => {
     }
     };
 
-    config = {
+    let config = {
       tableName: 'imagenes_productos',
       timestamps: false
     };
 
     let ImagenProducto = sequelize.define(alias, cols, config);
   
-    ImagenProducto.associate = function(models){
-      ImagenProducto.belongsto(models.Producto,{
+    /*ImagenProducto.associate = function(models){
+      ImagenProducto.belongsTo(models.Productos,{
         as: "productos",
         foreignKey: "producto_id"
       });
-    }
+    }*/
 
     return ImagenProducto;
-  }
+}

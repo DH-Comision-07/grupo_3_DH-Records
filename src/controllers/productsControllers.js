@@ -47,8 +47,13 @@ let productsControllers = {
         res.render('products/edit', {productId});
     },
 
-    getAll: function(req, res) {
-        res.render('products/products', {products: productService.getAll()});
+    listAll: async function(req, res) {
+        try { //si todo sale bien
+            let productsArray = await productService.getAll()
+            res.render('products/products', {products: productsArray});
+        } catch (error) { //si sale mal
+            
+        }
 
     },
     getProductDetail: function(req, res) {

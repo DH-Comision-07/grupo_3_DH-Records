@@ -17,7 +17,7 @@ routes.get('/create', productsControllers.create);
 
 routes.get("/edit/:id", productsControllers.edit);
 
-routes.get('/', productsControllers.getAll);
+routes.get('/', productsControllers.listAll);
 
 routes.post('/', multerMid.fields([{ name: 'imagen' }]), productsControllers.store);
 
