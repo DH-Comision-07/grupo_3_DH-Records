@@ -1,0 +1,19 @@
+module.exports = (sequelize, DataTypes) => {
+
+    let alias = "Imagenes_productos";
+    cols = {};
+    config = {
+      tableName: 'imagenes_productos',
+      timestamps: false
+    };
+    let ImagenProducto = sequelize.define(alias, cols, config);
+  
+    ImagenProducto.associate = function(models){
+      ImagenProducto.belongsto(models.Producto,{
+        as: "productos",
+        foreignKey: "producto_id"
+      });
+    }
+
+    return ImagenProducto;
+  }

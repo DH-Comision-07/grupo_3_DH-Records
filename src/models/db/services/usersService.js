@@ -9,7 +9,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs= require('bcryptjs');
-const db = require('..//models');
+const db = require('../models/users');
+
 
 let userService = {
 
