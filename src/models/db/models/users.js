@@ -2,9 +2,8 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Users extends Model {
-   
-
+class Users extends Model {
+  /* 
     static associate(models) {
       this.belongsToMany(models.Products,{
         as: 'products',
@@ -13,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       
     }
+    */
   }
   Users.init({
     nombreUsuario: DataTypes.STRING,
@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Users',
+    timestamps: false
   });
   return Users;
 };

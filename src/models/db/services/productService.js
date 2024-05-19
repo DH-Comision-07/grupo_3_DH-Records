@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const products = require('../json/products.json');
+let db = require('../models');
 
 let productService = {
 
