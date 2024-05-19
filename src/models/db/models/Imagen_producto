@@ -1,11 +1,28 @@
 module.exports = (sequelize, DataTypes) => {
 
     let alias = "Imagenes_productos";
-    cols = {};
+
+    cols = {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      nombre: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      tipo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+    };
+
     config = {
       tableName: 'imagenes_productos',
       timestamps: false
     };
+
     let ImagenProducto = sequelize.define(alias, cols, config);
   
     ImagenProducto.associate = function(models){
