@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head-1.ejs') %>   
+
+<!-- aca se inserta la hoja de estilo correspondiente a la vista -->
+<link rel="stylesheet" href="/css/product.css">
+
+<%- include('../partials/head-2.ejs') %>  
+    
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+    <main class="main">
+        <h2 class="titulo-seccion-general">Lista de Productos</h1>
+
+        <section class="productos__seccion">
+        
+            <% products.forEach(product=> { %>
+                
+        <article class="productos__articulo main__articulo">
+            <a href="/products/product-detail/<%= product.id %>">
+                <img src="/imagenes/<%=product.imagen%>" class="productos__img">
+                    <div class="productos__info">
+                        <p class="productos__descripcion"> <%= product.autor %> </p>
+                        <p class="productos__precio"> <%= product.preciomostrador %> </p>     
+                    </div>
+            </a>
+        </article>
+
+        <% }) %>
+
+        
+        
+    </section>
+
+
+    <section class="productos__section-boton">
+        <form action="/" method="post">
+            <div class="productos__botonPadre">
+                <button class="productos__boton" type="submit" value="Ver Mas Productos"> Ver Mas Productos </button>
+            </div>
+          </form>
+    </section>
+    </main>
+    
+    <%- include('../partials/footer.ejs') %>
+
+   
+</body>
+</html>
+
