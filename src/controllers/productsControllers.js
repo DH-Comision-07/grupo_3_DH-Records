@@ -54,6 +54,35 @@ let productsControllers = {
             res.status(500).send('Error inesperado');
         }
     },
+
+    edit: async function(req, res) {
+        try {
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            let productId = await productService.getBy(req.params.id);
+            res.render('products/edit', {genres, authors, productId});
+            //res.send(productId);
+        } catch (error) {
+            res.send('Error inesperado').status(500);
+        }
+    },
+
+    update: async function(req, res) {
+        try {
+            const productId = req.params.id;
+            const productData = req.body;
+
+            //si en el form vino una imagen, necesito actualizar
+            const imagen = req.files.imagen ? req.files.imagen[0] : null;
+            
+            await productService.updateDB(productId, productData, imagen);
+            
+            res.redirect(`/products/detail/${productId}`); 
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error inesperado');
+        }
+    },
     
     // Metodos a reemplazar con CRUD de DB
 
@@ -69,11 +98,6 @@ let productsControllers = {
 
     cart: function(req, res) {
         res.render('products/cart');
-    },
-    
-    edit: function(req, res) {
-        let productId = (productService.getBy(req.params.id));
-        res.render('products/edit', {productId});
     },
     
     
@@ -107,7 +131,12 @@ let productsControllers = {
         } else {
             res.status(404).send('Product not Created');
         } 
-    }
+    },
+
+    editDeprecated: function(req, res) {
+        let productId = (productService.getBy(req.params.id));
+        res.render('products/edit', {productId});
+    },
 
 };
 

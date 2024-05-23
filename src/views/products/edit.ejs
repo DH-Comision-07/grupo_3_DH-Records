@@ -3,50 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Producto | DH Records</title>
-    <link rel="stylesheet" href="/css/edit-product.css">
+    <title>Crear Producto | DH Records</title>
+    <link rel="stylesheet" href="/css/edit-product-copy.css">
 </head>
 <body>
-    <form action="/edit/<%= productId.id %>" method="POST"> 
-        <h1>Edit Product </h1>
-        <input type="hidden" name="_method" value="PUT">
+
+    <form action="/products/<%= productId.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+        <h1>Editar un producto existente</h1>
         
-        <label for="name">Product name:</label>
-        <input type="text" id="name" name="name" value="<%= productId.name %>" required> 
+        <label for="titulo">Titulo:</label>
+        <input type="text" id="titulo" name="titulo" value="<%= productId.titulo %>" required> 
         
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" required><%= productId.description %></textarea> 
-        
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" accept="image/*"> 
-        
-        <label for="categoria">Category:</label>
-        <select id="categoria" name="categoria" required>
-            <option value="Pop">Pop</option>
-            <option value="Rock">Rock</option>
-            <option value="Pop-Rock">Pop-Rock</option>
-            <option value="Electronica">Electronica</option>
-            <option value="Country">Country</option>
-            <option value="R&B">R&B</option>
-            <option value="Soul">Soul</option>
-            <option value="Heavy Metal">Heavy Metal </option>
-            <option value="Rap-Hip-Hop">Rap-Hip-Hop</option>
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="" disabled selected>Seleccione un género</option>
+            <% genres.forEach(function(genre) { %>
+                <% if(genre.id == productId.generos.id) { %>
+                    <option value="<%= genre.id %>" selected><%= genre.nombre %></option>
+                <% }else { %>
+                    <option value="<%= genre.id %>"><%= genre.nombre %></option>
+                <% } %>
+
+            <% }); %>
         </select>
+        <a href="/#"><label>no encontras el Género? agregalo a la lista</label></a>
+
+        <label for="descripcion">Description:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required><%= productId.descripcion %></textarea> 
+
+        <label for="autor">Autor:</label>
+        <select id="autor" name="autor" required>
+            <option value="" disabled selected>Seleccione un autor</option>
+            <% authors.forEach(function(author) { %>
+                <option value="<%= author.id %>"><%= author.nombre %></option>
+            <% }); %>
+        </select>
+        <a href="/#"><label>no encontras el Autor? agregalo a la lista</label></a>
         
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" step="0.01" value="<%= productId.price %>" required> <!-- Agregado valor del precio del producto -->
+        <label for="precioCosto">Precio Costo:</label>
+        <input type="number" id="precioCosto" name="precioCosto" step="0.01" value="<%= productId.precio_costo %>" required> 
+
+        <label for="precioVenta">Precio de venta:</label>
+        <input type="number" id="precioVenta" name="precioVenta" step="0.01" value="<%= productId.precio_venta %>" required> 
         
+        <% if (productId.imagenesProductos) { %>
+            <label for="imagenActual">Imagen actual:</label>
+            <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="Imagen actual del producto" style="max-width: 200px;">
+        <% } %>
+
+        <label for="imagen">Seleccionar una NUEVA Imagen de portada?</label>
+        <input type="file" id="imagen" name="imagen"> 
+
+        <label for="releaseDate">Fecha de lanzamiento:</label>
+        <input type="date" id="releaseDate" name="releaseDate   " required>
+
+        <label for="estilo">Estilo:</label>
+        <input type="text" id="estilo" name="estilo" value="<%= productId.estilo %>" required> 
+        
+
         <!-- Contenedor de botones -->
         <div class="botones-container">
-            <!-- Botón de guardar cambios -->
+
             <button type="submit">Guardar Cambios</button>
 
-            <!-- Contenedor del botón "Eliminar Producto" -->
-            <div class="eliminar-producto-container">
-                <form action="/eliminar-producto/<%= productId.id %>" method="POST">
-                    <button type="submit" onclick="return confirm('¿Estás seguro que quieres eliminar este producto?')">Eliminar Producto</button>
-                </form>
-            </div>
         </div>
     </form>
 </body>

@@ -46,6 +46,83 @@ let productService = {
         }
     },
 
+    storeDB: async function(productData, imagen) {
+        try {
+            const { titulo, genero, descripcion, autor, precioCosto, precioVenta, releaseDate, estilo } = productData;
+    
+            const producto = await db.Productos.create({
+                titulo: titulo,
+                genero_id: genero,
+                descripcion: descripcion,
+                autor_id: autor, 
+                precio_costo: precioCosto,
+                precio_venta: precioVenta,
+                release_date: releaseDate,
+                estilo: estilo
+            });
+            if (imagen) {
+                // Guardar la imagen en la tabla imagenes_productos
+                await db.ImagenesProductos.create({
+                    nombre: imagen.filename,
+                    tipo: imagen.mimetype,
+                    producto_id: producto.id
+                });
+            }
+            return producto;
+        } catch (error) {
+            return ({});
+        }
+        
+    },
+
+    //METODOS EN DESARROLLO PARA EL CRUD DE DB
+    updateDB: async function(productId, productData, imagen) {
+        try {
+            const { titulo, genero, descripcion, autor, precioCosto, precioVenta, releaseDate, estilo } = productData;
+    
+            await db.Productos.update({
+                titulo: titulo,
+                genero_id: genero,
+                descripcion: descripcion,
+                autor_id: autor,
+                precio_costo: precioCosto,
+                precio_venta: precioVenta,
+                release_date: releaseDate,
+                estilo: estilo
+            }, { 
+                where: { id: productId } 
+            });
+    
+            //verifico si tengo q actualizar la imagen
+            if (imagen) {
+                //Obtengo la imagen asociada al producto
+                let imagenProducto = await db.ImagenesProductos.findOne({ 
+                    where: { 
+                        producto_id: productId 
+                    } 
+                });
+    
+                //si el producto ya tinia imagen y la tengo q reescribir, primero la elimino
+                if (imagenProducto) {
+                    await imagenProducto.destroy({ 
+                        where: { 
+                            producto_id: productId 
+                        } 
+                    });
+                }
+    
+                await db.ImagenesProductos.create({
+                    nombre: imagen.filename,
+                    tipo: imagen.mimetype,
+                    producto_id: productId
+                });
+            }
+    
+        } catch (error) {
+            return ({});
+        }
+    },
+
     //METODOS ANTERIORMENTE UTILIZADOS PARA JSON
     products: products,
 
@@ -96,39 +173,9 @@ let productService = {
         } else {
             return false;
         }
-    },
-
-    //METODOS EN DESARROLLO PARA EL CRUD DE DB
-    storeDB: async function(productData, imagen) {
-        try {
-            const { titulo, genero, descripcion, autor, precioCosto, precioVenta, releaseDate, estilo } = productData;
-    
-            // Crear el producto en la base de datos
-            const producto = await db.Productos.create({
-                titulo: titulo,
-                genero_id: genero,
-                descripcion: descripcion,
-                autor_id: autor, // Asegúrate de usar los nombres correctos de tus columnas y asociaciones
-                precio_costo: precioCosto,
-                precio_venta: precioVenta,
-                release_date: releaseDate,
-                estilo: estilo
-            });
-            // Verificar si una imagen fue cargada
-            if (imagen) {
-                // Guardar la imagen en la tabla imagenes_productos
-                await db.ImagenesProductos.create({
-                    nombre: imagen.filename,
-                    tipo: imagen.mimetype,
-                    producto_id: producto.id
-                });
-            }
-            return producto;
-        } catch (error) {
-            return ({});
-        }
-        
     }
+
+
 }
 
 module.exports = productService;
