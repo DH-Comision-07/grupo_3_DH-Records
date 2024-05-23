@@ -15,7 +15,7 @@
             <section id="destacados" class="productos__seccion">
                 <% products.slice(0,6).forEach(product => { %>
                     <article class="productos__articulo main__articulo">
-                      <a href="/products/<%= product.id %>"> 
+                      <a href="/products/detail/<%= product.id %>"> 
                         <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" class="productos__img">
                         <div class="productos__info">
                           <p class="productos__descripcion"><%= product.titulo %></p>

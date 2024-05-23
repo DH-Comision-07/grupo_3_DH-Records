@@ -9,18 +9,21 @@ const multerMid = require('../middlewares/multerProductsMid');
 
 routes.get('/', productsControllers.listAll);
 
-routes.get('/:id', productsControllers.detail);
+routes.get('/detail/:id', productsControllers.detail);
 
 routes.delete('/:id', productsControllers.detailDelete);
 
 routes.get('/cart', productsControllers.cart);
 
-routes.get('/create', productsControllers.create);
-
 routes.get("/edit/:id", productsControllers.edit);
 
+
+// -- Rutas en desarrollo CRUD de DB
+routes.get("/create", productsControllers.create);
 routes.post('/', multerMid.fields([{ name: 'imagen' }]), productsControllers.store);
 
-
+// -- Rutas deprecated
+//routes.get('/create-deprecated', productsControllers.create);
+//routes.post('/', multerMid.fields([{ name: 'imagen' }]), productsControllers.store);
 
 module.exports = routes;
