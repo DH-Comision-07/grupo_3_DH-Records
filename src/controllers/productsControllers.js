@@ -77,7 +77,18 @@ let productsControllers = {
             
             await productService.updateDB(productId, productData, imagen);
             
-            res.redirect(`/products/detail/${productId}`); 
+            res.redirect(`/products/${productId}`); 
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error inesperado');
+        }
+    },
+
+    delete: async function(req, res) {
+        try {
+            let productId = req.params.id;
+            await productService.delete(productId);
+            res.redirect('/products');
         } catch (error) {
             console.error(error);
             res.status(500).send('Error inesperado');
@@ -85,16 +96,6 @@ let productsControllers = {
     },
     
     // Metodos a reemplazar con CRUD de DB
-
-    detailDelete: function(req, res) {
-        let productId = req.params.id;
-        let productDeleted = productService.delete(productId);
-        if (productDeleted) {
-            res.redirect('/products');
-        } else {
-            return res.status(404).send('Product not found');
-        }    
-    },
 
     cart: function(req, res) {
         res.render('products/cart');
@@ -137,6 +138,16 @@ let productsControllers = {
         let productId = (productService.getBy(req.params.id));
         res.render('products/edit', {productId});
     },
+
+    detailDeleteDeprecated: function(req, res) {
+        let productId = req.params.id;
+        let productDeleted = productService.delete(productId);
+        if (productDeleted) {
+            res.redirect('/products');
+        } else {
+            return res.status(404).send('Product not found');
+        }    
+    }
 
 };
 

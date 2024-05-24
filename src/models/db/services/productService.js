@@ -111,6 +111,7 @@ let productService = {
                     });
                 }
     
+                //y despues guardo la nueva imagen
                 await db.ImagenesProductos.create({
                     nombre: imagen.filename,
                     tipo: imagen.mimetype,
@@ -123,10 +124,41 @@ let productService = {
         }
     },
 
+    delete: async function (productId) {
+        try {
+            //Obtengo la imagen asociada al producto
+            let imagenProducto = await db.ImagenesProductos.findOne({ 
+                where: { 
+                    producto_id: productId 
+                } 
+            });
+
+            //si el producto tiene imagen, la elimino
+            if (imagenProducto) {
+                await imagenProducto.destroy({ 
+                    where: { 
+                        producto_id: productId 
+                    } 
+                });
+            };
+
+            //por ultimo elimino el producto seleccionado
+            await db.Productos.destroy({ 
+                where: { 
+                    id: productId 
+                } 
+            });
+
+        } catch (error) {
+            return ({});
+        }                              
+    },
+
+
     //METODOS ANTERIORMENTE UTILIZADOS PARA JSON
     products: products,
 
-    delete: function (id) {
+    deleteDeprecated: function (id) {
         const initialLength = this.products.length;
         this.products = this.products.filter(product => product.id != id);                          //filter no modifica el array ooriginal por eso el this.products=
           
