@@ -35,7 +35,11 @@
         <select id="autor" name="autor" required>
             <option value="" disabled selected>Seleccione un autor</option>
             <% authors.forEach(function(author) { %>
-                <option value="<%= author.id %>"><%= author.nombre %></option>
+                <% if(author.id == productId.autores.id) { %>
+                    <option value="<%= author.id %>" selected><%= author.nombre %></option>
+                <% }else { %>
+                    <option value="<%= author.id %>"><%= author.nombre %></option>
+                <% } %>
             <% }); %>
         </select>
         <a href="/#"><label>no encontras el Autor? agregalo a la lista</label></a>
@@ -55,7 +59,7 @@
         <input type="file" id="imagen" name="imagen"> 
 
         <label for="releaseDate">Fecha de lanzamiento:</label>
-        <input type="date" id="releaseDate" name="releaseDate   " required>
+        <input type="date" id="releaseDate" name="releaseDate" value="<%= productId.release_date.toISOString().split('T')[0] %>" required>
 
         <label for="estilo">Estilo:</label>
         <input type="text" id="estilo" name="estilo" value="<%= productId.estilo %>" required> 

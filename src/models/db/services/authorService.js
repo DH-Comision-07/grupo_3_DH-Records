@@ -9,6 +9,21 @@ let authorService = {
             console.log(error);
             return([]);
         }
+    },
+
+    storeDB: async function(nombre) {
+        try {
+            const author = await db.Autores.create({
+                nombre: nombre
+            });
+
+            return author;
+
+        } catch (error) {
+
+            return ({});
+        }
+        
     }
 }
 

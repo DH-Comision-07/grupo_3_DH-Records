@@ -46,7 +46,13 @@ let productsControllers = {
         try {
             const productData = req.body;
             const imagen = req.files.imagen[0];
-            
+
+            //debo revisar si se creo un nuevo autor antes de guardar el producto en la DB
+            if (productData.newAuthor) {
+                let newAuthor = await authorService.storeDB(productData.newAuthor);
+                productData.autor = newAuthor.id;
+            }
+
             let producto = await productService.storeDB(productData, imagen)
             res.redirect('/products'); 
         } catch (error) {

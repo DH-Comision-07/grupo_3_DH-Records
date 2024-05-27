@@ -24,14 +24,19 @@ let productService = {
 
     getBy: async function(id) {
         try {
-            return await db.Productos.findByPk(id, {
+            let productID = await db.Productos.findByPk(id, {
                 include: [
                   { association: "generos" },
                   { association: "autores" },
                   { association: "imagenesProductos" }
                 ]
             })
-            //return this.products.find(product => product.id == id);
+            //tengo que cambiar la fecha para que sea tipo DATE para despues mostrarla 
+            //en el HTML, por eso la transformo en tipo DATE 
+            if(productID && productID.release_date){
+                productID.release_date = new Date(productID.release_date);
+            }
+            return productID;
         } catch (error) {
             console.log(error);
             return {
