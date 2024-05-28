@@ -14,18 +14,18 @@
         <h2 class="titulo_principal"> Product Detail </h2>
         <section class="producto">
             <div class="vinilo__img1">
-                <img src="/images/Vinilo1.png" alt="Vinilo1">
+                <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="Vinilo1">
             </div>
             <div class="vinilo">
                 <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
-                    <p>Group: <%= productId.autor %> </p>
-                    <p>Year: <%=productId.año %> </p>
-                    <p>Gender: <%=productId.categoria %> </p>
+                    <p>Group: <%= productId.autores.nombre %> </p>
+                    <p>Year: <%=productId.release_date.toISOString().split('T')[0] %> </p>
+                    <p>Gender: <%=productId.generos.nombre %> </p>
                     <p>Style: <%= productId.estilo %></p>
                     <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 <br>
                 <h4 class="titulo__precio">Price</h4>
-                <p class="num__precio"><%= productId.precioMostrador %></p>
+                <p class="num__precio"><%= productId.precio_venta %></p>
                 <p class="agregar__carrito">
                 <div class="centrar-texto">
                     <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
@@ -62,3 +62,6 @@
 </body>
     
 </html>
+
+
+
