@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Producto | DH Records</title>
-    <link rel="stylesheet" href="/css/edit-product-copy.css">
+    <link rel="stylesheet" href="/css/product-create-edit.css">
+    <script src="/js/products/createFormHandler.js" defer></script>
 </head>
 <body>
 
@@ -31,8 +32,8 @@
         <label for="descripcion">Description:</label>
         <textarea id="descripcion" name="descripcion" rows="4" required><%= productId.descripcion %></textarea> 
 
-        <label for="autor">Autor:</label>
-        <select id="autor" name="autor" required>
+        <label id="authorLabel" for="autor">Autor:</label>
+        <select id="authorSelect" name="autor" class="visible" required>
             <option value="" disabled selected>Seleccione un autor</option>
             <% authors.forEach(function(author) { %>
                 <% if(author.id == productId.autores.id) { %>
@@ -42,8 +43,11 @@
                 <% } %>
             <% }); %>
         </select>
-        <a href="/#"><label>no encontras el Autor? agregalo a la lista</label></a>
-        
+        <input type="text" id="newAuthorInput" name="newAuthor" class="hidden" placeholder="Ingrese el nombre del nuevo autor">
+        <input type="checkbox" id="newAuthorCheckbox">
+        <label for="newAuthorCheckbox">Agregar Autor a la lista</label>
+
+
         <label for="precioCosto">Precio Costo:</label>
         <input type="number" id="precioCosto" name="precioCosto" step="0.01" value="<%= productId.precio_costo %>" required> 
 

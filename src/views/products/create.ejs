@@ -4,29 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Producto | DH Records</title>
-    <link rel="stylesheet" href="/css/edit-product-copy.css">
-    <script>
-        function toggleNewAuthor() {
-            const checkbox = document.getElementById('newAuthorCheckbox');
-            const authorLabel = document.getElementById('authorLabel');
-            const authorSelect = document.getElementById('authorSelect');
-            const newAuthorInput = document.getElementById('newAuthorInput');
-    
-            if (checkbox.checked) {
-                authorLabel.innerText = "Nuevo Autor:";
-                authorSelect.removeAttribute('required'); // Remover el atributo "required" del select
-                newAuthorInput.setAttribute('required', true); // Agregar el atributo "required" al input
-                authorSelect.style.display = 'none';
-                newAuthorInput.style.display = 'block';
-            } else {
-                authorLabel.innerText = "Autor:";
-                authorSelect.setAttribute('required', true); // Agregar el atributo "required" al select
-                newAuthorInput.removeAttribute('required'); // Remover el atributo "required" del input
-                authorSelect.style.display = 'block';
-                newAuthorInput.style.display = 'none';
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="/css/product-create-edit.css">
+    <script src="/js/products/createFormHandler.js" defer></script>
 </head>
 <body>
     <form action="/products/" method="POST" enctype="multipart/form-data"> 
@@ -42,25 +21,20 @@
                 <option value="<%= genre.id %>"><%= genre.nombre %></option>
             <% }); %>
         </select>
-        <a href="/#"><label>no encontras el Género? agregalo a la lista</label></a>
 
         <label for="descripcion">Description:</label>
         <textarea id="descripcion" name="descripcion" rows="4" required></textarea> 
 
-
-
         <label id="authorLabel" for="autor">Autor:</label>
-        <select id="authorSelect" name="autor" required>
+        <select id="authorSelect" name="autor" class="visible" required>
             <option value="" disabled selected>Seleccione un autor</option>
             <% authors.forEach(function(author) { %>
                 <option value="<%= author.id %>"><%= author.nombre %></option>
             <% }); %>
         </select>
-        <input type="text" id="newAuthorInput" name="newAuthor" style="display: none;" placeholder="Ingrese el nombre del nuevo autor">
-        <input type="checkbox" id="newAuthorCheckbox" onclick="toggleNewAuthor()">
+        <input type="text" id="newAuthorInput" name="newAuthor" class="hidden" placeholder="Ingrese el nombre del nuevo autor">
+        <input type="checkbox" id="newAuthorCheckbox">
         <label for="newAuthorCheckbox">Agregar Autor a la lista</label>
-        
-
         
         <label for="precioCosto">Precio Costo:</label>
         <input type="number" id="precioCosto" name="precioCosto" step="0.01" value="" required> 
@@ -76,9 +50,7 @@
 
         <label for="estilo">Estilo:</label>
         <input type="text" id="estilo" name="estilo" value="" required> 
-        
 
-        <!-- Contenedor de botones -->
         <div class="botones-container">
 
             <button type="submit">Guardar Cambios</button>

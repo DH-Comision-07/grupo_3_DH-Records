@@ -19,7 +19,7 @@
             <div class="vinilo">
                 <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
                     <p>Group: <%= productId.autores.nombre %> </p>
-                    <p>Year: <%=productId.release_date %> </p>
+                    <p>Year: <%=productId.release_date.toISOString().split('T')[0] %> </p>
                     <p>Gender: <%=productId.generos.nombre %> </p>
                     <p>Style: <%= productId.estilo %></p>
                     <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     

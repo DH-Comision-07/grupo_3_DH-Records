@@ -109,3 +109,10 @@ input[type="file"] {
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}

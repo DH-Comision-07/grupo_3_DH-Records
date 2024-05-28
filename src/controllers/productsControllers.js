@@ -78,12 +78,18 @@ let productsControllers = {
             const productId = req.params.id;
             const productData = req.body;
 
-            //si en el form vino una imagen, necesito actualizar
+            //si en el form vino una nueva imagen, necesito actualizar
             const imagen = req.files.imagen ? req.files.imagen[0] : null;
+
+            //debo revisar si se creo un nuevo autor antes de guardar el producto en la DB
+            if (productData.newAuthor) {
+                let newAuthor = await authorService.storeDB(productData.newAuthor);
+                productData.autor = newAuthor.id;
+            }
             
             await productService.updateDB(productId, productData, imagen);
             
-            res.redirect(`/products/${productId}`); 
+            res.redirect(`/products/detail/${productId}`); 
         } catch (error) {
             console.error(error);
             res.status(500).send('Error inesperado');
