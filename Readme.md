@@ -44,6 +44,12 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
   Mi vida siempre está acompañada de la música; para mí, es el motor detrás de todo. Amante del Rock y defensor del Rock Barrial, estoy entusiasmado y ansioso por llevar adelante este proyecto.
 
+- **Mariano Xinos**
+
+  Hola soy Mariano, estudie 4 años en Arquitectura y actualmente me apasiona la programación. Siempre me intesero el mundo de la tecnología y estoy en busca de nuevos desafíos y oportunidades para mejorar mis habilidades. 
+
+ En mis tiempos libres  disfruto mucho cocinar, explorando nuevas recetas y también ir al gimnasio. Todo tipo de actividades que me mantienen activo y saludable, combino mis intereses para encontrar un equilibrio perfecto entre mente, cuerpo y creatividad. 
+
 - **Nicolas Randazzo:**
   
   Apasionado de los deportes y la vida saludable. Con un pasado como entrenador de handball y personal trainer, he encontrado mi camino en el mundo de las ventas a través de las redes sociales. Disfruto compartir momentos con amigos, ya sea practicando deportes, disfrutando de una buena comida o escuchando música.
@@ -78,9 +84,6 @@ Conoce al increíble equipo detrás de nuestra tienda:
   me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
   Hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena convivencia y hacer amigos y conocidos.
 
-- **Mariano Xinos**
-
-  Hola soy Mariano, estudie 4 años en Arquitectura y actualmente trabajo en una empresa constructora. En mis tiempos libres me gusta cocinar y ir al gimnasio, me encanta la tecnología y decidi darme la oportunidad de aprender a programar.
 
 
 # 🌐 Páginas web que nos sirven de inspiración
