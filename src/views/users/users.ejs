@@ -1,1 +1,29 @@
-"esta vista debería mostrar todos los usuarios"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <%- include('../partials/head-1.ejs') %> 
+    <link rel="stylesheet" href="/css/product.css">
+    <%- include('../partials/head-2.ejs') %>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <section>
+            <h1 class="titulo">Users Profile</h1>
+            <ul>
+                <% for( let i = 0; i < users.length; i++ ) { %>
+                <li>
+                    <a href="/users/<%= users[i].id %>"><%= users[i].nombreUsuario %></a>
+                </li>
+                <% } %>
+        
+            </ul>
+            
+        </section>
+        
+        
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>

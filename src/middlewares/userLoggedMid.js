@@ -1,4 +1,4 @@
-const usersService = require ('../models/usersService');
+const usersService = require ('../models/db/services/usersService');
 
 function userLoggedMid(req, res, next) {
     res.locals.isLogged = false;

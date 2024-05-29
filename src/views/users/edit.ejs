@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head-1.ejs') %> 
+    <link rel="stylesheet" href="/css/product.css">
+    <%- include('../partials/head-2.ejs') %>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <h1>Edit Profile</h1>
+
+        <form action="/users/<%= user.id %>?_method=PUT" method="POST">
+            <label for="title">Name:</label>
+            <input  type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= user.nombreUsuario %>" required>
+        
+            <label for="awards">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email address" value="<%= user.email %>" required>
+        
+            <label for="awards">Password:</label>
+            <input type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= user.contraseña %>" required>
+        
+        
+            <button type="submit">Save the edit</button>
+        </form>
+    </main>
+
+  <!--   <%- include('../partials/footer.ejs') %>  -->
+</body>
