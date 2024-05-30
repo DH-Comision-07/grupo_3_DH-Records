@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
+    await queryInterface.createTable('productos', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,34 +12,25 @@ module.exports = {
       titulo: {
         type: Sequelize.STRING
       },
-      generoDisco: {
-        type: Sequelize.STRING
+      genero_id: {
+        type: Sequelize.INTEGER
       },
       descripcion: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
-      autor: {
-        type: Sequelize.STRING
-      },
-      discografica: {
-        type: Sequelize.STRING
-      },
-      precioCosto: {
+      autor_id: {
         type: Sequelize.INTEGER
       },
-      precioMostrador: {
-        type: Sequelize.INTEGER
+      precio_costo: {
+        type: Sequelize.DECIMAL
       },
-      stock: {
-        type: Sequelize.INTEGER
+      precio_venta: {
+        type: Sequelize.DECIMAL
       },
-      anio: {
-        type: Sequelize.INTEGER
+      release_date: {
+        type: Sequelize.DATE
       },
       estilo: {
-        type: Sequelize.STRING
-      },
-      canciones: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -53,6 +44,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('productos');
   }
 };

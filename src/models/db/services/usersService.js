@@ -56,8 +56,8 @@ let userService = {
     },
 
     createUser: async function(userData) {
+  userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;   // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
-        userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;   // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         const newUser = await db.Users.create({
             nombreUsuario,
             email,
