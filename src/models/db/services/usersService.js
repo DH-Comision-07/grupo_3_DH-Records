@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs= require('bcryptjs');
-const db = require('../models/users');
+const db = require('../models');
 
 
 let userService = {
@@ -57,6 +57,7 @@ let userService = {
 
     createUser: async function(userData) {
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
+        userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;   // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         const newUser = await db.Users.create({
             nombreUsuario,
             email,

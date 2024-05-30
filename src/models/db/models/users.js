@@ -22,7 +22,7 @@ class Users extends Model {
   }, {
     sequelize,
     modelName: 'Users',
-    timestamps: false
+    timestamps: true
   });
   return Users;
 };
