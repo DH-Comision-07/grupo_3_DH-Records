@@ -12,6 +12,10 @@ let usersControllers = {
 
     processRegister: async function (req, res) {
         const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.render('users/register', { errores: errors.mapped(), oldData: req.body });
+        }
         
         let userEmail= userService.getByField('email', req.body.email);
 
