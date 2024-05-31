@@ -1,4 +1,6 @@
 window.addEventListener('load', () => {
+
+    // Para la interacción cuando se selecciona la Opcion de agragar un nuevo autor
     const checkbox = document.getElementById('newAuthorCheckbox');
     const authorLabel = document.getElementById('authorLabel');
     const authorSelect = document.getElementById('authorSelect');
