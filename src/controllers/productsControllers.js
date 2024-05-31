@@ -159,6 +159,10 @@ let productsControllers = {
         } else {
             return res.status(404).send('Product not found');
         }    
+    },
+
+    formExtern: function(req, res) {
+        res.render('products/create-form-extern');
     }
 
 };

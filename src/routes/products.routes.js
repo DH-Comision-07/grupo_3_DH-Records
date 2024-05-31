@@ -7,6 +7,8 @@ const multerMid = require('../middlewares/multerProductsMid');
 
 //--- Rutas de productos 
 
+routes.get("/create-form-extern", productsControllers.formExtern);
+
 routes.get('/cart', productsControllers.cart);
 
 // -- Rutas CRUD de DB
