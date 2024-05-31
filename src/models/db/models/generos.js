@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      generos.hasMany(models.productos, {
+        as: "productos",
+        foreignKey: "genero_id"
+      });
     }
   }
   generos.init({
@@ -21,3 +24,4 @@ module.exports = (sequelize, DataTypes) => {
   });
   return generos;
 };
+

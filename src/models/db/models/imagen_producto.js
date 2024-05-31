@@ -10,10 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      imagen_producto.belongsTo(models.productos, {
+        as: "productos",
+        foreignKey: "producto_id"
+      });
     }
   }
-  imagen_producto.init({
+  imagen_producto.init({           // init es ES6 mas nuevo que el define
     nombre: DataTypes.STRING,
     tipo: DataTypes.STRING,
     producto_id: DataTypes.INTEGER
