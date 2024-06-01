@@ -13,7 +13,7 @@ let productService = {
                 include: [
                     {association: "generos"},
                     {association: "autores"},
-                    {association: "imagenesProductos"}
+                    {association: "imagen_producto"}
                 ]
             })
         } catch (error) {
@@ -28,7 +28,7 @@ let productService = {
                 include: [
                   { association: "generos" },
                   { association: "autores" },
-                  { association: "imagenesProductos" }
+                  { association: "imagen_producto" }
                 ]
             })
             //tengo que cambiar la fecha para que sea tipo DATE para despues mostrarla 
