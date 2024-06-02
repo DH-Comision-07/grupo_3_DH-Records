@@ -149,4 +149,12 @@ VALUES
 (9, 'imagen-1712232233566.jpg', 'jpg', 9),
 (10, 'imagen-1712232293259.png', 'png', 10);
 
-
+-- INSERT DE Categorias -- 
+INSERT INTO `DH-Records`.`categorias`
+(`admin`, `usuario`)
+VALUES
+('Carlos', 'Ana'),
+('Roberto', 'María'),
+('Fernando', 'Laura'),
+('Javier', 'Patricia'),
+('Luis', 'Sofía');
