@@ -38,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'productos',
+    //se genera un primer commit al cual regresar
   });
   return productos;
 };
