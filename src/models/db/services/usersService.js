@@ -26,7 +26,7 @@ let userService = {
             const users = await db.Users.findAll();
             return users;
         } catch (error) {
-            console.log('error');
+            console.log(error);
             return [];
         }
     },
@@ -46,6 +46,11 @@ let userService = {
         
     update: async function (id, body) {
         try {
+            const user = await this.getBy(id);
+            if (user.id === 0) {
+                console.log(`Usuario con id ${id} no encontrado`);
+                return;
+            }
             if (body.contraseña) {
                 body.contraseña = bcryptjs.hashSync(body.contraseña, 10);
             }

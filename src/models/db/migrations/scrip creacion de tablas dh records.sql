@@ -6,7 +6,7 @@ USE `DH-Records` ;
 -- Table `DH-Records`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`users` (
-   `id` INT,
+   `id` INT AUTO_INCREMENT,
    `nombreUsuario` VARCHAR(45) NOT NULL,
    `email` VARCHAR(45) NOT NULL,
    `contraseña` VARCHAR(255) NOT NULL,
@@ -14,35 +14,20 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`users` (
    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA GENEROS -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`generos`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`generos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA AUTORES -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`autores`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`autores` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA PRODUCTOS -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`productos`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`productos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(45) NULL,
   `genero_id` INT NOT NULL,
   `descripcion` TEXT NULL,
@@ -66,13 +51,8 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`productos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA IMAGENES_PRODUCTOS -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`imagenes_productos`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`imagenes_productos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `tipo` VARCHAR(45) NULL,
   `producto_id` INT NOT NULL,
@@ -84,7 +64,6 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`imagenes_productos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- ----------------------------------------------------------POBLANDO LA BASE DE DATOS ------------------------------------------------
 -- INSERT DE LA TABLA GENEROS- 

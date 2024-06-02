@@ -118,7 +118,7 @@ let usersControllers = {
             const users = await userService.getAll();
             res.render('users/users', { users });
         } catch (error) {
-            res.render('users/users', { users:error });
+            res.render('users/users', { users: [], error: 'Hubo un error al obtener los usuarios' });
         }
     },
 
@@ -137,11 +137,9 @@ let usersControllers = {
         await userService.update(req.params.id, req.body);
         res.redirect(`/users/${req.params.id}`)  // vista del detalle de la vista que edite
     } catch(error) {
-        res.send('No se pudo editar');
+        res.status(500).send('No se pudo editar');
     }
     }
-
-
 }
 
 module.exports = usersControllers;
