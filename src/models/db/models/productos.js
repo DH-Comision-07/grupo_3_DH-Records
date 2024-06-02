@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      productos.belongsTo(models.generos, {
+      productos.belongsTo(models.Generos, {
         as: "generos",
         foreignKey: "genero_id"
       });
 
-      productos.belongsTo(models.autores, {
+      productos.belongsTo(models.Autores, {
         as: "autores",
         foreignKey: "autor_id"
       });
 
-      productos.hasMany(models.imagen_producto, {
+      productos.hasMany(models.ImagenesProductos, {
         as: "imagenesProductos",
         foreignKey: "producto_id"
       });
@@ -37,7 +37,9 @@ module.exports = (sequelize, DataTypes) => {
     estilo: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'productos',
+    timestamps:false,
+    modelName: 'Productos',
+    //se genera un primer commit al cual regresar
   });
   return productos;
 };

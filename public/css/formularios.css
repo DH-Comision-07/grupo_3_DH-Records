@@ -82,6 +82,15 @@
     margin-bottom: 10px;
 }
 
+.formulario__img {
+    display: block;
+    margin-bottom: 26px;
+    max-width: 200px;
+    border: 1px solid var(--GRIS-INPUT);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 .formulario__button {
     background-color: var(--NEGRO08);
     border: none;
