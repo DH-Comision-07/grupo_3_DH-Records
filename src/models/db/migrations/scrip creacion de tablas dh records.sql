@@ -65,6 +65,14 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`imagenes_productos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `DH-Records`.`categorias` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `admin` VARCHAR(255) NULL,
+  `usuario` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+
 -- ----------------------------------------------------------POBLANDO LA BASE DE DATOS ------------------------------------------------
 -- INSERT DE LA TABLA GENEROS- 
 -- SENTENCIA DEL INSERT -- 
