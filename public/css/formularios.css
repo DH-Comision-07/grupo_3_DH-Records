@@ -18,12 +18,19 @@
   }
 
 .contenedor-general{
+    width: 100%; 
+    margin: 0;
+    padding: 10px;
+    background-color: var(--MANTECA-FONDO);
+}
+
+/*------------------------------------------------------*/
+.contenedor-formulario{
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--MANTECA-FONDO);
 }
 
 .formulario {

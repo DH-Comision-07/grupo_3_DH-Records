@@ -1,64 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de producto | DH Records</title>
+    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/general-styles.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
 
-<%- include('../partials/head-1.ejs') %>   
-<!-- aca se inserta la hoja de estilo correspondiente a la vista -->
-<link href="/css/product-detail.css" rel="stylesheet">
-<%- include('../partials/head-2.ejs') %>
+    <link rel="stylesheet" href="/css/product-detail.css">
+</head>
 
 <body>
+    <div class="contenedor-general"> 
 
     <%- include('../partials/header.ejs') %>
     
-    <main class="main">
-        <h2 class="titulo_principal"> Product Detail </h2>
-        <section class="producto">
-            <div class="vinilo__img1">
-                <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="Vinilo1">
+    <main>
+    
+        <h2 class="producto__titulo-principal"> <%= productId.titulo %> </h2>
+
+        <section class="producto__contenedor-general">
+
+            <div class="producto__contenedor-info--img">
+                <div class="producto__contenedor-img">
+                    <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="Vinilo1" class="producto__img">
+                </div>
+                <div class="producto__field--info">
+                    <p class="producto__info-item--descripcion"><%= productId.descripcion %></p>
+                </div>
             </div>
-            <div class="vinilo">
-                <h4 class="titulo__vinilo"> <%= productId.titulo %> </h4>
-                    <p>Group: <%= productId.autores.nombre %> </p>
-                    <p>Year: <%=productId.release_date.toISOString().split('T')[0] %> </p>
-                    <p>Gender: <%=productId.generos.nombre %> </p>
-                    <p>Style: <%= productId.estilo %></p>
-                    <p>Qualification: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
-                <br>
-                <h4 class="titulo__precio">Price</h4>
-                <p class="num__precio"><%= productId.precio_venta %></p>
-                <p class="agregar__carrito">
-                <div class="centrar-texto">
-                    <a href="/products/cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></a>
+            
+            <div class="producto__contenedor-info">
+                
+                <div class="producto__field--info">
+                    <p class="producto__info-item">Título: <%= productId.titulo %> </h4>
+                    <p class="producto__info-item">Autor: <%= productId.autores.nombre %> </p>
+                    <p class="producto__info-item">Fecha de estreno: <%=productId.release_date.toISOString().split('T')[0] %> </p>
+                    <p class="producto__info-item">Genero: <%=productId.generos.nombre %> </p>
+                    <p class="producto__info-item">Estilo: <%= productId.estilo %></p>
+                    <p class="producto__info-item">Calificación: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 </div>
-                </p> 
-                <div class="centrar-texto">
-                    <a href="/products/edit/<%= productId.id %>">Edit Product</a>
+                
+                <div class="producto__field--contenedor-precio">
+                    <h3 class="producto__info-item">Precio:&nbsp;</h4>
+                    <p class="producto__info-item"> $<%= productId.precio_venta %></p>
                 </div>
-                <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
-                    <button type="submit">Delete product</button>
-                </form>
-                </div> 
+
+                <div class="producto__field--contenedor-btn">
+                    <a href="/products/cart" class="producto__button">Comprar! <i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="/products/edit/<%= productId.id %>" class="producto__button hidden">Editar Producto</a>
+                    <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
+                        <button type="submit" class="producto__button hidden">Eliminar Producto</button>
+                    </form>
+                </div>
+
+            </div>
         </section>
 
-        <section class="sugerencias">
-            <div class="sugerencias__titulo">
-                <h3>Suggestions according to your search:</h3>
+        <section class="referidos__contenedor-general">
+            
+            <h3 class="referidos__titulo-principal">Referidos</h3>
+
+            <div class="referidos__contenedor-tarjeta-producto">
+                <div class="tarjeta_producto">
+                    <p>DISCO!</p>
+                </div>
+                <div class="tarjeta_producto">
+                    <p>DISCO!</p>
+                </div>
+                <div class="tarjeta_producto">
+                    <p>DISCO!</p>
+                </div>
+                <div class="tarjeta_producto">
+                    <p>DISCO!</p>
+                </div>
+                <div class="tarjeta_producto">
+                    <p>DISCO!</p>
+                </div>
+                <div class="tarjeta_producto">
+                    <p>DISCO!</p>
+                </div>
             </div>
-            <br>
-            <div class="vinilo__img2">
-                <img src="/images/Vinilo2.png" alt="Vinilo2">
-            </div>
-            <div class="vinilo__img2">
-                <img src="/images/Vinilo3.png" alt="Vinilo3">
-            </div>
-            <div class="vinilo__img2">
-                <img src="/images/Vinilo4.png" alt="Vinilo4">
-            </div>
-         </section>
+            
+        </section>
+
     </main>
 
     <%- include('../partials/footer.ejs') %>
 
+    </div>
 </body>
     
 </html>
