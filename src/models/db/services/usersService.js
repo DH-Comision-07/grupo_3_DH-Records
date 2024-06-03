@@ -60,6 +60,15 @@ let userService = {
         }   
     },
 
+    deleteUser: async function(id) {
+        try {
+            console.log(id);
+            return await db.Users.destroy({ where: { id:id }});
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
     createUser: async function(userData) {
         userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;   // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
@@ -100,6 +109,7 @@ let userService = {
     
         return false;
     },
+
 
 
     //         JSON
