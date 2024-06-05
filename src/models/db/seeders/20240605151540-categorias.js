@@ -20,10 +20,10 @@ module.exports = {
         categorias: categoria.categorias
       }));
   
-        await queryInterface.bulkInsert('Categorias', categoriasRegistro, {});
+        await queryInterface.bulkInsert('categorias', categoriasRegistro, {});
     },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Categorias', null , {});
+    await queryInterface.bulkDelete('categorias', null , {});
   }
 };

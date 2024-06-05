@@ -25,10 +25,10 @@ module.exports = {
       nombre: autor.nombre
     }));
 
-      await queryInterface.bulkInsert('Autores', autoresRegistro, {});
+      await queryInterface.bulkInsert('autores', autoresRegistro, {});
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Autores', null , {});
+    await queryInterface.bulkDelete('autores', null , {});
   }
 };
