@@ -13,8 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   categorias.init({
-    admin: DataTypes.STRING,
-    usuario: DataTypes.STRING
+    categorias: DataTypes.STRING,
   }, {
     sequelize,
     timestamps:false,

@@ -9,12 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      admin: {
+      categorias: {
         type: Sequelize.STRING
       },
-      usuario: {
-        type: Sequelize.STRING
-      }
+     
     });
   },
   async down(queryInterface, Sequelize) {
