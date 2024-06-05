@@ -2,27 +2,45 @@
 <html lang="en">
 <head>
     <%- include('../partials/head-1.ejs') %> 
-    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/general-styles.css">
+    <link rel="stylesheet" href="/css/formularios.css">
     <%- include('../partials/head-2.ejs') %>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <main>
-        <h1>Edit Profile</h1>
+    <main class="contenedor-general--edit ">
+        <section class="formulario">
+            <form action="/users/<%= user.id %>?_method=PUT" method="POST" >
 
-        <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-            <label for="title">Name:</label>
-            <input  type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= user.nombreUsuario %>" required>
-        
-            <label for="awards">Email:</label>
-            <input type="email" name="email" id="email" placeholder="Email address" value="<%= user.email %>" required>
-        
-            <label for="awards">Password:</label>
-            <input type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= user.contraseña %>" required>
-        
-        
-            <button type="submit">Save the edit</button>
-        </form>
+                <h1 class="formulario__titulo">Edit Profile</h1>
+
+                <div class="formulario__field">
+                    <label for="title" class="formulario__label">Name:</label>
+                    <input  type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username" class="formulario__input"  value="<%= user.nombreUsuario %>" required>
+                </div>
+
+                <div class="formulario__field">
+                    <label for="awards" class="formulario__label">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Email address" class="formulario__input" value="<%= user.email %>" required>
+                </div>
+
+                <div class="formulario__field">
+                    <label for="awards" class="formulario__label">Password:</label>
+                    <input type="password" name="contraseña" id="contraseña" placeholder="Password" class="formulario__input" value="<%= user.contraseña %>" required>
+                </div>
+
+                <div class="formulario__field--contenedor-btn">
+                    <button type="submit" class="formulario__button">Save Changes</button>
+                </div>
+            
+            </form>
+
+            <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
+                <div class="formulario__field--contenedor-btn">
+                    <button type="submit" class="formulario__button">Delete Account</button>
+                </div>
+            </form>
+        </section>
     </main>
 
   <!--   <%- include('../partials/footer.ejs') %>  -->

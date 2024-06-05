@@ -6,7 +6,7 @@ USE `DH-Records` ;
 -- Table `DH-Records`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`users` (
-   `id` INT,
+   `id` INT AUTO_INCREMENT,
    `nombreUsuario` VARCHAR(45) NOT NULL,
    `email` VARCHAR(45) NOT NULL,
    `contraseña` VARCHAR(255) NOT NULL,
@@ -14,35 +14,20 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`users` (
    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA GENEROS -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`generos`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`generos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA AUTORES -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`autores`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`autores` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA PRODUCTOS -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`productos`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`productos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(45) NULL,
   `genero_id` INT NOT NULL,
   `descripcion` TEXT NULL,
@@ -66,13 +51,8 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`productos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- CREACION DE LA TABLA IMAGENES_PRODUCTOS -- 
--- -----------------------------------------------------
--- Table `DH-Records`.`imagenes_productos`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DH-Records`.`imagenes_productos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `tipo` VARCHAR(45) NULL,
   `producto_id` INT NOT NULL,
@@ -84,6 +64,12 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`imagenes_productos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `DH-Records`.`categorias` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `categorias` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
 
 -- ----------------------------------------------------------POBLANDO LA BASE DE DATOS ------------------------------------------------
@@ -149,17 +135,22 @@ VALUES
 
 -- INSERT DE IMAGENES_PRODUCTOS -- 
 INSERT INTO `dh-records`.`imagenes_productos`
-(`id`, `nombre`, `tipo`, `producto_id`)
+(`nombre`, `tipo`, `producto_id`)
 VALUES
-(1, 'imagen-1712231620361.jpg', 'jpg', 1),
-(2, 'imagen-1712231723306.png', 'png', 2),
-(3, 'imagen-1712231816033.png', 'png', 3),
-(4, 'imagen-1712231885555.jpg', 'jpg', 4),
-(5, 'imagen-1712231969140.jpg', 'jpg', 5),
-(6, 'imagen-1712232037398.jpg', 'jpg', 6),
-(7, 'imagen-1712232099852.png', 'png', 7),
-(8, 'imagen-1712232176060.jpg', 'jpg', 8),
-(9, 'imagen-1712232233566.jpg', 'jpg', 9),
-(10, 'imagen-1712232293259.png', 'png', 10);
+('imagen-1712231620361.jpg', 'jpg', 1),
+('imagen-1712231723306.png', 'png', 2),
+('imagen-1712231816033.png', 'png', 3),
+('imagen-1712231885555.jpg', 'jpg', 4),
+('imagen-1712231969140.jpg', 'jpg', 5),
+('imagen-1712232037398.jpg', 'jpg', 6),
+('imagen-1712232099852.png', 'png', 7),
+('imagen-1712232176060.jpg', 'jpg', 8),
+('imagen-1712232233566.jpg', 'jpg', 9),
+('imagen-1712232293259.png', 'png', 10);
 
-
+-- INSERT DE Categorias -- 
+INSERT INTO `DH-Records`.`categorias`
+(`categorias`)
+VALUES 
+('admin'), 
+('usuario');
