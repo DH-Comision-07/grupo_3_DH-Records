@@ -67,8 +67,7 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `DH-Records`.`categorias` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `admin` VARCHAR(255) NULL,
-  `usuario` VARCHAR(255) NULL,
+  `categorias` VARCHAR(255) NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
@@ -151,10 +150,7 @@ VALUES
 
 -- INSERT DE Categorias -- 
 INSERT INTO `DH-Records`.`categorias`
-(`admin`, `usuario`)
-VALUES
-('Carlos', 'Ana'),
-('Roberto', 'María'),
-('Fernando', 'Laura'),
-('Javier', 'Patricia'),
-('Luis', 'Sofía');
+(`categorias`)
+VALUES 
+('admin'), 
+('usuario');
