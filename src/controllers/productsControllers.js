@@ -25,8 +25,9 @@ let productsControllers = {
 
     detail: async function(req, res) {
         try { //si todo sale bien
-            let productId = await productService.getBy(req.params.id)
-            res.render('products/detail', {productId});
+            let productId = await productService.getBy(req.params.id);
+            let productRef = await productService.getByGenre(productId.genero_id);
+            res.render('products/detail', {productId, productRef});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
         }
@@ -38,6 +39,7 @@ let productsControllers = {
             let authors = await authorService.getAll();
             res.render('products/create', {genres, authors});
         } catch (error) {
+            console.log(error);
             res.send('Error inesperado').status(500);
         }
     },

@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto | DH Records</title>
+    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/general-styles.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
     <link rel="stylesheet" href="/css/formularios.css">
     <script src="/js/products/createFormHandler.js" defer></script>
 </head>
 <body>
 
+    <div class="contenedor-general">
+
     <%- include('../partials/header.ejs') %>
 
     <main>
-        <section class="contenedor-general ">
+        <div class="contenedor-formulario">
+
             <form action="/products/<%= productId.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario"> 
                 
                 <h1 class="formulario__titulo">Editar un producto existente</h1>
@@ -98,10 +106,12 @@
                     <button type="submit" class="formulario__button">Guardar Cambios</button>
                 </div>
             </form>
-        </section>
+        </div>
         
     </main>
     
+    </div>
+
 </body>
 </html>
 
