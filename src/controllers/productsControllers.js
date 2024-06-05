@@ -35,14 +35,12 @@ let productsControllers = {
 
     create: async function(req, res) {
         try {
-            console.log("estoy entrando al create");
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
             res.render('products/create', {genres, authors});
         } catch (error) {
-            console.log("me da un error el create");
             console.log(error);
-            res.send('Error inesperado al levantar la vista create').status(500);
+            res.send('Error inesperado').status(500);
         }
     },
     

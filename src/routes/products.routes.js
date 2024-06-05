@@ -9,12 +9,12 @@ const multerMid = require('../middlewares/multerProductsMid');
 
 routes.get('/cart', productsControllers.cart);
 
+routes.get("/create", productsControllers.create);
 
 // -- Rutas CRUD de DB
 routes.get('/', productsControllers.listAll);
 routes.get('/:id', productsControllers.detail);
 
-routes.get("/create", productsControllers.create);
 routes.post('/', multerMid.fields([{ name: 'imagen' }]), productsControllers.store);
 
 routes.get("/edit/:id", productsControllers.edit);
