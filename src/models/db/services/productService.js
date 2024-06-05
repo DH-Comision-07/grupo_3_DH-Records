@@ -24,6 +24,11 @@ let productService = {
 
     getBy: async function(id) {
         try {
+            
+            if (!id) {
+                throw new Error("Invalid genre ID");
+            }
+
             let productID = await db.Productos.findByPk(id, {
                 include: [
                   { association: "generos" },
@@ -48,6 +53,32 @@ let productService = {
                 release_date: '-',
                 estilo: '-'
             }
+        }
+    },
+
+    getByGenre: async function(id) {
+        try {
+            
+            if (!id) {
+                throw new Error("Invalid genre ID");
+            }
+    
+            let products = await db.Productos.findAll({
+                include: [
+                    {association: "generos"},
+                    {association: "autores"},
+                    {association: "imagenesProductos"}
+                ],
+                where: {
+                    genero_id: id,
+                },
+            });
+
+            return products;
+
+        } catch (error) {
+            console.log(error);
+            return([]);
         }
     },
 

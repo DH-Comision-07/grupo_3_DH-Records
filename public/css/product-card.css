@@ -1,0 +1,95 @@
+:root {
+    --BLANCO: #FFF;
+    --MANTECA-FONDO: #f8f9fa;
+    --GRIS-CLARO:  #F5F5F5;
+    --GRIS-INPUT: #bcbcbc;
+    --GRIS-OSCURO: #333;
+    --NEGRO: #202020;
+    --NEGRO08: rgba(0, 0, 0, 0.8);
+    --VIOLETA-SOMBRA: #662482;
+    --VIOLETA-OSCURO: #3C0753;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor-general{
+    width: 100%; 
+    margin: 0;
+    padding: 10px;
+    background-color: var(--MANTECA-FONDO);
+}
+
+/*------------------------------------------------------*/
+
+.tarjeta_producto {
+    width: 150px;
+    height: 220px;
+    min-width: 150px;
+    min-height: 250px;
+    margin: 10px;
+    background-color: var(--GRIS-INPUT);
+    border-radius: 6px;
+    box-shadow: 0 0 5px var(--VIOLETA-SOMBRA);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.tarjeta-producto__contenedor-img {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    min-height: 130px;
+    margin: 10px 5px 5px 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: var(--GRIS-CLARO); 
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 0 5px var(--VIOLETA-SOMBRA);
+}
+.tarjeta-producto__img {
+    width: 100%;
+}
+
+.tarjeta-producto__contenedor-info {
+    margin: 0px 5px;
+    padding: 5px; 
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tarjeta-producto__contenedor-info--descripcion {
+    overflow: hidden;
+}
+
+.tarjeta-producto__titulo {
+    margin: 0px;
+    color: var(--GRIS-OSCURO);
+    display: inline-block;
+}
+
+.tarjeta-producto__autor {
+    margin: 0px;
+    color: var(--GRIS-OSCURO);
+    font-size: 8px;
+    display: inline-block;
+}
+
+.tarjeta-producto__precio {
+    color: var(--GRIS-OSCURO);
+}

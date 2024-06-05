@@ -157,19 +157,6 @@
 
 }
 
-.tarjeta_producto {
-    width: 150px;
-    height: 200px;
-    min-width: 150px;
-    min-height: 200px;
-    margin: 10px;
-    background-color: var(--GRIS-INPUT);
-    border-radius: 6px;
-    box-shadow: 0 0 5px var(--VIOLETA-SOMBRA);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /*------------------------------------------------------*/
 .hidden {

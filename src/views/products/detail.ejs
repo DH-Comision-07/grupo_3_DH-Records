@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
 
+    <link rel="stylesheet" href="/css/product-card.css">
     <link rel="stylesheet" href="/css/product-detail.css">
 </head>
 
@@ -26,7 +27,7 @@
 
             <div class="producto__contenedor-info--img">
                 <div class="producto__contenedor-img">
-                    <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="Vinilo1" class="producto__img">
+                    <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="imagen del producto" class="producto__img">
                 </div>
                 <div class="producto__field--info">
                     <p class="producto__info-item--descripcion"><%= productId.descripcion %></p>
@@ -51,9 +52,9 @@
 
                 <div class="producto__field--contenedor-btn">
                     <a href="/products/cart" class="producto__button">Comprar! <i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="/products/edit/<%= productId.id %>" class="producto__button hidden">Editar Producto</a>
+                    <a href="/products/edit/<%= productId.id %>" class="producto__button visible">Editar Producto</a>
                     <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
-                        <button type="submit" class="producto__button hidden">Eliminar Producto</button>
+                        <button type="submit" class="producto__button visible">Eliminar Producto</button>
                     </form>
                 </div>
 
@@ -65,24 +66,25 @@
             <h3 class="referidos__titulo-principal">Referidos</h3>
 
             <div class="referidos__contenedor-tarjeta-producto">
-                <div class="tarjeta_producto">
-                    <p>DISCO!</p>
-                </div>
-                <div class="tarjeta_producto">
-                    <p>DISCO!</p>
-                </div>
-                <div class="tarjeta_producto">
-                    <p>DISCO!</p>
-                </div>
-                <div class="tarjeta_producto">
-                    <p>DISCO!</p>
-                </div>
-                <div class="tarjeta_producto">
-                    <p>DISCO!</p>
-                </div>
-                <div class="tarjeta_producto">
-                    <p>DISCO!</p>
-                </div>
+                
+                <% productRef.forEach(product=> { %> 
+                    <% if (product.id !== productId.id) { %>
+                    <a href="/products/<%= product.id %>">
+                        <article class="tarjeta_producto">
+                            <div class="tarjeta-producto__contenedor-img">
+                                <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" alt="imagen del producto" class="tarjeta-producto__img">
+                            </div>
+                            <div class="tarjeta-producto__contenedor-info">
+                                <div class="tarjeta-producto__contenedor-info--descripcion">
+                                    <p class="tarjeta-producto__titulo"><%= product.titulo %></p>
+                                    <p class="tarjeta-producto__autor"><%= product.autores.nombre %></p>
+                                </div>
+                                <h3 class="tarjeta-producto__precio">$<%= product.precio_venta %></h3>     
+                            </div>
+                        </article>
+                    </a>
+                    <% } %>
+                 <% }) %>
             </div>
             
         </section>

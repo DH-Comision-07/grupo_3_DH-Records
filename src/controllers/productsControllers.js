@@ -25,8 +25,9 @@ let productsControllers = {
 
     detail: async function(req, res) {
         try { //si todo sale bien
-            let productId = await productService.getBy(req.params.id)
-            res.render('products/detail', {productId});
+            let productId = await productService.getBy(req.params.id);
+            let productRef = await productService.getByGenre(productId.genero_id);
+            res.render('products/detail', {productId, productRef});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
         }
@@ -34,11 +35,14 @@ let productsControllers = {
 
     create: async function(req, res) {
         try {
+            console.log("estoy entrando al create");
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
             res.render('products/create', {genres, authors});
         } catch (error) {
-            res.send('Error inesperado').status(500);
+            console.log("me da un error el create");
+            console.log(error);
+            res.send('Error inesperado al levantar la vista create').status(500);
         }
     },
     
