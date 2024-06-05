@@ -136,18 +136,18 @@ VALUES
 
 -- INSERT DE IMAGENES_PRODUCTOS -- 
 INSERT INTO `dh-records`.`imagenes_productos`
-(`id`, `nombre`, `tipo`, `producto_id`)
+(`nombre`, `tipo`, `producto_id`)
 VALUES
-(1, 'imagen-1712231620361.jpg', 'jpg', 1),
-(2, 'imagen-1712231723306.png', 'png', 2),
-(3, 'imagen-1712231816033.png', 'png', 3),
-(4, 'imagen-1712231885555.jpg', 'jpg', 4),
-(5, 'imagen-1712231969140.jpg', 'jpg', 5),
-(6, 'imagen-1712232037398.jpg', 'jpg', 6),
-(7, 'imagen-1712232099852.png', 'png', 7),
-(8, 'imagen-1712232176060.jpg', 'jpg', 8),
-(9, 'imagen-1712232233566.jpg', 'jpg', 9),
-(10, 'imagen-1712232293259.png', 'png', 10);
+('imagen-1712231620361.jpg', 'jpg', 1),
+('imagen-1712231723306.png', 'png', 2),
+('imagen-1712231816033.png', 'png', 3),
+('imagen-1712231885555.jpg', 'jpg', 4),
+('imagen-1712231969140.jpg', 'jpg', 5),
+('imagen-1712232037398.jpg', 'jpg', 6),
+('imagen-1712232099852.png', 'png', 7),
+('imagen-1712232176060.jpg', 'jpg', 8),
+('imagen-1712232233566.jpg', 'jpg', 9),
+('imagen-1712232293259.png', 'png', 10);
 
 -- INSERT DE Categorias -- 
 INSERT INTO `DH-Records`.`categorias`
