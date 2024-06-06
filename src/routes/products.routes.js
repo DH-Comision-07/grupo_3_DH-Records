@@ -13,6 +13,7 @@ routes.get("/create", productsControllers.create);
 
 // -- Rutas CRUD de DB
 routes.get('/', productsControllers.listAll);
+routes.get('/filter', productsControllers.filter);
 routes.get('/:id', productsControllers.detail);
 
 routes.post('/', multerMid.fields([{ name: 'imagen' }]), productsControllers.store);
