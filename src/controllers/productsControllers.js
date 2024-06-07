@@ -17,8 +17,22 @@ let productsControllers = {
     listAll: async function(req, res) {
         try { //si todo sale bien
             let productsArray = await productService.getAll()
-            res.render('products/products', {products: productsArray});
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            res.render('products/products', {products: productsArray, genres, authors});
         } catch (error) { //si sale mal
+            res.send('Error inesperado').status(500);
+        }
+    },
+
+    filter: async function(req, res) {
+        try {
+            const { genero, autor, precioMin, precioMax } = req.query;
+            let products = await productService.applyFilters(genero, autor, precioMin, precioMax);
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            res.render('products/products', {products, genres, authors});
+        } catch (error) {
             res.send('Error inesperado').status(500);
         }
     },

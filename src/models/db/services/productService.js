@@ -3,6 +3,7 @@ const fs = require('fs');
 
 const products = require('../json/products.json');
 let db = require('../models');
+const { Op } = require('sequelize');
 
 let productService = {
 
@@ -53,6 +54,40 @@ let productService = {
                 release_date: '-',
                 estilo: '-'
             }
+        }
+    },
+
+    applyFilters: async function (genero, autor, precioMin, precioMax) {
+        try {
+            let where = {};
+
+            if(genero) {where.genero_id = genero;} 
+            if (autor) {where.autor_id = autor;}
+            if (precioMin || precioMax) {
+                where.precio_venta = {
+                    [Op.between]: [
+                        //si no se especifica valor min se concidera cero
+                        precioMin ? parseFloat(precioMin) : 0,
+                        //si no se especifica valor max, se concidera el mayo valor maximo posible
+                        precioMax ? parseFloat(precioMax) : Number.MAX_VALUE
+                    ]
+                };
+            }
+
+            let products = await db.Productos.findAll({
+                include: [
+                    { association: "generos" },
+                    { association: "autores" },
+                    { association: "imagenesProductos" }
+                ],
+                where: where
+            });
+
+            return products;
+            
+        } catch (error) {
+            console.log(error);
+            return([]);
         }
     },
 
