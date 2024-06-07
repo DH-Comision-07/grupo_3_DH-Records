@@ -29,7 +29,9 @@ let productsControllers = {
         try {
             const { genero, autor, precioMin, precioMax } = req.query;
             let products = await productService.applyFilters(genero, autor, precioMin, precioMax);
-            res.send(products);
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            res.render('products/products', {products, genres, authors});
         } catch (error) {
             res.send('Error inesperado').status(500);
         }
