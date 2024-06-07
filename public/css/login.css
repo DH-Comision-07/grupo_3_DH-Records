@@ -133,8 +133,23 @@ body{
 .error{
     margin-left: 15px;
     margin-top: 5px;
-   color:#E54D2E; 
+   color:#fb3838 
 }
+
+.error-message {
+     /* los elementos en linea no respetan margen superior e inferior por eso necesitamo esto que sigue como elemento en linea pero tambien con propiedades de bloque*/
+    margin-left: 15px;
+    margin-top: 5px;
+    color:#fb3838
+  }
+
+
+  .is-invalid {
+    color: #fb3838;
+    border: 2px solid #c41111;
+   } ;
+  
+   
 
 @media screen and (min-width: 76px) and (max-width: 1024px) {    /*    Tablet    */
     .contenedor-formulario{

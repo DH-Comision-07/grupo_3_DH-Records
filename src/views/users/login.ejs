@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/login.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/js/users/loginValidation.js"></script>
   </head>
 
 <body>
@@ -14,8 +15,9 @@
         <form action="/users/login" method="post">
             <h1 class="titulo-formulario">DH-Records</h1>
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>" >
-                <i class='bx bxs-user'></i>
+                <input class="casilla-individal" type="email" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>" >
+                <i class='bx bxs-user'></i> 
+                <div class="error-message" ></div>
                 <% if( locals.errores && errores.email) { %>
                     <div class="error">
                         <%= errores.email.msg %>
