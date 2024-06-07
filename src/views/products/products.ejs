@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
 
+    <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/product-card.css">
     <link rel="stylesheet" href="/css/formularios.css">
     
@@ -17,77 +18,74 @@
 </head>
     
 <body>
-    <%- include('../partials/header.ejs') %>
-    
-    <main class="main">
-        <h2 class="titulo-seccion-general">List of products</h1>
+    <div class="contenedor-general"> 
 
-        <div class="section_container">
-
-            <section class="side-bar">
-                <form id="filtroForm" action="/products/filter" method="GET">
-                    <div class="formulario__field">
-                        <label for="genero" class="formulario__label">Género:</label>
-                        <select id="genero" name="genero" class="formulario__input">
-                            <option value="" disabled selected>Seleccione un género</option>
-                            <% genres.forEach(function(genre) { %>
-                                <option value="<%= genre.id %>"><%= genre.nombre %></option>
-                            <% }); %>
-                        </select>
-                    </div>
-                
-                    <div class="formulario__field">
-                        <label for="autor" class="formulario__label">Autor:</label>
-                        <select id="autor" name="autor" class="formulario__input">
-                            <option value="" disabled selected>Seleccione un autor</option>
-                            <% authors.forEach(function(author) { %>
-                                <option value="<%= author.id %>"><%= author.nombre %></option>
-                            <% }); %>
-                        </select>
-                    </div>
-                
-                    <div class="formulario__field">
-                        <label for="precioMin" class="formulario__label">Precio Mínimo:</label>
-                        <input type="number" id="precioMin" name="precioMin" min="0" step="0.01" class="formulario__input">
-                    </div>
-                
-                    <div class="formulario__field">
-                        <label for="precioMax" class="formulario__label">Precio Máximo:</label>
-                        <input type="number" id="precioMax" name="precioMax" min="0" step="0.01" class="formulario__input">
-                    </div>
-                
-                    <button type="submit" class="formulario__button">Aplicar Filtros</button>
-                </form>
-                <a href="/products/create" class="side-bar__btn"> Crear Nuevo Producto </a>
-            </section>
+        <%- include('../partials/header.ejs') %>
     
-            <section class="productos__seccion">     
-                <% products.forEach(product=> { %>       
-                    <a href="/products/<%= product.id %>">
-                        <article class="tarjeta_producto">
-                            <div class="tarjeta-producto__contenedor-img">
-                                <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" alt="imagen del producto" class="tarjeta-producto__img">
-                            </div>
-                            <div class="tarjeta-producto__contenedor-info">
-                                <div class="tarjeta-producto__contenedor-info--descripcion">
-                                    <p class="tarjeta-producto__titulo"><%= product.titulo %></p>
-                                    <p class="tarjeta-producto__autor"><%= product.autores.nombre %></p>
+        <main>
+
+            <div class="contenedor-general-secciones"> 
+                <section class="filters-bar__contenedor-general">
+                    <form id="filtroForm" action="/products/filter" method="GET">
+                        <div class="formulario__field">
+                            <label for="genero" class="formulario__label">Género:</label>
+                            <select id="genero" name="genero" class="formulario__input">
+                                <option value="" selected>Seleccione un género</option>
+                                <% genres.forEach(function(genre) { %>
+                                    <option value="<%= genre.id %>"><%= genre.nombre %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                    
+                        <div class="formulario__field">
+                            <label for="autor" class="formulario__label">Autor:</label>
+                            <select id="autor" name="autor" class="formulario__input">
+                                <option value="" disabled selected>Seleccione un autor</option>
+                                <% authors.forEach(function(author) { %>
+                                    <option value="<%= author.id %>"><%= author.nombre %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                    
+                        <div class="formulario__field">
+                            <label for="precioMin" class="formulario__label">Precio Mínimo:</label>
+                            <input type="number" id="precioMin" name="precioMin" min="0" step="0.01" class="formulario__input">
+                        </div>
+                    
+                        <div class="formulario__field">
+                            <label for="precioMax" class="formulario__label">Precio Máximo:</label>
+                            <input type="number" id="precioMax" name="precioMax" min="0" step="0.01" class="formulario__input">
+                        </div>
+                    
+                        <button type="submit" class="formulario__button">Aplicar Filtros</button>
+                        <a href="/products/create" class="formulario__button--link"> Crear Nuevo Producto </a>
+                    </form>
+                </section>
+
+                <section class="producto__contenedor-general">     
+                    <% products.forEach(product=> { %>       
+                        <a href="/products/<%= product.id %>">
+                            <article class="tarjeta_producto">
+                                <div class="tarjeta-producto__contenedor-img">
+                                    <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" alt="imagen del producto" class="tarjeta-producto__img">
                                 </div>
-                                <h3 class="tarjeta-producto__precio">$<%= product.precio_venta %></h3>     
-                            </div>
-                        </article>
-                    </a>
-                 <% }) %>
-     
-                
-            </section>
+                                <div class="tarjeta-producto__contenedor-info">
+                                    <div class="tarjeta-producto__contenedor-info--descripcion">
+                                        <p class="tarjeta-producto__titulo"><%= product.titulo %></p>
+                                        <p class="tarjeta-producto__autor"><%= product.autores.nombre %></p>
+                                    </div>
+                                    <h3 class="tarjeta-producto__precio">$<%= product.precio_venta %></h3>     
+                                </div>
+                            </article>
+                        </a>
+                        <% }) %> 
+                </section>
 
-
-        </div>
-
+            </div>
+        </main>
+        
         <%- include('../partials/footer.ejs') %>
-    </main>
-    
+    </div>
 </body>
 </html>
 
