@@ -7,9 +7,8 @@ window.onload = function() {
 
      let passwordField = document.querySelector('#contraseña');
 
-    let errorMessagesEmail = document.querySelectorAll('.error__message--email');
+    let errorMessages = document.querySelectorAll('.error__message');
 
-    let errorMessagesPassword = document.querySelector('.error__message--password');
 
         
    formLogin.forEach((formField,index) => {
@@ -18,17 +17,17 @@ window.onload = function() {
             if(formField.value === '') {
                 formField.classList.add('is-invalid');
                 if(formField === emailField){
-                    errorMessagesEmail[index].textContent = 'The email address is required';
+                    errorMessages[index].textContent = 'The email address is required';
                 } else if (formField === passwordField) {
-                    errorMessagesPassword.textContent = 'The password is required';
+                    errorMessages[index].textContent = 'The password is required';
                 }
 
             } else {
                 formField.classList.remove('is-invalid');
                 if(formField === emailField){
-                    errorMessagesEmail[index].textContent = '';
+                    errorMessages[index].textContent = '';
                 } else if (formField === passwordField) {
-                    errorMessagesPassword.textContent = '';
+                    errorMessages[index].textContent = '';
                 }
             } 
         })

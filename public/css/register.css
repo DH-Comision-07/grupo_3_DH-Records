@@ -126,11 +126,29 @@ body{
     margin: 10px 10px 5px;
 }
 
-
 .terminosCondiciones-checkbox label input{
     accent-color: #fff; /* color de la marca de verificación */
     margin-right: 3px;
 }
+
+.error__message--name {
+    margin-left: 15px;
+    margin-top: 5px;
+    color:#fb3838
+  }
+ 
+
+.error__message--email {
+    margin-left: 15px;
+    margin-top: 5px;
+    color:#fb3838
+  }
+ 
+  .error__message--password{
+   margin-left: 15px;
+   margin-top: 5px;
+   color:#fb3838
+ }
 
 .error{
     margin-left: 15px;
@@ -139,17 +157,24 @@ body{
 }
 
 
-@media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
+.is-invalid {
+    color: #fb3838;
+    border: 2px solid #c41111;
+   } ;
+  
+
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {     /*    Tablet    */
     .contenedor-formulario{
-    width: 50%;
+        width: 50%;
     }
     
 }
 
 
-@media screen and (max-width: 768px) {      /*    Mobile     */
+@media screen and (max-width: 767px) {      /*    Mobile     */
     .contenedor-formulario{
-        width: 90%;  /* para que no se deforme el formulario */
+        width: 90%;  
     }
 
     /* Todo mas pequeño */
