@@ -21,7 +21,7 @@ body{
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
     backdrop-filter: blur(25px);  /* temendo efecto para fondo borroso */
-    width: 35%;
+    width: 25%;
     color: white;
     border-radius: 10px;
     padding: 30px 35px;
@@ -142,7 +142,7 @@ body{
     height: 190%;
     background-image: linear-gradient(to right, #fda326, #db5904);
     border-radius: 50%;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
     z-index: -1;
   }
 
@@ -184,18 +184,23 @@ body{
     text-decoration: underline;
 }
 
+.error__message--email {
+   margin-left: 15px;
+   margin-top: 5px;
+   color:#fb3838
+ }
+
+ .error__message--password{
+  margin-left: 15px;
+  margin-top: 5px;
+  color:#fb3838
+}
+
 .error{
     margin-left: 15px;
     margin-top: 5px;
    color:#fb3838 
 }
-
-.error-message {
-     /* los elementos en linea no respetan margen superior e inferior por eso necesitamo esto que sigue como elemento en linea pero tambien con propiedades de bloque*/
-    margin-left: 15px;
-    margin-top: 5px;
-    color:#fb3838
-  }
 
 
   .is-invalid {
@@ -204,9 +209,9 @@ body{
    } ;
   
 
-@media screen and (min-width: 76px) and (max-width: 1024px) {    /*    Tablet    */
-    .contenedor-formulario{
-    width: 50%;
+@media screen and (max-width: 1024px) {    /*    Tablet    */
+    .contenedor-formulario{ 
+        width: 90%; 
     }
     
 }
@@ -214,7 +219,7 @@ body{
 
 @media screen and (max-width: 767px) {    /*    Mobile     */
     .contenedor-formulario{ 
-        width: 90%;  /* para que no se deforme el formulario */
+        width: 90%;  
     }
 
     /* Todo mas pequeño */

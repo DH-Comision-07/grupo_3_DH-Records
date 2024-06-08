@@ -17,7 +17,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="email" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>" >
                 <i class='bx bxs-user'></i> 
-                <div class="error-message" ></div>
+                <div class="error__message--email" ></div>
                 <% if( locals.errores && errores.email) { %>
                     <div class="error">
                         <%= errores.email.msg %>
@@ -28,6 +28,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= oldData ? oldData.contraseña : '' %>">
                 <i class='bx bxs-lock-alt'></i>
+                <div class="error__message--password" ></div>
                 <% if( locals.errores && errores.contraseña) { %>
                     <div class="error">
                         <%= errores.contraseña.msg %>
