@@ -9,11 +9,9 @@ window.onload = function() {
 
      let passwordField = document.querySelector('#contraseña');
 
-     let errorMessagesName = document.querySelector('.error__message--name');
+     let errorMessages = document.querySelectorAll('.error__message');
 
-     let errorMessagesEmail = document.querySelector('.error__message--email');
 
-     let errorMessagesPassword = document.querySelector('.error__message--password');
 
 
      formRegister.forEach((formField,index) => {
@@ -22,21 +20,28 @@ window.onload = function() {
             if(formField.value === '') {
                 formField.classList.add('is-invalid');
                 if(formField === nameField){ 
-                    errorMessagesName.textContent = 'The username is required';
+                    errorMessages[index].textContent = 'The username is required';
                  } else if(formField === emailField){
-                    errorMessagesEmail.textContent = 'The email address is required';
+                    errorMessages[index].textContent = 'The email address is required';
                 } else if (formField === passwordField) {
-                    errorMessagesPassword.textContent = 'The password is required';
+                    errorMessages[index].textContent = 'The password is required';
                 }
 
+            } else if (formField === nameField && formField.value.length < 2) {
+                formField.classList.add('is-invalid');
+                    errorMessages[index].textContent = 'It must have at least 2 characters';
+    
+            } else if (formField === passwordField && formField.value.length < 8) {
+                formField.classList.add('is-invalid');
+                    errorMessages[index].textContent = 'It must have at least 8 characters'; 
             } else {
                 formField.classList.remove('is-invalid');
                 if(formField === nameField){
-                    errorMessageName.textContent = '';
+                    errorMessages[index].textContent = '';
                 } else if(formField === emailField){
-                    errorMessagesEmail[index].textContent = '';
+                    errorMessages[index].textContent = '';
                 } else if (formField === passwordField) {
-                    errorMessagesPassword.textContent = '';
+                    errorMessages[index].textContent = '';
                 }
             } 
         })

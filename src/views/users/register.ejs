@@ -20,7 +20,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= oldData ? oldData.nombreUsuario : '' %>">
                 <i class='bx bxs-user'></i>
-                <div class="error__message--name" ></div>
+                <div class="error__message" ></div>
                 <% if( locals.errores && errores.nombreUsuario) { %>
                     <div class="error">
                         <%= errores.nombreUsuario.msg %>
@@ -31,7 +31,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="email" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>">                
                 <i class='bx bxs-envelope'></i>
-                <div class="error__message--email" ></div>
+                <div class="error__message" ></div>
                 <% if( locals.errores && errores.email) { %>
                     <div class="error">
                         <%= errores.email.msg %>
@@ -42,7 +42,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= oldData ? oldData.contraseña : '' %>">
                 <i class='bx bxs-lock-alt'></i>
-                <div class="error__message--password" ></div>
+                <div class="error__message" ></div>
                 <% if( locals.errores && errores.contraseña) { %>
                     <div class="error">
                         <%= errores.contraseña.msg %>
