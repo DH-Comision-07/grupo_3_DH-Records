@@ -57,8 +57,10 @@
                             <input type="number" id="precioMax" name="precioMax" min="0" step="0.01" class="formulario__input">
                         </div>
                     
-                        <button type="submit" class="formulario__button">Aplicar Filtros</button>
-                        <a href="/products/create" class="formulario__button--link"> Crear Nuevo Producto </a>
+                        <div class="producto__field--contenedor-btn">
+                            <button type="submit" class="producto__button">Aplicar Filtros</button>
+                            <a href="/products/create" class="producto__button">Crear Nuevo</a>
+                        </div>
                     </form>
                 </section>
 
@@ -86,6 +88,7 @@
         
         <%- include('../partials/footer.ejs') %>
     </div>
+
 </body>
 </html>
 
