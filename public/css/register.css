@@ -20,7 +20,8 @@ body{
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
     backdrop-filter: blur(35px);  /*  efecto para que desenfoque fondo */
-    width: 30%;
+    width: 90%;
+    max-width: 400px;
     color: white;
     border-radius: 10px;
     padding: 30px 27px;
@@ -210,18 +211,11 @@ body{
   
 
 
-@media screen and (min-width: 767px) and (max-width: 1024px) {     /*    Tablet    */
-    .contenedor-formulario{
-        width: 50%;
-    }
-    
-}
+
 
 
 @media screen and (max-width: 767px) {      /*    Mobile     */
-    .contenedor-formulario{
-        width: 90%;  
-    }
+   
 
     /* Todo mas pequeño */
     .titulo-formulario{
