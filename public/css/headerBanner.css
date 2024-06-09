@@ -1,4 +1,4 @@
-/* COLORES */
+
 :root {
     --FUCSIA: #720455;
     --VIOLETA-OSCURO: #3C0753;
@@ -20,6 +20,9 @@ a{
     color: #090b0b;
     font-size: 1.3rem;
     font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: italic;
 }
 
 
@@ -30,7 +33,7 @@ a{
 .header-contenedor-general-tarjeta{
     height: 90vh;
     padding: 0 2rem; 
-    width: 95%;
+    width: 90%;
     margin: auto;
     border-radius: 40px;
     background-image: url("/images/Foto26.jpg");
@@ -45,7 +48,7 @@ a{
     margin: auto;
     width: 95%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   
     
@@ -53,9 +56,10 @@ a{
 }
 
 .header__navbar__logo a{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: bold;  
     color: #090b0b;
+   
 }
 
 
@@ -65,6 +69,7 @@ a{
     gap: 3rem;
     list-style: none;
     color: #090b0b;
+    
     
 }
 
@@ -94,7 +99,7 @@ a{
     border: none;
     outline: none;
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -103,7 +108,7 @@ a{
 .user__logIn{
     color: #090b0b;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 
