@@ -20,7 +20,8 @@ body{
     border: 2px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba( 0, 0, 0, 1);
     backdrop-filter: blur(35px);  /*  efecto para que desenfoque fondo */
-    width: 30%;
+    width: 90%;
+    max-width: 400px;
     color: white;
     border-radius: 10px;
     padding: 30px 27px;
@@ -97,10 +98,6 @@ body{
     transition: .8s;
 }
 
-.boton-registro:hover{
-    font-size: 18px;
-}
-
 
 .link-registro{
     font-size: 15px;
@@ -126,31 +123,99 @@ body{
     margin: 10px 10px 5px;
 }
 
-
 .terminosCondiciones-checkbox label input{
     accent-color: #fff; /* color de la marca de verificación */
     margin-right: 3px;
 }
 
+
+.boton-registro{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    outline: none;
+    font-weight: 600; 
+    font-size: 18px;  
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 1px 1px 2px #c5c5c5, -1px -1px 2px #ffffff;
+    transition: all 0.2s ease-in;
+}
+
+
+.boton-registro:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+
+
+.boton-registro:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 120%;
+    width: 160%;
+    height: 190%;
+    background-image: linear-gradient(to right, #fda326, #db5904);
+    border-radius: 50%;
+    transition: all 0.4s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+
+
+  .boton-registro:hover {
+    color: #ffffff;
+    border: 1px solid #fdae26;
+  }
+
+
+.boton-registro:hover:before {
+    top: -35%;
+    background-image: linear-gradient(to right, #fda326, #db5904);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
+
+  .boton-registro:hover:after {
+    top: -45%;
+    background-image: linear-gradient(to right, #fda326, #db5904);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
+
+  .error__message{
+   margin-left: 15px;
+   margin-top: 5px;
+   color:#fb3838
+ }
+
 .error{
     margin-left: 15px;
     margin-top: 2px;
-   color:#E54D2E; 
+   color:#fb3838; 
 }
 
 
-@media screen and (min-width: 76px) and (max-width: 1024px) {     /*    Tablet    */
-    .contenedor-formulario{
-    width: 50%;
-    }
-    
-}
+.is-invalid {
+    color: #fb3838;
+    border: 2px solid #fb3838;
+   } ;
+  
 
 
-@media screen and (max-width: 768px) {      /*    Mobile     */
-    .contenedor-formulario{
-        width: 90%;  /* para que no se deforme el formulario */
-    }
+
+
+
+@media screen and (max-width: 767px) {      /*    Mobile     */
+   
 
     /* Todo mas pequeño */
     .titulo-formulario{

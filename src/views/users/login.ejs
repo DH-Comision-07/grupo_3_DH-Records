@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/users/loginValidation.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="/js/users/loginValidation.js"></script>
-  </head>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
 
 <body>
   <section class="contenedor-formulario">
@@ -17,7 +17,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="email" name="email" id="email" placeholder="Email address" value="<%= oldData ? oldData.email : '' %>" >
                 <i class='bx bxs-user'></i> 
-                <div class="error__message--email" ></div>
+                <div class="error__message" ></div>
                 <% if( locals.errores && errores.email) { %>
                     <div class="error">
                         <%= errores.email.msg %>
@@ -28,7 +28,7 @@
             <div class= "contenedor-casilla">
                 <input class="casilla-individal" type="password" name="contraseña" id="contraseña" placeholder="Password" value="<%= oldData ? oldData.contraseña : '' %>">
                 <i class='bx bxs-lock-alt'></i>
-                <div class="error__message--password" ></div>
+                <div class="error__message" ></div>
                 <% if( locals.errores && errores.contraseña) { %>
                     <div class="error">
                         <%= errores.contraseña.msg %>
