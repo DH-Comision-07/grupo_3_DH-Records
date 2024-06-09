@@ -4,6 +4,7 @@ const genreService = require ('../models/db/services/genreService');
 const authorService = require ('../models/db/services/authorService');
 
 const { validationResult } = require('express-validator');
+const multer = require('multer');
 
 let productsControllers = {
 
@@ -81,18 +82,22 @@ let productsControllers = {
 
     storetest: function(req, res) {
         // Obtener los errores de validación
-        const errors = validationResult(req);
+        const errors = validationResult(req).array();
+    
+        // Obtener los errores de multer
+        const multerError = req.multerValidationError;
         
         // Obtener el contenido del body
         const bodyContent = req.body;
 
-        // Verificar si hay errores
-        if (!errors.isEmpty()) {
-            // Enviar los errores y el body como respuesta
-            return res.status(400).json({ 
-                errors: errors.array(), 
-                body: bodyContent 
-            });
+        // Si hay errores de express validator o errores de multer, enviarlos a la vista
+        if (errors.length > 0 || multerError) {
+            const errorResponse = {
+                errors: errors, // Errores de express validator
+                multerError: multerError && multerError.message, // Error de multer si existe
+                body: bodyContent // Contenido del body
+            };
+            return res.status(400).json(errorResponse);
         }
 
         // Si no hay errores, puedes manejar la lógica de creación del producto aquí
