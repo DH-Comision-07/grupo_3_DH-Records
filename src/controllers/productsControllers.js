@@ -3,6 +3,8 @@ const productService = require ('../models/db/services/productService');
 const genreService = require ('../models/db/services/genreService');
 const authorService = require ('../models/db/services/authorService');
 
+const { validationResult } = require('express-validator');
+
 let productsControllers = {
 
     home: async function(req, res) {
@@ -75,6 +77,28 @@ let productsControllers = {
             console.error(error);
             res.status(500).send('Error inesperado');
         }
+    },
+
+    storetest: function(req, res) {
+        // Obtener los errores de validación
+        const errors = validationResult(req);
+        
+        // Obtener el contenido del body
+        const bodyContent = req.body;
+
+        // Verificar si hay errores
+        if (!errors.isEmpty()) {
+            // Enviar los errores y el body como respuesta
+            return res.status(400).json({ 
+                errors: errors.array(), 
+                body: bodyContent 
+            });
+        }
+
+        // Si no hay errores, puedes manejar la lógica de creación del producto aquí
+        // ...
+
+        res.send('Producto creado exitosamente');
     },
 
     edit: async function(req, res) {
