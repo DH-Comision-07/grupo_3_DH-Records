@@ -1,7 +1,7 @@
 
 /* ------------------------------------- Main ------------------------------------- */
 .main{
-    max-width: 1200px;
+    width: 95%;
     margin: auto;
     background-color: #B8BCBD;
 }

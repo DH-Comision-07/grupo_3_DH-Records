@@ -5,13 +5,13 @@
 <link rel="stylesheet" href="/css/home.css">
 <%- include('./partials/head-2.ejs') %>  
 
-<body>
-    <div class="contenedor-general-home">
+<body class="contenedor-general-home">
+    
         
         <%- include('./partials/headerBanner.ejs') %>   
-    
+        <h2 class="titulo-seccion">Productos destacados</h2>
         <main class="main">
-           
+            
             <section id="destacados" class="productos__seccion">
                 <% products.slice(0,6).forEach(product => { %>
                     <article class="productos__articulo main__articulo">
@@ -32,6 +32,6 @@
         
     <%- include('./partials/footer.ejs') %>
         
-    </div>
+    
 </body>
 </html>

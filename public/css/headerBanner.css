@@ -1,4 +1,4 @@
-/* COLORES */
+
 :root {
     --FUCSIA: #720455;
     --VIOLETA-OSCURO: #3C0753;
@@ -17,50 +17,135 @@
 
 a{
     text-decoration: none;  /* Sacarle el subrayado */
-    color: #FFF;
-    font-size: 1.1rem;
+    color: #090b0b;
+    font-size: 1.3rem;
     font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: italic;
 }
 
 
 
 /* Header */
 
+
 .header-contenedor-general-tarjeta{
+    position: relative;
     height: 90vh;
     padding: 0 2rem; 
+    width: 90%;
+    margin: auto;
+    border-radius: 40px;
     background-image: url("/images/Foto26.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;  
-    
+
 }
+
+.button__banner{
+    
+    position: absolute;
+    bottom: 40px; /* Ajusta este valor según tus necesidades */
+    left: 60px;
+    z-index: 1;
+    display: inline-block;
+    width: 10%;
+    height: 45px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 1px 1px 2px #c5c5c5, -1px -1px 2px #ffffff;
+    transition: all 0.2s ease-in;
+
+    color: #090909;
+    padding: 0.5em 2em;
+    font-size: 19px;  
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.button__banner:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+
+
+.button__banner:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 120%;
+    width: 160%;
+    height: 190%;
+    background-image: linear-gradient(to right, #fda326, #db5904);
+    border-radius: 50%;
+    transition: all 0.3s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+
+
+  .button__banner:hover {
+    color: #ffffff;
+    border: 1px solid #fdae26;
+  }
+
+
+.button__banner:hover:before {
+    top: -35%;
+    background-image: linear-gradient(to right, #fda326, #db5904);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
+
+  .button__banner:hover:after {
+    top: -45%;
+    background-image: linear-gradient(to right, #fda326, #db5904);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+
 
 
 .header__navbar{
-   padding: 1rem;
+    padding: 1rem;
+    margin: auto;
+    width: 95%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+  
+    
+
 }
 
 .header__navbar__logo a{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: bold;  
+    color: #090b0b;
+   
 }
 
 
 .links{
     display: flex;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
+    color: #090b0b;
+    
+    
 }
 
 
 .links a:hover{
     text-decoration: underline;
-   
 }
 
 
@@ -84,16 +169,16 @@ a{
     border: none;
     outline: none;
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
 }
 
 
 .user__logIn{
-    color: #FFF;
+    color: #090b0b;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 
