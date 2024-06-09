@@ -17,8 +17,8 @@
 
 a{
     text-decoration: none;  /* Sacarle el subrayado */
-    color: #FFF;
-    font-size: 1.1rem;
+    color: #090b0b;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
@@ -26,41 +26,51 @@ a{
 
 /* Header */
 
+
 .header-contenedor-general-tarjeta{
     height: 90vh;
     padding: 0 2rem; 
+    width: 95%;
+    margin: auto;
+    border-radius: 40px;
     background-image: url("/images/Foto26.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;  
-    
+    background-position: center;    
 }
 
 
 .header__navbar{
-   padding: 1rem;
+    padding: 1rem;
+    margin: auto;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  
+    
+
 }
 
 .header__navbar__logo a{
     font-size: 1.7rem;
     font-weight: bold;  
+    color: #090b0b;
 }
 
 
 .links{
     display: flex;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 3rem;
     list-style: none;
+    color: #090b0b;
+    
 }
 
 
 .links a:hover{
     text-decoration: underline;
-   
 }
 
 
@@ -91,7 +101,7 @@ a{
 
 
 .user__logIn{
-    color: #FFF;
+    color: #090b0b;
     font-weight: bold;
     font-size: 1.1rem;
 }
