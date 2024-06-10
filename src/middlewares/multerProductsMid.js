@@ -15,6 +15,7 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
     cb(null, true); 
+    req.multerValidationError = false;
   } else {
     req.multerValidationError = new Error('Solo se permiten archivos JPG y PNG');
     cb(null, false); // Rechazar el archivo

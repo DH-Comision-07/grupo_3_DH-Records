@@ -33,7 +33,7 @@
                     <% if (expressValidatorErrors) { %>
                         <% expressValidatorErrors.forEach(function(error) { %>
                             <% if (error.path === 'titulo') { %>
-                                <p><%= error.msg %></p>
+                                <p class="formulario__msj-error"><%= error.msg %></p>
                             <% } %>
                         <% }); %>
                     <% } %>
@@ -60,7 +60,7 @@
                     <% if (expressValidatorErrors) { %>
                         <% expressValidatorErrors.forEach(function(error) { %>
                             <% if (error.path === 'descripcion') { %>
-                                <p><%= error.msg %></p>
+                                <p class="formulario__msj-error"><%= error.msg %></p>
                             <% } %>
                         <% }); %>
                     <% } %>
@@ -100,7 +100,7 @@
                     <label for="imagen" class="formulario__label">Imagen de portada:</label>
                     <input type="file" class="formulario__input" id="imagen" name="imagen" required> 
                     <% if (multerError) { %>
-                        <p><%= multerError %></p>
+                        <p class="formulario__msj-error"><%= multerError %></p>
                     <% } %>
                 </div>
         

@@ -66,13 +66,13 @@ let productsControllers = {
             const productData = req.body;
             const expressValidatorErrors = validationResult(req).array();
             const multerError = req.multerValidationError;
-            
-            if(expressValidatorErrors || multerError){
+           
+            if(expressValidatorErrors > 0 || multerError !== false){
                 let genres = await genreService.getAll();
                 let authors = await authorService.getAll();
                 return res.render('products/create', {genres, authors, oldData: productData,  expressValidatorErrors, multerError});
             }
-                
+
             //debo revisar si se creo un nuevo autor antes de guardar el producto en la DB
             if (productData.newAuthor) {
                 let newAuthor = await authorService.storeDB(productData.newAuthor);
@@ -100,32 +100,6 @@ let productsControllers = {
             res.send('Error inesperado').status(500);
         }
     },
-    
-    // storetest: function(req, res) {
-    //     // Obtener los errores de validación
-    //     const errors = validationResult(req).array();
-    
-    //     // Obtener los errores de multer
-    //     const multerError = req.multerValidatigionError;
-        
-    //     // Obtener el contenido del body
-    //     const bodyContent = req.body;
-
-    //     // Si hay errores de express validator o errores de multer, enviarlos a la vista
-    //     if (errors.length > 0 || multerError) {
-    //         const errorResponse = {
-    //             errors: errors, // Errores de express validator
-    //             multerError: multerError && multerError.message, // Error de multer si existe
-    //             body: bodyContent // Contenido del body
-    //         };
-    //         return res.status(400).json(errorResponse);
-    //     }
-
-    //     // Si no hay errores, puedes manejar la lógica de creación del producto aquí
-    //     // ...
-
-    //     res.send('Producto creado exitosamente');
-    // },
 
     update: async function(req, res) {
         try {
@@ -143,7 +117,7 @@ let productsControllers = {
             
             await productService.updateDB(productId, productData, imagen);
             
-            res.redirect(`/products/detail/${productId}`); 
+            res.redirect(`/products/${productId}`); 
         } catch (error) {
             console.error(error);
             res.status(500).send('Error inesperado');
