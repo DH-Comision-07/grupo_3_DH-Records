@@ -29,7 +29,14 @@
                 
                 <div class="formulario__field">
                     <label for="titulo" class="formulario__label">Titulo:</label>
-                    <input type="text" class="formulario__input" id="titulo" name="titulo" value="" required> 
+                    <input type="text" class="formulario__input" id="titulo" name="titulo" value="<%= oldData ? oldData.titulo : '' %>" required> 
+                    <% if (expressValidatorErrors) { %>
+                        <% expressValidatorErrors.forEach(function(error) { %>
+                            <% if (error.path === 'titulo') { %>
+                                <p class="formulario__msj-error"><%= error.msg %></p>
+                            <% } %>
+                        <% }); %>
+                    <% } %>
                 </div>
                 
                 <div class="formulario__field">
@@ -37,14 +44,26 @@
                     <select id="genero" name="genero" class="formulario__input" required>
                         <option value="" disabled selected>Seleccione un género</option>
                         <% genres.forEach(function(genre) { %>
-                            <option value="<%= genre.id %>"><%= genre.nombre %></option>
+                            <% if (oldData && genre.id == oldData.genero) { %> 
+                                <option value="<%= genre.id %>" selected><%= genre.nombre %></option>
+                            <% } else { %>
+                                <option value="<%= genre.id %>"><%= genre.nombre %></option>
+                            <% } %>
                         <% }); %>
+
                     </select>
                 </div>
 
                 <div class="formulario__field">
                     <label for="descripcion" class="formulario__label">Description:</label>
-                    <textarea id="descripcion" class="formulario__input" name="descripcion" rows="4" required></textarea> 
+                    <textarea id="descripcion" class="formulario__input" name="descripcion" rows="4" required><%= oldData ? oldData.descripcion : '' %></textarea> 
+                    <% if (expressValidatorErrors) { %>
+                        <% expressValidatorErrors.forEach(function(error) { %>
+                            <% if (error.path === 'descripcion') { %>
+                                <p class="formulario__msj-error"><%= error.msg %></p>
+                            <% } %>
+                        <% }); %>
+                    <% } %>
                 </div>
         
                 <div class="formulario__field">
@@ -52,8 +71,13 @@
                     <select id="authorSelect" name="autor" class="formulario__input visible" required>
                         <option value="" disabled selected>Seleccione un autor</option>
                         <% authors.forEach(function(author) { %>
-                            <option value="<%= author.id %>"><%= author.nombre %></option>
+                            <% if(oldData && author.id == oldData.autor) { %>
+                                <option value="<%= author.id %>" selected><%= author.nombre %></option>
+                            <% }else { %>
+                                <option value="<%= author.id %>"><%= author.nombre %></option>
+                            <% } %>
                         <% }); %>
+
                     </select>
                     <input type="text" class="formulario__input hidden" id="newAuthorInput" name="newAuthor"  placeholder="Ingrese el nombre del nuevo autor">
                 </div>
@@ -64,27 +88,30 @@
                 
                 <div class="formulario__field">
                     <label for="precioCosto" class="formulario__label">Precio Costo:</label>
-                    <input type="number" class="formulario__input" id="precioCosto" name="precioCosto" step="0.01" value="" required> 
+                    <input type="number" class="formulario__input" id="precioCosto" name="precioCosto" step="0.01" value="<%= oldData ? oldData.precioCosto : '' %>" required> 
                 </div>
         
                 <div class="formulario__field">
                     <label for="precioVenta" class="formulario__label">Precio de venta:</label>
-                    <input type="number" class="formulario__input" id="precioVenta" name="precioVenta" step="0.01" value="" required> 
+                    <input type="number" class="formulario__input" id="precioVenta" name="precioVenta" step="0.01" value="<%= oldData ? oldData.precioVenta : '' %>" required> 
                 </div>
                 
                 <div class="formulario__field">
                     <label for="imagen" class="formulario__label">Imagen de portada:</label>
                     <input type="file" class="formulario__input" id="imagen" name="imagen" required> 
+                    <% if (multerError) { %>
+                        <p class="formulario__msj-error"><%= multerError %></p>
+                    <% } %>
                 </div>
         
                 <div class="formulario__field">
                     <label for="releaseDate" class="formulario__label">Fecha de lanzamiento:</label>
-                    <input type="date" class="formulario__input" id="releaseDate" name="releaseDate" required>
+                    <input type="date" class="formulario__input" id="releaseDate" name="releaseDate" value="<%= oldData ? oldData.releaseDate : '' %>" required>
                 </div>
         
                 <div class="formulario__field">
                     <label for="estilo" class="formulario__label">Estilo:</label>
-                    <input type="text" class="formulario__input" id="estilo" name="estilo" value="" required> 
+                    <input type="text" class="formulario__input" id="estilo" name="estilo" value="<%= oldData ? oldData.estilo : '' %>" required> 
                 </div>
         
                 <div class="formulario__field--contenedor-btn">

@@ -11,6 +11,17 @@ const storage = multer.diskStorage({
     }
   })
   
-  const multerProductsMid = multer({ storage: storage });
+//Validacion del tipo de archivo de la imagen.
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    cb(null, true); 
+    req.multerValidationError = false;
+  } else {
+    req.multerValidationError = new Error('Solo se permiten archivos JPG y PNG');
+    cb(null, false); // Rechazar el archivo
+  }
+};
 
-  module.exports = multerProductsMid;
+const multerProductsMid = multer({ storage: storage, fileFilter: fileFilter });
+
+module.exports = multerProductsMid;
