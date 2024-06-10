@@ -3,7 +3,7 @@
 .main{
     width: 95%;
     margin: auto;
-    background-color: #B8BCBD;
+   
 }
 .main__articulo {
     margin-bottom: 10px;
@@ -55,7 +55,6 @@
 }
   
 
-
 .productos__section-boton {
     display: flex;
     justify-content: center;
@@ -69,6 +68,31 @@
     border-radius: 5px;
 }
 
+.seccion__texto{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.titulo{
+    margin-bottom: 0;
+    padding-top: 50px; 
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.subtitulo{
+    margin-top: 5px;
+    padding-bottom: 40px; 
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    
+}
 /* ------------------------------------- Medias Querys ------------------------------------- */
 @media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
     

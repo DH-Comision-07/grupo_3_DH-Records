@@ -9,9 +9,12 @@
     
         
         <%- include('./partials/headerBanner.ejs') %>   
-        <h2 class="titulo-seccion">Productos destacados</h2>
+
         <main class="main">
-            
+          <section class="seccion__texto">
+            <h2 class="titulo">Featured Products</h2>
+            <h4 class="subtitulo">Top picks from Our vinyl collection, essential albums for every music lover</h4>
+          </section>
             <section id="destacados" class="productos__seccion">
                 <% products.slice(0,6).forEach(product => { %>
                     <article class="productos__articulo main__articulo">
