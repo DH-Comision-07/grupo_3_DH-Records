@@ -37,6 +37,9 @@
                             <% } %>
                         <% }); %>
                     <% } %>
+                    <div class="formulario__contenedor-errores hidden" id="contenedor-errores-titulo">
+                        <p class="formulario__msj-error" id="msj-error-titulo"></p>
+                    </div>
                 </div>
                 
                 <div class="formulario__field">
@@ -64,6 +67,9 @@
                             <% } %>
                         <% }); %>
                     <% } %>
+                    <div class="formulario__contenedor-errores hidden" id="contenedor-errores-descripcion">
+                        <p class="formulario__msj-error" id="msj-error-descripcion"></p>
+                    </div>
                 </div>
         
                 <div class="formulario__field">
@@ -102,6 +108,9 @@
                     <% if (multerError) { %>
                         <p class="formulario__msj-error"><%= multerError %></p>
                     <% } %>
+                    <div class="formulario__contenedor-errores hidden" id="contenedor-errores-imagen">
+                        <p class="formulario__msj-error" id="msj-error-imagen"></p>
+                    </div>
                 </div>
         
                 <div class="formulario__field">
