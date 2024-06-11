@@ -34,7 +34,7 @@ a{
     position: relative;
     height: 90vh;
     padding: 0 2rem; 
-    width: 90%;
+    width: 95%;
     margin: auto;
     border-radius: 40px;
     background-image: url("/images/Foto26.jpg");
@@ -47,10 +47,13 @@ a{
 .button__banner{
     
     position: absolute;
-    bottom: 40px; /* Ajusta este valor según tus necesidades */
-    left: 60px;
+    bottom: 5%;
+    left: 5%;
     z-index: 1;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 10%;
     height: 45px;
     border-radius: 40px;
@@ -63,7 +66,6 @@ a{
     transition: all 0.2s ease-in;
 
     color: #090909;
-    padding: 0.5em 2em;
     font-size: 19px;  
     font-family: "Staatliches", sans-serif;
     font-weight: 400;
@@ -217,4 +219,22 @@ a{
     border-color: rgba(0, 0, 0, 0.8); ;
     background-color: #fff;
     box-shadow: 0 0 10px rgba( 0, 0, 0, .6);
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .button__banner{
+        /* Ajusta los estilos según tus necesidades */
+        width: 20%; 
+    }
+}
+
+@media (max-width: 768px) {
+   
+    .button__banner{
+        /* Ajusta los estilos según tus necesidades */
+        width: 25%;
+        font-size: 15px; 
+    }
+   
 }
