@@ -107,22 +107,32 @@ window.addEventListener('load', () => {
     const imagenErrMsj = document.getElementById('msj-error-imagen');
     let imagenState = false;
 
-    imagenInput.addEventListener('change', (event) => {
+    imagenInput.addEventListener('focus', (event) => {
+        imagenErrContainer.classList.remove('hidden');
+        imagenErrContainer.classList.add('visible');
         const file = event.target.files[0];
         console.log('Selected file:', file);
 
         if (!file) {
             // No se seleccionó ningún archivo
             imagenErrMsj.innerText = 'Debes seleccionar una imagen.';
+            console.log('entre al if', imagenErrMsj.innerText);
             imagenState = false;
             event.target.classList.remove('focused-ok');
             event.target.classList.add('focused-error');
-            return;
         }
+    });
 
-        const allowedTypes = ['image/jpeg', 'image/png'];
-        if (!allowedTypes.includes(file.type)) {
-            // El tipo de archivo no está permitido
+    imagenInput.addEventListener('blur', (event) => {
+        imagenErrContainer.classList.remove('visible');
+        imagenErrContainer.classList.add('hidden');
+    });
+
+    imagenInput.addEventListener('change', (event) => {
+        const tiposPermitidos = ['image/jpeg', 'image/png'];
+        const file = event.target.files[0];
+
+        if (!tiposPermitidos.includes(file.type)) {
             imagenErrMsj.innerText = 'Solo se permiten archivos JPG y PNG.';
             imagenState = false;
             event.target.classList.remove('focused-ok');
