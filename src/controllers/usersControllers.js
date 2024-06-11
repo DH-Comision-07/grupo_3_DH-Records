@@ -12,6 +12,10 @@ let usersControllers = {
 
     processRegister: async function (req, res) {
         const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.render('users/register', { errores: errors.mapped(), oldData: req.body });
+        }
         
         let userEmail= userService.getByField('email', req.body.email);
 
@@ -109,35 +113,43 @@ let usersControllers = {
         }
     },
 
-    list: async function (req, res) {
+    list: async function(req, res) {
         try {
             const users = await userService.getAll();
             res.render('users/users', { users });
         } catch (error) {
-            res.render('users/users', { users:error });
+            res.render('users/users', { users: [], error: 'Hubo un error al obtener los usuarios' });
         }
     },
 
-    edit: async function (req, res) {
+    edit: async function(req, res) {
         try {
             let user = await userService.getBy(req.params.id);
            res.render('users/edit', {user})
         } catch (error) {
-            res.send('Error inesperado').status(500);
+            res.status(500).send('Error inesperado');
         }
     },
 
 
-   update: async function (req, res) {
-    try {
-        await userService.update(req.params.id, req.body);
-        res.redirect(`/users/${req.params.id}`)  // vista del detalle de la vista que edite
-    } catch(error) {
-        res.send('No se pudo editar');
+   update: async function(req, res) {
+        try {
+            await userService.update(req.params.id, req.body);
+            res.redirect(`/users/${req.params.id}`)  // vista del detalle de la vista que edite
+        } catch(error) {
+            res.status(500).send('No se pudo editar');
+        }
+    },
+    
+    delete: async function(req, res) {
+        try {
+            await userService.deleteUser(req.params.id);
+            res.redirect('/users');
+        } catch (error){
+            res.status(500).send('No se pudo eliminar el usuario');
+        }
     }
-    }
-
-
+    
 }
 
 module.exports = usersControllers;

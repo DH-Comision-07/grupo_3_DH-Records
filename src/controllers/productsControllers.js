@@ -3,6 +3,9 @@ const productService = require ('../models/db/services/productService');
 const genreService = require ('../models/db/services/genreService');
 const authorService = require ('../models/db/services/authorService');
 
+const { validationResult } = require('express-validator');
+const multer = require('multer');
+
 let productsControllers = {
 
     home: async function(req, res) {
@@ -17,16 +20,31 @@ let productsControllers = {
     listAll: async function(req, res) {
         try { //si todo sale bien
             let productsArray = await productService.getAll()
-            res.render('products/products', {products: productsArray});
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            res.render('products/products', {products: productsArray, genres, authors});
         } catch (error) { //si sale mal
+            res.send('Error inesperado').status(500);
+        }
+    },
+
+    filter: async function(req, res) {
+        try {
+            const { genero, autor, precioMin, precioMax } = req.query;
+            let products = await productService.applyFilters(genero, autor, precioMin, precioMax);
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            res.render('products/products', {products, genres, authors});
+        } catch (error) {
             res.send('Error inesperado').status(500);
         }
     },
 
     detail: async function(req, res) {
         try { //si todo sale bien
-            let productId = await productService.getBy(req.params.id)
-            res.render('products/detail', {productId});
+            let productId = await productService.getBy(req.params.id);
+            let productRef = await productService.getByGenre(productId.genero_id);
+            res.render('products/detail', {productId, productRef});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
         }
@@ -36,8 +54,9 @@ let productsControllers = {
         try {
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
-            res.render('products/create', {genres, authors});
+            res.render('products/create', {genres, authors, oldData: {}, expressValidatorErrors: [], multerError: null});
         } catch (error) {
+            console.log(error);
             res.send('Error inesperado').status(500);
         }
     },
@@ -45,16 +64,25 @@ let productsControllers = {
     store: async function(req, res) {
         try {
             const productData = req.body;
-            const imagen = req.files.imagen[0];
+            const expressValidatorErrors = validationResult(req).array();
+            const multerError = req.multerValidationError;
+           
+            if(expressValidatorErrors > 0 || multerError !== false){
+                let genres = await genreService.getAll();
+                let authors = await authorService.getAll();
+                return res.render('products/create', {genres, authors, oldData: productData,  expressValidatorErrors, multerError});
+            }
 
             //debo revisar si se creo un nuevo autor antes de guardar el producto en la DB
             if (productData.newAuthor) {
                 let newAuthor = await authorService.storeDB(productData.newAuthor);
                 productData.autor = newAuthor.id;
             }
-
+                
+            const imagen = req.files.imagen[0];
             let producto = await productService.storeDB(productData, imagen)
             res.redirect('/products'); 
+            
         } catch (error) {
             console.error(error);
             res.status(500).send('Error inesperado');
@@ -89,7 +117,7 @@ let productsControllers = {
             
             await productService.updateDB(productId, productData, imagen);
             
-            res.redirect(`/products/detail/${productId}`); 
+            res.redirect(`/products/${productId}`); 
         } catch (error) {
             console.error(error);
             res.status(500).send('Error inesperado');
@@ -159,6 +187,10 @@ let productsControllers = {
         } else {
             return res.status(404).send('Product not found');
         }    
+    },
+
+    formExtern: function(req, res) {
+        res.render('products/create-form-extern');
     }
 
 };

@@ -21,13 +21,8 @@ module.exports = {
       terminosCondiciones: {
         type: Sequelize.BOOLEAN
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      categorias_id: {
+        type: Sequelize.INTEGER,  
       }
     });
   },

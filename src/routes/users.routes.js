@@ -36,6 +36,8 @@ routes.get("/:id", userUnloggedValidationMid, usersControllers.detail);
 
 routes.put('/:id',usersControllers.update);
 
+routes.delete('/:id', usersControllers.delete);
+
 
 
 

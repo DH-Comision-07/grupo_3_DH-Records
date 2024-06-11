@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs= require('bcryptjs');
-const db = require('../models/users');
+const db = require('../models');
 
 
 let userService = {
@@ -26,7 +26,7 @@ let userService = {
             const users = await db.Users.findAll();
             return users;
         } catch (error) {
-            console.log('error');
+            console.log(error);
             return [];
         }
     },
@@ -46,6 +46,11 @@ let userService = {
         
     update: async function (id, body) {
         try {
+            const user = await this.getBy(id);
+            if (user.id === 0) {
+                console.log(`Usuario con id ${id} no encontrado`);
+                return;
+            }
             if (body.contraseña) {
                 body.contraseña = bcryptjs.hashSync(body.contraseña, 10);
             }
@@ -55,7 +60,17 @@ let userService = {
         }   
     },
 
+    deleteUser: async function(id) {
+        try {
+            console.log(id);
+            return await db.Users.destroy({ where: { id:id }});
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
     createUser: async function(userData) {
+        userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;   // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
         const newUser = await db.Users.create({
             nombreUsuario,
@@ -94,6 +109,7 @@ let userService = {
     
         return false;
     },
+
 
 
     //         JSON

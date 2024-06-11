@@ -15,13 +15,9 @@
 
 .contenedor-general-home {
     margin: 0 auto;
-    max-width: 1200px;
-    background: linear-gradient(to right, #858986, #b3b2b8); 
+  
 }
 
-.contenedor-general-tarjeta {
- 
-}
 
 .input-general {
     padding: 12px; /* con valor fijo en px o 10% */ 
