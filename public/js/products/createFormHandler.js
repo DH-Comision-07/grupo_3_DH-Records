@@ -19,6 +19,7 @@ window.addEventListener('load', () => {
         newAuthorInput.required = isChecked;
     });
 
+
     //Validaciones Titulo: comportamiento y manejo de estado
     const tituloInput = document.getElementById('titulo');
     const tituloErrContainer = document.getElementById('contenedor-errores-titulo');
@@ -143,6 +144,34 @@ window.addEventListener('load', () => {
             imagenState = true;
             event.target.classList.remove('focused-error');
             event.target.classList.add('focused-ok');
+        }
+    });
+
+    //Validaciones del formulario: verificacion del errores
+    const formulario = document.getElementById('formulario-ppal');
+    const erroresGenerales = document.getElementById('contenedor-errores-generales');
+    const listaErrores = document.getElementById('lista-errores');
+
+    formulario.addEventListener('submit', (event) => {
+        let mensajesDeError = [];
+
+        if (!tituloState) {
+            mensajesDeError.push('Título');
+        }
+        if (!descripcionState) {
+            mensajesDeError.push('Descripción');
+        }
+        if (!imagenState) {
+            mensajesDeError.push('Imagen');
+        }
+
+        if (mensajesDeError.length > 0) {
+            event.preventDefault(); 
+            listaErrores.innerHTML = mensajesDeError.map((error) => (`<li class="formulario__msj-error">Error en el campo: ${error}</li>`)).join('');
+            erroresGenerales.classList.remove('hidden');
+            erroresGenerales.classList.add('visible');
+        } else {
+            erroresGenerales.classList.add('hidden');
         }
     });
 

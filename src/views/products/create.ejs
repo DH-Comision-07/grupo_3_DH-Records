@@ -23,7 +23,7 @@
     
     <main>
         <div class="contenedor-formulario">
-            <form action="/products/" method="POST" enctype="multipart/form-data" class="formulario"> 
+            <form action="/products/" method="POST" enctype="multipart/form-data" class="formulario" id="formulario-ppal"> 
                 
                 <h1 class="formulario__titulo">Crear un producto nuevo</h1>
                 
@@ -121,6 +121,11 @@
                 <div class="formulario__field">
                     <label for="estilo" class="formulario__label">Estilo:</label>
                     <input type="text" class="formulario__input" id="estilo" name="estilo" value="<%= oldData ? oldData.estilo : '' %>" required> 
+                </div>
+
+                <div class="formulario__contenedor-errores hidden" id="contenedor-errores-generales">
+                    <p class="formulario__msj-error">Error al enviar. Verificar los siguientes errores</p>
+                    <ul id="lista-errores"></ul>
                 </div>
         
                 <div class="formulario__field--contenedor-btn">
