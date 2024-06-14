@@ -11,83 +11,85 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <section class="contenedor">
-            <section class="contenedor__perfil">
-                <section class="seccion__perfil">
-                    <div class="contenedor__perfil">
+            <section class="perfil">
+                <section class="perfil__imagen">
                         <img src="/Images/users/<%= user.image %>" alt="user-avatar" class="perfil__img">
-                        <h2>Name: <%= user.nombreUsuario %> </h2>
-                        <h3 class="subtitulo"><%= user.email %></h3>
-                        <form action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
+                        <h2 clas="perfil__imagen--nombre">Name: <%= user.nombreUsuario %> </h2>
+                        <h3 class="perfil__imagen--email"><%= user.email %></h3>
+                        <form class='perfil__imagen--formulario'action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
                             <input type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
-                            <button type='submit'> Upload</button>
+                            <button class="boton__upload" type='submit'> Upload</button>
                         </form>
-                    </div>
                 </section>
-                <section class="seccion__info">
-                    <h3 class="titulo__info">My information</h3>
-                    <div class="bloque__info">
-                        <div class="grupo__info">
-                            <p>Name and Surname</p>
-                            <p>E-Mail</p>
-                            <p>DNI</p>
-                            <p>Address</p>
-                        </div>
-                        <div class="datos__info">
-                            <p><%= user.nombreUsuario %></p>
-                            <p><%= user.email %></p>
-                            <p>12345678</p>
-                            <p> Street 123</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="seccion__compras">
-                    <h3 class="titulo__compras">Mis Compras</h3>
-                    <div class="bloque__compras">
-                        <div class="grupo__compras">
-                            <p>Buy 1</p>
-                            <p>State</p>
-                            <p>Deliver date</p>
-                            <p>Products</p>
-                        </div>
-                        <div class="datos__compras">
-                            <p>N Articles</p>
-                            <p>Delivered</p>
-                            <p>Delivered on February 20</p>
-                            <p>Disk 1, Disk 2...</p>
-                        </div>
-                    </div>
-                    <div class="bloque__compras">
-                        <div class="grupo__compras">
-                            <p>Buy 2</p>
-                            <p>State</p>
-                            <p>Delivery date</p>
-                            <p>Products</p>
-                        </div>
-                        <div class="datos__compras">
-                            <p>N Articles</p>
-                            <p>In travel</p>
-                            <p>Arrives on February 29</p>
-                            <p>Disck 1, Disck 2...</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="seccion__seguridad">
-                    <h3 class="titulo__seguridad">Segcurity</h3>
-                    <div class="bloque__seguridad">
-                        <div class="grupo__seguridad">
-                            <p>Change Password</p>
-                            <p>Change E-Mail</p>
-                            <p>Delete Account</p>
-                        </div>
-                        <div class="datos__seguridad">
-                            <p>********</p>
-                            <p>********</p>
-                            <p>********</p>
-                        </div>
-                    </div>
-                </section>
+                <section class="perfil__info">
+                    <section class="perfil__info--user">
+                        <h3 class="titulo__info">My information</h3>
+                            <div class="grupo__info">
+                                <div class="grupo__info--user">
+                                    <p>Name and Surname</p>
+                                    <p><%= user.nombreUsuario %></p>
+                                </div>
+                                <div class="grupo__info--user">
+                                    <p>E-Mail</p>
+                                    <p><%= user.email %></p>
+                                </div>
+                                <div class="grupo__info--user">
+                                    <p>DNI</p>
+                                    <p>12345678</p>
+                                </div>
+                                <div class="grupo__info--user">
+                                    <p>Address</p>
+                                    <p>Street 123</p>
+                                </div>
+                            </div>
+                    </section>
+                    <section class="perfil__info--compras">
+                        <h3 class="titulo__compras">Mis Compras</h3>
+                            <div class="grupo__info">
+                                <div class="grupo__info--compras">
+                                    <p>N Article</p>
+                                    <p>Buy 1</p>
+                                </div>
+                                <div class="grupo__info--compras">
+                                    <p>Deliver date</p>
+                                    <p>Products</p>
+                                </div>
+                                <div class="grupo__info--compras">
+                                    <p>State</p>
+                                    <p>Traveling</p>
+                                </div>
+                                <div class="grupo__info--compras">
+                                    <p>Delivered Date</p>
+                                    <p>Arrives on July 9</p>
+                                </div>
+                                <div class="grupo__info--compras">
+                                    <p>Products</p>
+                                    <p>Vinyl 1, Vinyl 2...</p>
+                                </div>
+                            </div>
+                    </section>
+                    <section class="perfil__info--seguridad">
+                        <h3 class="titulo__seguridad">Security</h3>
+                            <div class="grupo__info">
+                                <div class="grupo__info--seguridad">
+                                    <p>Change Password</p>
+                                    <p>********</p>
+                                </div>
+                                <div class="grupo__info--seguridad">
+                                    <p>Change E-Mail</p>
+                                    <p>********</p>
+                                </div>
+                                <div class="grupo__info--seguridad">
+                                    <p>Delete Account</p>
+                                    <p>********</p>
+                                </div>
+                              
+                            </div>
+                    </section>
             </section>
-        </section>
+            </section>
+        </div>
+        </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>

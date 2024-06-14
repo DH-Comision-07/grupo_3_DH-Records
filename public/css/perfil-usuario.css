@@ -21,20 +21,19 @@ body{
 
 .contenedor{
     background:  rgba(249, 247, 247, 0.3);;
-    
     border-radius: 60px;
 
-    height: 90vh;
+    height: 100vh;
     width: 90vw;
     margin:30px auto auto auto;
     padding: 20px 20px 10px 20px;
    
 }
 
-.contenedor__perfil{
+.perfil{
     display: flex;
     flex-direction: row;
-    align-items: center;
+   align-items: flex-start;
   
     margin:auto;
     background: white;
@@ -44,48 +43,18 @@ body{
     border-radius: 60px;
 
     width: calc(100% - 10px); 
-    height: calc(100% - 10px);
-    
+    height: calc(100% - 10px); 
 }
 
+.perfil__imagen{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-
-.subtitulo{
-    font-size: 16px;
-}
-
-p{
-    color: var(--GRIS);
-}
-
-h2{
-    font-size: 25px;
-    margin: 10px 0px;
-    text-align: center;
-    color: var(--GRIS);
-}
-
-h3{
-    font-size: 20px;
-    text-align: center;
-    color: var(--GRIS);
-}
-
-
-
-
-
-
-/*PERFIL*/
-
-.seccion__perfil{
-    margin: auto;
+    color:black;
+    margin-left: 40px;
     margin-top: 40px;
     margin-bottom: 20px;
-}
-
-.contenedor__perfil{
-   
 }
 
 .perfil__img{
@@ -96,25 +65,46 @@ h3{
     align-items: center;
 }
 
-/*INFO*/
-
-.seccion__info{
-    margin: 20px 10px 20px;
+.perfil__imagen--email{
+    font-size: 16px;
+    margin-top: 10px;
+}
+.perfil__imagen--formulario{
+    margin-top: 10px;
 }
 
-.titulo__info{
-    text-align: start;
-    font-size: 18px;
+.perfil__info{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 70%;
 }
 
-.bloque__info{
-    width: 90%;
-    margin: 15px auto;
-    padding: 5px;
-  
-    background-color: var(--NEGRO);
+                           
+.boton__upload{
+    margin-top: 15px;
+}
+
+
+/* Section User */
+
+
+.perfil__info--user{
+    display: flex;
+    flex-direction: column;
+    width: 80%;   
+    margin-top: 20px;
+}
+
+
+.grupo__info--user {
+    display: flex;
+    background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 0 10px var(--NEGRO);
+    box-shadow: 0 0 10px #f7f7f7;
+
+    margin: 10px auto;
+    
 }
 
 .grupo__info p{
@@ -125,42 +115,43 @@ h3{
     margin: auto;
 }
 
-.datos__info p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    padding-left: 15px;
-    margin: auto;
+
+.titulo__info{
+    text-align: start;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
-/*COMPRAS*/
 
-.seccion__compras{
-    margin: 20px 10px 20px;
+/* Section Compras */
+
+.perfil__info--compras{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
 }
+
+.grupo__info--compras{
+    display: flex;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f7f7f7;
+
+    margin: 10px auto;
+    
+}
+
+
 
 .titulo__compras{
     text-align: start;
     font-size: 18px;
+    margin-bottom: 5px;
 }
 
-.bloque__compras{
-    width: 90%;
-    margin: 15px auto;
-    padding: 5px;
-  
-    background-color: var(--NEGRO);
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--NEGRO);
-}
 
-.grupo__compras p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: right;
-    padding-right: 15px;
-    margin: auto;
-}
+
 
 .datos__compras p{
     padding-top: 5px;
@@ -170,25 +161,25 @@ h3{
     margin: auto;
 }
 
-/*SEGURIDAD*/
 
-.seccion__seguridad{
-    margin: 20px 10px 20px;
+
+/*Section Seguridad */
+
+.perfil__info--seguridad{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
 }
 
-.titulo__seguridad{
-    text-align: start;
-    font-size: 18px;
-}
-
-.bloque__seguridad{
-    width: 90%;
-    margin: 15px auto;
-    padding: 5px;
- 
-    background-color: var(--NEGRO);
+.grupo__info--seguridad{
+    display: flex;
+    background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 0 10px var(--NEGRO);
+    box-shadow: 0 0 10px #f7f7f7;
+
+    margin: 10px auto;
+    
 }
 
 .grupo__seguridad p{
@@ -206,3 +197,45 @@ h3{
     padding-left: 15px;
     margin: auto;
 }
+
+.titulo__seguridad{
+    text-align: start;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+/* Texto */
+
+
+
+
+p{
+    color: black;
+ 
+  
+}
+
+h2{
+    font-size: 25px;
+    margin: 10px 0px;
+    text-align: center;
+    color:black;
+}
+
+h3{
+    font-size: 20px;
+    text-align: center;
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
