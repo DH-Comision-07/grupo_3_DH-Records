@@ -23,19 +23,18 @@ body{
     background:  rgba(249, 247, 247, 0.3);;
     border-radius: 60px;
 
-    height: 100vh;
     width: 90vw;
     margin:30px auto auto auto;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 20px 20px;
    
 }
 
 .perfil{
     display: flex;
     flex-direction: row;
-   align-items: flex-start;
+    align-items: flex-start;
   
-    margin:auto;
+    margin: auto;
     background: white;
     
     box-shadow: 0 0 10px white;
@@ -144,14 +143,6 @@ body{
 
 
 
-.titulo__compras{
-    text-align: start;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-
-
 
 .datos__compras p{
     padding-top: 5px;
@@ -179,7 +170,6 @@ body{
     box-shadow: 0 0 10px #f7f7f7;
 
     margin: 10px auto;
-    
 }
 
 .grupo__seguridad p{
@@ -198,11 +188,7 @@ body{
     margin: auto;
 }
 
-.titulo__seguridad{
-    text-align: start;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
+
 
 
 /* Texto */
@@ -232,9 +218,50 @@ h3{
 
 
 
+@media screen and (max-width: 768px) {
+ 
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        height: auto; 
+        overflow-y: auto; /* Permite el desplazamiento vertical si el contenido supera la altura máxima */
+       
+    }
+  
+   
+    .perfil__info--user{
+        width: 100%; 
+       
+    }
+
+    .perfil__info--compras{
+        width: 100%
+       
+    }
+
+    .perfil__info--seguridad{
+        width: 100%
+       
+    }
 
 
+    .grupo__info--user {
+        flex-direction: column;
+    }
 
+    .grupo__info p{
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .titulo__info{
+        font-size: 16px;
+    }
+
+
+    
+
+}
 
 
 
