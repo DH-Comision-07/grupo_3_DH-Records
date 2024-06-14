@@ -13,7 +13,7 @@
 }
 
 body{
-    background-image: url("/images/users/Foto58.jpg");
+    background-image: url("/images/users/Foto61.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -98,6 +98,7 @@ body{
 
 .grupo__info--user {
     display: flex;
+   
     background-color: #f7f7f7;
     border-radius: 10px;
     box-shadow: 0 0 10px #f7f7f7;
@@ -109,9 +110,8 @@ body{
 .grupo__info p{
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: right;
-    padding-right: 15px;
-    margin: auto;
+    margin:auto;
+    
 }
 
 
@@ -137,19 +137,7 @@ body{
     border-radius: 10px;
     box-shadow: 0 0 10px #f7f7f7;
 
-    margin: 10px auto;
-    
-}
-
-
-
-
-.datos__compras p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    padding-left: 15px;
-    margin: auto;
+    margin: 10px auto;  
 }
 
 
@@ -172,46 +160,23 @@ body{
     margin: 10px auto;
 }
 
-.grupo__seguridad p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: right;
-    padding-right: 15px;
-    margin: auto;
-}
-
-.datos__seguridad p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    padding-left: 15px;
-    margin: auto;
-}
-
-
-
-
-/* Texto */
-
 
 
 
 p{
     color: black;
  
-  
 }
 
 h2{
     font-size: 25px;
     margin: 10px 0px;
-    text-align: center;
+  
     color:black;
 }
 
 h3{
     font-size: 20px;
-    text-align: center;
     color:black;
 }
 
