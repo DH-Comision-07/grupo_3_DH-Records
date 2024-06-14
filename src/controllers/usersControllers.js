@@ -1,5 +1,6 @@
 const usersService = require('../models/db/services/usersService');
 const { validationResult } = require('express-validator');
+const multer = require('multer');
 const bcryptjs= require('bcryptjs');
 const userService = require('../models/db/services/usersService');
 

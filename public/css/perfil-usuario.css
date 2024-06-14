@@ -8,20 +8,47 @@
     --GRIS-OSCURO: #282828;
 }
 
-
 * {
     box-sizing: border-box;
 }
 
 body{
-    Background-color: var(--GRIS-OSCURO);
-    max-width: 1200px;
-    margin: auto;
+    background-image: url("/images/users/Foto58.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-main{
-    width: 100%;  
+.contenedor{
+    background:  rgba(249, 247, 247, 0.3);;
+    
+    border-radius: 60px;
+
+    height: 90vh;
+    width: 90vw;
+    margin:30px auto auto auto;
+    padding: 20px 20px 10px 20px;
+   
 }
+
+.contenedor__perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    margin:auto;
+    background: white;
+    
+    box-shadow: 0 0 10px white;
+
+    border-radius: 60px;
+
+    width: calc(100% - 10px); 
+    height: calc(100% - 10px);
+    
+}
+
+
 
 .subtitulo{
     font-size: 16px;
@@ -44,13 +71,9 @@ h3{
     color: var(--GRIS);
 }
 
-.header{
-    margin-top: 20px;
-}
 
-form{
-    color:var(--BLANCO) ;
-}
+
+
 
 
 /*PERFIL*/
@@ -62,9 +85,7 @@ form{
 }
 
 .contenedor__perfil{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   
 }
 
 .perfil__img{
@@ -90,9 +111,7 @@ form{
     width: 90%;
     margin: 15px auto;
     padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
     background-color: var(--NEGRO);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--NEGRO);
@@ -129,9 +148,7 @@ form{
     width: 90%;
     margin: 15px auto;
     padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
     background-color: var(--NEGRO);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--NEGRO);
@@ -168,9 +185,7 @@ form{
     width: 90%;
     margin: 15px auto;
     padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ 
     background-color: var(--NEGRO);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--NEGRO);

@@ -13,15 +13,15 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
     if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif') {
         cb(null, true);
+        req.multerValidationError = false;
     } else {
+        req.multerValidationError = new Error('Solo se permiten archivos JPG, PNG, JPEG o GIF');
         cb(null, false);
     }
 }
 
-const multerUsersMid = multer({
-     storage,
-     fileFilter
 
-    });
+
+const multerUsersMid = multer({ storage, fileFilter });
 
 module.exports = multerUsersMid;
