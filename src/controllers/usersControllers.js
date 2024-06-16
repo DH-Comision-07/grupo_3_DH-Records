@@ -100,7 +100,8 @@ let usersControllers = {
         let userUpdated = userService.updateImage(userId, newUserData);
     
         if (userUpdated) {
-            return res.redirect('/users/detail/' + userId);
+            res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+            return res.redirect('back');
         } else {
             return res.redirect('/');
         }

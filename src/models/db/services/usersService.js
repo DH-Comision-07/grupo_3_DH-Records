@@ -112,24 +112,25 @@ let userService = {
     },
 
     updateImage: async function(userId, newUserData) {
-      
         try {
-            let user =await db.Users.findByPk(userId);
+            let user = await db.Users.findByPk(userId);
         
             if(user){
-                user.imagenUsuario = newImageData.image;
+                user.imagenUsuario = newUserData.image;
+                console.log(`New image data: ${newUserData.image}`); 
                 await user.save();
+                console.log(`Image updated successfully for user with ID: ${userId}`); 
                 return true;
             }
-
+    
+            console.log(`No user found with ID: ${userId}`); 
             return false;
             
         } catch (error){
+            console.log(`Error updating image for user with ID: ${userId}`); 
             console.log(error);
             return false;
         }
-            
-     
     },
 
     
