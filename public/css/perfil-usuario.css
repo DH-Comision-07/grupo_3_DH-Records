@@ -23,7 +23,7 @@ body{
     background:  rgba(249, 247, 247, 0.3);;
     border-radius: 60px;
 
-    width: 90vw;
+    width: 85vw;
     margin:30px auto auto auto;
     padding: 20px 20px 20px 20px;
    
@@ -149,6 +149,7 @@ body{
     flex-direction: column;
     width: 80%;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .grupo__info--seguridad{

@@ -14,11 +14,11 @@ const db = require('../models');
 
 let userService = {
 
-    users: require('../json/users.json'),
+    
    
-    getByField: function(field,text) {
-        return this.users.find(user => user[field] === text);          
-    },
+    getByField: async function(field, text) {
+        return await db.Users.findOne({ where: { [field]: text } });
+      },
 
     //Sequelize 
     getAll: async function (){
@@ -33,16 +33,27 @@ let userService = {
 
     getBy: async function(id) {
         try {
-            return await db.Users.findByPk(id);
+            let user = await db.Users.findByPk(id);
+            if (!user) {
+                user = {
+                    id: 0,
+                    nombreUsuario: "No encontrado",
+                    email: "No encontrado",
+                    imagenUsuario: "No encontrado"
+                }
+            }
+            return user;
         } catch (error) {
             console.log(error);
-            return {      // objeto falso
+            return {
                 id: 0,
                 nombreUsuario: "No encontrado",
-                
+                email: "No encontrado",
+                imagenUsuario: "No encontrado"
             }
         } 
     },
+   
         
     update: async function (id, body) {
         try {
@@ -70,14 +81,25 @@ let userService = {
     },
 
     createUser: async function(userData) {
-        userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;   // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
+        // Verificar si ya existe un usuario con el mismo nombre o correo electrónico
+        const existingUser = await this.getByField('nombreUsuario', userData.nombreUsuario);
+        if (existingUser) {
+            return { error: 'Ya existe un usuario con este nombre de usuario' };
+        }
+        const existingEmail = await this.getByField('email', userData.email);
+        if (existingEmail) {
+            return { error: 'Ya existe un usuario con este correo electrónico' };
+        }
+    
+        // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
+        userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
         const newUser = await db.Users.create({
             nombreUsuario,
             email,
             contraseña,
             terminosCondiciones,
-         });
+        });
         return newUser;
     },
  
@@ -89,64 +111,30 @@ let userService = {
         return bcryptjs.compareSync(inputPassword, userPassword);
     },
 
-    updateImage: function(userId, newUserData) {
-        console.log(newUserData);
-        console.log(userId);
+    updateImage: async function(userId, newUserData) {
+      
+        try {
+            let user =await db.Users.findByPk(userId);
         
-        let users = this.getAll();
+            if(user){
+                user.imagenUsuario = newImageData.image;
+                await user.save();
+                return true;
+            }
 
-        let userIndex = users.findIndex(user => user.id == userId);
-    
-        // Si el usuario existe...
-        if (userIndex != -1) {
+            return false;
             
-            users[userIndex].image = newUserData.image;
+        } catch (error){
+            console.log(error);
+            return false;
+        }
             
-            fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(users));
+     
+    },
+
     
-            return true;
-        }
-    
-        return false;
-    },
 
-
-
-    //         JSON
-
-     createId: function() {
-        let lastUser = this.users[this.users.length - 1];             
-        if(lastUser) {                                               
-        return lastUser.id + 1;
-        } else {
-            return 1;                                                
-        }
-    },
-
-    create: function(user) {
-        let newUser= {
-            id: this.createId(),
-            ...user                                                   
-        }
-        this.users.push(newUser);
-        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
-        return this.users;
-    },
-
-    delete: function(id) {
-        this.users = this.users.filter(user => user.id !== id);                                 
-        fs.writeFileSync(path.join(__dirname, '../json/users.json'), JSON.stringify(this.users));
-        return this.users;
-    },
-
-    //getBy: function(id) {
-    //    return this.users.find(user => user.id === id);
-    //    },
-
-    // getAll: function() {
-    //     return this.users;
-    //     },
-    
+ 
 
     
 }

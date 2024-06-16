@@ -13,36 +13,32 @@ let usersControllers = {
 
     processRegister: async function (req, res) {
         const errors = validationResult(req);
-
+    
         if (!errors.isEmpty()) {
             return res.render('users/register', { errores: errors.mapped(), oldData: req.body });
         }
         
-        let userEmail= userService.getByField('email', req.body.email);
-
+        let userEmail= await userService.getByField('email', req.body.email);
+    
         if(userEmail) {
-            res.render('users/register', { errores:{email:{ msg: 'This email is already registered'}}, oldData: req.body });
+            return res.render('users/register', { errores:{email:{ msg: 'This email is already registered'}}, oldData: req.body });
         }
-
-        if (!errors.isEmpty()) {
-            res.render('users/register', { errores: errors.mapped(), oldData: req.body });
-        } else {
-            req.body.contraseña  = userService.hashPassword(req.body.contraseña);
-
-            const newUser = await userService.createUser(req.body);
-
-            usersService.create(req.body);
-            
-            return res.redirect('/users/login');
-        };
-    },  
+    
+        req.body.contraseña  = userService.hashPassword(req.body.contraseña);
+    
+        const newUser = await userService.createUser(req.body);
+    
+        usersService.createUser(req.body);
+        
+        return res.redirect('/users/login');
+    },
 
 
     login: function (req, res) {
         return res.render('users/login',{ errores: [], oldData: {} });
     },
 
-    processLogin: function (req, res) {
+    processLogin: async function (req, res) {
         //Capturo los errores que envía express-validator
         const errors=  validationResult(req);
      
@@ -52,7 +48,7 @@ let usersControllers = {
         }
 
         //Si pasa las validaciones y no hay errores busco en la DB el usuario que se corresponda con el email ingresado
-        let userLogin= userService.getByField('email', req.body.email);
+        let userLogin=  await userService.getByField('email', req.body.email);
         console.log(userLogin);
         //Si no encuentro usuario registrado vuelvo al Login y lo mando a registrarse
         if(!userLogin){
@@ -76,19 +72,15 @@ let usersControllers = {
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
                 }
                 
-                return res.redirect('/users/:id') 
+                return res.redirect('/users/' + userLogin.id) 
             } else {
                 return res.render('users/login', { errores:{contraseña:{ msg: 'Incorrect password'}}, oldData: req.body });
             }
         }
 
-        return res.redirect('/users/:id') 
+        return res.redirect('/users/' + userLogin.id) 
     },
 
-    
-    detail: function(req, res) {
-        return res.render('users/detail', { user: req.session.userLogged });
-    },
 
 
     logOut: function(req, res) {
@@ -132,6 +124,18 @@ let usersControllers = {
         }
     },
 
+    detail: async function(req, res) {
+        try {
+            let user = await userService.getBy(req.params.id);
+            if (user) {
+                res.render('users/detail', { user: user });
+            } else {
+                res.status(404).send('Usuario no encontrado');
+            }
+        } catch (error) {
+            res.status(500).send('Error al obtener el usuario');
+        }
+    },
 
    update: async function(req, res) {
         try {
