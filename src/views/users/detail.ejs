@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <%- include('../partials/head-1.ejs') %> 
     <link rel="stylesheet" href="/css/perfil-usuario.css">
     <%- include('../partials/head-2.ejs') %>
@@ -14,12 +13,13 @@
             <section class="perfil">
                 <section class="perfil__imagen">
                         <img src="/Images/users/<%= user.imagenUsuario %>" alt="user-avatar" class="perfil__img">
-                        <h2 clas="perfil__imagen--nombre">Name: <%= user.nombreUsuario %> </h2>
+                        <h2 clas="perfil__imagen--nombre"> Name: <%= user.nombreUsuario %> </h2>
                         <h3 class="perfil__imagen--email"><%= user.email %></h3>
                         <form class='perfil__imagen--formulario' action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
-                            <input type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
-                            <button class="boton__upload" type='submit'> Upload</button>
+                            <input class='formulario__input' type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
+                            <button class="boton__upload" type='submit'> Upload </button>
                         </form>
+                        
                 </section>
                 <section class="perfil__info">
                     <section class="perfil__info--user">

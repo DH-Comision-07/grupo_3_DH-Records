@@ -44,6 +44,14 @@ body{
     width: calc(100% - 10px); 
     height: calc(100% - 10px); 
 }
+.formulario__input{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #828080;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
 .perfil__imagen{
     display: flex;
@@ -81,7 +89,7 @@ body{
 
                            
 .boton__upload{
-    margin-top: 15px;
+   
 }
 
 

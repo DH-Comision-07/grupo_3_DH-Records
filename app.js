@@ -1,7 +1,10 @@
 const express = require ('express');
 const path = require ('path');
+const userLoggedMid = require('./middlewares/userLoggedMid');
 
 const app = express();
+
+app.use(userLoggedMid);
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
