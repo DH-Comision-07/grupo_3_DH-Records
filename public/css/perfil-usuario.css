@@ -8,63 +8,60 @@
     --GRIS-OSCURO: #282828;
 }
 
-
 * {
     box-sizing: border-box;
 }
 
 body{
-    Background-color: var(--GRIS-OSCURO);
-    max-width: 1200px;
+    background-image: url("/images/users/Foto61.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor{
+    background:  rgba(249, 247, 247, 0.3);;
+    border-radius: 60px;
+
+    width: 85vw;
+    margin:30px auto auto auto;
+    padding: 20px 20px 20px 20px;
+   
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  
     margin: auto;
+    background: white;
+    
+    box-shadow: 0 0 10px white;
+
+    border-radius: 60px;
+
+    width: calc(100% - 10px); 
+    height: calc(100% - 10px); 
+}
+.formulario__input{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #828080;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-main{
-    width: 100%;  
-}
-
-.subtitulo{
-    font-size: 16px;
-}
-
-p{
-    color: var(--GRIS);
-}
-
-h2{
-    font-size: 25px;
-    margin: 10px 0px;
-    text-align: center;
-    color: var(--GRIS);
-}
-
-h3{
-    font-size: 20px;
-    text-align: center;
-    color: var(--GRIS);
-}
-
-.header{
-    margin-top: 20px;
-}
-
-form{
-    color:var(--BLANCO) ;
-}
-
-
-/*PERFIL*/
-
-.seccion__perfil{
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.contenedor__perfil{
+.perfil__imagen{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+
+    color:black;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .perfil__img{
@@ -75,119 +72,171 @@ form{
     align-items: center;
 }
 
-/*INFO*/
-
-.seccion__info{
-    margin: 20px 10px 20px;
+.perfil__imagen--email{
+    font-size: 16px;
+    margin-top: 10px;
+}
+.perfil__imagen--formulario{
+    margin-top: 10px;
 }
 
-.titulo__info{
-    text-align: start;
-    font-size: 18px;
-}
-
-.bloque__info{
-    width: 90%;
-    margin: 15px auto;
-    padding: 5px;
+.perfil__info{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--NEGRO);
+    flex-direction: column;
+    align-items:center;
+    width: 70%;
+}
+
+                           
+.boton__upload{
+   
+}
+
+
+/* Section User */
+
+
+.perfil__info--user{
+    display: flex;
+    flex-direction: column;
+    width: 80%;   
+    margin-top: 20px;
+}
+
+
+.grupo__info--user {
+    display: flex;
+   
+    background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 0 10px var(--NEGRO);
+    box-shadow: 0 0 10px #f7f7f7;
+
+    margin: 10px auto;
+    
 }
 
 .grupo__info p{
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: right;
-    padding-right: 15px;
-    margin: auto;
+    margin:auto;
+    
 }
 
-.datos__info p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    padding-left: 15px;
-    margin: auto;
-}
 
-/*COMPRAS*/
-
-.seccion__compras{
-    margin: 20px 10px 20px;
-}
-
-.titulo__compras{
+.titulo__info{
     text-align: start;
     font-size: 18px;
+    margin-bottom: 5px;
 }
 
-.bloque__compras{
-    width: 90%;
-    margin: 15px auto;
-    padding: 5px;
+
+/* Section Compras */
+
+.perfil__info--compras{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--NEGRO);
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--NEGRO);
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
 }
 
-.grupo__compras p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: right;
-    padding-right: 15px;
-    margin: auto;
-}
-
-.datos__compras p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    padding-left: 15px;
-    margin: auto;
-}
-
-/*SEGURIDAD*/
-
-.seccion__seguridad{
-    margin: 20px 10px 20px;
-}
-
-.titulo__seguridad{
-    text-align: start;
-    font-size: 18px;
-}
-
-.bloque__seguridad{
-    width: 90%;
-    margin: 15px auto;
-    padding: 5px;
+.grupo__info--compras{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--NEGRO);
+    background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 0 10px var(--NEGRO);
+    box-shadow: 0 0 10px #f7f7f7;
+
+    margin: 10px auto;  
 }
 
-.grupo__seguridad p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: right;
-    padding-right: 15px;
-    margin: auto;
+
+
+/*Section Seguridad */
+
+.perfil__info--seguridad{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.datos__seguridad p{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    padding-left: 15px;
-    margin: auto;
+.grupo__info--seguridad{
+    display: flex;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f7f7f7;
+
+    margin: 10px auto;
 }
+
+
+
+
+p{
+    color: black;
+ 
+}
+
+h2{
+    font-size: 25px;
+    margin: 10px 0px;
+  
+    color:black;
+}
+
+h3{
+    font-size: 20px;
+    color:black;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+ 
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        height: auto; 
+        overflow-y: auto; /* Permite el desplazamiento vertical si el contenido supera la altura máxima */
+       
+    }
+  
+   
+    .perfil__info--user{
+        width: 100%; 
+       
+    }
+
+    .perfil__info--compras{
+        width: 100%
+       
+    }
+
+    .perfil__info--seguridad{
+        width: 100%
+       
+    }
+
+
+    .grupo__info--user {
+        flex-direction: column;
+    }
+
+    .grupo__info p{
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .titulo__info{
+        font-size: 16px;
+    }
+
+
+    
+
+}
+
+
+
+

@@ -18,6 +18,9 @@ module.exports = {
       contraseña: {
         type: Sequelize.STRING
       },
+      imagenUsuario: {
+        type: Sequelize.STRING
+      },
       terminosCondiciones: {
         type: Sequelize.BOOLEAN
       },

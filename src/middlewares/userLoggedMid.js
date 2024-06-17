@@ -1,15 +1,19 @@
 const usersService = require ('../models/db/services/usersService');
 
-function userLoggedMid(req, res, next) {
+async function userLoggedMid(req, res, next) {
     res.locals.isLogged = false;
     
     //reviso si tengo algun email de usuario en las cookies
     let emailInCookies = req.cookies.userEmail;
-    let userFromCookies = usersService.getByField('email', emailInCookies);
+    let userFromCookies;
+
+    if (emailInCookies) {
+        userFromCookies = await usersService.getByField('email', emailInCookies);
+    }
     
     //si encontre un usuario segun el email de la cookie lo paso a sesion
     if(userFromCookies){
-        req.session.userLogged = userFromCookies;
+        req.session.userLogged =  userFromCookies;
     }
 
     //si tengo un usuario en sesion lo paso a la variable local
