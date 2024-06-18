@@ -135,7 +135,7 @@
 /*  blog */
 
 .blog{
-    margin-top: 60px;
+    margin-top: 70px;
     
 }
 
@@ -157,19 +157,26 @@
 
 .blog__seccion--texto{
     padding: 20px;
-     margin-top: -10px;
+    margin-top: -10px;
 }
 
 
 .blog__seccion--titulo{
-   
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 
 .blog__seccion--p{
     text-align: left;
-    font-size: 14px;
     line-height: 1.5;
+    font-size: 13px;
+    
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 400;
+    font-style: normal;
+       
 }
 
 
