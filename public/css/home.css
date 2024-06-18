@@ -165,12 +165,14 @@
     font-family: "Bebas Neue", sans-serif;
     font-weight: 300;
     font-style: normal;
+    font-size: 26px;
+   
 }
 
 
 .blog__seccion--p{
     text-align: left;
-    line-height: 1.5;
+    line-height: 1.6;
     font-size: 13px;
     
     font-family: "Libre Caslon Text", serif;
@@ -183,7 +185,7 @@
 .blog__seccion--imagen{
     height: 200px; 
     border-radius: 20px;
-    background-image: url("/images/Foto31.jpg");
+    background-image: url("/images/Foto50.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;  
