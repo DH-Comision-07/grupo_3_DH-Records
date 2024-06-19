@@ -115,7 +115,7 @@
 .titulo{
     margin-bottom: 0;
     padding-top: 50px; 
-    font-size: 40px;
+    font-size: 27px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 500;
     font-style: italic;
@@ -124,12 +124,10 @@
 .subtitulo{
     margin-top: 5px;
     padding-bottom: 20px; 
-    font-size: 18px;
+    font-size: 12px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-
-    
 }
 
 /*  blog */
@@ -196,6 +194,7 @@
 }
 
 
+/* banner */
 .seccion{
     margin-top: 80px;
     
@@ -235,7 +234,7 @@
 .seccion__banner--titulo{
     margin-bottom: 0;
     margin-top: 10px;
-    font-size: 40px;
+    font-size: 27px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 500;
     font-style: italic;
@@ -244,7 +243,7 @@
 .seccion__banner--subtitulo{
     margin-top: 5px;
     padding-bottom: 10px; 
-    font-size: 18px;
+    font-size: 12px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -257,10 +256,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    right: 40%;
+    right: 30%;
     z-index: 1;
-    width: 200%;
-    height: 45px;
+    width: 150%;
+    height: 40px;
     
     border-radius: 40px;
     border: 1px solid #fff;
@@ -272,7 +271,7 @@
     transition: all 0.2s ease-in;
 
     color: #090909;
-    font-size: 19px;  
+    font-size: 14px;  
     font-family: "Staatliches", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -341,6 +340,51 @@
      
         
     }
+
+    .titulo{
+        margin-bottom: 0;
+        padding-top: 70px; 
+        font-size: 45px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+    }
+    
+    .subtitulo{
+        margin-top: 5px;
+        padding-bottom: 20px; 
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    .seccion__banner--titulo{
+        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 45px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+    }
+    
+    .seccion__banner--subtitulo{
+        margin-top: 5px;
+        padding-bottom: 10px; 
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+    
+
+    .seccion__banner--boton{
+        width: 200%;
+        height: 45px;
+        font-size: 19px;  
+        
+    }
+
 }
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
@@ -360,7 +404,48 @@
        
     }
 
+    .titulo{
+        margin-bottom: 0;
+        padding-top: 50px; 
+        font-size: 45px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+    }
+    
+    .subtitulo{
+        margin-top: 5px;
+        padding-bottom: 20px; 
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
 
+    .seccion__banner--titulo{
+        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 45px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+    }
+    
+    .seccion__banner--subtitulo{
+        margin-top: 5px;
+        padding-bottom: 10px; 
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+    
+    .seccion__banner--boton{
+        width: 200%;
+        height: 45px;
+        font-size: 19px;  
+        
+    }
     
 
 }
