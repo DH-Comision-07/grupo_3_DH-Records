@@ -196,6 +196,59 @@
 }
 
 
+.seccion{
+    margin-top: 80px;
+    
+}
+
+
+.seccion__banner{
+    
+    border-radius: 20px;
+    background: #f4f3f2;
+    margin: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.seccion__banner--imagen{
+    height: 400px; 
+    border-radius: 20px;
+    background-image: url("/images/Foto50.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+
+.seccion__banner--texto{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+
+.seccion__banner--titulo{
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.seccion__banner--subtitulo{
+    margin-top: 5px;
+    padding-bottom: 20px; 
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
 /* ------------------------------------- Medias Querys ------------------------------------- */
 @media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
     
