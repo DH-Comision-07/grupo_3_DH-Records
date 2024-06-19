@@ -22,7 +22,7 @@
             </label>
             
             <% if(locals.isLogged) { %>
-                <a href="/users/detail/:id" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
+                <a href="/users/:id" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
                 <a href="/users/logout" class="user__singUp"> LogOut </a>
             <% }else{ %>
                 <a href="/users/login" class="user__logIn"> Log in</i></a>

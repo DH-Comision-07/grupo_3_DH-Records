@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`users` (
    `nombreUsuario` VARCHAR(45) NOT NULL,
    `email` VARCHAR(45) NOT NULL,
    `contraseña` VARCHAR(255) NOT NULL,
+   `imagenUsuario` VARCHAR(255),
    `terminosCondiciones` tinyint(1) NOT NULL,
    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
