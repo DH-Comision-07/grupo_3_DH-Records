@@ -4,7 +4,6 @@ const genreService = require ('../models/db/services/genreService');
 const authorService = require ('../models/db/services/authorService');
 
 const { validationResult } = require('express-validator');
-const multer = require('multer');
 
 let productsControllers = {
 
