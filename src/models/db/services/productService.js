@@ -57,7 +57,7 @@ let productService = {
         }
     },
 
-    getProductsCountByGenre: async function() {
+    countByGenre: async function() {
         try {
             return await db.Productos.findAll({
                 include: [{ association: 'generos' }],
