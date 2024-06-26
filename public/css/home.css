@@ -134,6 +134,7 @@
 
 .blog{
     margin-top: 70px;
+    margin-bottom: 60px;
     
 }
 
@@ -181,7 +182,7 @@
 
 
 .blog__seccion--imagen{
-    height: 200px; 
+    height: 400px; 
     border-radius: 20px;
     background-image: url("/images/Foto21.jpg"); 
     background-repeat: no-repeat;
@@ -319,7 +320,9 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {      /*    Tablet    */
     
     
-
+    .blog__seccion--imagen{
+        height: 200px; 
+    }
   
     /* productos-destacados */
     .productos__seccion {
@@ -331,8 +334,7 @@
     .productos__articulo {
         flex-basis: calc(40% - 20px); 
         margin: 0 auto 20px auto; 
-        padding: 15px; /* con valor fijo en px o 10% */
-     
+        padding: 15px; /* con valor fijo en px o 10% */  
         
     }
 
@@ -384,7 +386,10 @@
 
 @media screen and (min-width: 1024px) {    /*    Desktop   */
     
-   
+    .blog__seccion--imagen{
+        height: 200px; 
+    }
+
     /* productos-destacados */
     .productos__seccion{
         display: flex;
