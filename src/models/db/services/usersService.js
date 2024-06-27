@@ -31,6 +31,16 @@ let userService = {
         }
     },
 
+    getAllCategories: async function() {
+        try {
+            const categories = await db.Categorias.findAll();
+            return categories;
+        } catch (error) {
+            console.log(error);
+            return [];
+        }
+    },
+
     getBy: async function(id) {
         try {
             let user = await db.Users.findByPk(id);
@@ -53,8 +63,7 @@ let userService = {
             }
         } 
     },
-   
-        
+    
     update: async function (id, body) {
         try {
             const user = await this.getBy(id);
@@ -65,7 +74,14 @@ let userService = {
             if (body.contraseña) {
                 body.contraseña = bcryptjs.hashSync(body.contraseña, 10);
             }
-            return await db.Users.update(body, {where: { id:id }})  ; 
+            let updateData = {
+                nombreUsuario: body.nombreUsuario,
+                email: body.email,
+                categorias_id: body.categorias_id, 
+                contraseña: body.contraseña 
+            }
+            return await db.Users.update(updateData, {where: { id:id }});
+
         } catch (error) {
             console.log(error);
         }   

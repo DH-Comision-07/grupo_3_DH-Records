@@ -29,6 +29,17 @@
                     <input type="password" name="contraseña" id="contraseña" placeholder="Password" class="formulario__input" value="<%= user.contraseña %>" required>
                 </div>
 
+                <div class="formulario__field">
+                    <label for="categorias_id" class="formulario__label">Category:</label>
+                    <select name="categorias_id" id="categorias_id" class="formulario__input" required>
+                        <% categoriasUsuario.forEach(function(categoria) { %>
+                            <option value="<%= categoria.id %>">
+                                <%= categoria.categorias %>
+                            </option>
+                        <% }); %>
+                    </select>
+                </div>
+
                 <div class="formulario__field--contenedor-btn">
                     <button type="submit" class="formulario__button">Save Changes</button>
                 </div>

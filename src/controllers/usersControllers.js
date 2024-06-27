@@ -81,14 +81,11 @@ let usersControllers = {
         return res.redirect('/users/' + userLogin.id) 
     },
 
-
-
     logOut: function(req, res) {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     },
-
 
     editImage: function(req, res) {
         let userId = req.params.id;
@@ -119,9 +116,10 @@ let usersControllers = {
     edit: async function(req, res) {
         try {
             let user = await userService.getBy(req.params.id);
-           res.render('users/edit', {user})
+            const categoriasUsuario = await userService.getAllCategories();
+           res.render('users/edit', {user, categoriasUsuario})
         } catch (error) {
-            res.status(500).send('Error inesperado');
+            res.status(500).send('Error inesperado' + error.message);
         }
     },
 
