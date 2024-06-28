@@ -13,13 +13,13 @@
 
 
 
-.contenedor-general{
+.users-card{
     width: 100%; 
     padding: 10px;
 }
 
 
-.producto__contenedor-general{
+.users-card__contenedor{
     max-width: 750px;
     margin: auto;
     padding: 16px;
@@ -34,7 +34,7 @@
 }
 
 
-.tarjeta_producto {
+.tarjeta-user{
     width: 150px;
     height: 220px;
     min-width: 150px;
@@ -51,7 +51,7 @@
     flex-wrap: nowrap;
 }
 
-.tarjeta-producto__contenedor-info {
+.tarjeta-user__info{
     margin: 0px 5px;
     padding: 5px; 
     height: 100%;
@@ -63,11 +63,11 @@
 }
 
 
-.tarjeta-producto__contenedor-info--descripcion {
+.tarjeta-user__info--descripcion {
     overflow: hidden;
 }
 
-.tarjeta-producto__titulo {
+.tarjeta-user__info--titulo {
     margin: 0px;
     color: var(--GRIS-OSCURO);
     display: inline-block;
