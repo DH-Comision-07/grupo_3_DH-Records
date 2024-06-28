@@ -1,17 +1,10 @@
 
-:root {
-    --BLANCO: #FFF;
-    --MANTECA-FONDO: #f8f9fa;
-    --GRIS-CLARO:  #F5F5F5;
-    --GRIS-INPUT: #bcbcbc;
-    --GRIS-OSCURO: #333;
-    --NEGRO: #202020;
-    --NEGRO08: rgba(0, 0, 0, 0.8);
-    --VIOLETA-SOMBRA: #662482;
-    --VIOLETA-OSCURO: #3C0753;
+body{
+    background-image: url("/images/users/Foto61.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-
-
 
 .users-card{
     width: 100%; 
@@ -24,7 +17,7 @@
     margin: auto;
     padding: 16px;
     border-radius: 6px;
-    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #493c3a;   
     display: flex; 
     justify-content: space-around; 
@@ -40,9 +33,9 @@
     min-width: 150px;
     min-height: 250px;
     margin: 10px;
-    background-color: #e5e2dc;
+    background-color: #FFFFFF;
     border-radius: 6px;
-    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #493c3a;
     display: flex;
     flex-direction: column;
@@ -69,7 +62,7 @@
 
 .tarjeta-user__info--titulo {
     margin: 0px;
-    color: var(--GRIS-OSCURO);
+    color: #333;
     display: inline-block;
 }
 
