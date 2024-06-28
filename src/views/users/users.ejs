@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
-    <%- include('../partials/head-1.ejs') %> 
-    <link rel="stylesheet" href="/css/product.css">
-    <%- include('../partials/head-2.ejs') %>
-</head>
+    <head>
+        <%- include('../partials/head-1.ejs') %>   
+        <link rel="stylesheet" href="/css/users.css">
+        <%- include('../partials/head-2.ejs') %>
+    </head>
+
 <body>
+    <div class="contenedor-general">
     <%- include('../partials/header.ejs') %>
     <main>
-        <section>
-            <h1 class="titulo">Users Profile</h1>
-            <ul>
-                <% for( let i = 0; i < users.length; i++ ) { %>
-                <li>
-                    <a href="/users/<%= users[i].id %>"><%= users[i].nombreUsuario %></a>
-                </li>
-                <% } %>
-        
-            </ul>
-            
+        <h1 class="titulo">Users Profile</h1>
+        <section class="producto__contenedor-general">
+            <% users.forEach(function(user) { %>
+                <a href="/users/edit/<%= user.id %>" >
+                    <article class="tarjeta_producto">
+                        <div class="tarjeta-producto__contenedor-info">
+                            <div class="tarjeta-producto__contenedor-info--descripcion">
+                                <p class="tarjeta-producto__titulo"><%= user.nombreUsuario %></p>
+                                <p class="tarjeta-producto__titulo"><%= user.id %></p>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            <% }); %>
         </section>
-        
-        
     </main>
-
     <%- include('../partials/footer.ejs') %>
+    </div>
+    
 </body>
+</html>
