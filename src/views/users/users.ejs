@@ -17,8 +17,10 @@
                     <article class="tarjeta-user">
                         <div class="tarjeta-user__info">
                             <div class="tarjeta-user__info--descripcion">
-                                <p class="tarjeta-user__info--titulo"><%= user.nombreUsuario %></p>
-                                <p class="tarjeta-user__info--titulo"><%= user.id %></p>
+                                <div class="tarjeta-user__contenedor">
+                                    <img src="/Images/users/<%= user.imagenUsuario %>"  class="tarjeta-user__contenedor-imagen" >
+                                </div>
+                                <p class="tarjeta-user__info--titulo"><%= user.nombreUsuario %> <%= user.id %></p>
                             </div>
                         </div>
                     </article>
