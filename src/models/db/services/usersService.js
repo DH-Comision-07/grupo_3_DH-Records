@@ -115,6 +115,7 @@ let userService = {
             email,
             contraseña,
             terminosCondiciones,
+            categorias_id: 2
         });
         return newUser;
     },

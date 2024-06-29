@@ -27,8 +27,6 @@ let usersControllers = {
         req.body.contraseña  = userService.hashPassword(req.body.contraseña);
     
         const newUser = await userService.createUser(req.body);
-    
-        usersService.createUser(req.body);
         
         return res.redirect('/users/login');
     },
