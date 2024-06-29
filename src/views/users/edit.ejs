@@ -34,7 +34,7 @@
                         <label for="categorias_id" class="formulario__label">Category:</label>
                         <select name="categorias_id" id="categorias_id" class="formulario__input" required>
                             <% categoriasUsuario.forEach(function(categoria) { %>
-                                <option value="<%= categoria.id %>">
+                                <option value="<%= categoria.id %>" <%= categoria.id === user.categorias_id ? 'selected' : '' %>>
                                     <%= categoria.categorias %>
                                 </option>
                             <% }); %>
