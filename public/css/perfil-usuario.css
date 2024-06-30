@@ -44,7 +44,6 @@ body{
     width: calc(100% - 10px); 
     height: calc(100% - 10px); 
 }
-
 .formulario__input{
     width: 90%;
     padding: 10px;
@@ -89,6 +88,10 @@ body{
 }
 
                            
+.boton__upload{
+   
+}
+
 
 /* Section User */
 
@@ -167,6 +170,8 @@ body{
 }
 
 
+
+
 p{
     color: black;
  
@@ -184,12 +189,7 @@ h3{
     color:black;
 }
 
-.boton__upload{
-    margin-top: 5px;
-}
-.boton-admin{
-    margin-top: 20px;
-}
+
 
 
 @media screen and (max-width: 768px) {
