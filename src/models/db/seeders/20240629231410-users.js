@@ -24,7 +24,7 @@ module.exports = {
     ]
 
 
-    let usersRegistro = users.map(categoria => ({
+    let usersRegistro = users.map(users => ({
       nombreUsuario: users.nombreUsuario,
       email: users.email,
       contraseña: users.contraseña,
