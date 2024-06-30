@@ -41,13 +41,6 @@ app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
 //Confir de rutas
 const homeRoutes= require('./routes/home.routes');
-const productsRoutes = require('./routes/products.routes');
-const usersRoutes = require('./routes/users.routes');
-const apisRoutes = require('./routes/apis.routes');
-
 app.use('/', homeRoutes);
-app.use('/products', productsRoutes);
-app.use('/users', usersRoutes);
-app.use('/apis', apisRoutes);
 
  
