@@ -155,3 +155,14 @@ INSERT INTO `DH-Records`.`categorias`
 VALUES 
 ('admin'), 
 ('usuario');
+
+-- INSERT DE USUARIOS --
+INSERT INTO `DH-Records`.`users`
+(`nombreUsuario`, `email`, `contraseña`, `imagenUsuario`, `terminosCondiciones`,`categorias_id`)
+VALUES
+('Mariano','marian@hotmail.com',12345678,'userProfile-1718577395048.jpg',0,1),
+('Dani','dani@hotmail.com',12345678,'userProfile-1718637185571.jpg',0,2),
+('Nico','nico@hotmail.com',12345678,'userProfile-1718577395048.jpg',0,2),
+('Juan','juan@hotmail.com',12345678,'userProfile-1718637185571.jpg',0,2),
+('Lucas','lucas@hotmail.com',12345678,'userProfile-1718577395048.jpg',0,2),
+('Jaime','jaime@hotmail.com',12345678,'userProfile-1718637185571.jpg',0,2)
