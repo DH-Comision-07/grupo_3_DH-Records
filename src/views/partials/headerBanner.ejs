@@ -29,10 +29,10 @@
             </label>
             
             <% if(locals.isLogged) { %>
-                <a href="/users/:id" class="user__logIn"> 
+                <a href="/users/<%= locals.userLogged.id %>" class="user__logIn"> 
                     Hola <%= locals.userLogged.nombreUsuario %>
                 </a>
-                <a href="/users/:id" class="user__logIn"> 
+                <a href="/users/<%= locals.userLogged.id %>"class="user__logIn"> 
                     <div class="user__avatar">
                         <img src="Images/users/<%= locals.userLogged.imagenUsuario %>" alt="user-avatar">
                     </div>
