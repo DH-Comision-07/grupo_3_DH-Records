@@ -19,7 +19,9 @@
                             <input class='formulario__input' type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
                             <button class="boton__upload" type='submit'> Upload </button>
                         </form>
-                        
+                        <form action="/users" method="GET">
+                            <button type="submit" class="boton-admin">Users List</button>
+                        </form>
                 </article>
                 <section class="perfil__info">
                     <article class="perfil__info--user">
@@ -92,5 +94,4 @@
         </div>
     </main>
 
-    <%- include('../partials/footer.ejs') %>
 </body>
