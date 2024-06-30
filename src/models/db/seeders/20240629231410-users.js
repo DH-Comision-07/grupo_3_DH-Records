@@ -24,13 +24,13 @@ module.exports = {
     ]
 
 
-    let usersRegistro = users.map(users => ({
-      nombreUsuario: users.nombreUsuario,
-      email: users.email,
-      contraseña: users.contraseña,
-      imagenUsuario: users.imagenUsuario,
-      terminosCondiciones: users.terminosCondiciones,
-      categorias_id: users.categorias_id
+    let usersRegistro = users.map(user => ({
+      nombreUsuario: user.nombreUsuario,
+      email: user.email,
+      contraseña: user.contraseña,
+      imagenUsuario: user.imagenUsuario,
+      terminosCondiciones: user.terminosCondiciones,
+      categorias_id: user.categorias_id
     }));
 
       await queryInterface.bulkInsert('users', usersRegistro, {});
