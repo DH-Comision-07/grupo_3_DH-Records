@@ -17,12 +17,12 @@ module.exports = {
   async up (queryInterface, Sequelize) {
   
     let users = [
-      new Users('Mariano','marian@hotmail.com','12345678','userProfile-1718577395048.jpg',0,1),
-      new Users('Dani','dani@hotmail.com','12345678','userProfile-1718637185571.jpg',0,2),
-      new Users('Nico','nico@hotmail.com','12345678','userProfile-1718577395048.jpg',0,2),
-      new Users('Juan','juan@hotmail.com','12345678','userProfile-1718637185571.jpg',0,2),
-      new Users('Lucas','lucas@hotmail.com','12345678','userProfile-1718577395048.jpg',0,2),
-      new Users('Jaime','jaime@hotmail.com','12345678','userProfile-1718637185571.jpg',0,2)
+      new Users('Mariano','marian@hotmail.com','12345678','defaultUserImage.png',0,1),
+      new Users('Dani','dani@hotmail.com','12345678','defaultUserImage.png',0,2),
+      new Users('Nico','nico@hotmail.com','12345678','defaultUserImage.png',0,2),
+      new Users('Juan','juan@hotmail.com','12345678','defaultUserImage.png',0,2),
+      new Users('Lucas','lucas@hotmail.com','12345678','defaultUserImage.png',0,2),
+      new Users('Jaime','jaime@hotmail.com','12345678','defaultUserImage.png',0,2)
     ]
 
 
