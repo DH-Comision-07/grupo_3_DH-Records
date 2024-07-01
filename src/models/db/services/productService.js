@@ -4,6 +4,7 @@ const fs = require('fs');
 const products = require('../json/products.json');
 let db = require('../models');
 const { Op } = require('sequelize');
+const { log } = require('console');
 
 let productService = {
 
@@ -100,6 +101,64 @@ let productService = {
 
             return products;
             
+        } catch (error) {
+            console.log(error);
+            return([]);
+        }
+    },
+
+    findLike: async function (query) {
+        try {
+            let products = await db.Productos.findAll({
+                where: {
+                    [Op.or]: [
+                        { titulo: { [Op.like]: `%${query}%` } },
+                        { estilo: { [Op.like]: `%${query}%` } },
+                    ]
+                },
+                include: [
+                    { association: "generos" },
+                    { association: "autores" },
+                    { association: "imagenesProductos" }
+                ]
+
+                // include: [
+                //     {
+                //         model: db.Generos,
+                //         as: 'generos',
+                //         where: {
+                //             nombre: { [Op.like]: `%${query}%` }
+                //         },
+                //         required: false // Esto permite que los productos que no tengan genero igual al query también se incluyan
+                //     },
+                //     {
+                //         model: db.Autores,
+                //         as: 'autores',
+                //         where: {
+                //             nombre: { [Op.like]: `%${query}%` }
+                //         },
+                //         required: false // Esto permite que los productos que no tengan autor igual al query también se incluyan
+                //     },
+                //     {
+                //         model: db.ImagenesProductos,
+                //         as: 'imagenesProductos',
+                //         required: false
+                //     }
+                // ]
+
+                // include: [
+                //     { association: 'generos', 
+                //         where: { nombre: { [Op.like]: `%${query}%` } } 
+                //     },
+                //     { association: 'autores', 
+                //         where: { nombre: { [Op.like]: `%${query}%` } }
+                //     },
+                //     { association: 'imagenesProductos' }
+                // ]
+            });
+            console.log('estoy dentro del service');
+            console.log(products);
+            return products;
         } catch (error) {
             console.log(error);
             return([]);

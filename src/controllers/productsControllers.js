@@ -35,7 +35,23 @@ let productsControllers = {
             let authors = await authorService.getAll();
             res.render('products/products', {products, genres, authors});
         } catch (error) {
+            console.error(error);
             res.send('Error inesperado').status(500);
+        }
+    },
+
+    serch: async function(req, res) {
+        
+        const query = req.query.serch;
+
+        try {
+            const products = await productService.findLike(query);
+            let genres = await genreService.getAll();
+            let authors = await authorService.getAll();
+            res.render('products/products', {products, genres, authors});
+        } catch (error) {
+            console.error(error);
+            res.send('Error en la búsqueda').status(500);
         }
     },
 
@@ -48,6 +64,7 @@ let productsControllers = {
             res.send('Error inesperado').status(500);
         }
     },
+
 
     create: async function(req, res) {
         try {
@@ -138,59 +155,7 @@ let productsControllers = {
 
     cart: function(req, res) {
         res.render('products/cart');
-    },
-    
-    
-    //este metodo no se a que hace referencia, hay que probar con eliminarlo
-    getProductDetail: function(req, res) {
-        const productId = req.params.id;
-        const product = productService.getBy(productId);
-        
-        if (!product) {
-            return res.status(404).send('Product not found');
-        }
-        
-        res.render('products/detail', { product });
-    },
-
-    //metodos en que quedaron obsoletos
-    createDeprecated: function(req, res) {
-        res.render('products/create');
-    },
-    
-    storeDeprecated: function(req, res) {
-        // datos del formulario y el archivo de imagen
-        const productData = req.body;
-        const imagen = req.files.imagen[0];
-        
-        // Llamada al service
-        let productStored = productService.store(productData, imagen);
-        
-        if (productStored) {
-            res.redirect('/products');
-        } else {
-            res.status(404).send('Product not Created');
-        } 
-    },
-
-    editDeprecated: function(req, res) {
-        let productId = (productService.getBy(req.params.id));
-        res.render('products/edit', {productId});
-    },
-
-    detailDeleteDeprecated: function(req, res) {
-        let productId = req.params.id;
-        let productDeleted = productService.delete(productId);
-        if (productDeleted) {
-            res.redirect('/products');
-        } else {
-            return res.status(404).send('Product not found');
-        }    
-    },
-
-    formExtern: function(req, res) {
-        res.render('products/create-form-extern');
-    }
+    }  
 
 };
 
