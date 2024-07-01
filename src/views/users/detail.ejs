@@ -19,11 +19,9 @@
                             <input class='formulario__input' type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
                             <button class="boton__upload" type='submit'> Upload </button>
                         </form>
-                        <% if(user.categorias_id == 1) { %>
-                            <form action="/users" method="GET">
-                                <button type="submit" class="boton-admin">Users List</button>
-                            </form>
-                        <% } %>
+                        <form action="/users/edit/<%= user.id %>" method="GET">
+                            <button type="submit" class="boton-admin">Edit</button>
+                        </form>
                 </article>
                 <!-- <section class="perfil__info">
                     <article class="perfil__info--user">

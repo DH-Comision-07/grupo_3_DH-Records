@@ -5,8 +5,11 @@
         
         <ul class="links">
             <li> <a href="/"> Home </a></li>
-            <li> <a href="#destacados"> Popular </a></li>
+            <li> <a href="/#destacados"> Popular </a></li>
             <li> <a href="/products"> Products </a></li>
+            <% if(locals.userLogged.categorias_id == 1 ) { %>
+            <li> <a href="/users"> Users </a></li>
+            <% } %>
         </ul>
 
         <div class="barra-superior__sec-buscar-productos">
