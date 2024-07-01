@@ -30,6 +30,7 @@
                         <input type="password" name="contraseña" id="contraseña" placeholder="Password" class="formulario__input" value="<%= user.contraseña %>" required>
                     </div>
 
+                    <% if(locals.userLogged.categorias_id == 1) { %> 
                     <div class="formulario__field">
                         <label for="categorias_id" class="formulario__label">Category:</label>
                         <select name="categorias_id" id="categorias_id" class="formulario__input" required>
@@ -40,6 +41,7 @@
                             <% }); %>
                         </select>
                     </div>
+                    <% } %>
 
                     <div class="formulario__field--contenedor-btn">
                         <button type="submit" class="formulario__button">Save Changes</button>
@@ -47,11 +49,14 @@
                 
                 </form>
 
+                <% if(locals.userLogged.categorias_id == 1) { %> 
                 <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
                     <div class="formulario__field--contenedor-btn">
                         <button type="submit" class="formulario__button">Delete Account</button>
                     </div>
                 </form>
+                <% } %>
+                
             </section>
         </main>
     <!--   <%- include('../partials/footer.ejs') %>  -->

@@ -5,8 +5,11 @@
         
         <ul class="links">
             <li> <a href="/"> Home </a></li>
-            <li> <a href="#destacados"> Popular </a></li>
+            <li> <a href="/#destacados"> Popular </a></li>
             <li> <a href="/products"> Products </a></li>
+            <% if(locals.userLogged.categorias_id == 1 ) { %>
+            <li> <a href="/users"> Users </a></li>
+            <% } %>
         </ul>
 
         <div class="barra-superior__sec-buscar-productos">
@@ -22,7 +25,12 @@
             </label>
             
             <% if(locals.isLogged) { %>
-                <a href="/users/:id" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
+                <a href="/users/<%= locals.userLogged.id %>" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
+                <a href="/users/<%= locals.userLogged.id %>"class="user__logIn"> 
+                    <div class="user__avatar">
+                        <img src="/Images/users/<%= locals.userLogged.imagenUsuario %>" alt="user-avatar">
+                    </div>
+                </a>
                 <a href="/users/logout" class="user__singUp"> LogOut </a>
             <% }else{ %>
                 <a href="/users/login" class="user__logIn"> Log in</i></a>

@@ -59,7 +59,11 @@
                     
                         <div class="producto__field--contenedor-btn">
                             <button type="submit" class="producto__button">Aplicar Filtros</button>
-                            <a href="/products/create" class="producto__button">Crear Nuevo</a>
+                            <% if(locals.isLogged) { %>
+                                <% if(locals.userLogged.categorias_id == 1) { %>
+                                <a href="/products/create" class="producto__button">Crear Nuevo</a>
+                                <% } %>
+                            <% } %>
                         </div>
                     </form>
                 </section>

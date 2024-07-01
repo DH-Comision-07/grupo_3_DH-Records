@@ -19,11 +19,11 @@
                             <input class='formulario__input' type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
                             <button class="boton__upload" type='submit'> Upload </button>
                         </form>
-                        <form action="/users" method="GET">
-                            <button type="submit" class="boton-admin">Users List</button>
+                        <form action="/users/edit/<%= user.id %>" method="GET">
+                            <button type="submit" class="boton-admin">Edit</button>
                         </form>
                 </article>
-                <section class="perfil__info">
+                <!-- <section class="perfil__info">
                     <article class="perfil__info--user">
                         <h3 class="titulo__info">My information</h3>
                             <div class="grupo__info">
@@ -88,7 +88,7 @@
                               
                             </div>
                     </article>
-                </section>
+                </section> -->
             </section>
         </div>
         </div>

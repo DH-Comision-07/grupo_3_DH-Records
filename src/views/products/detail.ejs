@@ -52,10 +52,14 @@
 
                 <div class="producto__field--contenedor-btn">
                     <a href="/products/cart" class="producto__button">Comprar! <i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="/products/edit/<%= productId.id %>" class="producto__button visible">Editar Producto</a>
-                    <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
-                        <button type="submit" class="producto__button visible">Eliminar Producto</button>
-                    </form>
+                    <% if(locals.isLogged) { %>
+                        <% if(locals.userLogged.categorias_id == 1) { %>
+                        <a href="/products/edit/<%= productId.id %>" class="producto__button visible">Editar Producto</a>
+                        <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
+                            <button type="submit" class="producto__button visible">Eliminar Producto</button>
+                        </form>
+                        <% } %>
+                    <% } %>
                 </div>
 
             </div>

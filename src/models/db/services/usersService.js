@@ -110,10 +110,12 @@ let userService = {
         // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
+        let imagenUsuario = 'defaultUserImage.png';
         const newUser = await db.Users.create({
             nombreUsuario,
             email,
             contraseña,
+            imagenUsuario,
             terminosCondiciones,
             categorias_id: 2
         });
