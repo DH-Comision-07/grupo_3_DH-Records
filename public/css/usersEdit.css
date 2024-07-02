@@ -33,7 +33,7 @@ body{
 }
 
 .formulario__field {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .formulario__label {
@@ -89,3 +89,10 @@ body{
     cursor: pointer;
 }
 
+.boton__upload{
+    margin-bottom: 20px;
+}
+
+.formulario__input{
+    margin-bottom: 10px;
+}

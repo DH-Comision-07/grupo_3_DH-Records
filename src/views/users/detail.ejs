@@ -15,10 +15,7 @@
                         <img src="/Images/users/<%= user.imagenUsuario %>" alt="user-avatar" class="perfil__img">
                         <h2 clas="perfil__imagen--nombre"> Name: <%= user.nombreUsuario %> </h2>
                         <h3 class="perfil__imagen--email"><%= user.email %></h3>
-                        <form class='perfil__imagen--formulario' action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
-                            <input class='formulario__input' type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
-                            <button class="boton__upload" type='submit'> Upload </button>
-                        </form>
+                      
                         <form action="/users/edit/<%= user.id %>" method="GET">
                             <button type="submit" class="boton-admin">Edit</button>
                         </form>

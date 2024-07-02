@@ -43,6 +43,11 @@
                     </div>
                     <% } %>
 
+                    <form class='formulario__field' action='/users/uploadProfilePicture/<%= user.id %>' method='POST' enctype='multipart/form-data'>
+                        <input class='formulario__input' type='file' id ='profilePicture' name='profilePicture' accept='image/*'>  
+                        <button class="boton__upload" type='submit'> Upload </button>
+                    </form>
+
                     <div class="formulario__field--contenedor-btn">
                         <button type="submit" class="formulario__button">Save Changes</button>
                     </div>
