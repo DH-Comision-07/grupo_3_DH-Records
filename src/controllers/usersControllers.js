@@ -124,6 +124,7 @@ let usersControllers = {
     detail: async function(req, res) {
         try {
             let user = await userService.getBy(req.params.id);
+            console.log(user); 
             if (user) {
                 res.render('users/detail', { user: user });
             } else {

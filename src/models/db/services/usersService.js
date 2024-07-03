@@ -48,18 +48,25 @@ let userService = {
                 user = {
                     id: 0,
                     nombreUsuario: "No encontrado",
+                    apellidoUsuario: "No encontrado",
                     email: "No encontrado",
-                    imagenUsuario: "No encontrado"
+                    imagenUsuario: "No encontrado",
+                    direccion: "No encontrado",
+                    dni: "No encontrado"
                 }
             }
             return user;
+
         } catch (error) {
             console.log(error);
             return {
                 id: 0,
                 nombreUsuario: "No encontrado",
+                apellidoUsuario: "No encontrado",
                 email: "No encontrado",
-                imagenUsuario: "No encontrado"
+                imagenUsuario: "No encontrado",
+                direccion: "No encontrado",
+                dni: "No encontrado"
             }
         } 
     },
@@ -76,9 +83,12 @@ let userService = {
             }
             let updateData = {
                 nombreUsuario: body.nombreUsuario,
+                apellidoUsuario: body.apellidoUsuario,
                 email: body.email,
                 categorias_id: body.categorias_id, 
-                contraseña: body.contraseña 
+                contraseña: body.contraseña,
+                direccion: body.direccion,
+                dni: body.dni,
             }
             return await db.Users.update(updateData, {where: { id:id }});
 
@@ -113,9 +123,12 @@ let userService = {
         let imagenUsuario = 'defaultUserImage.png';
         const newUser = await db.Users.create({
             nombreUsuario,
+            apellidoUsuario,
             email,
             contraseña,
             imagenUsuario,
+            direccion,
+            dni,
             terminosCondiciones,
             categorias_id: 2
         });

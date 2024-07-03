@@ -13,13 +13,13 @@
             <section class="perfil">
                 <article class="perfil__imagen">
                         <img src="/Images/users/<%= user.imagenUsuario %>" alt="user-avatar" class="perfil__img">
-                        <h2 clas="perfil__imagen--nombre"> Name: <%= user.nombreUsuario %> </h2>
-                        <h3 class="perfil__imagen--email"><%= user.email %></h3>
-                      
-                        <form action="/users/edit/<%= user.id %>" method="GET">
+                        <h2 class="perfil__imagen--nombre"> <%= user.nombreUsuario %> </h2>
+
+                        <form  action="/users/edit/<%= user.id %>" method="GET">
                             <button type="submit" class="boton-admin">Edit</button>
                         </form>
                 </article>
+
                 <section class="perfil__info">
                     <article class="perfil__info--user">
                         <h3 class="titulo__info">My information</h3>
