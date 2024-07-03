@@ -21,5 +21,5 @@
   <circle cx="100" cy="100" r="35" fill="black" />
   
   <!-- Texto en el centro -->
-  <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="15" dy=".3em">DR-R</text>
+  <text x="50%" y="50%" text-anchor="middle" fill="white" font-size="15" dy=".3em">DH-R</text>
 </svg>
