@@ -109,53 +109,42 @@ let productService = {
 
     findLike: async function (query) {
         try {
-            let products = await db.Productos.findAll({
+            const productosPorTitulo = await db.Productos.findAll({
                 where: {
-                    [Op.or]: [
-                        { titulo: { [Op.like]: `%${query}%` } },
-                        { estilo: { [Op.like]: `%${query}%` } },
-                    ]
+                    titulo: { [Op.like]: `%${query}%` }
                 },
                 include: [
-                    { association: "generos" },
-                    { association: "autores" },
-                    { association: "imagenesProductos" }
+                    { association: 'generos' },
+                    { association: 'autores' },
+                    { association: 'imagenesProductos' }
                 ]
-
-                // include: [
-                //     {
-                //         model: db.Generos,
-                //         as: 'generos',
-                //         where: {
-                //             nombre: { [Op.like]: `%${query}%` }
-                //         },
-                //         required: false // Esto permite que los productos que no tengan genero igual al query también se incluyan
-                //     },
-                //     {
-                //         model: db.Autores,
-                //         as: 'autores',
-                //         where: {
-                //             nombre: { [Op.like]: `%${query}%` }
-                //         },
-                //         required: false // Esto permite que los productos que no tengan autor igual al query también se incluyan
-                //     },
-                //     {
-                //         model: db.ImagenesProductos,
-                //         as: 'imagenesProductos',
-                //         required: false
-                //     }
-                // ]
-
-                // include: [
-                //     { association: 'generos', 
-                //         where: { nombre: { [Op.like]: `%${query}%` } } 
-                //     },
-                //     { association: 'autores', 
-                //         where: { nombre: { [Op.like]: `%${query}%` } }
-                //     },
-                //     { association: 'imagenesProductos' }
-                // ]
             });
+    
+            const productosPorGenero = await db.Productos.findAll({
+                include: [
+                    {
+                        association: 'generos',
+                        where: { nombre: { [Op.like]: `%${query}%` } },
+                        required: true
+                    },
+                    { association: 'autores' },
+                    { association: 'imagenesProductos' }
+                ]
+            });
+    
+            const productosPorAutor = await db.Productos.findAll({
+                include: [
+                    {
+                        association: 'autores',
+                        where: { nombre: { [Op.like]: `%${query}%` } },
+                        required: true
+                    },
+                    { association: 'generos' },
+                    { association: 'imagenesProductos' }
+                ]
+            });
+    
+            const products = [...productosPorTitulo, ...productosPorGenero, ...productosPorAutor];
             console.log('estoy dentro del service');
             console.log(products);
             return products;

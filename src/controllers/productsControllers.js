@@ -18,10 +18,12 @@ let productsControllers = {
 
     listAll: async function(req, res) {
         try { //si todo sale bien
-            let productsArray = await productService.getAll()
+            let products = await productService.getAll()
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
-            res.render('products/products', {products: productsArray, genres, authors});
+            let message;
+            message = products.length === 0 ? 'No se encontraron productos' : null;
+            res.render('products/products', {products, genres, authors, message});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
         }
@@ -33,7 +35,9 @@ let productsControllers = {
             let products = await productService.applyFilters(genero, autor, precioMin, precioMax);
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
-            res.render('products/products', {products, genres, authors});
+            let message;
+            message = products.length === 0 ? 'No se encontraron productos' : null;
+            res.render('products/products', {products, genres, authors, message});
         } catch (error) {
             console.error(error);
             res.send('Error inesperado').status(500);
@@ -48,7 +52,9 @@ let productsControllers = {
             const products = await productService.findLike(query);
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
-            res.render('products/products', {products, genres, authors});
+            let message;
+            message = products.length === 0 ? 'No se encontraron productos' : null;
+            res.render('products/products', {products, genres, authors, message});
         } catch (error) {
             console.error(error);
             res.send('Error en la búsqueda').status(500);
