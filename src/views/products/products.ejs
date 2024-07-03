@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto | DH Records</title>
+    <title> Products | DH Records</title>
     <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="/Images/dh-records.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/css/general-styles.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -13,8 +14,6 @@
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/product-card.css">
     <link rel="stylesheet" href="/css/formularios.css">
-    
-
 </head>
     
 <body>
@@ -69,7 +68,10 @@
                 </section>
 
                 <section class="producto__contenedor-general">     
-                    <% products.forEach(product=> { %>       
+                    <% if (message) { %>
+                        <p> <%= message %> </p>
+                    <% } %>     
+                    <% products.forEach(product=> { %>  
                         <a href="/products/<%= product.id %>">
                             <article class="tarjeta_producto">
                                 <div class="tarjeta-producto__contenedor-img">

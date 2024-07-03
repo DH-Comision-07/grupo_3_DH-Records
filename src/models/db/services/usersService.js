@@ -50,6 +50,7 @@ let userService = {
                     nombreUsuario: "No encontrado",
                     email: "No encontrado",
                     imagenUsuario: "No encontrado"
+                    // deberia agregarse los nuevos campos
                 }
             }
             return user;
@@ -60,6 +61,7 @@ let userService = {
                 nombreUsuario: "No encontrado",
                 email: "No encontrado",
                 imagenUsuario: "No encontrado"
+                //deberian agregarse los nuevos campos
             }
         } 
     },
@@ -111,6 +113,10 @@ let userService = {
         userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;
         let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
         let imagenUsuario = 'defaultUserImage.png';
+        // categorias_id = categoria por defecto;
+        // dni usuario = dni por defecto;
+        // direccion = direccion por defecto;
+        // apellido = apellido por defecto;
         const newUser = await db.Users.create({
             nombreUsuario,
             email,

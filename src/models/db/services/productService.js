@@ -4,6 +4,7 @@ const fs = require('fs');
 const products = require('../json/products.json');
 let db = require('../models');
 const { Op } = require('sequelize');
+const { log } = require('console');
 
 let productService = {
 
@@ -100,6 +101,53 @@ let productService = {
 
             return products;
             
+        } catch (error) {
+            console.log(error);
+            return([]);
+        }
+    },
+
+    findLike: async function (query) {
+        try {
+            const productosPorTitulo = await db.Productos.findAll({
+                where: {
+                    titulo: { [Op.like]: `%${query}%` }
+                },
+                include: [
+                    { association: 'generos' },
+                    { association: 'autores' },
+                    { association: 'imagenesProductos' }
+                ]
+            });
+    
+            const productosPorGenero = await db.Productos.findAll({
+                include: [
+                    {
+                        association: 'generos',
+                        where: { nombre: { [Op.like]: `%${query}%` } },
+                        required: true
+                    },
+                    { association: 'autores' },
+                    { association: 'imagenesProductos' }
+                ]
+            });
+    
+            const productosPorAutor = await db.Productos.findAll({
+                include: [
+                    {
+                        association: 'autores',
+                        where: { nombre: { [Op.like]: `%${query}%` } },
+                        required: true
+                    },
+                    { association: 'generos' },
+                    { association: 'imagenesProductos' }
+                ]
+            });
+    
+            const products = [...productosPorTitulo, ...productosPorGenero, ...productosPorAutor];
+            console.log('estoy dentro del service');
+            console.log(products);
+            return products;
         } catch (error) {
             console.log(error);
             return([]);
