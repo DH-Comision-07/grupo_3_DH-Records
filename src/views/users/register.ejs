@@ -19,12 +19,23 @@
         <form action="/users/register" method="post">
             <h1 class="titulo-formulario">DH-Records</h1>
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= oldData ? oldData.nombreUsuario : '' %>">
+                <input class="casilla-individal" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Name"  value="<%= oldData ? oldData.nombreUsuario : '' %>">
                 <i class='bx bxs-user'></i>
                 <div class="error__message" ></div>
                 <% if( locals.errores && errores.nombreUsuario) { %>
                     <div class="error">
                         <%= errores.nombreUsuario.msg %>
+                    </div>
+                <% } %>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="apellidoUsuario" id="apellidoUsuario" placeholder="Last Name"  value="<%= oldData ? oldData.apellidoUsuario : '' %>">
+                <i class='bx bxs-user'></i>
+                <div class="error__message" ></div>
+                <% if( locals.errores && errores.apellidoUsuario) { %>
+                    <div class="error">
+                        <%= errores.apellidoUsuario.msg %>
                     </div>
                 <% } %>
             </div>  

@@ -17,32 +17,26 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
 }
+
 
 .contenedor{
     background:  rgba(249, 247, 247, 0.3);;
     border-radius: 60px;
-
     width: 85vw;
     margin:30px auto auto auto;
     padding: 20px 20px 20px 20px;
-   
 }
 
 .perfil{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-  
     margin: auto;
     background: white;
-    
     box-shadow: 0 0 10px white;
-
     border-radius: 60px;
-
-    width: calc(100% - 10px); 
-    height: calc(100% - 10px); 
 }
 
 .formulario__input{
@@ -57,8 +51,8 @@ body{
 .perfil__imagen{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
+    align-items:center;
+    
     color:black;
     margin-left: 40px;
     margin-top: 40px;
@@ -73,6 +67,14 @@ body{
     align-items: center;
 }
 
+.perfil__imagen--nombre {
+   margin-top: 20px;
+}
+
+.boton-admin{
+    margin-top: 10px;
+}
+
 .perfil__imagen--email{
     font-size: 16px;
     margin-top: 10px;
@@ -85,7 +87,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items:center;
-    width: 70%;
+    width: 80%;
+
 }
 
                            
@@ -127,45 +130,6 @@ body{
 }
 
 
-/* Section Compras */
-
-.perfil__info--compras{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-top: 20px;
-}
-
-.grupo__info--compras{
-    display: flex;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #f7f7f7;
-
-    margin: 10px auto;  
-}
-
-
-
-/*Section Seguridad */
-
-.perfil__info--seguridad{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.grupo__info--seguridad{
-    display: flex;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #f7f7f7;
-
-    margin: 10px auto;
-}
-
 
 p{
     color: black;
@@ -187,9 +151,7 @@ h3{
 .boton__upload{
     margin-top: 5px;
 }
-.boton-admin{
-    margin-top: 20px;
-}
+
 
 
 @media screen and (max-width: 768px) {
@@ -199,10 +161,12 @@ h3{
         align-items: center;
         height: auto; 
         overflow-y: auto; /* Permite el desplazamiento vertical si el contenido supera la altura máxima */
-       
+    }
+
+    .perfil__imagen{
+        margin-left: 10px;
     }
   
-   
     .perfil__info--user{
         width: 100%; 
        

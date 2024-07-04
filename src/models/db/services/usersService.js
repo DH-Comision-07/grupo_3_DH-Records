@@ -48,26 +48,37 @@ let userService = {
                 user = {
                     id: 0,
                     nombreUsuario: "No encontrado",
+                    apellidoUsuario: "No encontrado",
                     email: "No encontrado",
-                    imagenUsuario: "No encontrado"
-                    // deberia agregarse los nuevos campos
+
+                    imagenUsuario: "No encontrado",
+                    direccion: "No encontrado",
+                    dni: "No encontrado"
+
                 }
             }
             return user;
+
         } catch (error) {
             console.log(error);
             return {
                 id: 0,
                 nombreUsuario: "No encontrado",
+                apellidoUsuario: "No encontrado",
                 email: "No encontrado",
-                imagenUsuario: "No encontrado"
-                //deberian agregarse los nuevos campos
+
+                imagenUsuario: "No encontrado",
+                direccion: "No encontrado",
+                dni: "No encontrado"
+
+
             }
         } 
     },
     
-    update: async function (id, body) {
+    update: async function (id, body, userImage) {
         try {
+            let newImageState = false;  
             const user = await this.getBy(id);
             if (user.id === 0) {
                 console.log(`Usuario con id ${id} no encontrado`);
@@ -78,12 +89,22 @@ let userService = {
             }
             let updateData = {
                 nombreUsuario: body.nombreUsuario,
+                apellidoUsuario: body.apellidoUsuario,
                 email: body.email,
                 categorias_id: body.categorias_id, 
-                contraseña: body.contraseña 
+                contraseña: body.contraseña,
+                direccion: body.direccion,
+                dni: body.dni,
             }
-            return await db.Users.update(updateData, {where: { id:id }});
 
+            if (userImage) {
+                updateData.imagenUsuario = userImage;
+                newImageState = true;
+            }
+
+            await db.Users.update(updateData, {where: { id:id }});
+            return newImageState;
+            
         } catch (error) {
             console.log(error);
         }   
@@ -111,7 +132,7 @@ let userService = {
     
         // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;
-        let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
+        let {nombreUsuario, apellidoUsuario, email, contraseña, direccion, dni, terminosCondiciones } = userData;
         let imagenUsuario = 'defaultUserImage.png';
         // categorias_id = categoria por defecto;
         // dni usuario = dni por defecto;
@@ -119,9 +140,12 @@ let userService = {
         // apellido = apellido por defecto;
         const newUser = await db.Users.create({
             nombreUsuario,
+            apellidoUsuario,
             email,
             contraseña,
             imagenUsuario,
+            direccion,
+            dni,
             terminosCondiciones,
             categorias_id: 2
         });
@@ -158,11 +182,6 @@ let userService = {
         }
     },
 
-    
-
- 
-
-    
 }
 
 

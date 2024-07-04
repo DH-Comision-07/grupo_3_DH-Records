@@ -124,6 +124,7 @@ let usersControllers = {
     detail: async function(req, res) {
         try {
             let user = await userService.getBy(req.params.id);
+            console.log(user); 
             if (user) {
                 res.render('users/detail', { user: user });
             } else {
@@ -136,8 +137,15 @@ let usersControllers = {
 
    update: async function(req, res) {
         try {
-            await userService.update(req.params.id, req.body);
-            res.redirect(`/users/${req.params.id}`)  // vista del detalle de la vista que edite
+            let userImage = null;
+            if (req.file) {
+                userImage = req.file.filename;
+            }
+
+            let newImageState = await userService.update(req.params.id, req.body, userImage);
+            
+            newImageState ? res.redirect('/users/login') : res.redirect(`/users/${req.params.id}`);
+
         } catch(error) {
             res.status(500).send('No se pudo editar');
         }
@@ -150,7 +158,8 @@ let usersControllers = {
         } catch (error){
             res.status(500).send('No se pudo eliminar el usuario');
         }
-    }
+    },
+
     
 }
 
