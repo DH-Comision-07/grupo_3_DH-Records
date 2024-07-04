@@ -71,8 +71,9 @@ let userService = {
         } 
     },
     
-    update: async function (id, body) {
+    update: async function (id, body, userImage) {
         try {
+            let newImageState = false;  
             const user = await this.getBy(id);
             if (user.id === 0) {
                 console.log(`Usuario con id ${id} no encontrado`);
@@ -90,8 +91,15 @@ let userService = {
                 direccion: body.direccion,
                 dni: body.dni,
             }
-            return await db.Users.update(updateData, {where: { id:id }});
 
+            if (userImage) {
+                updateData.imagenUsuario = userImage;
+                newImageState = true;
+            }
+
+            await db.Users.update(updateData, {where: { id:id }});
+            return newImageState;
+            
         } catch (error) {
             console.log(error);
         }   
@@ -119,7 +127,7 @@ let userService = {
     
         // Como es tipo Boolean, en mysql se representan como 1 o 0, por eso lo adapto.
         userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;
-        let { nombreUsuario, email, contraseña, terminosCondiciones } = userData;
+        let {nombreUsuario, apellidoUsuario, email, contraseña, direccion, dni, terminosCondiciones } = userData;
         let imagenUsuario = 'defaultUserImage.png';
         const newUser = await db.Users.create({
             nombreUsuario,
@@ -165,11 +173,6 @@ let userService = {
         }
     },
 
-    
-
- 
-
-    
 }
 
 
