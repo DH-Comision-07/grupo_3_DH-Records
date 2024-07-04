@@ -4,77 +4,25 @@
 <%- include('../partials/head-1.ejs') %>   
 
 <!-- aca se inserta la hoja de estilo correspondiente a la vista -->
-<link href="\css\carrito.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/carrito.css">
 
 <%- include('../partials/head-2.ejs') %>
 
+   
 <body>
-    
-        
     <%- include('../partials/header.ejs') %>
-      <div class="contenedor-general-home">
-        <main class="main">
-                <div class="contenedor-general">
-                    <header class="carrito__header">
-                        <p> Selected products in cart: </p>
-                    </header>
+    <main>
+        <section class="carrito"> 
+            <section class="carrito__formulario"> 
 
-                    <section class="carito__item">
-                        <div class="item__delete">
-                            <button class="item__delete-button">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                        <div class="item__producto">
-                                <article class="productos__articulo">
-                                    <img src="/images/Vinilo1.png" class="productos__img">
-                                    <div class="productos__info">
-                                        <p class="productos__descripcion"> Poul Weller </p>
-                                        <p class="productos__precio"> $5.000 </p>     
-                                    </div>
-                                </article>
-                        </div>
-                        <div class="item__cantidad">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
-                        </div>
-                        <div class="item__precio">$12345</div>
-                    </section>
-
-                    <section class="carito__item">
-                        <div class="item__delete">
-                            <button class="item__delete-button">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                        <div class="item__producto">
-                            <article class="productos__articulo">
-                                <img src="/images/Vinilo2.png" class="productos__img">
-                                    <div class="productos__info">
-                                        <p class="productos__descripcion"> Poul Keane </p>
-                                        <p class="productos__precio"> $5.000 </p>     
-                                    </div>
-                            </article>
-                        </div>
-                        <div class="item__cantidad">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
-                        </div>
-                        <div class="item__precio">$12345</div>
-                    </section>
-                    
-                    <footer class="carrito__footer">
-                        <p style="padding: 10px;"> TOTAL </p>
-                        <p style="padding: 10px;"> $xxxxxx</p>
-                    </footer>
+                <div class= "carrito__casilla">
+                    <p class="carrito__casilla-info"> Cart In Development</p>
                 </div>
-                      
-        </main>
-            
-        <%- include('../partials/footer.ejs') %>
 
-    </div>
+            </section>
+        </section>
+    </main>
 </body>
+
 </html>
+

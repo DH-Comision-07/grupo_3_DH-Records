@@ -160,7 +160,7 @@ let productsControllers = {
         }
     },
     
-    // Metodos a reemplazar con CRUD de DB
+
 
     cart: function(req, res) {
         res.render('products/cart');
