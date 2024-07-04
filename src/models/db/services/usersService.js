@@ -50,9 +50,11 @@ let userService = {
                     nombreUsuario: "No encontrado",
                     apellidoUsuario: "No encontrado",
                     email: "No encontrado",
+
                     imagenUsuario: "No encontrado",
                     direccion: "No encontrado",
                     dni: "No encontrado"
+
                 }
             }
             return user;
@@ -64,9 +66,12 @@ let userService = {
                 nombreUsuario: "No encontrado",
                 apellidoUsuario: "No encontrado",
                 email: "No encontrado",
+
                 imagenUsuario: "No encontrado",
                 direccion: "No encontrado",
                 dni: "No encontrado"
+
+
             }
         } 
     },
@@ -129,6 +134,10 @@ let userService = {
         userData.terminosCondiciones = userData.terminosCondiciones === 'on' ? 1 : 0;
         let {nombreUsuario, apellidoUsuario, email, contraseña, direccion, dni, terminosCondiciones } = userData;
         let imagenUsuario = 'defaultUserImage.png';
+        // categorias_id = categoria por defecto;
+        // dni usuario = dni por defecto;
+        // direccion = direccion por defecto;
+        // apellido = apellido por defecto;
         const newUser = await db.Users.create({
             nombreUsuario,
             apellidoUsuario,
