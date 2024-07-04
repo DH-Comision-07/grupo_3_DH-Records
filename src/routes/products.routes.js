@@ -10,8 +10,8 @@ routes.get('/', productsControllers.listAll);
 routes.get("/create", productsControllers.create);
 routes.post('/', multerMid.fields([{ name: 'imagen' }]), productValidationMid, productsControllers.store);
 
-routes.get('/serch', productsControllers.serch);
 routes.get('/filter', productsControllers.filter);
+routes.get('/serch', productsControllers.serch);
 routes.get('/:id', productsControllers.detail);
 
 routes.get("/edit/:id", productsControllers.edit);

@@ -145,8 +145,6 @@ let productService = {
             });
     
             const products = [...productosPorTitulo, ...productosPorGenero, ...productosPorAutor];
-            console.log('estoy dentro del service');
-            console.log(products);
             return products;
         } catch (error) {
             console.log(error);

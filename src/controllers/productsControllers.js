@@ -21,9 +21,10 @@ let productsControllers = {
             let products = await productService.getAll()
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
+            let filterData = true;
             let message;
             message = products.length === 0 ? 'No se encontraron productos' : null;
-            res.render('products/products', {products, genres, authors, message});
+            res.render('products/products', {products, genres, authors, message, filterData});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
         }
@@ -35,9 +36,10 @@ let productsControllers = {
             let products = await productService.applyFilters(genero, autor, precioMin, precioMax);
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
+            let filterData = { genero, autor, precioMin, precioMax };
             let message;
             message = products.length === 0 ? 'No se encontraron productos' : null;
-            res.render('products/products', {products, genres, authors, message});
+            res.render('products/products', {products, genres, authors, message, filterData});
         } catch (error) {
             console.error(error);
             res.send('Error inesperado').status(500);
@@ -52,9 +54,10 @@ let productsControllers = {
             const products = await productService.findLike(query);
             let genres = await genreService.getAll();
             let authors = await authorService.getAll();
+            let filterData = null;
             let message;
             message = products.length === 0 ? 'No se encontraron productos' : null;
-            res.render('products/products', {products, genres, authors, message});
+            res.render('products/products', {products, genres, authors, message, filterData});
         } catch (error) {
             console.error(error);
             res.send('Error en la búsqueda').status(500);
