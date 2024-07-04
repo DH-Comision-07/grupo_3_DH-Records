@@ -5,6 +5,8 @@ const productsControllers = require('../controllers/productsControllers');
 const multerMid = require('../middlewares/multerProductsMid');
 const productValidationMid = require('../middlewares/productValidationMid');
 
+routes.get('/cart', productsControllers.cart);
+
 routes.get('/', productsControllers.listAll);
 
 routes.get("/create", productsControllers.create);
