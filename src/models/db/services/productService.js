@@ -58,21 +58,6 @@ let productService = {
         }
     },
 
-    countByGenre: async function() {
-        try {
-            return await db.Productos.findAll({
-                include: [{ association: 'generos' }],
-                attributes: [
-                    [db.Sequelize.fn('COUNT', db.Sequelize.col('genero_id')), 'productos_por_genero']
-                ],
-                group: ['genero_id']
-            });
-        } catch (error) {
-            console.log(error);
-            return([]);
-        }
-    },
-
     applyFilters: async function (genero, autor, precioMin, precioMax) {
         try {
             let where = {};

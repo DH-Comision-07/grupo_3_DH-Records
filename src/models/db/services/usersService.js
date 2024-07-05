@@ -150,7 +150,6 @@ let userService = {
             direccion,
             dni,
             terminosCondiciones,
-            categorias_id: 2
         });
         return newUser;
     },

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <%- include('../partials/head-1.ejs') %> 
-    <link rel="stylesheet" href="/css/usersEdit.css">
+    <link rel="stylesheet" href="/css/general-styles.css">
+    <link rel="stylesheet" href="/css/formularios.css">
     <%- include('../partials/head-2.ejs') %>
 </head>
 
@@ -13,7 +14,7 @@
             <section class="formulario">
                 <form action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
 
-                    <h1 class="formulario__titulo">Edit Profile</h1>
+                <h1 class="formulario__titulo">Edit Profile</h1>
 
                     <div class="formulario__field">
                         <label for="title" class="formulario__label">Name:</label>
@@ -25,10 +26,10 @@
                         <input  type="text" name="apellidoUsuario" id="apellidoUsuario" placeholder="Last Name" class="formulario__input"  value="<%= user.apellidoUsuario %>" required>
                     </div>
 
-                    <div class="formulario__field">
-                        <label for="awards" class="formulario__label">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Email address" class="formulario__input" value="<%= user.email %>" required>
-                    </div>
+                <div class="formulario__field">
+                    <label for="awards" class="formulario__label">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Email address" class="formulario__input" value="<%= user.email %>" required>
+                </div>
 
                     <div class="formulario__field">
                         <label for="awards" class="formulario__label">Password:</label>
@@ -63,11 +64,11 @@
                        
                  
 
-                    <div class="formulario__field--contenedor-btn">
-                        <button type="submit" class="formulario__button">Save Changes</button>
-                    </div>
-                
-                </form>
+                <div class="formulario__field--contenedor-btn">
+                    <button type="submit" class="formulario__button">Save Changes</button>
+                </div>
+            
+            </form>
 
                 <% if(locals.userLogged.categorias_id == 1) { %> 
                 <form action="/users/<%= user.id %>?_method=DELETE" method="POST" >
@@ -82,4 +83,3 @@
     <!--   <%- include('../partials/footer.ejs') %>  -->
     </div>
 </body>
-</html>

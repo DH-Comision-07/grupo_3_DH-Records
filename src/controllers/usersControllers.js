@@ -27,6 +27,8 @@ let usersControllers = {
         req.body.contraseña  = userService.hashPassword(req.body.contraseña);
     
         const newUser = await userService.createUser(req.body);
+    
+        usersService.createUser(req.body);
         
         return res.redirect('/users/login');
     },
@@ -79,11 +81,14 @@ let usersControllers = {
         return res.redirect('/users/' + userLogin.id) 
     },
 
+
+
     logOut: function(req, res) {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     },
+
 
     editImage: function(req, res) {
         let userId = req.params.id;
@@ -118,7 +123,7 @@ let usersControllers = {
            res.render('users/edit', {user, categoriasUsuario})
 
         } catch (error) {
-            res.status(500).send('Error inesperado' + error.message);
+            res.status(500).send('Error inesperado');
         }
     },
 
