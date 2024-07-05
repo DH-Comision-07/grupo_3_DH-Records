@@ -19,7 +19,7 @@ routes.get("/register", userLoggedValidationMid, usersControllers.register);
 routes.post("/register", validacionesRegister, usersControllers.processRegister);
 
 //Formulario de logueo
-routes.get("/login", userLoggedValidationMid, usersControllers.login); 
+routes.get("/login", usersControllers.login);   //userLoggedValidationMid
 //Proceso de logueo
 routes.post("/login", validacionesLogin, usersControllers.processLogin);  
 
@@ -34,7 +34,7 @@ routes.get("/edit/:id", usersControllers.edit);
 
 routes.get("/:id", userUnloggedValidationMid, usersControllers.detail);
 
-routes.put('/:id',usersControllers.update);
+routes.put('/:id', multerMid.single('profilePicture'), usersControllers.update);
 
 routes.delete('/:id', usersControllers.delete);
 

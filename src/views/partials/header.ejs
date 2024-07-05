@@ -5,13 +5,18 @@
         
         <ul class="links">
             <li> <a href="/"> Home </a></li>
-            <li> <a href="#destacados"> Popular </a></li>
+            <li> <a href="/#destacados"> Popular </a></li>
             <li> <a href="/products"> Products </a></li>
+            <% if(locals.isLogged) { %>
+                <% if(locals.userLogged.categorias_id == 1) { %>
+                <li> <a href="/users"> Users </a></li>
+                <% } %>
+            <% } %>
         </ul>
 
-        <div class="barra-superior__sec-buscar-productos">
-            <input type="text" placeholder="Buscar productos, marcas..." class="sec-buscar-productos__input">    
-        </div>
+        <form action="/products/serch" method="GET" class="barra-superior__sec-buscar-productos">
+            <input type="text" name="serch" placeholder="Buscar productos" class="sec-buscar-productos__input">
+        </form>
 
         <div class="header__nabvar__user">     
             <input type="checkbox" id="checkbox">
@@ -22,7 +27,12 @@
             </label>
             
             <% if(locals.isLogged) { %>
-                <a href="/users/:id" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
+                <a href="/users/<%= locals.userLogged.id %>" class="user__logIn"> Hola <%= locals.userLogged.nombreUsuario %></i></a>
+                <a href="/users/<%= locals.userLogged.id %>"class="user__logIn"> 
+                    <div class="user__avatar">
+                        <img src="/Images/users/<%= locals.userLogged.imagenUsuario %>" alt="user-avatar">
+                    </div>
+                </a>
                 <a href="/users/logout" class="user__singUp"> LogOut </a>
             <% }else{ %>
                 <a href="/users/login" class="user__logIn"> Log in</i></a>

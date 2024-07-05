@@ -11,14 +11,15 @@
         <%- include('./partials/headerBanner.ejs') %>   
 
         <main class="main">
-          <section class="seccion__texto">
+          <section id="destacados" class="seccion__texto">
             <h2 class="titulo">Featured Products</h2>
             <h4 class="subtitulo">Top picks from Our vinyl collection, essential albums for every music lover</h4>
           </section>
-            <section id="destacados" class="productos__seccion">
-                <% products.slice(0,6).forEach(product => { %>
+
+            <section class="productos__seccion">
+                <% products.slice(0,6).forEach(product => { %>                 <!-- slice = devuelve una copia de una parte de un array en un nuevo array-->
                     <article class="productos__articulo main__articulo">
-                      <a href="/products/detail/<%= product.id %>"> 
+                      <a href="/products/<%= product.id %>"> 
                         <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" class="productos__img">
                         <div class="productos__info">
                           <p class="productos__descripcion"><%= product.titulo %></p>

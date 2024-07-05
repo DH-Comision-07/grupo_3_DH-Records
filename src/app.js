@@ -2,11 +2,11 @@ const express = require ('express');
 const app = express();
 const path = require ('path');
 
-//Config de ruta para arvhicos estaticos
+// express.static es un middleware que sirve para configurar la ruta de los archivos estáticos.
 const publicPath = path.resolve(__dirname, '../public');
-app.use(express.static(publicPath));
+app.use(express.static(publicPath));   
 
-//Template Engine
+//Template Engine (configura Express para usar EJS como motor de plantillas)
 app.set("view engine","ejs");
 app.set('views', path.join(__dirname,"/views"));
 

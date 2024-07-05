@@ -12,10 +12,10 @@ let usersControllers = {
     },
 
     processRegister: async function (req, res) {
-        const errors = validationResult(req);
+        const errors = validationResult(req);                //recoge los resultados de las validaciones del req
     
         if (!errors.isEmpty()) {
-            return res.render('users/register', { errores: errors.mapped(), oldData: req.body });
+            return res.render('users/register', { errores: errors.mapped(), oldData: req.body });  //oldData = para que no se borren los datos ingresados
         }
         
         let userEmail= await userService.getByField('email', req.body.email);
@@ -49,7 +49,7 @@ let usersControllers = {
 
         //Si pasa las validaciones y no hay errores busco en la DB el usuario que se corresponda con el email ingresado
         let userLogin=  await userService.getByField('email', req.body.email);
-        console.log(userLogin);
+
         //Si no encuentro usuario registrado vuelvo al Login y lo mando a registrarse
         if(!userLogin){
             return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
@@ -63,7 +63,7 @@ let usersControllers = {
             //Si la contraseña coincide se loguea el usuario
             if(passwordMatch){
               // Crea una copia del objeto userLogin sin la contraseña
-                let userLoginForSession = {...userLogin};
+                let userLoginForSession = {...userLogin};                  // Operador de propagación (spread operator) ... para copiar todas las propiedades enumerables de un objeto (userLogin en este caso) a un nuevo objeto literal
                 delete userLoginForSession.contraseña;
 
                 req.session.userLogged = userLoginForSession;
@@ -100,7 +100,7 @@ let usersControllers = {
         let userUpdated = userService.updateImage(userId, newUserData);
     
         if (userUpdated) {
-            res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+            res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');  //Le dice al navegador que no debe almacenar en caché
             return res.redirect('back');
         } else {
             return res.redirect('/');
@@ -119,7 +119,9 @@ let usersControllers = {
     edit: async function(req, res) {
         try {
             let user = await userService.getBy(req.params.id);
-           res.render('users/edit', {user})
+            const categoriasUsuario = await userService.getAllCategories();
+           res.render('users/edit', {user, categoriasUsuario})
+
         } catch (error) {
             res.status(500).send('Error inesperado');
         }
@@ -128,6 +130,7 @@ let usersControllers = {
     detail: async function(req, res) {
         try {
             let user = await userService.getBy(req.params.id);
+            console.log(user); 
             if (user) {
                 res.render('users/detail', { user: user });
             } else {
@@ -140,8 +143,15 @@ let usersControllers = {
 
    update: async function(req, res) {
         try {
-            await userService.update(req.params.id, req.body);
-            res.redirect(`/users/${req.params.id}`)  // vista del detalle de la vista que edite
+            let userImage = null;
+            if (req.file) {
+                userImage = req.file.filename;
+            }
+
+            let newImageState = await userService.update(req.params.id, req.body, userImage);
+            
+            newImageState ? res.redirect('/users/login') : res.redirect(`/users/${req.params.id}`);
+
         } catch(error) {
             res.status(500).send('No se pudo editar');
         }
@@ -154,7 +164,8 @@ let usersControllers = {
         } catch (error){
             res.status(500).send('No se pudo eliminar el usuario');
         }
-    }
+    },
+
     
 }
 

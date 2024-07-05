@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto | DH Records</title>
+    <title> Products | DH Records</title>
     <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="/Images/dh-records.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/css/general-styles.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -13,8 +14,6 @@
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/product-card.css">
     <link rel="stylesheet" href="/css/formularios.css">
-    
-
 </head>
     
 <body>
@@ -28,44 +27,56 @@
                 <section class="filters-bar__contenedor-general">
                     <form id="filtroForm" action="/products/filter" method="GET">
                         <div class="formulario__field">
-                            <label for="genero" class="formulario__label">Género:</label>
-                            <select id="genero" name="genero" class="formulario__input">
-                                <option value="" selected>Seleccione un género</option>
-                                <% genres.forEach(function(genre) { %>
-                                    <option value="<%= genre.id %>"><%= genre.nombre %></option>
-                                <% }); %>
-                            </select>
+                          <label for="genero" class="formulario__label">Género:</label>
+                          <select id="genero" name="genero" class="formulario__input">
+                            <option value="" <%= !filterData || !filterData.genero ? 'selected' : '' %>>Seleccione un género</option>
+                            <% genres.forEach(function(genre) { %>
+                              <% if (filterData && genre.id == filterData.genero) { %> 
+                                <option value="<%= genre.id %>" selected><%= genre.nombre %></option>
+                              <% } else { %>
+                                <option value="<%= genre.id %>"><%= genre.nombre %></option>
+                              <% } %>
+                            <% }); %>
+                          </select>
                         </div>
-                    
                         <div class="formulario__field">
-                            <label for="autor" class="formulario__label">Autor:</label>
-                            <select id="autor" name="autor" class="formulario__input">
-                                <option value="" disabled selected>Seleccione un autor</option>
-                                <% authors.forEach(function(author) { %>
-                                    <option value="<%= author.id %>"><%= author.nombre %></option>
-                                <% }); %>
-                            </select>
+                          <label for="autor" class="formulario__label">Autor:</label>
+                          <select id="autor" name="autor" class="formulario__input">
+                            <option value="" disabled <%= !filterData || !filterData.autor ? 'selected' : '' %>>Seleccione un autor</option>
+                            <% authors.forEach(function(author) { %>
+                              <% if (filterData && author.id == filterData.autor) { %> 
+                                <option value="<%= author.id %>" selected><%= author.nombre %></option>
+                              <% } else { %>
+                                <option value="<%= author.id %>"><%= author.nombre %></option>
+                              <% } %>
+                            <% }); %>
+                          </select>
                         </div>
-                    
                         <div class="formulario__field">
-                            <label for="precioMin" class="formulario__label">Precio Mínimo:</label>
-                            <input type="number" id="precioMin" name="precioMin" min="0" step="0.01" class="formulario__input">
+                          <label for="precioMin" class="formulario__label">Precio Mínimo:</label>
+                          <input type="number" id="precioMin" name="precioMin" min="0" step="0.01" class="formulario__input" value="<%= filterData ? filterData.precioMin : '' %>">
                         </div>
-                    
                         <div class="formulario__field">
-                            <label for="precioMax" class="formulario__label">Precio Máximo:</label>
-                            <input type="number" id="precioMax" name="precioMax" min="0" step="0.01" class="formulario__input">
+                          <label for="precioMax" class="formulario__label">Precio Máximo:</label>
+                          <input type="number" id="precioMax" name="precioMax" min="0" step="0.01" class="formulario__input" value="<%= filterData ? filterData.precioMax : '' %>">
                         </div>
-                    
                         <div class="producto__field--contenedor-btn">
-                            <button type="submit" class="producto__button">Aplicar Filtros</button>
-                            <a href="/products/create" class="producto__button">Crear Nuevo</a>
+                          <button type="submit" class="producto__button">Aplicar Filtros</button>
+                          <a href="/products" class="producto__button">Borrar Filtros</a>
+                          <% if(locals.isLogged) { %>
+                            <% if(locals.userLogged.categorias_id == 1) { %>
+                              <a href="/products/create" class="producto__button">Crear Nuevo</a>
+                            <% } %>
+                          <% } %>
                         </div>
-                    </form>
+                      </form>
                 </section>
 
                 <section class="producto__contenedor-general">     
-                    <% products.forEach(product=> { %>       
+                    <% if (message) { %>
+                        <p> <%= message %> </p>
+                    <% } %>     
+                    <% products.forEach(product=> { %>  
                         <a href="/products/<%= product.id %>">
                             <article class="tarjeta_producto">
                                 <div class="tarjeta-producto__contenedor-img">

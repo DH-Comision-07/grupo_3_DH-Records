@@ -12,6 +12,9 @@ module.exports = {
       nombreUsuario: {
         type: Sequelize.STRING
       },
+      apellidoUsuario: {
+        type: Sequelize.STRING
+      },
       email: {
         type: Sequelize.STRING
       },
@@ -20,6 +23,12 @@ module.exports = {
       },
       imagenUsuario: {
         type: Sequelize.STRING
+      },
+      direccion: {
+        type: Sequelize.STRING
+      },
+      dni: {
+        type: Sequelize.INTEGER
       },
       terminosCondiciones: {
         type: Sequelize.BOOLEAN

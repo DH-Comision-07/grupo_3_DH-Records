@@ -2,7 +2,7 @@ const path = require('path');
 
 let db = {
 
-  config: path.resolve('src', 'models', 'db', 'config', 'database.js'),
+  config: path.resolve('src', 'models', 'db', 'config', 'database.js'),         //Config las rutas para diferentes componentes utilizados por Sequelize 
   'models-path': path.resolve('src', 'models','db', 'models'),
   'seeders-path': path.resolve('src', 'models', 'db', 'seeders'),
   'migrations-path': path.resolve('src', 'models', 'db', 'migrations'),

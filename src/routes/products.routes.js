@@ -6,15 +6,16 @@ const productsControllers = require('../controllers/productsControllers');
 const multerMid = require('../middlewares/multerProductsMid');
 const productValidationMid = require('../middlewares/productValidationMid');
 
-//--- Rutas de productos 
-
 routes.get('/cart', productsControllers.cart);
+
+routes.get('/', productsControllers.listAll);
 
 routes.get("/create", productsControllers.create);
 
 // -- Rutas CRUD de DB
 routes.get('/', productsControllers.listAll);
 routes.get('/filter', productsControllers.filter);
+routes.get('/serch', productsControllers.serch);
 routes.get('/:id', productsControllers.detail);
 
 routes.post('/', multerMid.fields([{ name: 'imagen' }]), productValidationMid, productsControllers.store);

@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title> Register | DH Records</title>
     <script src="/js/users/registerValidation.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="/Images/dh-records.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/css/register.css">
 
   </head>
@@ -18,12 +19,23 @@
         <form action="/users/register" method="post">
             <h1 class="titulo-formulario">DH-Records</h1>
             <div class= "contenedor-casilla">
-                <input class="casilla-individal" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Username"  value="<%= oldData ? oldData.nombreUsuario : '' %>">
+                <input class="casilla-individal" type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Name"  value="<%= oldData ? oldData.nombreUsuario : '' %>">
                 <i class='bx bxs-user'></i>
                 <div class="error__message" ></div>
                 <% if( locals.errores && errores.nombreUsuario) { %>
                     <div class="error">
                         <%= errores.nombreUsuario.msg %>
+                    </div>
+                <% } %>
+            </div>  
+
+            <div class= "contenedor-casilla">
+                <input class="casilla-individal" type="text" name="apellidoUsuario" id="apellidoUsuario" placeholder="Last Name"  value="<%= oldData ? oldData.apellidoUsuario : '' %>">
+                <i class='bx bxs-user'></i>
+                <div class="error__message" ></div>
+                <% if( locals.errores && errores.apellidoUsuario) { %>
+                    <div class="error">
+                        <%= errores.apellidoUsuario.msg %>
                     </div>
                 <% } %>
             </div>  

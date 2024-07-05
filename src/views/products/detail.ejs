@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto | DH Records</title>
+    <title> Product Details | DH Records</title>
     <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="/Images/dh-records.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/css/general-styles.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -52,10 +53,14 @@
 
                 <div class="producto__field--contenedor-btn">
                     <a href="/products/cart" class="producto__button">Comprar! <i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="/products/edit/<%= productId.id %>" class="producto__button visible">Editar Producto</a>
-                    <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
-                        <button type="submit" class="producto__button visible">Eliminar Producto</button>
-                    </form>
+                    <% if(locals.isLogged) { %>
+                        <% if(locals.userLogged.categorias_id == 1) { %>
+                        <a href="/products/edit/<%= productId.id %>" class="producto__button visible">Editar Producto</a>
+                        <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
+                            <button type="submit" class="producto__button visible">Eliminar Producto</button>
+                        </form>
+                        <% } %>
+                    <% } %>
                 </div>
 
             </div>
