@@ -12,10 +12,10 @@ let usersControllers = {
     },
 
     processRegister: async function (req, res) {
-        const errors = validationResult(req);
+        const errors = validationResult(req);                //recoge los resultados de las validaciones del req
     
         if (!errors.isEmpty()) {
-            return res.render('users/register', { errores: errors.mapped(), oldData: req.body });
+            return res.render('users/register', { errores: errors.mapped(), oldData: req.body });  //oldData = para que no se borren los datos ingresados
         }
         
         let userEmail= await userService.getByField('email', req.body.email);
@@ -61,7 +61,7 @@ let usersControllers = {
             //Si la contraseña coincide se loguea el usuario
             if(passwordMatch){
               // Crea una copia del objeto userLogin sin la contraseña
-                let userLoginForSession = {...userLogin};
+                let userLoginForSession = {...userLogin};                  // Operador de propagación (spread operator) ... para copiar todas las propiedades enumerables de un objeto (userLogin en este caso) a un nuevo objeto literal
                 delete userLoginForSession.contraseña;
 
                 req.session.userLogged = userLoginForSession;
@@ -95,7 +95,7 @@ let usersControllers = {
         let userUpdated = userService.updateImage(userId, newUserData);
     
         if (userUpdated) {
-            res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+            res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');  //Le dice al navegador que no debe almacenar en caché
             return res.redirect('back');
         } else {
             return res.redirect('/');
@@ -116,6 +116,7 @@ let usersControllers = {
             let user = await userService.getBy(req.params.id);
             const categoriasUsuario = await userService.getAllCategories();
            res.render('users/edit', {user, categoriasUsuario})
+
         } catch (error) {
             res.status(500).send('Error inesperado' + error.message);
         }

@@ -17,7 +17,7 @@
           </section>
 
             <section class="productos__seccion">
-                <% products.slice(0,6).forEach(product => { %>
+                <% products.slice(0,6).forEach(product => { %>                 <!-- slice = devuelve una copia de una parte de un array en un nuevo array-->
                     <article class="productos__articulo main__articulo">
                       <a href="/products/<%= product.id %>"> 
                         <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" class="productos__img">

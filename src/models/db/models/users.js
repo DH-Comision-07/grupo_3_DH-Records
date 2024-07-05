@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
   }
-  Users.init({                                         // init = metodo de Sequelize, vincula la db con tu Sequelize para que pueda leer la db ( sin el por mas que tengas data en la db no podrias ver ni interactuar con ella a través de Sequelize)
+  Users.init({                                      // init = metodo de Sequelize, vincula la db con tu Sequelize para que pueda leer la db ( sin el por mas que tengas data en la db no podrias ver ni interactuar con ella a través de Sequelize)
     nombreUsuario: DataTypes.STRING,
     apellidoUsuario: DataTypes.STRING,
     email: DataTypes.STRING,

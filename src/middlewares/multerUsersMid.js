@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../../public/Images/users'))
     },
     filename: function (req, file, cb) {
-        cb(null, 'userProfile' + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, 'userProfile' + '-' + Date.now() + path.extname(file.originalname))   //determina el nombre del archivo subido = 'userProfile'
     }
 });
 

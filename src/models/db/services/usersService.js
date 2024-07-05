@@ -17,7 +17,7 @@ let userService = {
     
    
     getByField: async function(field, text) {
-        return await db.Users.findOne({ where: { [field]: text } });
+        return await db.Users.findOne({ where: { [field]: text } });        // field = nombre columna de la db. (ES6)
       },
 
     //Sequelize 
@@ -25,6 +25,7 @@ let userService = {
         try {
             const users = await db.Users.findAll();
             return users;
+
         } catch (error) {
             console.log(error);
             return [];
@@ -35,6 +36,7 @@ let userService = {
         try {
             const categories = await db.Categorias.findAll();
             return categories;
+
         } catch (error) {
             console.log(error);
             return [];
@@ -43,7 +45,7 @@ let userService = {
 
     getBy: async function(id) {
         try {
-            let user = await db.Users.findByPk(id);
+            let user = await db.Users.findByPk(id);               // Si findByPk no encuentra un usuario, crea un objeto user con propiedades predeterminadas
             if (!user) {
                 user = {
                     id: 0,
@@ -78,7 +80,8 @@ let userService = {
     
     update: async function (id, body, userImage) {
         try {
-            let newImageState = false;  
+            let newImageState = false;                  //asume que no hay una nueva imagen seleccionada o cargada.
+                             
             const user = await this.getBy(id);
             if (user.id === 0) {
                 console.log(`Usuario con id ${id} no encontrado`);
@@ -99,7 +102,7 @@ let userService = {
 
             if (userImage) {
                 updateData.imagenUsuario = userImage;
-                newImageState = true;
+                newImageState = true;                   //indica que se ha cargado una nueva imagen.
             }
 
             await db.Users.update(updateData, {where: { id:id }});
