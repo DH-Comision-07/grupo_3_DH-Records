@@ -30,6 +30,11 @@ app.use(userLoggedMid);
 app.use(express.urlencoded({ extended: false}));   
 app.use(express.json());
 
+//Config solicitudos CORS - APIs
+const cors = require('cors');
+app.use(cors()); // Cualquier página web puede hacer solicitudes a tu API sin ser bloqueada
+
+
 //PUT/Delete
 const methodOverride = require('method-override'); 
 app.use(methodOverride('_method')); 
