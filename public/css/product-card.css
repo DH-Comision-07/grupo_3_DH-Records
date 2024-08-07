@@ -11,15 +11,13 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
+
 .contenedor-general{
     width: 100%; 
-    margin: 0;
     padding: 10px;
     background-color: var(--MANTECA-FONDO);
 }
@@ -63,33 +61,53 @@
 }
 
 .tarjeta-producto__contenedor-info {
-    margin: 0px 5px;
-    padding: 5px; 
+    padding: 4px; 
     height: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
+}
+.tarjeta-producto__contenedor-info > * {    /* seleccionar clases hijas */
+    margin: 0px;
+    text-align: center;   
 }
 
 .tarjeta-producto__contenedor-info--descripcion {
     overflow: hidden;
+
 }
 
 .tarjeta-producto__titulo {
-    margin: 0px;
+    margin: 2px;
+    font-size: 14px;
     color: var(--GRIS-OSCURO);
-    display: inline-block;
+    display: block;
+
+    font-family: "Berkshire Swash", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .tarjeta-producto__autor {
-    margin: 0px;
+    margin-top: 12px;
     color: var(--GRIS-OSCURO);
-    font-size: 8px;
-    display: inline-block;
+    font-size: 12px;
+    display: block;
+
+    font-family: "Rasa", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .tarjeta-producto__precio {
     color: var(--GRIS-OSCURO);
+    font-size: 20px;
+    display: block;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-family: "Rasa", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
 }
