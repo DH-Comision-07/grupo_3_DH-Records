@@ -12,7 +12,6 @@
 
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
   }
 
 .contenedor-general{
@@ -20,6 +19,7 @@
     margin: 0;
     padding: 10px;
     background-color: var(--MANTECA-FONDO);
+    
 }
 
 /*------------------------------------------------------*/

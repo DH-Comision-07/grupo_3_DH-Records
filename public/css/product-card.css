@@ -12,7 +12,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    
 }
 
 
@@ -92,7 +92,7 @@
 .tarjeta-producto__autor {
     margin-top: 12px;
     color: var(--GRIS-OSCURO);
-    font-size: 12px;
+    font-size: 13px;
     display: block;
 
     font-family: "Rasa", serif;

@@ -14,7 +14,7 @@
 * {
    
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+
 }
 
 .contenedor-general{
@@ -50,6 +50,7 @@
     background-color: var(--GRIS-CLARO); 
     border-radius: 6px;
     box-shadow: 0 0 5px var(--VIOLETA-SOMBRA);
+    font-family: Arial, sans-serif;
 }
 
 .producto__contenedor-general{
@@ -80,7 +81,7 @@
     box-shadow: 0 0 10px var(--VIOLETA-SOMBRA);
     padding: 10px 20px;
     color: var(--BLANCO);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
