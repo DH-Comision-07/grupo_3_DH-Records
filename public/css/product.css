@@ -14,15 +14,17 @@
 * {
    
     box-sizing: border-box;
-
+    
 }
+
 
 .contenedor-general{
     width: 100%; 
+    height: 100%;
     margin: 0;
     padding: 10px;
     background-color: var(--MANTECA-FONDO);
-    min-height: 100vh;
+   
 }
 
 /*------------------------------------------------------*/
@@ -30,8 +32,8 @@
     display: flex; 
     justify-content: flex-start; 
     align-items: flex-start; 
+    
 }
-
 
 @media (max-width: 768px) {
     .contenedor-general-secciones {
@@ -39,7 +41,6 @@
         justify-content: center; 
     }
 }
-
 
 
 .filters-bar__contenedor-general {
@@ -63,7 +64,8 @@
     display: flex; 
     justify-content: space-around; 
     align-items: flex-start;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
+   
 }
 
 .producto__field--contenedor-btn {
@@ -100,4 +102,5 @@
 .visible {
     display: block;
 }
+
 
