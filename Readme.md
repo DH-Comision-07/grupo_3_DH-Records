@@ -50,40 +50,6 @@ Conoce al increíble equipo detrás de nuestra tienda:
 
  En mis tiempos libres  disfruto mucho cocinar, explorando nuevas recetas y también ir al gimnasio. Todo tipo de actividades que me mantienen activo y saludable, combino mis intereses para encontrar un equilibrio perfecto entre mente, cuerpo y creatividad. 
 
-- **Nicolas Randazzo:**
-  
-  Apasionado de los deportes y la vida saludable. Con un pasado como entrenador de handball y personal trainer, he encontrado mi camino en el mundo de las ventas a través de las redes sociales. Disfruto compartir momentos con amigos, ya sea practicando deportes, disfrutando de una buena comida o escuchando música.
-  
-  Soy un entusiasta de la programación y actualmente me encuentro enfocado en mejorar mis habilidades en esta área para seguir creciendo personal y profesionalmente. Trato de "dejar todo en la cancha" en cada meta que me propongo, y al final del dia, no hay mejor manera de relajarme que con un buen fernet.
-
-- **Federico Loscocco**
-
-  Buenas! Soy Federico Loscocco, un apasionado de la tecnología y los videojuegos, graduado con un título universitario en esa área. Me encanta sumergirme en el mundo de la programación y la creatividad para aportar mi granito de arena al mundo de la tecnologia. Además, soy un entusiasta del deporte y la música, la cual me ayuda mucho a desconectarme un rato del mundo.
-
-- **Sebastian Gonzalez C.**
-
-  Hola, soy Sebastián. Me gusta la cocina y siempre estoy buscando nuevas formas de crear nuevas recetas. Me encanta experimentar con pastas, incluyendo sabores y técnicas culinarias y así darle forma a mi propio emprendimiento. 
-  Recientemente, he decidido explorar en este nuevo mundo y inscribirme en este curso de full stack. Estoy ansioso por aprender mas sobre el desarrollo de software y combinar mi pasión por la cocina con la tecnología. 
-
-- **Diana Robayo**
-
-  De profesión odontóloga desde hace 12 años, me caracterizo por ser una persona introvertida, familiar, enamora de los perros, naturaleza y el ejercicio. Me gusta explorar nuevos caminos, los retos constantes y adquirir nuevas habilidades, es por esta razón, que decidí iniciar la carrera en programación.
-  Actualmente vivo en la ciudad de Bogotá y para darle color a los días caóticos que en ella se viven me gusta escuchar música entre ellos el género de la electrónica, y en días lluviosos escucho baladas románticas. 
-
-- **Daniela Carolina Sánchez**
-
-  Hola soy Daniela Carolina Sánchez, odontóloga amante de los gatos, la naturaleza y la música. Mi conexión con estas tres cosas va mas allá de ser un gusto o una simple afición, tengo que confesar que el hard rock es mi escape al caos del día a día. Me encanta aprender cosas nuevas y por eso tengo un reto personal de aprender programación.
-
-- **Sophie Laureda**
-
-  Soy una entusiasta de la programación desde hace un buen tiempo, al igual que el diseño gráfico, el dibujo y la fotografía. Soy amante de la musica de los 80s y el pop y rock de los 2000s/2010s. Mi tiempo libre me gusta pasarlo con mis perros, con amigos o tomando un buen café mirando el atardecer. Soy muy comprometida con lo que me propongo y siempre estoy dispuesta a aprender. 
-
-- **ian gruszeczka**
-
-  Hola soy Ian Gruszeczka, un joven graduado de secundaria, con diploma en fotografia y acualmente estudiante de programacion.
-  me gusta esquiar, armar rompecabezas y jugar videojuegos, opte por estudiar programacion por recomendacion de mis familiares luego de intentar  una carrera de diseño grafico que no termino de convencerme.
-  Hablar, contar anegdotas y escuchar son cosas que disfruto hacer en compania y suelo llevarme vien con la gente, espero tener una buena convivencia y hacer amigos y conocidos.
-
 
 
 # 🌐 Páginas web que nos sirven de inspiración
