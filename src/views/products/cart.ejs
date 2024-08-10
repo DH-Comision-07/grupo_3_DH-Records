@@ -10,21 +10,37 @@
 
     
     <body>
-        <%- include('../partials/header.ejs') %>
+        <article%- include('../partials/header.ejs') %>
         <main>
-            <section class="carrito"> 
-                <section class="carrito__formulario"> 
+            <section class="contenedor"> 
+                <section class="carrito-items"> 
+                    <article class="carrito-items__navbar">
+                        <div class="carrito-items__navbar-left">
+                            <h3>Cart</h3>
+                            <p>(cantidad)</p>
+                        </div>
+                       <button> Clear cart</button>
+                    </article>
 
-                    <div class= "carrito__casilla">
-                        <div class="carrito__casilla-info"> </div>
-                        <div class="carrito__casilla-info"> </div>
+                    <article class="carrito-items__titles">
+                        <h3>Product</h3>
+                        <h3>Count</h3>
+                        <h3>Price</h3>
                         
-                    </div>
+                    </article>
+                    
+
+                </section>
+
+                <section class="carrito-pagos"> 
+
+
                     
                 </section>
+
             </section>
         </main>
     </body>
-
-</html>
+    
+    </html>
 
