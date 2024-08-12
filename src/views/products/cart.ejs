@@ -12,19 +12,60 @@
     <body>
         <%- include('../partials/header.ejs') %>
         <main>
-            <section class="carrito"> 
-                <section class="carrito__formulario"> 
+            <section class="contenedor"> 
+                <section class="carrito-items"> 
+                    <article class="carrito-items__navbar">
+                        <div class="carrito-items__navbar-left">
+                            <h3>Cart</h3>
+                            <span>(cantidad)</span>
+                        </div>
+                       <button> Clear cart</button>
+                    </article>
 
-                    <div class= "carrito__casilla">
-                        <div class="carrito__casilla-info"> </div>
-                        <div class="carrito__casilla-info"> </div>
-                        
-                    </div>
+                    
+                    <section class="carrito-items__products">
+
+                        <article class="carrito-items__products-titles">
+                            <div class="pendejo">
+                                <span>Products</span> 
+                                <div class="carrito-items__products-left">
+                                    <span class="oculto">Titulo producto</span>  
+                                    <span class="oculto">Subtitulo </span>
+                                </div>
+                             </div>
+                            <span> Count</span>
+                            <span>Price</span>
+                            <span class="oculto">delete</span>
+                        </article>
+
+
+                        <article class="carrito-items__products-indv">
+                            <div class="pendejo">
+                                <span>Imagen</span> 
+                                <div class="carrito-items__products-titulo">
+                                    <span>Titulo producto</span>  
+                                    <span>Subtitulo </span>
+                                </div>
+                             </div>
+                            <span> cantidad </span>
+                            <span>20000</span>
+                            <span>delete</span>
+                        </article>
+                                            
+                    </section>
+                    
+
+                </section>
+
+                <section class="carrito-pagos"> 
+
+
                     
                 </section>
+
             </section>
         </main>
     </body>
-
-</html>
+    
+    </html>
 
