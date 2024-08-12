@@ -71,8 +71,45 @@ body{
   padding-top: 5px;
 }
 
+.button-clear{
+  display: inline-block;
+  color: #db4527;
+  background: transparent;
+  border: 1px solid #db4527;
+  border-radius: 30px;
+  box-shadow: inset 0 0 0 0 #db4527;   /* inset = sombra interna */
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.9;
+  
+  padding: 8px 12px;
 
-.carrito-items__products{        /* hijo 3 / padre */
+  width: 100px;
+  height: 30px;
+
+  cursor: pointer;
+  transition: ease-out 0.5s;
+ 
+  
+}
+
+.button-clear:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #db4527;
+  font-size: 12px;
+  
+ }
+ 
+ .button-clear:active {
+  transform: scale(0.9);
+  
+ }
+ 
+
+
+
+.carrito-items__products{                /* padre */
   display: grid;
   grid-template-columns: repeat(6,1fr);
   grid-template-rows: repeat(12,1fr); 
@@ -86,7 +123,9 @@ body{
 }
 
 
-.carrito-items__products-titles{    /* padre / hijo */
+
+
+.carrito-items__products-titles{     /* hijo 2 / padre */
   background: #bcd8f3;
   border-radius: 15px;
   margin: 10px; 
@@ -107,6 +146,11 @@ body{
 
 }
 
+.pendejo span{
+padding-left: 20px;
+}
+
+
 .carrito-items__products-left{
  
   display: flex;
@@ -114,13 +158,19 @@ body{
   padding-left: 10px;
 }
 
+.carrito-items__products-extra{
+  padding-left: 20px;
+}
+
+
 .oculto{
  opacity: 0;
 }
  
 
 
-.carrito-items__products-indv{    /* padre / hijo */
+
+.carrito-items__products-indv{     /* hijo 3 / padre */
   background: #bcd8f3;
   border-radius: 15px;
   margin: 0px 10px ;
@@ -129,18 +179,82 @@ body{
   grid-column: 1/7;
  
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
  
 }
 
-.carrito-items__products-titulo{     /* hijo */
+.pendejo img{
+  width: 120px;
+  height: 80px;
+  border-radius: 10px;
+
+}
+
+.carrito-items__products-titulo{     
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
+ 
+}
+
+.carrito-items__products-span{
+  padding-right: 20px;
+}
+
+
+.button{
+  border: 1px solid #999595; /* border-2 border-yellow-500 */
+  background-color: #ffffff; /* bg-yellow-100 */
+  color: #757272; /* text-yellow-600 */
+  border-radius: 50%; /* rounded-full */
+  min-width: 22px; /* min-w-[120px] */
+  min-height: 22px;
+  margin: 0px 5px;
+  cursor: pointer;
+  font-size: 14px;
   
 }
 
+.button:hover{
+  color: #050400; /* hover:text-yellow-700 */
+  transform: scale(1.1);
+}
+
+.numero{
+  font-size: 18px;
+}
+
+
+.carrito-items__products-delete{
+  padding-right: 20px;
+ 
+}
+
+.button-delete{
+  background-color: #db4527;
+  color: #fff;
+  /* letter-spacing: 2px;   añade espacio entre las letras*/
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px dashed #db4527;  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+  transition: .4s;
+  font-size: 12px;
+  width: 35px;
+  height: 30px;
+  margin-right: 10px;
+  
+}
+
+.button-delete:hover {
+  transition: .4s;
+  border: 2px dashed #ee6145;  /* dashed hace que sea discontinuo */
+  background-color: #fff;
+  color: #ee6145;
+  
+ }
+ 
+ 
 
 
 
