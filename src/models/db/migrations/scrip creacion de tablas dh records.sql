@@ -72,6 +72,27 @@ CREATE TABLE IF NOT EXISTS `DH-Records`.`categorias` (
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `DH-Records`.`cart` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `cantidad` INT NULL,
+  `precio_venta` DECIMAL(8,2) NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_cart_users_idx` (`user_id` ASC),
+  INDEX `fk_cart_productos_idx` (`product_id` ASC),
+  CONSTRAINT `fk_cart_users`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `DH-Records`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cart_productos`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `DH-Records`.`productos` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
 
 -- ----------------------------------------------------------POBLANDO LA BASE DE DATOS ------------------------------------------------
 -- INSERT DE LA TABLA GENEROS- 
@@ -155,3 +176,18 @@ INSERT INTO `DH-Records`.`categorias`
 VALUES 
 ('admin'), 
 ('usuario');
+
+-- INSERT DE CART -- 
+INSERT INTO `DH-Records`.`cart`
+(`user_id`, `product_id`, `cantidad`, `precio_venta`)
+VALUES
+(1, 1, 2, 3599.00), 
+(2, 2, 1, 3599.00); 
+
+
+-- INSERT DE USERS -- 
+INSERT INTO `DH-Records`.`users`
+(`nombreUsuario`, `email`, `contraseña`, `imagenUsuario`, `terminosCondiciones`)
+VALUES
+('usuario1', 'usuario1@example.com', 'password1', 'imagen1.jpg', 1),
+('usuario2', 'usuario2@example.com', 'password2', 'imagen2.jpg', 1);
