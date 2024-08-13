@@ -1,7 +1,7 @@
 const {Cart, Productos, Users} = require('../database/models'); 
 
 const cartService = {
-    async getCartItems(req, res) {
+    async getCartItems(userId) {
         try{
             const cartItems = await Cart.findAll({
                 where: {user_id: userId},                       /* la fk coincide con el id  ( where metodo de Sequelize) */
