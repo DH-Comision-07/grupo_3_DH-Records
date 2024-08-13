@@ -6,9 +6,10 @@ const productsControllers = require('../controllers/productsControllers');
 const cartControllers = require('../controllers/cartControllers');
 const multerMid = require('../middlewares/multerProductsMid');
 const productValidationMid = require('../middlewares/productValidationMid');
+const userUnloggedValidationMid = require('../middlewares/userUnloggedValidationMid');
 
 routes.get('/cart', cartControllers.viewCart);
-routes.post('/cart/:id', cartControllers.addToCart); 
+routes.post('/cart/:productId',userUnloggedValidationMid, cartControllers.addToCart); 
 
 routes.get('/', productsControllers.listAll);
 

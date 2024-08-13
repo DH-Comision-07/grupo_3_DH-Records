@@ -67,9 +67,9 @@ let productsControllers = {
 
     detail: async function(req, res) {
         try { //si todo sale bien
-            let productId = await productService.getBy(req.params.id);
-            let productRef = await productService.getByGenre(productId.genero_id);
-            res.render('products/detail', {productId, productRef});
+            let product = await productService.getBy(req.params.id);
+            let productRef = await productService.getByGenre(product.genero_id);
+            res.render('products/detail', {product, productRef});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
         }

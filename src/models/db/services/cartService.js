@@ -13,6 +13,7 @@ const cartService = {
                     {model:Users, as: 'user'}                   /* incluye tabla Users a través del alias 'user' */
                 ]
             });
+            console.log('Cart Items:', cartItems); // Agrega este console.log
             return cartItems;
 
         } catch (error) {
@@ -30,14 +31,16 @@ const cartService = {
             if (!product) {
                 throw new Error('Product not found');
             }
-            const cartItem = await Cart.create({                        /* para crear un nuevo registro en Cart en la db */
+    
+            await Cart.create({
                 user_id: userId,
-                product_id: productId
+                product_id: productId,
+                cantidad: 1, 
+                precio_venta: product.precio_venta
             });
-            return cartItem;
         } catch (error) {
-            console.error('Error en el servicio al agregar al carrito:', error.message);
-            throw error;   /* Lanzara el error para que sea manejado en el controlador */
+            console.error('Error en el servicio al añadir al carrito:', error.message);
+            throw error;
         }
     }
 };

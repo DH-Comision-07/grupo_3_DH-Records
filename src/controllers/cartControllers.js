@@ -19,16 +19,17 @@ const cartController = {
 
     async addToCart(req, res) {
         try {
-            const userId = req.user.id;
-            const productId = req.params.id;
+            const userId = req.session.userLogged.id;
+            const productId = req.params.productId;                     
             await cartService.addToCart(userId, productId);
-            res.redirect('/cart');
+            res.redirect('/products/cart');
+
         } catch (error) {
-            console.error('Error en el controlador al agregar al carrito:', error.message);
-            res.status(500).send('Error al agregar el producto al carrito');
+            console.error('Error al añadir al carrito:', error);
+            res.status(500).send('Hubo un error al añadir el producto al carrito');
         }
     },
-}
+};
 
 module.exports = cartController;
 
