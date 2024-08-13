@@ -38,12 +38,12 @@
                             <span class="oculto">delete</span>
                         </article>
 
-                        
+                        <% cartItems.forEach(item => { %>
                         <article class="carrito-items__products-indv">
                             <div class="pendejo">
                                 <span><img src="/Images/Foto3.jpg" alt="aa"></span>
                                 <div class="carrito-items__products-titulo">
-                                    <span> asdasd  </span>  
+                                    <span> <%= item.titulo %>   </span>  
                                     <span>asd  </span>
                                 </div>
                              </div>
@@ -51,7 +51,7 @@
                             <span class="carrito-items__products-span"> adasd</span>
                             <span class="carrito-items__products-delete"> <button class="button-delete"> ╳ </button></span>
                         </article>
-                        
+                        <% }) %>
                                             
                     </section>
                     
