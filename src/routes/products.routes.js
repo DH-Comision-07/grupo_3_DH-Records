@@ -8,7 +8,7 @@ const multerMid = require('../middlewares/multerProductsMid');
 const productValidationMid = require('../middlewares/productValidationMid');
 
 routes.get('/cart', cartControllers.viewCart);
-routes.post('/cart', )
+routes.post('/cart/:id', cartControllers.addToCart); 
 
 routes.get('/', productsControllers.listAll);
 

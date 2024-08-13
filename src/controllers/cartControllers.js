@@ -15,7 +15,19 @@ const cartController = {
             console.error('Error en el controlador al obtener el carrito:', error);
             res.status(500).send('Hubo un error al obtener el carrito Controller');
         }
-    }
+    },
+
+    async addToCart(req, res) {
+        try {
+            const userId = req.user.id;
+            const productId = req.params.id;
+            await cartService.addToCart(userId, productId);
+            res.redirect('/cart');
+        } catch (error) {
+            console.error('Error en el controlador al agregar al carrito:', error.message);
+            res.status(500).send('Error al agregar el producto al carrito');
+        }
+    },
 }
 
 module.exports = cartController;
