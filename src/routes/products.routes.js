@@ -3,10 +3,11 @@ const routes = express.Router();
 const multer = require('multer');
 const path = require('path');
 const productsControllers = require('../controllers/productsControllers');
+const cartControllers = require('../controllers/cartControllers');
 const multerMid = require('../middlewares/multerProductsMid');
 const productValidationMid = require('../middlewares/productValidationMid');
 
-routes.get('/cart', productsControllers.cart);
+routes.get('/cart', cartControllers.viewCart);
 
 routes.get('/', productsControllers.listAll);
 

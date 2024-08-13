@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Cart',
+    tableName: 'Cart',   /* sin esto me saltaba error porque no encontraba la tabla ya que Sequelize la hace en pluralización automática aunque no lo veas */
     timestamps: false
   });
   return Cart;

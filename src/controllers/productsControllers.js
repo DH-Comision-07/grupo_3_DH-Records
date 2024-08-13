@@ -160,12 +160,7 @@ let productsControllers = {
             res.status(500).send('Error inesperado');
         }
     },
-    
 
-
-    cart: function(req, res) {
-        res.render('products/cart');
-    }  
 
 };
 
