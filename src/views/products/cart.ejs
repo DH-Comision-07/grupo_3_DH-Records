@@ -24,11 +24,9 @@
 
                     <section class="carrito-items__products">
                         <article class="carrito-items__products-titles">
-                            <span>Products</span> 
-                            <span class="oculto"></span>
+                            <span>Products</span>                         
                             <span > Count</span>
-                            <span >Price</span>
-                          
+                            <span >Price</span>                       
                         </article>
 
                         <article class="carrito-items__products-individual">
@@ -40,12 +38,7 @@
                                         <div> <%= item.product.titulo %> </div>                                        
                                     </div>
                                 </div>
-                                <div class="carrito-items__products-span">
-                                    <button class="button"> - </button>
-                                    <span class="numero"> 1 </span>                                  
-                                        <button type="submit" class="button"> + </button>                                   
-                                </div>
-
+                          
                                 <span class="carrito-items__products-span"> <%= item.product.precio_venta %></span>
                                 <span class="carrito-items__products-delete">
                                     <form method="POST" action="/cart/<%= item.product.id %>?_method=DELETE">
