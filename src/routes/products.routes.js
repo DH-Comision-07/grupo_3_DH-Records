@@ -10,6 +10,7 @@ const userUnloggedValidationMid = require('../middlewares/userUnloggedValidation
 
 routes.get('/cart', cartControllers.viewCart);
 routes.post('/cart/:productId',userUnloggedValidationMid, cartControllers.addToCart); 
+routes.delete('/cart/:productId', userUnloggedValidationMid, cartControllers.deleteCartItem);
 
 routes.get('/', productsControllers.listAll);
 

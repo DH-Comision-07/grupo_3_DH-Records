@@ -42,7 +42,18 @@ const cartService = {
             console.error('Error en el servicio al añadir al carrito:', error.message);
             throw error;
         }
-    }
+    },
+
+    async deleteCartItem(productId) {
+        try{
+            console.log(productId)
+            return await Cart.destroy({where: { product_id : productId}});
+        }   catch(error){
+            console.error('Error en el service al eliminar el item del carrito:', error.message);
+            throw error;
+        }
+    },
+
 };
 
 module.exports = cartService;
