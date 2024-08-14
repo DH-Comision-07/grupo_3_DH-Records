@@ -28,23 +28,23 @@
                             <span class="oculto"></span>
                             <span > Count</span>
                             <span >Price</span>
-                            <span class="oculto">delete</span>
+                          
                         </article>
 
                         <article class="carrito-items__products-individual">
                             <% cartItems.forEach(item => { %>
                             <article class="carrito-items__products-indv">
                                 <div class="pendejo">
-                                    <span><img src="/Images/Foto3.jpg" alt="aa"></span>
+                                    <span><img src="/Images/Foto3.jpg" alt="Photo Item"></span>
                                     <div class="carrito-items__products-titulo">
-                                        <span> <%= item.product.titulo %> </span>                                        
+                                        <div> <%= item.product.titulo %> </div>                                        
                                     </div>
                                 </div>
-                                <span class="carrito-items__products-span">
+                                <div class="carrito-items__products-span">
                                     <button class="button"> - </button>
                                     <span class="numero"> 1 </span>                                  
                                         <button type="submit" class="button"> + </button>                                   
-                                </span>
+                                </div>
 
                                 <span class="carrito-items__products-span"> <%= item.product.precio_venta %></span>
                                 <span class="carrito-items__products-delete">
