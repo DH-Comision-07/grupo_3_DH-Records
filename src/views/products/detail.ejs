@@ -22,41 +22,43 @@
     
     <main>
     
-        <h2 class="producto__titulo-principal"> <%= productId.titulo %> </h2>
+        <h2 class="producto__titulo-principal"> <%= product.titulo %> </h2>
 
         <section class="producto__contenedor-general">
 
             <div class="producto__contenedor-info--img">
                 <div class="producto__contenedor-img">
-                    <img src="/Images/main-img-product/<%= productId.imagenesProductos[0].nombre %>" alt="imagen del producto" class="producto__img">
+                    <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" alt="imagen del producto" class="producto__img">
                 </div>
                 <div class="producto__field--info">
-                    <p class="producto__info-item--descripcion"><%= productId.descripcion %></p>
+                    <p class="producto__info-item--descripcion"><%= product.descripcion %></p>
                 </div>
             </div>
             
             <div class="producto__contenedor-info">
                 
                 <div class="producto__field--info">
-                    <p class="producto__info-item">Título: <%= productId.titulo %> </h4>
-                    <p class="producto__info-item">Autor: <%= productId.autores.nombre %> </p>
-                    <p class="producto__info-item">Fecha de estreno: <%=productId.release_date.toISOString().split('T')[0] %> </p>
-                    <p class="producto__info-item">Genero: <%=productId.generos.nombre %> </p>
-                    <p class="producto__info-item">Estilo: <%= productId.estilo %></p>
+                    <p class="producto__info-item">Título: <%= product.titulo %> </h4>
+                    <p class="producto__info-item">Autor: <%= product.autores.nombre %> </p>
+                    <p class="producto__info-item">Fecha de estreno: <%=product.release_date.toISOString().split('T')[0] %> </p>
+                    <p class="producto__info-item">Genero: <%=product.generos.nombre %> </p>
+                    <p class="producto__info-item">Estilo: <%= product.estilo %></p>
                     <p class="producto__info-item">Calificación: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 </div>
                 
                 <div class="producto__field--contenedor-precio">
                     <h3 class="producto__info-item">Precio:&nbsp;</h4>
-                    <p class="producto__info-item"> $<%= productId.precio_venta %></p>
+                    <p class="producto__info-item"> $<%= product.precio_venta %></p>
                 </div>
 
                 <div class="producto__field--contenedor-btn">
-                    <a href="/products/cart" class="producto__button">Comprar! <i class="fa-solid fa-cart-shopping"></i></a>
+                    <form method="POST" action="/products/cart/<%= product.id %>">
+                        <button type="submit" class="producto__button">Comprar! <i class="fa-solid fa-cart-shopping"></i></button>
+                    </form>
                     <% if(locals.isLogged) { %>
                         <% if(locals.userLogged.categorias_id == 1) { %>
-                        <a href="/products/edit/<%= productId.id %>" class="producto__button visible">Editar Producto</a>
-                        <form method="POST" action="/products/<%= productId.id %>?_method=DELETE">
+                        <a href="/products/edit/<%= product.id %>" class="producto__button visible">Editar Producto</a>
+                        <form method="POST" action="/products/<%= product.id %>?_method=DELETE">
                             <button type="submit" class="producto__button visible">Eliminar Producto</button>
                         </form>
                         <% } %>
@@ -73,7 +75,7 @@
             <div class="referidos__contenedor-tarjeta-producto">
                 
                 <% productRef.forEach(product=> { %> 
-                    <% if (product.id !== productId.id) { %>
+                    <% if (product.id !== product.id) { %>
                     <a href="/products/<%= product.id %>">
                         <article class="tarjeta_producto">
                             <div class="tarjeta-producto__contenedor-img">
