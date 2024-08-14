@@ -30,6 +30,19 @@ const cartController = {
             res.status(500).send('Hubo un error al añadir el producto al carrito');
         }
     },
+
+    async deleteCartItem(req,res){
+        try{
+            const productId = req.params.productId;         /* es productId porque asi lo defini en su ruta = /cart/:productId */
+            await cartService.deleteCartItem(productId);
+            res.redirect('/products/cart');
+        }catch (error) {
+            console.error('Error al eliminar del carrito:', error);
+            res.status(500).send('Hubo un error al eliminar el producto del carrito');
+        }
+    }
+
+
 };
 
 module.exports = cartController;

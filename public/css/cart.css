@@ -24,7 +24,7 @@ body{
   grid-template-rows: repeat(9,1fr);       
   grid-column-gap: 20px;                                  /* column-gap = espacio entre columnas, bordes contenedor no separa */
   height: 70vh;
-  padding: 4vh 5% 4vh 5%;                               /* esto controlando width con este padding */
+  padding: 4vh 10% 4vh 10%;                               /* esto controlando width con este padding */
 }
 
 
@@ -69,6 +69,8 @@ body{
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  
  
 }
 
@@ -112,7 +114,7 @@ body{
   grid-column: 1/7;
  
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 40% 30% 30%; 
   align-items: center;
   gap: 5%
  
@@ -142,7 +144,7 @@ body{
   margin: 0px 5px ;
   
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 40% 30% 30%; 
   align-items: center;
   gap: 5%
  
@@ -151,9 +153,9 @@ body{
 
 .pendejo{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding-left: 0px;
+
 
 }
 
@@ -173,38 +175,22 @@ body{
 
 .carrito-items__products-titulo{     
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   padding-left: 20px;
- 
+  font-family: "Berkshire Swash", serif;
+  font-style: normal;
 }
 
-
-.button{
-  border: 1px solid #999595; /* border-2 border-yellow-500 */
-  background-color: #ffffff; /* bg-yellow-100 */
-  color: #757272; /* text-yellow-600 */
-  border-radius: 50%; /* rounded-full */
-  min-width: 22px; /* min-w-[120px] */
-  min-height: 22px;
-  margin: 0px 5px;
-  cursor: pointer;
-  font-size: 14px;
-  
+.carrito-items__products-span{
+  font-family: "Rasa", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px; 
+  padding-left: 10px;
 }
-
-.button:hover{
-  color: #050400; /* hover:text-yellow-700 */
-  transform: scale(1.1);
-}
-
-.numero{
-  font-size: 18px;
-}
-
 
 .carrito-items__products-delete{
   padding-right: 20px;
- 
 }
 
 .button-delete{
@@ -232,8 +218,6 @@ body{
  }
  
  
-
-
 
 
 
