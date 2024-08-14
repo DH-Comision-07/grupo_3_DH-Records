@@ -17,57 +17,47 @@
                     <article class="carrito-items__navbar">
                         <div class="carrito-items__navbar-left">
                             <h3>Cart</h3>
-                            <span>(<%= cartItems.length %>)</span>                                       <!-- lenght = js  propiedad del array -->
+                            <span>(<%= cartItems.length %>)</span>                                  <!-- lenght = js  propiedad del array -->
                         </div>
                        <button class="button-clear"> Clear cart</button>
                     </article>
 
-                    
                     <section class="carrito-items__products">
-
                         <article class="carrito-items__products-titles">
-                            <div class="pendejo">
-                                <span>Products</span> 
-                                <div class="carrito-items__products-left">
-                                    <span class="oculto">Titulo producto</span>  
-                                    <span class="oculto">Subtitulo </span>
-                                </div>
-                             </div>
-                            <span class="carrito-items__products-extra"> Count</span>
-                            <span class="carrito-items__products-extra">Price</span>
+                            <span>Products</span> 
+                            <span class="oculto"></span>
+                            <span > Count</span>
+                            <span >Price</span>
                             <span class="oculto">delete</span>
                         </article>
 
-                        <% cartItems.forEach(item => { %>
-                        <article class="carrito-items__products-indv">
-                            <div class="pendejo">
-                                <span><img src="/Images/Foto3.jpg" alt="aa"></span>
-                                <div class="carrito-items__products-titulo">
-                                    <span> <%= item.product.titulo %>   </span>  
-                                    <span> </span>
+                        <article class="carrito-items__products-individual">
+                            <% cartItems.forEach(item => { %>
+                            <article class="carrito-items__products-indv">
+                                <div class="pendejo">
+                                    <span><img src="/Images/Foto3.jpg" alt="aa"></span>
+                                    <div class="carrito-items__products-titulo">
+                                        <span> <%= item.product.titulo %> </span>                                        
+                                    </div>
                                 </div>
-                             </div>
-                            <span class="carrito-items__products-span">
-                                <button class="button"> - </button>
-                                <span class="numero"> 1 </span>
-                                <form method="POST" action="/cart/<%= item.product.id %>">
-                                    <button type="submit" class="button-add"> + </button>
-                                </form>
-                             </span>
+                                <span class="carrito-items__products-span">
+                                    <button class="button"> - </button>
+                                    <span class="numero"> 1 </span>                                  
+                                        <button type="submit" class="button"> + </button>                                   
+                                </span>
 
-                            <span class="carrito-items__products-span"> <%= item.product.precio_venta %></span>
-                            <span class="carrito-items__products-delete">
-                                <form method="POST" action="/cart/<%= item.product.id %>?_method=DELETE">
-                                    <button type="submit" class="button-delete"> ╳ </button>
-                                </form>
-                            </span>
-                        </article>
-                        <% }) %>
-                                            
+                                <span class="carrito-items__products-span"> <%= item.product.precio_venta %></span>
+                                <span class="carrito-items__products-delete">
+                                    <form method="POST" action="/cart/<%= item.product.id %>?_method=DELETE">
+                                        <button type="submit" class="button-delete"> ╳ </button>
+                                    </form>
+                                </span>
+                            </article>
+                            <% }) %>
+                        </article>                  
                     </section>
-                    
-
                 </section>
+
 
                 <section class="carrito-pagos"> 
 

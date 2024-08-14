@@ -24,7 +24,7 @@ body{
   grid-template-rows: repeat(9,1fr);       
   grid-column-gap: 20px;                                  /* column-gap = espacio entre columnas, bordes contenedor no separa */
   height: 70vh;
-  padding: 4vh 20% 4vh 15%;
+  padding: 4vh 15% 4vh 15%;                               /* esto controlando width con este padding */
 }
 
 
@@ -40,9 +40,15 @@ body{
   backdrop-filter: blur(25px);  
   border-radius: 30px;
   width: 100%;
-  height: 100%;
+  height: auto;
   grid-row: 1/9;
   grid-column: 1/6;
+  overflow: scroll;
+}
+
+
+.carrito-items::-webkit-scrollbar {                       /* pseudo-elemento =  personalizar la apariencia de las barras de desplazamiento en navegadores basados en WebKit, como Chrome y Safari */
+  display: none; /* WebKit (Chrome, Safari) */
 }
 
 
@@ -113,6 +119,9 @@ body{
   display: grid;
   grid-template-columns: repeat(6,1fr);
   grid-template-rows: repeat(12,1fr); 
+
+
+ 
  
 
   background: transparent;
@@ -136,7 +145,7 @@ body{
   grid-column: 1/7;
  
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
  
 }
@@ -171,37 +180,40 @@ padding-left: 20px;
  
 
 
+.carrito-items__products-individual{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  grid-row:3/6;
+  grid-column: 1/7;
+}
 
 .carrito-items__products-indv{     /* hijo 3 / padre */
   background: transparent;
   border-radius: 15px;
   border: 1px solid gray;
-  margin: 0px 10px ;
+  margin: 0px 5px ;
   
-  grid-row:3/6;
-  grid-column: 1/7;
- 
   display: flex;
   justify-content: space-between;
   align-items: center;
  
 }
 
+
 .pendejo img{
   width: 120px;
   height: 80px;
   border-radius: 10px;
+  padding: 5px 0px;
 
 }
 
 .carrito-items__products-titulo{     
-  display: flex;
-  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
  
-}
-
-.carrito-items__products-span{
-  padding-right: 20px;
 }
 
 

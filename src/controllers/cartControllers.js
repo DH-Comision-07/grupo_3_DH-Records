@@ -4,7 +4,7 @@ const cartController = {
     async viewCart(req, res) {
         try{
             if (!req.session.userLogged || !req.session.userLogged.id) {
-                return res.status(401).send('Usuario no autenticado');
+                return res.redirect('/users/login');
             }                       
 
             const userId = req.session.userLogged.id;                        /* obtengo el id */
@@ -20,7 +20,8 @@ const cartController = {
     async addToCart(req, res) {
         try {
             const userId = req.session.userLogged.id;
-            const productId = req.params.productId;                     
+            const productId = req.params.productId;               
+            
             await cartService.addToCart(userId, productId);
             res.redirect('/products/cart');
 
