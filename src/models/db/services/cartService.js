@@ -13,7 +13,7 @@ const cartService = {
                     {model:Users, as: 'user'}                   /* incluye tabla Users a través del alias 'user' */
                 ]
             });
-            console.log('Cart Items:', cartItems); // Agrega este console.log
+            console.log('Cart Items:', cartItems); 
             return cartItems;
 
         } catch (error) {
