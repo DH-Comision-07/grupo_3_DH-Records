@@ -2,27 +2,63 @@
 <html lang="en">
 
 <%- include('../partials/head-1.ejs') %>   
-
-<!-- aca se inserta la hoja de estilo correspondiente a la vista -->
-<link rel="stylesheet" href="/css/carrito.css">
-
+<link rel="stylesheet" href="/css/cart.css">
 <%- include('../partials/head-2.ejs') %>
 
-   
-<body>
-    <%- include('../partials/header.ejs') %>
-    <main>
-        <section class="carrito"> 
-            <section class="carrito__formulario"> 
+    
+    <body>
+     
+        <main>
+            <%- include('../partials/header.ejs') %>
+            <section class="contenedor"> 
+                <section class="carrito-items"> 
+                    <article class="carrito-items__navbar">
+                        <div class="carrito-items__navbar-left">
+                            <h3>Cart</h3>
+                            <span>(<%= cartItems.length %>)</span>                                  <!-- lenght = js  propiedad del array -->
+                        </div>
+                      
+                    </article>
 
-                <div class= "carrito__casilla">
-                    <p class="carrito__casilla-info"> Cart In Development</p>
-                </div>
+                    <section class="carrito-items__products">
+                        <article class="carrito-items__products-titles">
+                            <span>Products</span>                         
+                            <span > Price</span>
+                            <span > Delete </span>                       
+                        </article>
+
+                        <article class="carrito-items__products-individual">
+                            <% cartItems.forEach(item => { %>
+                            <article class="carrito-items__products-indv">
+                                <div class="pendejo">
+                                    <span><img src="/Images/Foto3.jpg" alt="Photo Item"></span>
+                                    <div class="carrito-items__products-titulo">
+                                        <div> <%= item.product.titulo %> </div>                                        
+                                    </div>
+                                </div>
+                          
+                                <span class="carrito-items__products-span"> <%= item.product.precio_venta %></span>
+                                <span class="carrito-items__products-delete">
+                                    <form method="POST" action="/products/cart/<%= item.product.id %>?_method=DELETE">
+                                        <button type="submit" class="button-delete"> ╳ </button>
+                                    </form>
+                                </span>
+                            </article>
+                            <% }) %>
+                        </article>                  
+                    </section>
+                </section>
+
+
+                <section class="carrito-pagos"> 
+
+
+                    
+                </section>
 
             </section>
-        </section>
-    </main>
-</body>
-
-</html>
+        </main>
+       
+    </body> 
+    </html>
 

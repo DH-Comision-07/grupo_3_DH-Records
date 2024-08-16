@@ -14,6 +14,7 @@ async function userLoggedMid(req, res, next) {
     
     //si encontre un usuario segun el email de la cookie lo paso a sesion
     if(userFromCookies){
+
         req.session.userLogged =  userFromCookies;
         res.locals.isLogged = true;
     }
@@ -22,6 +23,7 @@ async function userLoggedMid(req, res, next) {
     if(req.session.userLogged){
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged.dataValues;
+
     }
 
     next();

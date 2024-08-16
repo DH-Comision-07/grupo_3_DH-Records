@@ -10,7 +10,6 @@
 }
 
 
-
 * {
     box-sizing: border-box;
    
@@ -50,6 +49,7 @@ a {
     align-items: center;
     gap: 1rem;
     list-style: none;
+    padding: 0px;
 }
 
 .links a:hover {
@@ -60,7 +60,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .header__nabvar__user a:hover {
@@ -119,13 +119,15 @@ a {
     width: 100%;
     height: 30px;
     line-height: 25px;
-    padding: 0 0.5rem;
+    padding: 0 0px;
     border: 2px solid transparent;
     border-radius: 30px;
     outline: none;
-    background-color: var(--BLANCO);
+    background-color: #f3f3f4;
+    border-color: rgba(0, 0, 0, 0.2);
     color: #0d0c22;
     transition: .3s;
+    text-align: center;
 }
 
 .sec-buscar-productos__input:hover, .sec-buscar-productos__input:focus {

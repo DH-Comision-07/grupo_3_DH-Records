@@ -44,8 +44,7 @@ a{
 
 }
 
-.button__banner{
-    
+.button__banner{  
     position: absolute;
     bottom: 5%;
     left: 5%;
@@ -122,8 +121,6 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-  
-    
 
 }
 
@@ -140,10 +137,11 @@ a{
     justify-content: flex-start;
     gap: 3rem;
     list-style: none;
-    color: #090b0b;
-    
+    padding: 0px;
+    color: #090b0b;  
     
 }
+
 
 
 .links a:hover{
@@ -210,6 +208,8 @@ a{
     background-color: #f3f3f4;
     color: #0d0c22;
     transition: .3s;
+    text-align: center;
+    
 }
    
 
@@ -224,17 +224,50 @@ a{
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .button__banner{
-        /* Ajusta los estilos según tus necesidades */
+      
         width: 20%; 
     }
+
+    .links{
+        gap: 1rem;
+    }
+
+    .header__navbar{
+        box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        background-color: white;
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+       
+    }
 }
+
 
 @media (max-width: 768px) {
    
     .button__banner{
-        /* Ajusta los estilos según tus necesidades */
+      
         width: 25%;
         font-size: 15px; 
     }
+
+    .links{
+        gap: 1rem;
+    }
+
+    .header__navbar{
+        box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        background-color: white;
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 20px; 
+    }   
    
 }
+

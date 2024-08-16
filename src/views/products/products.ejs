@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Products | DH Records</title>
-    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-    <link rel="icon" href="/Images/dh-records.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/css/general-styles.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
 
+    <%- include('../partials/head-1.ejs') %>   
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/product-card.css">
     <link rel="stylesheet" href="/css/formularios.css">
-</head>
-    
-<body>
-    <div class="contenedor-general"> 
+    <%- include('../partials/head-2.ejs') %>  
 
-        <%- include('../partials/header.ejs') %>
     
-        <main>
-
+<body id="footer-productos" >
+    
+    
+        <main class="contenedor-general">
+          <%- include('../partials/header.ejs') %>
             <div class="contenedor-general-secciones"> 
                 <section class="filters-bar__contenedor-general">
                     <form id="filtroForm" action="/products/filter" method="GET">
@@ -92,14 +82,10 @@
                             </article>
                         </a>
                         <% }) %> 
-                </section>
-
-            </div>
+                </section>              
+            </div>                          
         </main>
-        
-        <%- include('../partials/footer.ejs') %>
-    </div>
-
+        <%- include('../partials/footer.ejs') %>       
 </body>
 </html>
 

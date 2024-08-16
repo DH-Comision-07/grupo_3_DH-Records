@@ -3,10 +3,14 @@ const routes = express.Router();
 const multer = require('multer');
 const path = require('path');
 const productsControllers = require('../controllers/productsControllers');
+const cartControllers = require('../controllers/cartControllers');
 const multerMid = require('../middlewares/multerProductsMid');
 const productValidationMid = require('../middlewares/productValidationMid');
+const userUnloggedValidationMid = require('../middlewares/userUnloggedValidationMid');
 
-routes.get('/cart', productsControllers.cart);
+routes.get('/cart', cartControllers.viewCart);
+routes.post('/cart/:productId',userUnloggedValidationMid, cartControllers.addToCart); 
+routes.delete('/cart/:productId', userUnloggedValidationMid, cartControllers.deleteCartItem);
 
 routes.get('/', productsControllers.listAll);
 
