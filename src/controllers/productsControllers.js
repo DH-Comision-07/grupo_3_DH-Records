@@ -69,6 +69,7 @@ let productsControllers = {
         try { //si todo sale bien
             let product = await productService.getBy(req.params.id);
             let productRef = await productService.getByGenre(product.genero_id);
+
             res.render('products/detail', {product, productRef});
         } catch (error) { //si sale mal
             res.send('Error inesperado').status(500);
