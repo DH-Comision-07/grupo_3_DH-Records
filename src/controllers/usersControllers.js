@@ -50,6 +50,7 @@ let usersControllers = {
         //Si pasa las validaciones y no hay errores busco en la DB el usuario que se corresponda con el email ingresado
         let userLogin=  await userService.getByField('email', req.body.email);
 
+
         //Si no encuentro usuario registrado vuelvo al Login y lo mando a registrarse
         if(!userLogin){
             return res.render('users/login', { errores:{email:{ msg: 'This email is not registered'}}, oldData: req.body });
@@ -67,7 +68,7 @@ let usersControllers = {
                 delete userLoginForSession.contraseña;
 
                 req.session.userLogged = userLoginForSession;
-
+                
                 if(req.body.rememberUser){
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30});
                 }
