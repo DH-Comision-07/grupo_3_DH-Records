@@ -1,6 +1,7 @@
 const express = require ('express');
 const app = express();
 const path = require ('path');
+require('dotenv').config();
 
 // express.static es un middleware que sirve para configurar la ruta de los archivos estáticos.
 const publicPath = path.resolve(__dirname, '../public');
