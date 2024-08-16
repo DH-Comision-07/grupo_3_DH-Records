@@ -10,7 +10,6 @@
 }
 
 
-
 * {
     box-sizing: border-box;
    
@@ -61,7 +60,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .header__nabvar__user a:hover {
