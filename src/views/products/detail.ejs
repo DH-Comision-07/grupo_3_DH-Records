@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Product Details | DH Records</title>
-    <script src="https://kit.fontawesome.com/986ef756a5.js" crossorigin="anonymous"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-    <link rel="icon" href="/Images/dh-records.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/css/general-styles.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
 
+    <%- include('../partials/head-1.ejs') %>   
     <link rel="stylesheet" href="/css/product-detail.css">
     <link rel="stylesheet" href="/css/product-card.css">
-</head>
+    <%- include('../partials/head-2.ejs') %> 
 
-<body>
-    <div class="contenedor-general"> 
 
-    <%- include('../partials/header.ejs') %>
-    
-    <main>
-    
+<body id="footer-productos" >
+
+    <main class="contenedor-general">
+    <%- include('../partials/header.ejs') %> 
         <h2 class="producto__titulo-principal"> <%= product.titulo %> </h2>
-
         <section class="producto__contenedor-general">
-
             <div class="producto__contenedor-info--img">
                 <div class="producto__contenedor-img">
                     <img src="/Images/main-img-product/<%= product.imagenesProductos[0].nombre %>" alt="imagen del producto" class="producto__img">
@@ -38,17 +25,17 @@
             <div class="producto__contenedor-info">
                 
                 <div class="producto__field--info">
-                    <p class="producto__info-item">Título: <%= product.titulo %> </h4>
-                    <p class="producto__info-item">Autor: <%= product.autores.nombre %> </p>
-                    <p class="producto__info-item">Fecha de estreno: <%=product.release_date.toISOString().split('T')[0] %> </p>
-                    <p class="producto__info-item">Genero: <%=product.generos.nombre %> </p>
-                    <p class="producto__info-item">Estilo: <%= product.estilo %></p>
+                    <p class="producto__info-item">Título: <span class="producto__info-item-hijo"> <%= product.titulo %> </span> </p>
+                    <p class="producto__info-item">Autor: <span class="producto__info-item-hijo">  <%= product.autores.nombre %> </span> </p>
+                    <p class="producto__info-item">Fecha de estreno: <span class="producto__info-item-hijo"> <%=product.release_date.toISOString().split('T')[0] %>  </span> </p>
+                    <p class="producto__info-item">Genero: <span class="producto__info-item-hijo"> <%=product.generos.nombre %> </span> </p>
+                    <p class="producto__info-item">Estilo: <span class="producto__info-item-hijo"> <%= product.estilo %> </span> </p>
                     <p class="producto__info-item">Calificación: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </p>     
                 </div>
                 
                 <div class="producto__field--contenedor-precio">
                     <h3 class="producto__info-item">Precio:&nbsp;</h4>
-                    <p class="producto__info-item"> $<%= product.precio_venta %></p>
+                    <p class="producto__info-item"> <span class="producto__info-item-hijo"> $<%= product.precio_venta %> </span> </p>
                 </div>
 
                 <div class="producto__field--contenedor-btn">
@@ -64,16 +51,13 @@
                         <% } %>
                     <% } %>
                 </div>
-
             </div>
         </section>
 
-        <section class="referidos__contenedor-general">
-            
+        <section class="referidos__contenedor-general">         
             <h3 class="referidos__titulo-principal">Referidos</h3>
 
-            <div class="referidos__contenedor-tarjeta-producto">
-                
+            <div class="referidos__contenedor-tarjeta-producto">  
                 <% productRef.forEach(product=> { %> 
                     <% if (product.id !== product.id) { %>
                     <a href="/products/<%= product.id %>">
@@ -92,17 +76,11 @@
                     </a>
                     <% } %>
                  <% }) %>
-            </div>
-            
+            </div>    
         </section>
-
     </main>
-
     <%- include('../partials/footer.ejs') %>
-
-    </div>
-</body>
-    
+</body>    
 </html>
 
 

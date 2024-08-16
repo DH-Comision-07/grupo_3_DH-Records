@@ -13,7 +13,7 @@
     margin: auto;
     border-radius: 20px;
     width: 90%;
-    background: linear-gradient(to right, #C1C1C1, #f4f3f2); 
+    background: linear-gradient(to right, #C1C1C1, #f4f3f285); 
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     padding-top: 0;
     margin-top: 0px;
@@ -27,7 +27,7 @@
     padding: 20px;
     margin: auto;
     border-radius: 20px;
-    background: linear-gradient(to right, #C1C1C1, #f4f3f2); 
+    background: linear-gradient(to right, #C1C1C1, #f4f3f285); 
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     padding-top: 0;
     margin-top: 0px;
@@ -36,6 +36,8 @@
  
 }
 
+
+
 .top-footer {
     display: flex;
     flex-direction: row;
@@ -43,21 +45,24 @@
 
 .navbar-footer{
     width: 50%;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 500;
-    font-style: italic;
        
 }
 
+
 .link-footer li a{
-    font-size: 20px;
     padding: 0;
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .navbar-footer ul{
     padding: 0;
     
 }
+
+
 
 .navbar-footer li{
     list-style-type: none;
@@ -126,6 +131,8 @@
 
 .footer-enlaces p{
     color: #FFF;
+     font-family: "Bebas Neue", sans-serif;
+    font-style: italic;
 }
 
 

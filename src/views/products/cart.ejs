@@ -2,16 +2,14 @@
 <html lang="en">
 
 <%- include('../partials/head-1.ejs') %>   
-
-<!-- aca se inserta la hoja de estilo correspondiente a la vista -->
 <link rel="stylesheet" href="/css/cart.css">
-
 <%- include('../partials/head-2.ejs') %>
 
     
     <body>
-        <%- include('../partials/header.ejs') %>
+     
         <main>
+            <%- include('../partials/header.ejs') %>
             <section class="contenedor"> 
                 <section class="carrito-items"> 
                     <article class="carrito-items__navbar">
@@ -25,8 +23,8 @@
                     <section class="carrito-items__products">
                         <article class="carrito-items__products-titles">
                             <span>Products</span>                         
-                            <span > Count</span>
-                            <span >Price</span>                       
+                            <span > Price</span>
+                            <span > Delete </span>                       
                         </article>
 
                         <article class="carrito-items__products-individual">
@@ -60,7 +58,7 @@
 
             </section>
         </main>
-    </body>
-    
+       
+    </body> 
     </html>
 
